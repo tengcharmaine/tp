@@ -1,5 +1,7 @@
 package seedu.address.model.person;
 
+import java.util.Locale;
+
 import static java.util.Objects.requireNonNull;
 import static seedu.address.commons.util.AppUtil.checkArgument;
 
@@ -10,8 +12,8 @@ import static seedu.address.commons.util.AppUtil.checkArgument;
 public class Sex {
 
     public static final Sex DEFAULT = new Sex("F");
-    public static final String MALE = "M";
-    public static final String FEMALE = "F";
+    public static final String MALE = "m";
+    public static final String FEMALE = "f";
 
     public static final String MESSAGE_CONSTRAINTS =
             "Sex should only contain either 'M' or 'F', and it should not be blank";
@@ -20,7 +22,7 @@ public class Sex {
      * The first character of the sex must not be a whitespace,
      * otherwise " " (a blank string) becomes a valid input.
      */
-    public static final String VALIDATION_REGEX = "[MF]";
+    public static final String VALIDATION_REGEX = "[mfMF]";
 
     public final String value;
 
@@ -33,13 +35,13 @@ public class Sex {
         requireNonNull(sex);
         checkArgument(isValidSex(sex), MESSAGE_CONSTRAINTS);
         if (isFemaleString(sex)) {
-            value = FEMALE;
+            value = FEMALE.toUpperCase();
         } else if (isMaleString(sex)) {
-            value = MALE;
+            value = MALE.toUpperCase();
         } else {
             // This should never happen
             // Prevents linter from detecting fullSex as potentially unassigned
-            value = "";
+            value = "".toUpperCase();
         }
     }
 

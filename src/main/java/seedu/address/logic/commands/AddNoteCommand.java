@@ -87,7 +87,13 @@ public class AddNoteCommand extends Command {
         return new CommandResult(generateSuccessMessage(editedPerson));
     }
 
-    private boolean isNoteChanged(Person person, Note newNote) {
+    /**
+     * Checks if the note of the person is changed.
+     * @param person the person to be compared with
+     * @param newNote the new note to be compared with
+     * @return true if the note is changed, false otherwise
+     */
+    public boolean isNoteChanged(Person person, Note newNote) {
         if (person != null) {
             return !person.getNote().equals(newNote);
         }

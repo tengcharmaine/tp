@@ -77,7 +77,21 @@ public class AddNoteCommand extends Command {
         model.setPerson(personToEdit, editedPerson);
         model.updateFilteredPersonList(PREDICATE_SHOW_ALL_PERSONS);
 
+        Person person = FindCommand.getFoundPerson();
+        if (person != null && isNoteChanged(person, note)) {
+            model.updateFilteredPersonList(new IdentityCardNumberMatchesPredicate(person.getIdentityCardNumber()));
+            model.setDisplayNoteAsFirstFilteredPerson();
+            model.updateFilteredPersonList(PREDICATE_SHOW_ALL_PERSONS);
+        }
+
         return new CommandResult(generateSuccessMessage(editedPerson));
+    }
+
+    private boolean isNoteChanged(Person person, Note newNote) {
+        if (person != null) {
+            return !person.getNote().equals(newNote);
+        }
+        return false;
     }
 
     /**

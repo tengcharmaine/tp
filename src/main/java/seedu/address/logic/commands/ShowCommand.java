@@ -1,0 +1,98 @@
+package seedu.address.logic.commands;
+
+import static java.util.Objects.requireNonNull;
+
+import java.util.List;
+
+import seedu.address.logic.Messages;
+import seedu.address.logic.commands.exceptions.CommandException;
+import seedu.address.model.Model;
+import seedu.address.model.person.IdentityCardNumberMatchesPredicate;
+import seedu.address.model.person.Person;
+
+
+
+/**
+ * Shows the user a note of a person in the address book.
+ * If no IC is given, the displayed note panel will be cleared.
+ */
+public class ShowCommand extends Command {
+
+    public static final String COMMAND_WORD = "show";
+    public static final String MESSAGE_SHOW_NOTE_SUCCESS = "Displayed note of person: %1$s";
+
+    public static final String MESSAGE_CLEAR_NOTE_SUCCESS = "Note cleared.";
+
+    public static final String MESSAGE_USAGE = COMMAND_WORD + ": Shows the note of the person whose IC matches the "
+            + "specified IC (case-insensitive) and displays it.\n"
+            + "If no IC is given, the displayed note panel will be cleared. \n"
+            + "Parameters: IC (optional)\n"
+            + "Example (to display note): " + COMMAND_WORD + " t1234567A"
+            + "Example (to clear display): " + COMMAND_WORD;
+    private final IdentityCardNumberMatchesPredicate icPredicate;
+
+    private final boolean isClear;
+
+    /**
+     * Creates a ShowCommand to show the note of the person whose profile matches the specified {@code icPredicate}.
+     * @param icPredicate of the person in the filtered person list to show the note
+     */
+    private ShowCommand(IdentityCardNumberMatchesPredicate icPredicate, boolean isClear) {
+        this.icPredicate = icPredicate;
+        this.isClear = isClear;
+    }
+
+    /**
+     * Factory method to create a ShowCommand to show the note of the person whose profile matches
+     * the specified {@code icPredicate}.
+     * @param icPredicate of the person in the filtered person list to show the note
+     */
+    public static ShowCommand createShowCommand(IdentityCardNumberMatchesPredicate icPredicate) {
+        return new ShowCommand(icPredicate, false);
+    }
+
+    /**
+     * Factory method to create a ShowCommand to clear the displayed note panel.
+     */
+    public static ShowCommand createClearCommand() {
+        return new ShowCommand(null, true);
+    }
+
+    @Override
+    public CommandResult execute(Model model) throws CommandException {
+        requireNonNull(model);
+        if (isClear) {
+            model.clearDisplayNote();
+            return new CommandResult(MESSAGE_CLEAR_NOTE_SUCCESS);
+        }
+
+        List<Person> allPatients = model.getAddressBook().getPersonList();
+
+        Person person = allPatients.stream()
+            .filter(icPredicate::test)
+            .findFirst()
+            .orElseThrow(() -> new CommandException(Messages.MESSAGE_NO_MATCHING_IC));
+
+        model.setDisplayNote(person);
+
+        return new CommandResult(
+                String.format(MESSAGE_SHOW_NOTE_SUCCESS, person.getIdentityCardNumber())
+        );
+    }
+
+
+    @Override
+    public boolean equals(Object other) {
+        if (other == this) {
+            return true;
+        }
+
+        // instanceof handles nulls
+        if (!(other instanceof ShowCommand)) {
+            return false;
+        }
+
+        ShowCommand e = (ShowCommand) other;
+        return icPredicate.equals(e.icPredicate);
+    }
+}

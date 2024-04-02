@@ -4,6 +4,7 @@ import static java.util.Objects.requireNonNull;
 
 import java.util.List;
 
+import seedu.address.commons.util.ToStringBuilder;
 import seedu.address.logic.Messages;
 import seedu.address.logic.commands.exceptions.CommandException;
 import seedu.address.model.Model;
@@ -93,6 +94,24 @@ public class ShowCommand extends Command {
         }
 
         ShowCommand e = (ShowCommand) other;
+        // icPredicate is not important if isClear is true
+        if (isClear && e.isClear) {
+            return true;
+        }
+        if (isClear != e.isClear) {
+            return false;
+        }
+        if (icPredicate == null || e.icPredicate == null) {
+            return icPredicate == e.icPredicate;
+        }
         return icPredicate.equals(e.icPredicate);
+    }
+
+    @Override
+    public String toString() {
+        return new ToStringBuilder(this)
+                .add("predicate", icPredicate)
+                .add("isClear", isClear)
+                .toString();
     }
 }

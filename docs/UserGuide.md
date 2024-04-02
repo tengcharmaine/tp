@@ -44,16 +44,22 @@ Welcome to the comprehensive user guide for ClinicMate! Our goal is to provide y
 
 Before we dive into the details, let's acquaint ourselves with the annotations you'll encounter throughout this user guide. These annotations will help you understand and navigate ClinicMate's features smoothly.
 
-**Useful Tip:**
+<div markdown="block" class="alert alert-success">
+> :warning:**Useful Tip:**<br>
 - Provides additional insights and tips to enhance your ClinicMate experience.
+</div>
 
-**Note:**
+<div markdown="block" class="alert alert-info">
+> :memo:**Note:**<br>
 - Provides valuable additional details for using ClinicMate effectively.
+</div>
 
-**Warning:**
+<div markdown="block" class="alert alert-danger">
+> :warning: **Warning:**<br>
 - Alerts you to potential pitfalls or issues to be mindful of when using ClinicMate.
+</div>
 
----
+<div style="page-break-after: always;"></div><br/>
 
 Throughout this guide, you'll also encounter various text styles. Here's what they represent:
 
@@ -62,11 +68,8 @@ Throughout this guide, you'll also encounter various text styles. Here's what th
 - `Highlights specific elements such as file names, commands, or any text that should be treated as code.`
 - > Provides information about the parameters that you can input into a command.
 
-Now that you're familiar with the annotations and text styles, let's show you how to navigate this user guide based on your level of expertise.
+Now that you're familiar with the annotations and text styles, we will give you a tour on how to navigate this user guide based on your level of expertise.
 
-
-
---------------------------------------------------------------------------------------------------------------------
 
 ## Quick start
 

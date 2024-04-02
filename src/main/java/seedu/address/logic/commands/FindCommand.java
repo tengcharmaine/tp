@@ -21,8 +21,6 @@ public class FindCommand extends Command {
             + "Parameters: IC (must be a valid identity card number) \n"
             + "Example: " + COMMAND_WORD + " t1234567A";
 
-    private static Person foundPerson = null;
-
     private final IdentityCardNumberMatchesPredicate predicate;
 
     public FindCommand(IdentityCardNumberMatchesPredicate predicate) {
@@ -33,18 +31,16 @@ public class FindCommand extends Command {
     public CommandResult execute(Model model) {
         requireNonNull(model);
         model.updateFilteredPersonList(predicate);
-        model.setDisplayNoteAsFirstFilteredPerson();
+
+        assert model.getFilteredPersonList().size() <= 1 : "There should be at most one person in the filtered list";
 
         if (model.getFilteredPersonList().size() == 1) {
-            foundPerson = model.getFilteredPersonList().get(0);
+            Person person = model.getFilteredPersonList().get(0);
+            model.setDisplayNote(person);
         }
 
         return new CommandResult(
                 String.format(Messages.MESSAGE_PERSONS_LISTED_OVERVIEW, model.getFilteredPersonList().size()));
-    }
-
-    public static Person getFoundPerson() {
-        return foundPerson;
     }
 
     @Override

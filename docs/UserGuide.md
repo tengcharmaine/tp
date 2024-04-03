@@ -33,9 +33,8 @@ Bid farewell to cumbersome paperwork and embrace the efficiency of ClinicMate in
 
 <div style="page-break-after: always;"></div><br/>
 
-# Table of Contents
-
-<div style="page-break-after: always;"></div><br/>
+<!-- * Table of Contents -->
+<page-nav-print />
 
 
 # Guide Usage

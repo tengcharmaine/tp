@@ -3,7 +3,6 @@ package seedu.address.logic.commands;
 import static java.util.Objects.requireNonNull;
 import static seedu.address.commons.util.CollectionUtil.requireAllNonNull;
 import static seedu.address.logic.parser.CliSyntax.PREFIX_NOTE;
-import static seedu.address.model.Model.PREDICATE_SHOW_ALL_PERSONS;
 
 import java.util.List;
 
@@ -74,10 +73,27 @@ public class AddNoteCommand extends Command {
                     personToEdit.getIdentityCardNumber(), personToEdit.getAge(), personToEdit.getSex(),
                     personToEdit.getAddress(), updatedNote, personToEdit.getTags());
         }
+
         model.setPerson(personToEdit, editedPerson);
-        model.updateFilteredPersonList(PREDICATE_SHOW_ALL_PERSONS);
+
+        if (model.isPersonDisplayed(personToEdit)) {
+            model.setDisplayNote(editedPerson);
+        }
 
         return new CommandResult(generateSuccessMessage(editedPerson));
+    }
+
+    /**
+     * Checks if the note of the person is changed.
+     * @param person the person to be compared with
+     * @param newNote the new note to be compared with
+     * @return true if the note is changed, false otherwise
+     */
+    public boolean isNoteChanged(Person person, Note newNote) {
+        if (person != null) {
+            return !person.getNote().equals(newNote);
+        }
+        return false;
     }
 
     /**

@@ -86,14 +86,21 @@ public interface Model {
      */
     void updateFilteredPersonList(Predicate<Person> predicate);
 
+    /**
+     * Returns the display note.
+     */
     Note getDisplayNote();
 
+    /**
+     * Sets the displayed note to the note of the given person.
+     */
     void setDisplayNote(Person person);
 
     /**
-     * Replaces the note that is displayed in the note panel.
+     * Returns true if the person is displayed in the note panel.
      */
-    void setDisplayNote(Note note);
+    boolean isPersonDisplayed(Person person);
+
 
     /**
      * Sets the display note to the first filtered person.

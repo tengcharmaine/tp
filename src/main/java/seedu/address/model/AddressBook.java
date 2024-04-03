@@ -30,7 +30,7 @@ public class AddressBook implements ReadOnlyAddressBook {
         persons = new UniquePersonList();
     }
 
-    private Optional<Note> displayNote = Optional.empty();
+    private Optional<Person> displayPerson = Optional.empty();
 
     public AddressBook() {}
 
@@ -102,22 +102,28 @@ public class AddressBook implements ReadOnlyAddressBook {
      * Get the display note.
      */
     public Note getDisplayNote() {
-        return displayNote.orElse(Note.DEFAULT);
+        return displayPerson.map(Person::getNote).orElse(Note.EMPTY);
     }
 
     /**
-     * Sets the display note to the given note.
-     * @param note The note to be displayed.
+     * Set the display person.
      */
-    public void setDisplayNote(Note note) {
-        this.displayNote = Optional.of(note);
+    public void setDisplayPerson(Person person) {
+        this.displayPerson = Optional.of(person);
+    }
+
+    /**
+     * Check if person is displayed.
+     */
+    public boolean isPersonDisplayed(Person person) {
+        return displayPerson.isPresent() && displayPerson.get().isSamePerson(person);
     }
 
     /**
      * Clears the display note.
      */
-    public void clearDisplayNote() {
-        this.displayNote = Optional.empty();
+    public void clearDisplayPerson() {
+        this.displayPerson = Optional.empty();
     }
 
 

@@ -104,19 +104,6 @@ public class ModelManagerTest {
     }
 
     @Test
-    public void setDisplayedNote_validNote_setsDisplayedNote() {
-        Note note = Note.DEFAULT;
-        modelManager.setDisplayNote(note);
-        assertEquals(note, modelManager.getDisplayNote());
-    }
-
-    @Test
-    public void setDisplayedNote_nullNote_throwsNullPointerException() {
-        Note note = null;
-        assertThrows(NullPointerException.class, () -> modelManager.setDisplayNote(note));
-    }
-
-    @Test
     public void clearDisplayedNote_validNote_clearsDisplayedNote() {
         modelManager.setDisplayNote(ALICE);
         modelManager.clearDisplayNote();

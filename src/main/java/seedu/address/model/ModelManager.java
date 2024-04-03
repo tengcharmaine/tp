@@ -137,16 +137,15 @@ public class ModelManager implements Model {
     }
 
     @Override
-    public void setDisplayNote(Note note) {
-        requireNonNull(note);
-        addressBook.setDisplayNote(note);
+    public void setDisplayNote(Person person) {
+        requireNonNull(person);
+        addressBook.setDisplayPerson(person);
     }
 
     @Override
-    public void setDisplayNote(Person person) {
+    public boolean isPersonDisplayed(Person person) {
         requireNonNull(person);
-        Note displayNote = person.getNote();
-        setDisplayNote(displayNote);
+        return addressBook.isPersonDisplayed(person);
     }
 
     /**
@@ -168,7 +167,7 @@ public class ModelManager implements Model {
      */
     @Override
     public void clearDisplayNote() {
-        addressBook.clearDisplayNote();
+        addressBook.clearDisplayPerson();
     }
 
     @Override

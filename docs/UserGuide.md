@@ -6,7 +6,7 @@ title: User Guide
 # Welcome to ClinicMate!
 *Your solution to streamlining patient contact management.*
 
-Welcome esteemed healthcare professionals! Are you still grappling with traditional methods to manage patient details and jot down doctor's notes on paper? Are you overwhelmed by the challenge of organizing all your clinic's patient data?
+Greetings to esteemed healthcare professionals! Are you still grappling with traditional methods to manage patient details and jot down doctor's notes on paper? Are you overwhelmed by the challenge of organizing all your clinic's patient data?
 
 Fret not! **ClinicMate** is your solution.
 

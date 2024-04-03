@@ -1,6 +1,7 @@
 ---
-layout: page
-title: User Guide
+  layout: default.md
+  title: "User Guide"
+  pageNav: 3
 ---
 
 # Welcome to ClinicMate!
@@ -31,7 +32,6 @@ ClinicMate is a desktop application featuring a **Command Line Interface (CLI)**
 
 Bid farewell to cumbersome paperwork and embrace the efficiency of ClinicMate in organizing your clinic's patient data.
 
-<div style="page-break-after: always;"></div><br/>
 
 <!-- * Table of Contents -->
 <page-nav-print />
@@ -44,17 +44,22 @@ Welcome to the comprehensive user guide for ClinicMate! Our goal is to provide y
 Before we dive into the details, let's acquaint ourselves with the annotations you'll encounter throughout this user guide. These annotations will help you understand and navigate ClinicMate's features smoothly.
 
 <div markdown="block" class="alert alert-success">
-> :warning:**Useful Tip:**<br>
+
+**:bulb: Useful Tip:**<br>
+
 - Provides additional insights and tips to enhance your ClinicMate experience.
 </div>
 
 <div markdown="block" class="alert alert-info">
-> :memo:**Note:**<br>
+
+**:memo: Note:**<br>
 - Provides valuable additional details for using ClinicMate effectively.
+
 </div>
 
 <div markdown="block" class="alert alert-danger">
-> :warning: **Warning:**<br>
+
+**:warning: Warning:**<br>
 - Alerts you to potential pitfalls or issues to be mindful of when using ClinicMate.
 </div>
 

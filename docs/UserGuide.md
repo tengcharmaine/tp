@@ -4,18 +4,76 @@
   pageNav: 3
 ---
 
-# ClinicMate User Guide
+# Welcome to ClinicMate!
+*Your solution to streamlining patient contact management.*
 
-Welcome to ClinicMate, your efficient companion for managing contacts in a clinic! This user guide is designed to help you navigate ClinicMate effortlessly, whether you're a seasoned user or just getting started.
+Greetings to esteemed healthcare professionals! Are you still grappling with traditional methods to manage patient details and jot down doctor's notes on paper? Are you overwhelmed by the challenge of organizing all your clinic's patient data?
 
-ClinicMate is a **desktop** app for managing contacts in a clinic, optimized for use via a  **Command Line Interface** (CLI) while still having the benefits of a Graphical User Interface (GUI). If you can type fast, ClinicMate can manage your patients' contact faster than traditional GUI apps.
+Fret not! **ClinicMate** is your solution.
 
-Our target audience includes healthcare professionals and clinic staff who need a streamlined way to manage patient contacts. We assume that users have basic computer literacy and are familiar with using desktop applications.
+ClinicMate is tailor-made to streamline contact management in your clinic. Whether you're a seasoned practitioner or just starting out, ClinicMate is your indispensable companion.
+
+This comprehensive user guide will effortlessly navigate you through ClinicMate's array of features, ensuring optimal efficiency in managing patient contacts.
+
+Here is a **quick overview** of how ClinicMate streamlines contact management:
+
+**Data Management Functions**:
+
+- ***Data Management Functions***: Easily input, modify, and remove patient details through `add`, `edit` and `delete`. View comprehensive lists and detailed patient information effortlessly with `list` and `show` commands.
+
+
+- ***Note-Taking Capabilities***: Use `addnote` to quickly append relevant notes to patient records for future reference.
+
+
+- ***Navigation and Assistance***: Effortlessly search for specific patient records with `find`, reset the interface using `clear`, access comprehensive guidance through `help`, and `exit` ClinicMate with ease.
+
+
+ClinicMate is a desktop application featuring a **Command Line Interface (CLI)** with the convenience of a Graphical User Interface (GUI). Whether you're adept at typing or prefer a visual interface, ClinicMate ensures **swift and efficient** management of patient contacts.
+
+Bid farewell to cumbersome paperwork and embrace the efficiency of ClinicMate in organizing your clinic's patient data.
+
 
 <!-- * Table of Contents -->
 <page-nav-print />
 
---------------------------------------------------------------------------------------------------------------------
+
+# Guide Usage
+
+Welcome to the comprehensive user guide for ClinicMate! Our goal is to provide you with the knowledge and tools necessary to make the most of ClinicMate, your essential tool for clinic management. Whether you're a beginner or an experienced user, we're here to support you every step of the way.
+
+Before we dive into the details, let's acquaint ourselves with the annotations you'll encounter throughout this user guide. These annotations will help you understand and navigate ClinicMate's features smoothly.
+
+<div markdown="block" class="alert alert-success">
+
+**:bulb: Useful Tip:**<br>
+
+- Provides additional insights and tips to enhance your ClinicMate experience.
+</div>
+
+<div markdown="block" class="alert alert-info">
+
+**:memo: Note:**<br>
+- Provides valuable additional details for using ClinicMate effectively.
+
+</div>
+
+<div markdown="block" class="alert alert-danger">
+
+**:warning: Warning:**<br>
+- Alerts you to potential pitfalls or issues to be mindful of when using ClinicMate.
+</div>
+
+<div style="page-break-after: always;"></div><br/>
+
+Throughout this guide, you'll also encounter various text styles. Here's what they represent:
+
+- _Used to illustrate possible scenarios for utilizing a feature (mostly in feature sections)._
+- [Represents hyperlinks that you can click to navigate to another section of this user guide or to an external website.]()
+- `Highlights specific elements such as file names, commands, or any text that should be treated as code.`
+- > Provides information about the parameters that you can input into a command.
+
+Now that you're familiar with the annotations and text styles, we will give you a tour on how to navigate this user guide based on your level of expertise.
+
 
 ## Quick start
 

@@ -178,7 +178,7 @@ public class AddCommandTest {
         }
 
         @Override
-        public void setDisplayNote(Note note) {
+        public boolean isPersonDisplayed(Person person) {
             throw new AssertionError("This method should not be called.");
         }
 

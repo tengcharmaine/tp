@@ -6,6 +6,7 @@ import seedu.address.commons.util.ToStringBuilder;
 import seedu.address.logic.Messages;
 import seedu.address.model.Model;
 import seedu.address.model.person.IdentityCardNumberMatchesPredicate;
+import seedu.address.model.person.Person;
 
 /**
  * Finds and lists all persons in address book whose IC matches the argument IC.
@@ -17,7 +18,7 @@ public class FindCommand extends Command {
 
     public static final String MESSAGE_USAGE = COMMAND_WORD + ": Finds all persons whose profile matches "
             + "the specified IC (case-insensitive) and displays them.\n"
-            + "Parameters: IC (must be a valid identity card number) \n"
+            + "Parameters: IC\n"
             + "Example: " + COMMAND_WORD + " t1234567A";
 
     private final IdentityCardNumberMatchesPredicate predicate;
@@ -30,7 +31,14 @@ public class FindCommand extends Command {
     public CommandResult execute(Model model) {
         requireNonNull(model);
         model.updateFilteredPersonList(predicate);
-        model.setDisplayNoteAsFirstFilteredPerson();
+
+        assert model.getFilteredPersonList().size() <= 1 : "There should be at most one person in the filtered list";
+
+        if (model.getFilteredPersonList().size() == 1) {
+            Person person = model.getFilteredPersonList().get(0);
+            model.setDisplayNote(person);
+        }
+
         return new CommandResult(
                 String.format(Messages.MESSAGE_PERSONS_LISTED_OVERVIEW, model.getFilteredPersonList().size()));
     }

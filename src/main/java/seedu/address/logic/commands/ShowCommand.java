@@ -25,10 +25,10 @@ public class ShowCommand extends Command {
     public static final String MESSAGE_CLEAR_NOTE_SUCCESS = "Note cleared.";
 
     public static final String MESSAGE_USAGE = COMMAND_WORD + ": Shows the note of the person whose IC matches the "
-            + "specified IC (case-insensitive) and displays it.\n"
-            + "If no IC is given, the displayed note panel will be cleared. \n"
+            + "specified valid IC (case-insensitive) and displays it.\n"
+            + "If no IC is given, the displayed note panel will be cleared.\n"
             + "Parameters: IC (optional)\n"
-            + "Example (to display note): " + COMMAND_WORD + " t1234567A"
+            + "Example (to display note): " + COMMAND_WORD + " t1234567A\n"
             + "Example (to clear display): " + COMMAND_WORD;
     private final IdentityCardNumberMatchesPredicate icPredicate;
 

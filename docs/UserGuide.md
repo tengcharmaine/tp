@@ -200,6 +200,35 @@ Format: `find IC_NUMBER`
 Examples:
 * `find T0123456A` returns `John Doe`.
 
+<<<<<<< Updated upstream
+=======
+What a successful `find` command looks like:
+![successful_find](images/successfulfind.png)
+
+### Changing the displayed note: `show`
+
+There are 2 ways to use the `show` command:
+1. If an IC_NUMBER is provided, displays the full note of the person with the specified IC_NUMBER on the right.
+2. If no IC_NUMBER is provided, clears the note display on the right.
+
+Format: `show [IC_NUMBER]`
+
+For the first case where an IC_NUMBER is provided:
+* Rules for valid IC_NUMBER are the same as the `find` command.
+* Displays the full note of the person with the specified IC_NUMBER.
+* Does NOT modify the list of persons displayed.
+ 
+Example:
+* `show T0123456A` updates the note display on the right to show `John Doe`'s note.
+
+For the second case where no IC_NUMBER is provided:
+* Clears the note display on the left.
+* Does NOT modify the list of persons displayed.
+
+Example:
+* `show` clears any note that was being displayed on the right.
+
+>>>>>>> Stashed changes
 ### Deleting a person : `delete`
 
 Deletes the specified person from ClinicMate using their IC_NUMBER.

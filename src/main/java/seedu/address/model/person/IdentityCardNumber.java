@@ -11,7 +11,7 @@ public class IdentityCardNumber {
 
     public static final IdentityCardNumber DEFAULT = new IdentityCardNumber("S0000000A");
     public static final String MESSAGE_CONSTRAINTS =
-        "IC number starts with one letter (S,T,F,G,M) followed by seven digits and one letter behind"
+        "IC number starts with one letter (S,T,F,G,M) followed by seven digits and one letter behind.\n"
             + " It is case insensitive. An example is S1234567A.";
 
     public static final String VALIDATION_REGEX = "[STFGMstfgm][0-9]{7}[A-Z,a-z]";

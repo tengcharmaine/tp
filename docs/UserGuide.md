@@ -295,6 +295,7 @@ Furthermore, certain edits can cause the ClinicMate to behave in unexpected ways
 ## Appendix: Planned Enhancements
 
 1. **Support for multiple phone numbers**: Allow users to add multiple phone numbers for a single patient record.
+2. **Error handling**: Improve error messages in `edit` command to check for existance of IC number in the event of empty fields.
 
 --------------------------------------------------------------------------------------------------------------------
 

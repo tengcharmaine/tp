@@ -1,6 +1,6 @@
 package seedu.address.logic.parser;
 
-import static seedu.address.logic.Messages.MESSAGE_INVALID_COMMAND_FORMAT;
+import static seedu.address.logic.Messages.MESSAGE_INVALID_COMMAND_FORMAT_DELETE;
 import static seedu.address.logic.parser.CommandParserTestUtil.assertParseFailure;
 import static seedu.address.logic.parser.CommandParserTestUtil.assertParseSuccess;
 
@@ -35,13 +35,13 @@ public class DeleteCommandParserTest {
 
         // IC with incorrect format and additional arguments
         assertParseFailure(parser, "S1234 extra",
-                String.format(MESSAGE_INVALID_COMMAND_FORMAT, DeleteCommand.MESSAGE_USAGE));
+                String.format(MESSAGE_INVALID_COMMAND_FORMAT_DELETE, DeleteCommand.MESSAGE_USAGE));
 
         // IC with incorrect format containing non-alphanumeric characters
         assertParseFailure(parser, "S1234$%^", String.format(IdentityCardNumber.MESSAGE_CONSTRAINTS));
 
         // IC with correct format but with additional arguments
         assertParseFailure(parser, "S1234567A extra",
-                String.format(MESSAGE_INVALID_COMMAND_FORMAT, DeleteCommand.MESSAGE_USAGE));
+                String.format(MESSAGE_INVALID_COMMAND_FORMAT_DELETE, DeleteCommand.MESSAGE_USAGE));
     }
 }

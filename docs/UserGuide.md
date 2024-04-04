@@ -165,7 +165,7 @@ Format: `add n\NAME p\PHONE e\EMAIL i\IC_NUMBER ag\AGE s\SEX a\ADDRESS`
 
 <box type="tip" seamless>
 
-**Tip:** A person can have a note included (See [addnote](#adding-a-note--addnote) command).
+**Tip:** A person can have a note included (See `addnote` command).
 </box>
 
 Examples:
@@ -314,11 +314,15 @@ Furthermore, certain edits can cause the ClinicMate to behave in unexpected ways
 
 **Q**: Can I use ClinicMate on multiple computers?<br>
 **A**: Yes, you can use ClinicMate on multiple computers. Simply copy the ClinicMate `.jar` file and the `clinicmate.json` data file to the other computer and run the application as usual.
+
 --------------------------------------------------------------------------------------------------------------------
 ## Appendix: Planned Enhancements
 
 1. **Support for multiple phone numbers**: Allow users to add multiple phone numbers for a single patient record.
-2. **Error handling**: Improve error messages in `edit` command to check for existance of IC number in the event of empty fields.
+2. **Error handling**: Improve error messages in `edit` command to check for existence of IC number in the event of empty fields.
+3. **Custom fields**: Allow users to customize fields for patient records to suit their clinic's requirements.
+4. **Date of Birth**: Add a field for date of birth to patient records for better age calculation.
+5. **Appointment scheduling**: Implement a feature to track and schedule patient appointments.
 
 --------------------------------------------------------------------------------------------------------------------
 
@@ -331,6 +335,7 @@ Action     | Format, Examples
 **Delete** | `delete IC_NUMBER`<br> e.g., `delete T0123456A`
 **Add Note** | `addnote IC_NUMBER n\NOTE (-replace)`<br> e.g., `addnote T0123456A n\Patient has diabetes`<br> e.g., `addnote T0123456A n\Patient has diabetes -replace`
 **Find**   | `find IC_NUMBER`<br> e.g., `find T0123456A`
+**Show**   | `show [IC_NUMBER]`<br> e.g., `show T0123456A` <br> e.g., `show`
 **Help**   | `help`
 **List**   | `list`
 **Exit**   | `exit`

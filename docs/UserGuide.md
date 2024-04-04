@@ -160,7 +160,7 @@ Adds a person to ClinicMate.
 Format: `add n/NAME p/PHONE e/EMAIL i/IC_NUMBER ag/AGE s/SEX a/ADDRESS`
 
 * A person will be uniquely identified by his/her personal identification number.
-* ClinicMate does not allow the same identification number to be twice.
+* ClinicMate does not allow the same identification number to be used twice.
 
 <box type="tip" seamless>
 
@@ -267,7 +267,7 @@ Furthermore, certain edits can cause the ClinicMate to behave in unexpected ways
 
 ## FAQ
 
-**Q**: When using multiple screens, moving the application to a secondary screen and later switch to using only the primary screen, the GUI opens off-screen. What do I do?<br>
+**Q**: When using multiple screens, moving the application to a secondary screen and later switching to using only the primary screen, the GUI opens off-screen. What do I do?<br>
 **A**: Delete the `preferences.json` file created by the application before running the application again.
 
 **Q**: Is there a limit to the number of patient records ClinicMate can manage?<br>

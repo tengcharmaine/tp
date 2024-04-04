@@ -170,6 +170,9 @@ Format: `add n/NAME p/PHONE e/EMAIL i/IC_NUMBER ag/AGE s/SEX a/ADDRESS`
 Examples:
 * `add n/John Doe p/88888888 e/johndoe@mail.com i/T0123456A ag/12 s/Male a/John street, block 123, #01-01`
 
+What a successful `add` command looks like:
+![successful_add](images/successfuladd.png)
+
 ### Adding a note : `addnote`
 
 Add a note to an existing person in ClinicMate.
@@ -186,9 +189,12 @@ Examples:
 * `addnote T0123456A n/Patient has diabetes` Adds a note `Patient has diabetes` to the person with the IC number `T0123456A` in ClinicMate.
 * `addnote T0123456A n/Patient has diabetes -replace` Replaces the note of the person with the IC number `T0123456A` with `Patient has diabetes`.
 
+What a successful `addnote` command looks like:
+![successful_addnote](images/successfuladdnote.png)
+
 ### Locating persons by ic number: `find`
 
-Find an existing person in ClinicMate using their IC_NUMBER.
+Find an existing person in ClinicMate using their IC_NUMBER. Displays their contact information on the left-hand side of the screen and their full notes on the right-hand side.
 
 Format: `find IC_NUMBER`
 
@@ -201,6 +207,9 @@ Format: `find IC_NUMBER`
 
 Examples:
 * `find T0123456A` returns `John Doe`.
+
+What a successful `find` command looks like:
+![successful_find](images/successfulfind.png)
 
 ### Deleting a person : `delete`
 
@@ -217,6 +226,9 @@ Format: `delete IC_NUMBER`
 
 Examples:
 * `delete T0123456A` deletes `John Doe` who has `IC_NUMBER` of `T0123456A` from ClinicMate.
+
+What a successful `delete` message looks like:
+![successful_deletemessage](images/successfuldeletemessage.png)
 
 ### Listing all entries : `list`
 

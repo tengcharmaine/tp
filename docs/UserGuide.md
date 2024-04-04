@@ -178,7 +178,7 @@ What a successful `add` command looks like:
 
 Add a note to an existing person in ClinicMate.
 
-Format: `addnote IC_NUMBER n\NOTE (-replace)`
+Format: `addnote IC_NUMBER n\NOTE [-replace]`
 
 * Adds a note to the person with the specified `IC_NUMBER`. The IC number refers to the IC number shown in the displayed person list. The IC_NUMBER **must be the FULL IC NUMBER**.
 * IC number must be valid and currently exist in the database.
@@ -253,6 +253,20 @@ Examples:
 
 What a successful `delete` message looks like:
 ![successful_deletemessage](images/successfuldeletemessage.png)
+
+### Editing a person : `edit`
+
+Edits the details of the specified person in ClinicMate using their IC_NUMBER.
+Optional fields are indicated by square brackets `[]`.
+
+Format: `edit IC_NUMBER [n\NAME] [p\PHONE] [e\EMAIL] [i\IC_NUMBER] [ag\AGE] [s\SEX] [a\ADDRESS]`
+
+* Edits the details of the person with the specified `IC_NUMBER`.
+* The fields to be edited are indicated by the prefixes `n\`, `p\`, `e\`, `i\`, `ag\`, `s\`, `a\`.
+* Only the fields that are provided will be updated.
+
+Examples:
+* `edit T0123456A p\88888888` edits the phone number of the person with `IC_NUMBER` of `T0123456A` to `88888888`.
 
 ### Listing all entries : `list`
 
@@ -333,7 +347,8 @@ Action     | Format, Examples
 **Add**    | `add n\NAME p\PHONE e\EMAIL i\IC_NUMBER ag\AGE s\SEX a\ADDRESS` <br> e.g., `add n\John Doe p\88888888 e\johndoe@mail.com i\T0123456A ag\12 s\Male a\John street, block 123, #01-01`
 **Clear**  | `clear`
 **Delete** | `delete IC_NUMBER`<br> e.g., `delete T0123456A`
-**Add Note** | `addnote IC_NUMBER n\NOTE (-replace)`<br> e.g., `addnote T0123456A n\Patient has diabetes`<br> e.g., `addnote T0123456A n\Patient has diabetes -replace`
+**Edit**   | `edit IC_NUMBER n\NAME p\PHONE e\EMAIL i\IC_NUMBER ag\AGE s\SEX a\ADDRESS`<br> e.g., `edit T0123456A p\88888888`
+**Add Note** | `addnote IC_NUMBER n\NOTE [-replace]`<br> e.g., `addnote T0123456A n\Patient has diabetes`<br> e.g., `addnote T0123456A n\Patient has diabetes -replace`
 **Find**   | `find IC_NUMBER`<br> e.g., `find T0123456A`
 **Show**   | `show [IC_NUMBER]`<br> e.g., `show T0123456A` <br> e.g., `show`
 **Help**   | `help`

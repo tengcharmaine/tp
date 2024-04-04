@@ -85,10 +85,6 @@ public class PersonTest {
         // different address -> returns false
         editedAlice = new PersonBuilder(ALICE).withAddress(VALID_ADDRESS_BOB).build();
         assertFalse(ALICE.equals(editedAlice));
-
-        // different tags -> returns false
-        editedAlice = new PersonBuilder(ALICE).withTags(VALID_TAG_HUSBAND).build();
-        assertFalse(ALICE.equals(editedAlice));
     }
 
     @Test
@@ -117,10 +113,6 @@ public class PersonTest {
         Person editedAlice4 = new PersonBuilder(ALICE).withAddress(VALID_ADDRESS_BOB).build();
         assertNotEquals(ALICE.hashCode(), editedAlice4.hashCode());
 
-        // different tags -> returns false
-        Person editedAlice5 = new PersonBuilder(ALICE).withTags(VALID_TAG_HUSBAND).build();
-        assertNotEquals(ALICE.hashCode(), editedAlice5.hashCode());
-
         // different person -> returns false
         assertNotEquals(ALICE.hashCode(), BOB.hashCode());
     }
@@ -130,7 +122,7 @@ public class PersonTest {
         String expected = Person.class.getCanonicalName() + "{name=" + ALICE.getName() + ", phone=" + ALICE.getPhone()
                 + ", email=" + ALICE.getEmail() + ", identityCardNumber=" + ALICE.getIdentityCardNumber()
                 + ", age=" + ALICE.getAge() + ", sex=" + ALICE.getSex() + ", address=" + ALICE.getAddress()
-                + ", note=" + ALICE.getNote() + ", tags=" + ALICE.getTags() + "}";
+                + ", note=" + ALICE.getNote() + "}";
         assertEquals(expected, ALICE.toString());
     }
 }

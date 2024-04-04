@@ -83,9 +83,11 @@ Now that you're familiar with the annotations and text styles, we will give you 
 2. Run the command `java -version` to check if you have Java 11 or above installed in your computer.
 * Assuming that you have Java installed in your computer,
   * If you have a Windows, in this case the Java version is 19.0.2.
-       ![javaWindows](images/javaWindows.png)
+     ![javaWindows](images/javaWindows.png)
+  
   * If you have a Mac,  in this case the Java version is 11.0.19.
      ![javaMac](images/javaMac.png)
+
 3. If you do not have Java 11 or above installed in your computer, download it from [here](https://www.oracle.com/java/technologies/javase-jdk11-downloads.html).
 
 ### Setting up
@@ -147,7 +149,7 @@ Now that you're familiar with the annotations and text styles, we will give you 
 
 Shows a message explaining how to access the help page.
 
-![help message](images/helpMessage.png)
+![help message](images/newhelpwindow.png)
 
 Format: `help`
 
@@ -158,19 +160,22 @@ Adds a person to ClinicMate.
 Format: `add n/NAME p/PHONE e/EMAIL i/IC_NUMBER ag/AGE s/SEX a/ADDRESS`
 
 * A person will be uniquely identified by his/her personal identification number.
-* Clinic mate does not allow the same identification number to be twice.
+* ClinicMate does not allow the same identification number to be used twice.
 
 <box type="tip" seamless>
 
-**Tip:** A person can have a note included.
+**Tip:** A person can have a note included (See [addnote](#adding-a-note--addnote) command).
 </box>
 
 Examples:
 * `add n/John Doe p/88888888 e/johndoe@mail.com i/T0123456A ag/12 s/Male a/John street, block 123, #01-01`
 
+What a successful `add` command looks like:
+![successful_add](images/successfuladd.png)
+
 ### Adding a note : `addnote`
 
-Add a note to an existing person in CLinicMate.
+Add a note to an existing person in ClinicMate.
 
 Format: `addnote IC_NUMBER n/NOTE (-replace)`
 
@@ -181,12 +186,15 @@ Format: `addnote IC_NUMBER n/NOTE (-replace)`
 * The `-replace` flag can be used to replace the current note with the new note.
 
 Examples:
-*  `addnote T0123456A n/Patient has diabetes` Adds a note `Patient has diabetes` to the person with the IC number `T0123456A` in CLinicMate.
+* `addnote T0123456A n/Patient has diabetes` Adds a note `Patient has diabetes` to the person with the IC number `T0123456A` in ClinicMate.
 * `addnote T0123456A n/Patient has diabetes -replace` Replaces the note of the person with the IC number `T0123456A` with `Patient has diabetes`.
+
+What a successful `addnote` command looks like:
+![successful_addnote](images/successfuladdnote.png)
 
 ### Locating persons by ic number: `find`
 
-Find an existing person in CinicMate using their IC_NUMBER.
+Find an existing person in ClinicMate using their IC_NUMBER. Displays their contact information on the left-hand side of the screen and their full notes on the right-hand side.
 
 Format: `find IC_NUMBER`
 
@@ -199,6 +207,9 @@ Format: `find IC_NUMBER`
 
 Examples:
 * `find T0123456A` returns `John Doe`.
+
+What a successful `find` command looks like:
+![successful_find](images/successfulfind.png)
 
 ### Deleting a person : `delete`
 
@@ -215,6 +226,9 @@ Format: `delete IC_NUMBER`
 
 Examples:
 * `delete T0123456A` deletes `John Doe` who has `IC_NUMBER` of `T0123456A` from ClinicMate.
+
+What a successful `delete` message looks like:
+![successful_deletemessage](images/successfuldeletemessage.png)
 
 ### Listing all entries : `list`
 
@@ -249,23 +263,33 @@ If your changes to the data file makes its format invalid, ClinicMate will disca
 Furthermore, certain edits can cause the ClinicMate to behave in unexpected ways (e.g., if a value entered is outside the acceptable range). Therefore, edit the data file only if you are confident that you can update it correctly.
 </box>
 
-### Archiving data files `[coming in v2.0]`
-
-_Details coming soon ..._
-
 --------------------------------------------------------------------------------------------------------------------
 
 ## FAQ
 
+**Q**: When using multiple screens, moving the application to a secondary screen and later switching to using only the primary screen, the GUI opens off-screen. What do I do?<br>
+**A**: Delete the `preferences.json` file created by the application before running the application again.
+
+**Q**: Is there a limit to the number of patient records ClinicMate can manage?<br>
+**A**: ClinicMate is designed to handle a large number of patient records efficiently. However, performance may vary depending on the hardware specifications of your computer and the amount of data being managed.
+
 **Q**: How do I transfer my data to another Computer?<br>
-**A**: Install the app in the other computer and overwrite the empty data file it creates with the file that contains the data of your previous CLinicMate home folder.
+**A**: Install the app in the other computer and overwrite the empty data file it creates with the file that contains the data of your previous ClinicMate home folder.
 
---------------------------------------------------------------------------------------------------------------------
+**Q**: Can I export patient data from ClinicMate for reporting or backup purposes?<br>
+**A**: Currently, ClinicMate does not support direct export of patient data. However, you can manually copy the data from the data file located at `[JAR file location]/data/clinicmate.json` for backup or reporting purposes.
 
-## Known issues
+**Q**: Can I customize the fields for patient records in ClinicMate?<br>
+**A**: ClinicMate currently supports predefined fields for patient records (name, phone, email, IC number, age, sex, address). Customization of fields is not supported in the current version.
 
-1. **When using multiple screens**, if you move the application to a secondary screen, and later switch to using only the primary screen, the GUI will open off-screen. The remedy is to delete the `preferences.json` file created by the application before running the application again.
+**Q**: How secure is the patient data stored in ClinicMate?<br>
+**A**: ClinicMate stores patient data locally on your computer in a JSON file. It is recommended to keep your computer secure and up-to-date with the latest security patches to ensure the safety of patient data.
 
+**Q**: Is there a way to import patient data into ClinicMate from other software?<br>
+**A**: ClinicMate does not currently support direct import of patient data from other software. However, you can manually enter patient data using the `add` command.
+
+**Q**: Can I use ClinicMate on multiple computers?<br>
+**A**: Yes, you can use ClinicMate on multiple computers. Simply copy the ClinicMate `.jar` file and the `clinicmate.json` data file to the other computer and run the application as usual.
 --------------------------------------------------------------------------------------------------------------------
 
 ## Command summary

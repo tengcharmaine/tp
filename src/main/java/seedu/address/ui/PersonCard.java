@@ -1,7 +1,5 @@
 package seedu.address.ui;
 
-import java.util.Comparator;
-
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;
 import javafx.scene.layout.FlowPane;
@@ -57,8 +55,12 @@ public class PersonCard extends UiPart<Region> {
         this.person = person;
         id.setText(displayedIndex + ". ");
         name.setText(person.getName().fullName);
-        phone.setText(person.getPhone().value);
-        email.setText(person.getEmail().value);
+
+        StringBuilder truncatedPhone = new StringBuilder();
+        phone.setText(truncatedPhone.append("Phone: ").append(person.getPhone().value).toString());
+
+        StringBuilder truncatedEmail = new StringBuilder();
+        email.setText(truncatedEmail.append("Email: ").append(person.getEmail().value).toString());
 
         String fullNote = person.getNote().value;
         int maxLineLength = 30; // Maximum length of each line before truncation
@@ -93,9 +95,7 @@ public class PersonCard extends UiPart<Region> {
         ic.setText(person.getIdentityCardNumber().value);
         age.setText(String.valueOf(person.getAge().value));
         sex.setText(person.getSex().value);
-        address.setText(person.getAddress().value);
-        person.getTags().stream()
-                .sorted(Comparator.comparing(tag -> tag.tagName))
-                .forEach(tag -> tags.getChildren().add(new Label(tag.tagName)));
+        StringBuilder truncatedAddress = new StringBuilder();
+        address.setText(truncatedAddress.append("Address: ").append(person.getAddress().value).toString());
     }
 }

@@ -60,9 +60,7 @@ public class Messages {
             .append("; Sex: ")
             .append(person.getSex())
             .append("; Note: ")
-            .append(person.getNote())
-            .append("; Tags: ");
-        person.getTags().forEach(builder::append);
+            .append(person.getNote());
         return builder.toString();
     }
 

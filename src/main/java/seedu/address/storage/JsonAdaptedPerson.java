@@ -1,10 +1,7 @@
 package seedu.address.storage;
 
-import java.util.ArrayList;
 import java.util.HashSet;
-import java.util.List;
 import java.util.Set;
-import java.util.stream.Collectors;
 
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonProperty;
@@ -36,8 +33,6 @@ class JsonAdaptedPerson {
     private final String sex;
     private final String address;
     private final String note;
-    private final List<JsonAdaptedTag> tags = new ArrayList<>();
-
     /**
      * Constructs a {@code JsonAdaptedPerson} with the given person details.
      */
@@ -48,8 +43,7 @@ class JsonAdaptedPerson {
                              @JsonProperty("age") Integer age,
                              @JsonProperty("sex") String sex,
                              @JsonProperty("address") String address,
-                             @JsonProperty("note") String note,
-                             @JsonProperty("tags") List<JsonAdaptedTag> tags) {
+                             @JsonProperty("note") String note) {
         this.name = name;
         this.phone = phone;
         this.email = email;
@@ -58,9 +52,6 @@ class JsonAdaptedPerson {
         this.sex = sex;
         this.address = address;
         this.note = note;
-        if (tags != null) {
-            this.tags.addAll(tags);
-        }
     }
 
     /**
@@ -75,9 +66,6 @@ class JsonAdaptedPerson {
         sex = source.getSex().value;
         address = source.getAddress().value;
         note = source.getNote().value;
-        tags.addAll(source.getTags().stream()
-                .map(JsonAdaptedTag::new)
-                .collect(Collectors.toList()));
     }
 
     /**
@@ -86,11 +74,6 @@ class JsonAdaptedPerson {
      * @throws IllegalValueException if there were any data constraints violated in the adapted person.
      */
     public Person toModelType() throws IllegalValueException {
-        final List<Tag> personTags = new ArrayList<>();
-        for (JsonAdaptedTag tag : tags) {
-            personTags.add(tag.toModelType());
-        }
-
         if (name == null) {
             throw new IllegalValueException(String.format(MISSING_FIELD_MESSAGE_FORMAT, Name.class.getSimpleName()));
         }
@@ -157,7 +140,7 @@ class JsonAdaptedPerson {
         }
         final Note modelNote = new Note(note);
 
-        final Set<Tag> modelTags = new HashSet<>(personTags);
+        final Set<Tag> modelTags = new HashSet<>();
         return new Person(modelName, modelPhone, modelEmail, modelIdentityCardNumber, modelAge, modelSex, modelAddress,
                 modelNote, modelTags);
     }

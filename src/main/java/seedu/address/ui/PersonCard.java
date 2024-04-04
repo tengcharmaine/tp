@@ -94,8 +94,5 @@ public class PersonCard extends UiPart<Region> {
         age.setText(String.valueOf(person.getAge().value));
         sex.setText(person.getSex().value);
         address.setText(person.getAddress().value);
-        person.getTags().stream()
-                .sorted(Comparator.comparing(tag -> tag.tagName))
-                .forEach(tag -> tags.getChildren().add(new Label(tag.tagName)));
     }
 }

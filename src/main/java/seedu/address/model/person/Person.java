@@ -43,7 +43,6 @@ public class Person {
         this.sex = sex;
         this.address = address;
         this.note = note;
-        this.tags.addAll(tags);
     }
 
     public Name getName() {
@@ -123,14 +122,13 @@ public class Person {
                 && age.equals(otherPerson.age)
                 && sex.equals(otherPerson.sex)
                 && address.equals(otherPerson.address)
-                && note.equals(otherPerson.note)
-                && tags.equals(otherPerson.tags);
+                && note.equals(otherPerson.note);
     }
 
     @Override
     public int hashCode() {
         // use this method for custom fields hashing instead of implementing your own
-        return Objects.hash(name, phone, email, identityCardNumber, age, sex, address, note, tags);
+        return Objects.hash(name, phone, email, identityCardNumber, age, sex, address, note);
     }
 
     @Override
@@ -144,7 +142,6 @@ public class Person {
                 .add("sex", sex)
                 .add("address", address)
                 .add("note", note)
-                .add("tags", tags)
                 .toString();
     }
 

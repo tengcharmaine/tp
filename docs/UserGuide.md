@@ -226,7 +226,6 @@ For the second case where no IC_NUMBER is provided:
 Example:
 * `show` clears any note that was being displayed on the right.
 
->>>>>>> Stashed changes
 ### Deleting a person : `delete`
 
 Deletes the specified person from ClinicMate using their IC_NUMBER.

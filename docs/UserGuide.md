@@ -200,8 +200,6 @@ Format: `find IC_NUMBER`
 Examples:
 * `find T0123456A` returns `John Doe`.
 
-<<<<<<< Updated upstream
-=======
 What a successful `find` command looks like:
 ![successful_find](images/successfulfind.png)
 

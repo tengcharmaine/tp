@@ -111,15 +111,15 @@ Now that you're familiar with the annotations and text styles, we will give you 
 
    * `list` : Lists all contacts.
 
-   * `add n/John Doe p/88888888 e/johndoe@mail.com i/T0123456A ag/12 s/Male a/John street, block 123, #01-01` : Adds a contact named `John Doe` to ClinicMate.
+   * `add n\John Doe p\88888888 e\johndoe@mail.com i\T0123456A ag\12 s\Male a\John street, block 123, #01-01` : Adds a contact named `John Doe` to ClinicMate.
 
    * `delete T0123456A` : Deletes the contact with the IC 'T0123456A' shown in the current list.
 
    * `find T0123456A` : Find the contact with the IC 'T0123456A' shown in the current list.
 
-   * `addnote T0123456A n/Patient has diabetes` : Add a note: 'Patient has diabetes' for the contact with the IC 'T0123456A' as shown in current list.
+   * `addnote T0123456A n\Patient has diabetes` : Add a note: 'Patient has diabetes' for the contact with the IC 'T0123456A' as shown in current list.
    
-   * `addnote T0123456A n/Patient has diabetes -replace` : Replace the note of the contact with the IC 'T0123456A' with 'Patient has diabetes'.
+   * `addnote T0123456A n\Patient has diabetes -replace` : Replace the note of the contact with the IC 'T0123456A' with 'Patient has diabetes'.
    
    * `exit` : Exits the app.
 
@@ -134,10 +134,10 @@ Now that you're familiar with the annotations and text styles, we will give you 
 **Notes about the command format:**<br>
 
 * Words in `UPPER_CASE` are the parameters to be supplied by the user.<br>
-  e.g. in `add n/NAME`, `NAME` is a parameter which can be used as `add n/John Doe`.
+  e.g. in `add n\NAME`, `NAME` is a parameter which can be used as `add n\John Doe`.
 
 * Parameters can be in any order.<br>
-  e.g. if the command specifies `n/NAME i/IC_NUMBER`, `i/IC_NUMBER n/NAME` is also acceptable.
+  e.g. if the command specifies `n\NAME i\IC_NUMBER`, `i\IC_NUMBER n\NAME` is also acceptable.
 
 * Extraneous parameters for commands that do not take in parameters (such as `help`, `list`, `exit` and `clear`) will be ignored.<br>
   e.g. if the command specifies `help 123`, it will be interpreted as `help`.
@@ -157,10 +157,11 @@ Format: `help`
 
 Adds a person to ClinicMate.
 
-Format: `add n/NAME p/PHONE e/EMAIL i/IC_NUMBER ag/AGE s/SEX a/ADDRESS`
+Format: `add n\NAME p\PHONE e\EMAIL i\IC_NUMBER ag\AGE s\SEX a\ADDRESS`
 
 * A person will be uniquely identified by his/her personal identification number.
 * ClinicMate does not allow the same identification number to be used twice.
+* A name can have the special characters `-`, `,`, `/` in it.
 
 <box type="tip" seamless>
 
@@ -168,7 +169,7 @@ Format: `add n/NAME p/PHONE e/EMAIL i/IC_NUMBER ag/AGE s/SEX a/ADDRESS`
 </box>
 
 Examples:
-* `add n/John Doe p/88888888 e/johndoe@mail.com i/T0123456A ag/12 s/Male a/John street, block 123, #01-01`
+* `add n\John Doe p\88888888 e\johndoe@mail.com i\T0123456A ag\12 s\Male a\John street, block 123, #01-01`
 
 What a successful `add` command looks like:
 ![successful_add](images/successfuladd.png)
@@ -177,7 +178,7 @@ What a successful `add` command looks like:
 
 Add a note to an existing person in ClinicMate.
 
-Format: `addnote IC_NUMBER n/NOTE (-replace)`
+Format: `addnote IC_NUMBER n\NOTE (-replace)`
 
 * Adds a note to the person with the specified `IC_NUMBER`. The IC number refers to the IC number shown in the displayed person list. The IC_NUMBER **must be the FULL IC NUMBER**.
 * IC number must be valid and currently exist in the database.
@@ -186,8 +187,8 @@ Format: `addnote IC_NUMBER n/NOTE (-replace)`
 * The `-replace` flag can be used to replace the current note with the new note.
 
 Examples:
-* `addnote T0123456A n/Patient has diabetes` Adds a note `Patient has diabetes` to the person with the IC number `T0123456A` in ClinicMate.
-* `addnote T0123456A n/Patient has diabetes -replace` Replaces the note of the person with the IC number `T0123456A` with `Patient has diabetes`.
+* `addnote T0123456A n\Patient has diabetes` Adds a note `Patient has diabetes` to the person with the IC number `T0123456A` in ClinicMate.
+* `addnote T0123456A n\Patient has diabetes -replace` Replaces the note of the person with the IC number `T0123456A` with `Patient has diabetes`.
 
 What a successful `addnote` command looks like:
 ![successful_addnote](images/successfuladdnote.png)
@@ -291,16 +292,21 @@ Furthermore, certain edits can cause the ClinicMate to behave in unexpected ways
 **Q**: Can I use ClinicMate on multiple computers?<br>
 **A**: Yes, you can use ClinicMate on multiple computers. Simply copy the ClinicMate `.jar` file and the `clinicmate.json` data file to the other computer and run the application as usual.
 --------------------------------------------------------------------------------------------------------------------
+## Appendix: Planned Enhancements
+
+1. **Support for multiple phone numbers**: Allow users to add multiple phone numbers for a single patient record.
+
+--------------------------------------------------------------------------------------------------------------------
 
 ## Command summary
 
 Action     | Format, Examples
 -----------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------
-**[Add](#adding-a-person-add)**    | `add n/NAME p/PHONE e/EMAIL i/IC_NUMBER ag/AGE s/SEX a/ADDRESS` <br> e.g., `add n/John Doe p/88888888 e/johndoe@mail.com i/T0123456A ag/12 s/Male a/John street, block 123, #01-01`
-**[Clear](#clearing-all-entries--clear)**  | `clear`
-**[Delete](#deleting-a-person--delete)** | `delete IC_NUMBER`<br> e.g., `delete T0123456A`
-**[Add Note](#adding-a-note--addnote)** | `addnote IC_NUMBER n/NOTE (-replace)`<br> e.g., `addnote T0123456A n/Patient has diabetes`<br> e.g., `addnote T0123456A n/Patient has diabetes -replace`
-**[Find](#locating-persons-by-ic-number-find)**   | `find IC_NUMBER`<br> e.g., `find T0123456A`
-**[Help](#viewing-help--help)**   | `help`
-**[List](#listing-all-entries--list)**   | `list`
-**[Exit](#exiting-the-program--exit)**   | `exit`
+**Add**    | `add n\NAME p\PHONE e\EMAIL i\IC_NUMBER ag\AGE s\SEX a\ADDRESS` <br> e.g., `add n\John Doe p\88888888 e\johndoe@mail.com i\T0123456A ag\12 s\Male a\John street, block 123, #01-01`
+**Clear**  | `clear`
+**Delete** | `delete IC_NUMBER`<br> e.g., `delete T0123456A`
+**Add Note** | `addnote IC_NUMBER n\NOTE (-replace)`<br> e.g., `addnote T0123456A n\Patient has diabetes`<br> e.g., `addnote T0123456A n\Patient has diabetes -replace`
+**Find**   | `find IC_NUMBER`<br> e.g., `find T0123456A`
+**Help**   | `help`
+**List**   | `list`
+**Exit**   | `exit`

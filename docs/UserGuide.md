@@ -77,6 +77,8 @@ Now that you're familiar with the annotations and text styles, we will give you 
 
 ## Quick start
 
+In this section, you will learn how to set up ClinicMate on your computer. 
+
 ### Prerequisites
 
 1. Open Command Prompt (for Windows) or Terminal (for MacOS and Linux) on your desktop.
@@ -92,9 +94,12 @@ Now that you're familiar with the annotations and text styles, we will give you 
 
 ### Setting up
 1. Download the latest `.jar` file [here](https://github.com/AY2324S2-CS2103T-F14-2/tp/releases/latest)
-2. Copy the file to the folder you want to use as the _home folder_ for your ClinicMate.
-   * e.g. if you want to use the `Documents` folder as the _home folder_ for your ClinicMate, create a new folder named `clinicmate` in the `Documents` folder.
-   * You can then copy the `.jar` file to a folder named `clinicmate` in your `Documents` folder.
+2. You will see this screen after clicking on the link above.
+   * Click on the `clinicmate.jar` file to download it.
+![ClinicMateJar.png](images/ClinicMateJar.png)
+3. Move the file to the folder you want to use as the _home folder_ for your ClinicMate.
+   * For example, if you want to use the `Documents` folder as the _home folder_ for your ClinicMate, create a new folder named `clinicmate` in the `Documents` folder.
+   * You can then move the `.jar` file to a folder named `clinicmate` in your `Documents` folder.
    
 
 ### Running the application
@@ -103,10 +108,46 @@ Now that you're familiar with the annotations and text styles, we will give you 
    * `cd` is the command to change directory.
    * e.g. `cd Documents/clinicmate`
 3. Run the `java -jar clinicmate.jar` command to run the application.<br>
-   A GUI similar to the below should appear in a few seconds. Note how the app contains some sample data.<br>
-   ![Ui](images/updatedUI.png)
+4. Your command terminal should look like this after steps 2 and 3.
+![CommandTerminal](images/CommandTerminal.png)
 
-4. Type the command in the command box and press Enter to execute it. e.g. typing **`help`** and pressing Enter will open the help window.<br>
+<div markdown="block" class="alert alert-danger">
+
+**:warning: Warning:**<br>
+- You may notice that a new folder named `data` is newly created. This folder contains the data file for ClinicMate.
+- Do not delete this folder or its contents as it contains your patient data.
+</div>
+
+5. You should see the following screen after running the command.
+![Ui](images/updatedUI.png)
+6. Great job! You have successfully set up ClinicMate on your computer. You are now ready to learn about the **GUI** of ClinicMate!
+
+--------------------------------------------------------------------------------------------------------------------
+
+## GUI Overview
+
+ClinicMate features a Graphical User Interface (GUI) that provides a seamless user experience. The GUI is designed to be intuitive and user-friendly, allowing you to navigate through the application effortlessly.
+
+The GUI consists of the following components:
+![GUI.png](images/GUIFeatures.png)
+
+| **Number** | **Component**       | **Description**                                              |
+|------------|---------------------|--------------------------------------------------------------|
+| 1          | Command Box         | Enter commands here to interact with ClinicMate.             |
+| 2          | Message Box         | Displays the output of commands executed in the Command Box. |
+| 3          | Patient List Panel  | Displays the list of patients in ClinicMate.                 |
+| 4          | Patient Notes Panel | Displays the notes of the patient that you are viewing.      |
+
+<div markdown="block" class="alert alert-success">
+
+**:bulb: Useful Tip:**<br>
+
+- To maximise your viewing experience, opt for full-screen mode in ClinicMate!
+</div>
+
+
+## Using the GUI
+1. Type the command in the command box and press Enter to execute it. e.g. typing **`help`** and pressing Enter will open the help window.<br>
    Some example commands you can try:
 
    * `list` : Lists all contacts.
@@ -123,7 +164,7 @@ Now that you're familiar with the annotations and text styles, we will give you 
    
    * `exit` : Exits the app.
 
-5. Refer to the [Features](#features) below for details of each command.
+2. Refer to the [Features](#features) below for details of each command.
 
 --------------------------------------------------------------------------------------------------------------------
 
@@ -169,7 +210,7 @@ Format: `add n\NAME p\PHONE e\EMAIL i\IC_NUMBER ag\AGE s\SEX a\ADDRESS`
 </box>
 
 Examples:
-* `add n\John Doe p\88888888 e\johndoe@mail.com i\T0123456A ag\12 s\Male a\John street, block 123, #01-01`
+* `add n\John Doe p\88888888 e\johndoe@mail.com i\T0123456A ag\12 s\M a\John street, block 123, #01-01`
 
 What a successful `add` command looks like:
 ![successful_add](images/successfuladd.png)

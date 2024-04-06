@@ -145,26 +145,30 @@ The GUI consists of the following components:
 - To maximise your viewing experience, opt for full-screen mode in ClinicMate!
 </div>
 
+Now that you have been introduced to the GUI components, let's proceed to learn how you can use the CLI to interact with ClinicMate.
 
-## Using the GUI
-1. Type the command in the command box and press Enter to execute it. e.g. typing **`help`** and pressing Enter will open the help window.<br>
-   Some example commands you can try:
+## CLI Overview
+Experience the seamless power of ClinicMate's Command Line Interface (CLI) - where interaction is as simple as typing commands. 
+Say goodbye to juggling between typing and clicking, and welcome the streamlined efficiency of CLI!
 
-   * `list` : Lists all contacts.
+![CLI.png](images/CLIfeatures.png)
 
-   * `add n\John Doe p\88888888 e\johndoe@mail.com i\T0123456A ag\12 s\Male a\John street, block 123, #01-01` : Adds a contact named `John Doe` to ClinicMate.
+CLI is straightforward to use. The Command Box acts as your entry point for commands. Once you hit enter, ClinicMate processes 
+your input and delivers responses through the Message Box. It's all about interacting with ClinicMate effortlessly through text.
 
-   * `delete T0123456A` : Deletes the contact with the IC 'T0123456A' shown in the current list.
+Ready to dive in? Let's explore writing command lines and get you started with ClinicMate!
 
-   * `find T0123456A` : Find the contact with the IC 'T0123456A' shown in the current list.
+## Command Format
 
-   * `addnote T0123456A n\Patient has diabetes` : Add a note: 'Patient has diabetes' for the contact with the IC 'T0123456A' as shown in current list.
-   
-   * `addnote T0123456A n\Patient has diabetes -replace` : Replace the note of the contact with the IC 'T0123456A' with 'Patient has diabetes'.
-   
-   * `exit` : Exits the app.
+To use our CLI, you need to understand the format of the commands. 
 
-2. Refer to the [Features](#features) below for details of each command.
+| **Component** | **Example** | **Description**                                                                      |
+|---------------|-------------|--------------------------------------------------------------------------------------|
+| Command       | `add`       | Represents the action that you want to perform                                       |
+| Parameter     | `Mary`      | Represents a value that replaces the `UPPER_CASE` placeholders in the command format |
+| Prefix        | `n\ `       | Represents the type of parameter to be edited                                        |
+
+
 
 --------------------------------------------------------------------------------------------------------------------
 

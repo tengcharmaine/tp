@@ -346,6 +346,40 @@ Example:
 **Possible Errors that you might encounter:**
 Refer to `find`.
 
+### Editing a person : `edit`
+Made a typo in a detail? Don't worry! The `edit` command is here to assist you in correcting any mistakes effortlessly using the patients' `IC_NUMBER`.
+
+Format: `edit IC_NUMBER [n\NAME] [p\PHONE] [e\EMAIL] [i\IC_NUMBER] [ag\AGE] [s\SEX] [a\ADDRESS]`
+
+<div markdown="block" class="alert alert-success">
+
+**:bulb: Useful Tip:**<br>
+
+Optional fields are indicated by square brackets `[]`.
+
+</div>
+
+Steps:
+1. Enter `edit IC_NUMBER [n\NAME] [p\PHONE] [e\EMAIL] [i\IC_NUMBER] [ag\AGE] [s\SEX] [a\ADDRESS]` into the command box.
+2. The patient record with the corresponding `IC_NUMBER` will be edited.
+
+<div markdown="block" class="alert alert-info">
+
+**:memo: Note:**<br>
+
+* Edits the details of the person with the specified `IC_NUMBER`.
+* The fields to be edited are indicated by the prefixes `n\`, `p\`, `e\`, `i\`, `ag\`, `s\`, `a\`.
+* Only the fields that are provided will be updated.
+
+</div>
+
+Examples:
+* `edit T0123456A p\88888888` edits the phone number of the person with `IC_NUMBER` of `T0123456A` to `88888888`.
+
+What a successful `edit` message looks like:
+
+![EditCommand.png](images/EditCommand.png)
+
 ### Deleting a person : `delete`
 
 *The delete command enables the removal of patient records from ClinicMate. Use it to efficiently manage patient data by removing outdated or unnecessary entries.*

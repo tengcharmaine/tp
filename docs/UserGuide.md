@@ -224,7 +224,6 @@ Steps:
 
 </div>
 
-
 Examples:
 * `add n\John Doe p\88888888 e\johndoe@mail.com i\T0123456A ag\12 s\Male a\John street, block 123, #01-01`
 
@@ -410,6 +409,7 @@ Examples:
 What a successful `delete` message looks like:
 ![successful_deletemessage](images/deletemessage.png)
 
+<<<<<<< HEAD
 **Possible Errors that you might encounter:**
 
 There might be cases that the `IC_NUMBER` you keyed in does not exist in ClinicMate as shown below. Do check if the `IC_NUMBER` is registered before before trying to delete it.
@@ -535,11 +535,15 @@ Furthermore, certain edits can cause the ClinicMate to behave in unexpected ways
 
 **Q**: Can I use ClinicMate on multiple computers?<br>
 **A**: Yes, you can use ClinicMate on multiple computers. Simply copy the ClinicMate `.jar` file and the `clinicmate.json` data file to the other computer and run the application as usual.
+
 --------------------------------------------------------------------------------------------------------------------
 ## Appendix: Planned Enhancements
 
 1. **Support for multiple phone numbers**: Allow users to add multiple phone numbers for a single patient record.
-2. **Error handling**: Improve error messages in `edit` command to check for existance of IC number in the event of empty fields.
+2. **Error handling**: Improve error messages in `edit` command to check for existence of IC number in the event of empty fields.
+3. **Custom fields**: Allow users to customize fields for patient records to suit their clinic's requirements.
+4. **Date of Birth**: Add a field for date of birth to patient records for better age calculation.
+5. **Appointment scheduling**: Implement a feature to track and schedule patient appointments.
 
 --------------------------------------------------------------------------------------------------------------------
 
@@ -550,8 +554,10 @@ Action     | Format, Examples
 **Add**    | `add n\NAME p\PHONE e\EMAIL i\IC_NUMBER ag\AGE s\SEX a\ADDRESS` <br> e.g., `add n\John Doe p\88888888 e\johndoe@mail.com i\T0123456A ag\12 s\Male a\John street, block 123, #01-01`
 **Clear**  | `clear`
 **Delete** | `delete IC_NUMBER`<br> e.g., `delete T0123456A`
-**Add Note** | `addnote IC_NUMBER n\NOTE (-replace)`<br> e.g., `addnote T0123456A n\Patient has diabetes`<br> e.g., `addnote T0123456A n\Patient has diabetes -replace`
+**Edit**   | `edit IC_NUMBER n\NAME p\PHONE e\EMAIL i\IC_NUMBER ag\AGE s\SEX a\ADDRESS`<br> e.g., `edit T0123456A p\88888888`
+**Add Note** | `addnote IC_NUMBER n\NOTE [-replace]`<br> e.g., `addnote T0123456A n\Patient has diabetes`<br> e.g., `addnote T0123456A n\Patient has diabetes -replace`
 **Find**   | `find IC_NUMBER`<br> e.g., `find T0123456A`
+**Show**   | `show [IC_NUMBER]`<br> e.g., `show T0123456A` <br> e.g., `show`
 **Help**   | `help`
 **List**   | `list`
 **Exit**   | `exit`

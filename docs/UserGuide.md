@@ -18,15 +18,13 @@ This comprehensive user guide will effortlessly navigate you through ClinicMate'
 Here is a **quick overview** of how ClinicMate streamlines contact management:
 
 **Data Management Functions**:
-
-- ***Data Management Functions***: Easily input, modify, and remove patient details through `add`, `edit` and `delete`. View comprehensive lists and detailed patient information effortlessly with `list` and `show` commands.
-
-
-- ***Note-Taking Capabilities***: Use `addnote` to quickly append relevant notes to patient records for future reference.
+- ***Navigation and Assistance Functions***: Reset the interface using `clear`, access comprehensive guidance through `help`, and `exit` ClinicMate with ease. 
 
 
-- ***Navigation and Assistance***: Effortlessly search for specific patient records with `find`, reset the interface using `clear`, access comprehensive guidance through `help`, and `exit` ClinicMate with ease.
+- ***Data Management Functions***: Easily input, modify, and remove patient details through `add`, `edit` and `delete`. View detailed a comprehensive lists of patient information effortlessly with `lists` and `show` command. Effortlessly search for specific patient records with `find`.
 
+
+- ***Note-Taking Function***: Use `addnote` to quickly append relevant notes to patient records for future reference.
 
 ClinicMate is a desktop application featuring a **Command Line Interface (CLI)** with the convenience of a Graphical User Interface (GUI). Whether you're adept at typing or prefer a visual interface, ClinicMate ensures **swift and efficient** management of patient contacts.
 
@@ -127,11 +125,20 @@ Now that you're familiar with the annotations and text styles, we will give you 
 
 --------------------------------------------------------------------------------------------------------------------
 
-## Features
+# Existing Features
+This section gives you a step-by-step guide on how to use ClinicMate's feature. The 3 categories of ClinicMate's features are as follows:
+- ***Navigation and Assistance Functions***: `clear`, `help`, `exit`
 
-<box type="info" seamless>
 
-**Notes about the command format:**<br>
+- ***Data Management Functions***:  `add`, `edit`, `delete`, `show`, `find`,list
+
+
+- ***Note-Taking Function***: `addnote` 
+
+
+<div markdown="block" class="alert alert-info">
+
+**:memo: Note:**<br>
 
 * Words in `UPPER_CASE` are the parameters to be supplied by the user.<br>
   e.g. in `add n\NAME`, `NAME` is a parameter which can be used as `add n\John Doe`.
@@ -143,16 +150,60 @@ Now that you're familiar with the annotations and text styles, we will give you 
   e.g. if the command specifies `help 123`, it will be interpreted as `help`.
 
 * If you are using a PDF version of this document, be careful when copying and pasting commands that span multiple lines as space characters surrounding line-breaks may be omitted when copied over to the application.
-</box>
+</div>
+
+## Navigation and Assistance Functions
+Navigation and Assistance Functions in ClinicMate serve to enhance user experience and streamline workflows within the clinic management software. 
 
 ### Viewing help : `help`
+*Encountering a roadblock in ClinicMate? No problem! Simply utilize the `help` command for immediate assistance and guidance.*
 
-Shows a message explaining how to access the help page.
+**Format**: `help`
 
-![help message](images/newhelpwindow.png)
+![helpcommand](images/helpcommand.png)
 
-Format: `help`
+**Steps**:
+1. Enter `help` in the command box. A help window should pop up.
+2. You can access help by either:
+- Copying our User Guide's link through the **Copy URL** button.
+- Directing accessing our website through pressing on the icon.
 
+### Clearing all entries : `clear`
+*Transitioning to a new clinic? Easily clear existing data from ClinicMate with a simple `clear` command!*
+
+**Format**: `clear`
+
+![clearcommand](images/clearcommand.png)
+
+**Steps**:
+1. Enter `clear` in the command box. All entries will then be cleared.
+
+<div markdown="block" class="alert alert-danger">
+
+**:warning: Warning:**<br>
+`clear` is a one-time deletion of all of your entries in ClinicMate. Please use it with consideration and care. You will not be able to retrieve any information back once command has been called.
+</div>
+
+<div style="page-break-after: always;"></div><br/>
+
+### Exiting the program : `exit`
+
+*Concluding your session? Simply use the `exit` command to gracefully exit the program and conclude your session.*
+
+*Format*: `exit`
+
+*Steps*:
+1. Enter `exit` in the command box. You will then be directed out of ClinicMate.
+
+<div markdown="block" class="alert alert-info">
+
+**:memo: Note:**<br>
+
+Don't worry about losing your data when exiting. They will be automatically saved!
+
+</div>
+
+## Data Management Functions ##
 ### Adding a person: `add`
 
 Adds a person to ClinicMate.
@@ -174,24 +225,11 @@ Examples:
 What a successful `add` command looks like:
 ![successful_add](images/successfuladd.png)
 
-### Adding a note : `addnote`
 
-Add a note to an existing person in ClinicMate.
+### Listing all entries : `list`
+*Looking for a comprehensive overview of your patient entries in ClinicMate? Utilize the `list` command for quick access to all your patient records.*
 
-Format: `addnote IC_NUMBER n\NOTE (-replace)`
-
-* Adds a note to the person with the specified `IC_NUMBER`. The IC number refers to the IC number shown in the displayed person list. The IC_NUMBER **must be the FULL IC NUMBER**.
-* IC number must be valid and currently exist in the database.
-* Existing values will be updated to the input values.
-* When adding notes, the new note added will be appended to the current note of the person. i.e. current note is preserved.
-* The `-replace` flag can be used to replace the current note with the new note.
-
-Examples:
-* `addnote T0123456A n\Patient has diabetes` Adds a note `Patient has diabetes` to the person with the IC number `T0123456A` in ClinicMate.
-* `addnote T0123456A n\Patient has diabetes -replace` Replaces the note of the person with the IC number `T0123456A` with `Patient has diabetes`.
-
-What a successful `addnote` command looks like:
-![successful_addnote](images/successfuladdnote.png)
+Format: `list`
 
 ### Locating persons by ic number: `find`
 
@@ -254,24 +292,25 @@ Examples:
 What a successful `delete` message looks like:
 ![successful_deletemessage](images/successfuldeletemessage.png)
 
-### Listing all entries : `list`
+## Note-Taking Function ##
 
-Lists all entries from the ClinicMate.
+### Adding a note : `addnote`
+*As doctors, it's essential to document prescriptions and notes for each patient. Simplify this process with the `addnote` command, ensuring efficient and accurate record-keeping.*
 
-Format: `list`
+Format: `addnote IC_NUMBER n\NOTE (-replace)`
 
-### Clearing all entries : `clear`
+* Adds a note to the person with the specified `IC_NUMBER`. The IC number refers to the IC number shown in the displayed person list. The IC_NUMBER **must be the FULL IC NUMBER**.
+* IC number must be valid and currently exist in the database.
+* Existing values will be updated to the input values.
+* When adding notes, the new note added will be appended to the current note of the person. i.e. current note is preserved.
+* The `-replace` flag can be used to replace the current note with the new note.
 
-Clears all entries from the ClinicMate.
+Examples:
+* `addnote T0123456A n\Patient has diabetes` Adds a note `Patient has diabetes` to the person with the IC number `T0123456A` in ClinicMate.
+* `addnote T0123456A n\Patient has diabetes -replace` Replaces the note of the person with the IC number `T0123456A` with `Patient has diabetes`.
 
-Format: `clear`
-
-### Exiting the program : `exit`
-
-Exits the program.
-
-Format: `exit`
-
+What a successful `addnote` command looks like:
+![successful_addnote](images/successfuladdnote.png)
 ### Saving the data
 
 ClinicMate data are saved in the hard disk automatically after any command that changes the data. There is no need to save manually.

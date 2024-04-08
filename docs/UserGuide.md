@@ -75,6 +75,8 @@ Now that you're familiar with the annotations and text styles, we will give you 
 
 ## Quick start
 
+In this section, you will learn how to set up ClinicMate on your computer. 
+
 ### Prerequisites
 
 1. Open Command Prompt (for Windows) or Terminal (for MacOS and Linux) on your desktop.
@@ -90,9 +92,12 @@ Now that you're familiar with the annotations and text styles, we will give you 
 
 ### Setting up
 1. Download the latest `.jar` file [here](https://github.com/AY2324S2-CS2103T-F14-2/tp/releases/latest)
-2. Copy the file to the folder you want to use as the _home folder_ for your ClinicMate.
-   * e.g. if you want to use the `Documents` folder as the _home folder_ for your ClinicMate, create a new folder named `clinicmate` in the `Documents` folder.
-   * You can then copy the `.jar` file to a folder named `clinicmate` in your `Documents` folder.
+2. You will see this screen after clicking on the link above.
+   * Click on the `clinicmate.jar` file to download it.
+![ClinicMateJar.png](images/ClinicMateJar.png)
+3. Move the file to the folder you want to use as the _home folder_ for your ClinicMate.
+   * For example, if you want to use the `Documents` folder as the _home folder_ for your ClinicMate, create a new folder named `clinicmate` in the `Documents` folder.
+   * You can then move the `.jar` file to a folder named `clinicmate` in your `Documents` folder.
    
 
 ### Running the application
@@ -101,27 +106,87 @@ Now that you're familiar with the annotations and text styles, we will give you 
    * `cd` is the command to change directory.
    * e.g. `cd Documents/clinicmate`
 3. Run the `java -jar clinicmate.jar` command to run the application.<br>
-   A GUI similar to the below should appear in a few seconds. Note how the app contains some sample data.<br>
-   ![Ui](images/updatedUI.png)
+4. Your command terminal should look like this after steps 2 and 3.
+![CommandTerminal](images/CommandTerminal.png)
 
-4. Type the command in the command box and press Enter to execute it. e.g. typing **`help`** and pressing Enter will open the help window.<br>
-   Some example commands you can try:
+<div markdown="block" class="alert alert-danger">
 
-   * `list` : Lists all contacts.
+**:warning: Warning:**<br>
+- You may notice that a new folder named `data` is newly created. This folder contains the data file for ClinicMate.
+- Do not delete this folder or its contents as it contains your patient data.
+</div>
 
-   * `add n\John Doe p\88888888 e\johndoe@mail.com i\T0123456A ag\12 s\Male a\John street, block 123, #01-01` : Adds a contact named `John Doe` to ClinicMate.
+5. You should see the following screen after running the command.
+![Ui](images/updatedUI.png)
+6. Great job! You have successfully set up ClinicMate on your computer. You are now ready to learn about the **GUI** of ClinicMate!
 
-   * `delete T0123456A` : Deletes the contact with the IC 'T0123456A' shown in the current list.
+--------------------------------------------------------------------------------------------------------------------
 
-   * `find T0123456A` : Find the contact with the IC 'T0123456A' shown in the current list.
+## GUI Overview
 
-   * `addnote T0123456A n\Patient has diabetes` : Add a note: 'Patient has diabetes' for the contact with the IC 'T0123456A' as shown in current list.
-   
-   * `addnote T0123456A n\Patient has diabetes -replace` : Replace the note of the contact with the IC 'T0123456A' with 'Patient has diabetes'.
-   
-   * `exit` : Exits the app.
+ClinicMate features a Graphical User Interface (GUI) that provides a seamless user experience. The GUI is designed to be intuitive and user-friendly, allowing you to navigate through the application effortlessly.
 
-5. Refer to the [Features](#features) below for details of each command.
+The GUI consists of the following components:
+![GUI.png](images/GUIFeatures.png)
+
+| **Number** | **Component**       | **Description**                                              |
+|------------|---------------------|--------------------------------------------------------------|
+| 1          | Command Box         | Enter commands here to interact with ClinicMate.             |
+| 2          | Message Box         | Displays the output of commands executed in the Command Box. |
+| 3          | Patient List Panel  | Displays the list of patients in ClinicMate.                 |
+| 4          | Patient Notes Panel | Displays the notes of the patient that you are viewing.      |
+
+<div markdown="block" class="alert alert-success">
+
+**:bulb: Useful Tip:**<br>
+
+- To maximise your viewing experience, opt for full-screen mode in ClinicMate!
+</div>
+
+Now that you have been introduced to the GUI components, let's proceed to learn how you can use the CLI to interact with ClinicMate.
+
+## CLI Overview
+Experience the seamless power of ClinicMate's Command Line Interface (CLI) - where interaction is as simple as typing commands. 
+Say goodbye to juggling between typing and clicking, and welcome the streamlined efficiency of CLI!
+
+![CLI.png](images/CLIfeatures.png)
+
+CLI is straightforward to use. The Command Box acts as your entry point for commands. Once you hit enter, ClinicMate processes 
+your input and delivers responses through the Message Box. It's all about interacting with ClinicMate effortlessly through text.
+
+Ready to dive in? Let's explore writing command lines and get you started with ClinicMate!
+
+## Command Format
+
+To use our CLI, here is an overview of the command formats. 
+
+| **Component** | **Example** | **Description**                                                                      |
+|---------------|-------------|--------------------------------------------------------------------------------------|
+| Command       | `add`       | Represents the action that you want to perform                                       |
+| Parameter     | `Mary`      | Represents a value that replaces the `UPPER_CASE` placeholders in the command format |
+| Prefix        | `n\ `       | Represents the type of parameter to be edited                                        |
+| Flag          | `-replace`  | Represents an additional parameter that modifies the command's behavior              |
+
+You can find all the parameters used in ClinicMate [here](#definitions-of-key-terms). To learn more about the prefixes and command words used in LinkMeIn, 
+you can refer to the [Command Summary Section](#command-summary).
+
+Let's see how these components are used in a command!
+
+### Example Command: `addnote`
+
+![labelled](images/LabelledAddNote.png)
+
+You can substitute specific parameter values into the parameters in the command format. For instance, in the `addnote` command, you can replace `IC_NUMBER` with the patient's IC number and `NOTE` with the note you want to add.
+
+But what about the `[]` around `-replace`? Here's more about it:
+
+| **Symbol** | **Description**                                    | **Example**   |**Meaning**|
+|------------|----------------------------------------------------|---------------|-----------|
+| `[]`       | Indicates an optional parameter                    | `[-replace]`  | The `-replace` flag is optional and can be included or excluded in the command. |
+| None | Indicates a mandatory parameter | `n\NOTE` | The `n\NOTE` parameter is mandatory and must be included in the command. |
+
+
+
 
 --------------------------------------------------------------------------------------------------------------------
 
@@ -225,7 +290,7 @@ Steps:
 </div>
 
 Examples:
-* `add n\John Doe p\88888888 e\johndoe@mail.com i\T0123456A ag\12 s\Male a\John street, block 123, #01-01`
+* `add n\John Doe p\88888888 e\johndoe@mail.com i\T0123456A ag\12 s\M a\John street, block 123, #01-01`
 
 What a successful `add` command looks like:
 ![add_command](images/addcommand.png)
@@ -546,6 +611,61 @@ Furthermore, certain edits can cause the ClinicMate to behave in unexpected ways
 5. **Appointment scheduling**: Implement a feature to track and schedule patient appointments.
 
 --------------------------------------------------------------------------------------------------------------------
+## Glossary
+
+### Definitions of Key Terms
+
+These descriptions will help you understand the key terms used in ClinicMate.
+
+| Term                 | Definition                                                                                                                                                                                                           |
+|----------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| **Alphanumeric**     | Alphanumeric pertains to a character set containing both letters and numbers, encompassing the full range of 26 English alphabet letters (both uppercase and lowercase) along with numerical digits 0 through 9.     |
+| **Case-insensitive** | Case-insensitive treatment equates uppercase and lowercase characters, treating them as identical. For instance, both `john` and `John` would be considered the same.                                                |
+| **CLI**              | CLI, or Command-Line Interface, is a text-based interface enabling users to interact with software via typed commands.                                                                                               |
+| **Command**          | A command denotes a user's directive to ClinicMate, instructing it to execute a specific action. For example, the `add` command adds the patient's details to ClinicMate.                                            |
+| **GUI**              | GUI, or Graphical User Interface, facilitates user interaction with software through visual elements like icons, buttons, and windows, providing a more intuitive alternative to text-based commands.                |
+| **JAR**              | JAR, short for Java Archive, represents a package file format used to bundle multiple Java class files, along with associated metadata and resources, into a single file for distribution purposes.                  |
+| **JSON**             | JSON, standing for JavaScript Object Notation, serves as a lightweight data interchange format that is human-readable and easy for machines to parse, commonly utilized in web applications and configuration files. |
+| **Parameter**        | A parameter resembles a field in a form that requires input. In the command `edit S1234567A ag\AGE nNAME`, `AGE` and `NAME` are parameters within the command.                                                       |
+| **Prefix**           | A prefix acts as a keyword used to identify a parameter. In the command `edit S1234567A ag\AGE n\NAME`, `ag\` and `n\` function as prefixes.                                                                         |
+
+
+### Parameters Description
+
+| Parameter | Description                  | Constraints                                                                                                                         |
+|-----------|------------------------------|-------------------------------------------------------------------------------------------------------------------------------------|
+| NAME      | Name of the patient.         | Only contain alphanumeric characters and spaces, and should not be blank. Maximum of 100 characters (excluding spaces).             |
+| PHONE     | Phone number of the patient. | Only contain numbers, be at least 3 digits and at most 8 digits long. Should not be blank.                                          |
+| EMAIL     | Email of the patient.        | Should be in the format of [`local-part@domain`](#email-format-description) and should not be blank.                                |
+| IC_NUMBER | IC number of the patient.    | Case insensitive and should not be blank. It should start with one letter (S, F, G or M), followed by 7 digits and 1 letter behind. |
+| AGE       | Age of the patient.          | Only contain numbers, and should not be blank.                                                                                      |
+| SEX       | Sex of the patient.          | Case insensitive and should not be blank. Only accepts `m`, `f`, `M`, `F` as inputs.                                                |
+| ADDRESS   | Address of the patient.      | Case insensitive and should not be blank.                                                                                           |
+| NOTE      | Note of the patient          | Case insensitive and should not be blank.                                                                                           |
+
+<div markdown="block" class="alert alert-info">
+
+**:memo: Note:**<br>
+- If you enter an invalid input for any of the prefixes, you will see an error message in the command box.
+  Refer to the error message, check the description for the respective prefix and try the command again! An example of an error message is shown below.
+
+</div>
+
+![FindCommandError](images/FindCommandError.png)
+
+#### Email Format Description
+The email format is `local-part@domain`.
+
+`local-part` constraints:
+* Only contain alphanumeric characters and these special characters, excluding the parentheses, (+_.-).
+* May not start or end with any special characters.
+
+`domain` name constraints:
+* Made up of domain labels separated by periods.
+* End with a domain label at least 2 characters long
+* Have each domain label start and end with alphanumeric characters
+* Have each domain label consist of alphanumeric characters, separated only by hyphens, if any.
+
 
 ## Command summary
 

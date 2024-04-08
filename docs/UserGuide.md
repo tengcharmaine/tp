@@ -160,13 +160,33 @@ Ready to dive in? Let's explore writing command lines and get you started with C
 
 ## Command Format
 
-To use our CLI, you need to understand the format of the commands. 
+To use our CLI, here is an overview of the command formats. 
 
 | **Component** | **Example** | **Description**                                                                      |
 |---------------|-------------|--------------------------------------------------------------------------------------|
 | Command       | `add`       | Represents the action that you want to perform                                       |
 | Parameter     | `Mary`      | Represents a value that replaces the `UPPER_CASE` placeholders in the command format |
 | Prefix        | `n\ `       | Represents the type of parameter to be edited                                        |
+| Flag          | `-replace`  | Represents an additional parameter that modifies the command's behavior              |
+
+You can find all the parameters used in ClinicMate [here](#definitions-of-key-terms). To learn more about the prefixes and command words used in LinkMeIn, 
+you can refer to the [Command Summary Section](#command-summary).
+
+Let's see how these components are used in a command!
+
+### Example Command: `addnote`
+
+![labelled](images/LabelledAddNote.png)
+
+You can substitute specific parameter values into the parameters in the command format. For instance, in the `addnote` command, you can replace `IC_NUMBER` with the patient's IC number and `NOTE` with the note you want to add.
+
+But what about the `[]` around `-replace`? Here's more about it:
+
+| **Symbol** | **Description**                                    | **Example**   |**Meaning**|
+|------------|----------------------------------------------------|---------------|-----------|
+| `[]`       | Indicates an optional parameter                    | `[-replace]`  | The `-replace` flag is optional and can be included or excluded in the command. |
+| None | Indicates a mandatory parameter | `n\NOTE` | The `n\NOTE` parameter is mandatory and must be included in the command. |
+
 
 
 
@@ -384,6 +404,61 @@ Furthermore, certain edits can cause the ClinicMate to behave in unexpected ways
 5. **Appointment scheduling**: Implement a feature to track and schedule patient appointments.
 
 --------------------------------------------------------------------------------------------------------------------
+## Glossary
+
+### Definitions of Key Terms
+
+These descriptions will help you understand the key terms used in ClinicMate.
+
+| Term                 | Definition                                                                                                                                                                                                           |
+|----------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| **Alphanumeric**     | Alphanumeric pertains to a character set containing both letters and numbers, encompassing the full range of 26 English alphabet letters (both uppercase and lowercase) along with numerical digits 0 through 9.     |
+| **Case-insensitive** | Case-insensitive treatment equates uppercase and lowercase characters, treating them as identical. For instance, both `john` and `John` would be considered the same.                                                |
+| **CLI**              | CLI, or Command-Line Interface, is a text-based interface enabling users to interact with software via typed commands.                                                                                               |
+| **Command**          | A command denotes a user's directive to ClinicMate, instructing it to execute a specific action. For example, the `add` command adds the patient's details to ClinicMate.                                            |
+| **GUI**              | GUI, or Graphical User Interface, facilitates user interaction with software through visual elements like icons, buttons, and windows, providing a more intuitive alternative to text-based commands.                |
+| **JAR**              | JAR, short for Java Archive, represents a package file format used to bundle multiple Java class files, along with associated metadata and resources, into a single file for distribution purposes.                  |
+| **JSON**             | JSON, standing for JavaScript Object Notation, serves as a lightweight data interchange format that is human-readable and easy for machines to parse, commonly utilized in web applications and configuration files. |
+| **Parameter**        | A parameter resembles a field in a form that requires input. In the command `edit S1234567A ag\AGE nNAME`, `AGE` and `NAME` are parameters within the command.                                                       |
+| **Prefix**           | A prefix acts as a keyword used to identify a parameter. In the command `edit S1234567A ag\AGE n\NAME`, `ag\` and `n\` function as prefixes.                                                                         |
+
+
+### Parameters Description
+
+| Parameter | Description                  | Constraints                                                                                                                         |
+|-----------|------------------------------|-------------------------------------------------------------------------------------------------------------------------------------|
+| NAME      | Name of the patient.         | Only contain alphanumeric characters and spaces, and should not be blank. Maximum of 100 characters (excluding spaces).             |
+| PHONE     | Phone number of the patient. | Only contain numbers, be at least 3 digits and at most 8 digits long. Should not be blank.                                          |
+| EMAIL     | Email of the patient.        | Should be in the format of [`local-part@domain`](#email-format-description) and should not be blank.                                |
+| IC_NUMBER | IC number of the patient.    | Case insensitive and should not be blank. It should start with one letter (S, F, G or M), followed by 7 digits and 1 letter behind. |
+| AGE       | Age of the patient.          | Only contain numbers, and should not be blank.                                                                                      |
+| SEX       | Sex of the patient.          | Case insensitive and should not be blank. Only accepts `m`, `f`, `M`, `F` as inputs.                                                |
+| ADDRESS   | Address of the patient.      | Case insensitive and should not be blank.                                                                                           |
+| NOTE      | Note of the patient          | Case insensitive and should not be blank.                                                                                           |
+
+<div markdown="block" class="alert alert-info">
+
+**:memo: Note:**<br>
+- If you enter an invalid input for any of the prefixes, you will see an error message in the command box.
+  Refer to the error message, check the description for the respective prefix and try the command again! An example of an error message is shown below.
+
+</div>
+
+![FindCommandError](images/FindCommandError.png)
+
+#### Email Format Description
+The email format is `local-part@domain`.
+
+`local-part` constraints:
+* Only contain alphanumeric characters and these special characters, excluding the parentheses, (+_.-).
+* May not start or end with any special characters.
+
+`domain` name constraints:
+* Made up of domain labels separated by periods.
+* End with a domain label at least 2 characters long
+* Have each domain label start and end with alphanumeric characters
+* Have each domain label consist of alphanumeric characters, separated only by hyphens, if any.
+
 
 ## Command summary
 

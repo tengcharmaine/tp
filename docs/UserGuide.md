@@ -321,7 +321,13 @@ Steps:
 ### Locating persons by IC number: `find`
 *Today, your regular patient arrives at the clinic, and you need to retrieve her record. However, with a multitude of contacts, locating hers seems daunting. Fear not! Utilize the find command to swiftly pinpoint the specific patient you're searching for using their `IC_NUMBER`.*
 
-> ClinicMate will display their contact information on the left-hand side of the screen and their full notes on the right-hand side, for a more comprehensive view.
+<div markdown="block" class="alert alert-success">
+
+**:memo: Tip:**<br>
+
+ClinicMate will display their contact information on the left-hand side of the screen and their full notes on the right-hand side, for a more comprehensive view.
+
+</div>
 
 Format: `find IC_NUMBER`
 
@@ -346,8 +352,13 @@ Steps:
 Examples:
 * `find T0123456A` returns `John Doe`.
 
-What a successful `find` command looks like:
+What successful `find` commands look like:
 ![successful_find](images/findmessage.png)
+>What this means: There is a person matching the `IC_NUMBER` in the list of patients in ClinicMate.
+
+![successful_find2](images/successful_find2.png)
+>What this means: There is no one matching the `IC_NUMBER` in the list of patients in ClinicMate.
+
 
 **Possible Errors that you might encounter:**
 
@@ -611,6 +622,7 @@ Furthermore, certain edits can cause the ClinicMate to behave in unexpected ways
 4. **Date of Birth**: Add a field for date of birth to patient records for better age calculation.
 5. **Appointment scheduling**: Implement a feature to track and schedule patient appointments.
 6. **Notes tagging and labelling**: Allow users to tag and label different types of notes. For example, a tag for patient's diagnosis and another for their medication.
+7. **Flexible Find command**: Allow users to be able to find patients by their name, age, email, address, etc.
 
 --------------------------------------------------------------------------------------------------------------------
 ## Glossary

@@ -161,14 +161,14 @@ Ready to dive in? Let's explore writing command lines and get you started with C
 
 To use our CLI, here is an overview of the command formats. 
 
-| **Component** | **Example** | **Description**                                                                      |
-|---------------|-------------|--------------------------------------------------------------------------------------|
-| Command       | `add`       | Represents the action that you want to perform                                       |
-| Parameter     | `Mary`      | Represents a value that replaces the `UPPER_CASE` placeholders in the command format |
-| Prefix        | `n\ `       | Represents the type of parameter to be edited                                        |
-| Flag          | `-replace`  | Represents an additional parameter that modifies the command's behavior              |
+| **Component** | **Example** | **Description**                                                                                                      |
+|---------------|-------------|----------------------------------------------------------------------------------------------------------------------|
+| Command       | `add`       | Represents the action that you want to perform.                                                                      |
+| Parameter     | `Mary`      | Represents a value that replaces the `UPPER_CASE` placeholders in the command format.                                |
+| Prefix        | `n\ `       | Represents the type of parameter to be edited.                                                                       |
+| Flag          | `-replace`  | Represents an additional parameter that modifies the command's behavior.<br/>Must be used at the end of the command. |
 
-You can find all the parameters used in ClinicMate [here](#definitions-of-key-terms). To learn more about the prefixes and command words used in LinkMeIn, 
+You can find all the parameters used in ClinicMate [here](#definitions-of-key-terms). To learn more about the prefixes and command words used in ClinicMate, 
 you can refer to the [Command Summary Section](#command-summary).
 
 Let's see how these components are used in a command!
@@ -209,7 +209,7 @@ This section gives you a step-by-step guide on how to use ClinicMate's feature. 
 * Words in `UPPER_CASE` are the parameters to be supplied by the user.<br>
   e.g. in `add n\NAME`, `NAME` is a parameter which can be used as `add n\John Doe`.
 
-* Parameters can be in any order.<br>
+* Parameters with a prefix can be in any order.<br>
   e.g. if the command specifies `n\NAME i\IC_NUMBER`, `i\IC_NUMBER n\NAME` is also acceptable.
 
 * Extraneous parameters for commands that do not take in parameters (such as `help`, `list`, `exit` and `clear`) will be ignored.<br>
@@ -529,6 +529,17 @@ There might be cases that the `IC_NUMBER` you keyed in does not exist in ClinicM
 
 ![addnoteapp4.png](images/addnoteapp4.png)
 
+<div markdown="block" class="alert alert-info">
+
+**:memo: Note:**<br>
+
+* The IC number refers to the IC number shown in the displayed person list. The IC_NUMBER **must be the FULL IC NUMBER**.
+* IC number must be valid and currently exist in the database.
+* Existing values will be updated to the input values.
+* When adding notes, the new note added will be appended to the current note of the person. i.e. current note is preserved.
+
+</div>
+
 #### To replace notes
 
 *Format*: `addnote IC_NUMBER n\NOTE -replace`
@@ -551,7 +562,11 @@ There might be cases that the `IC_NUMBER` you keyed in does not exist in ClinicM
 * IC number must be valid and currently exist in the database.
 * Existing values will be updated to the input values.
 * When adding notes, the new note added will be appended to the current note of the person. i.e. current note is preserved.
+
+
 * The `-replace` flag can be used to replace the current note with the new note.
+  * It must only be used once.
+  * It must only be used at the end of the command.
   * Anything after the `-replace` flag will be ignored. For example, `-replacefdshareh` will be interpreted as `-replace`.
 
 </div>
@@ -594,14 +609,20 @@ Furthermore, certain edits can cause the ClinicMate to behave in unexpected ways
 
 ## FAQ
 
+**Q**: When will my note be cleared? <br>
+**A**: The note will be cleared when you use the `show` command without any `IC_NUMBER`. Unfortunately, `clear` or `delete` command will not clear the note. 
+
 **Q**: When using multiple screens, moving the application to a secondary screen and later switching to using only the primary screen, the GUI opens off-screen. What do I do?<br>
 **A**: Delete the `preferences.json` file created by the application before running the application again.
 
 **Q**: Is there a limit to the number of patient records ClinicMate can manage?<br>
 **A**: ClinicMate is designed to handle a large number of patient records efficiently. However, performance may vary depending on the hardware specifications of your computer and the amount of data being managed.
 
-**Q**: How do I transfer my data to another Computer?<br>
-**A**: Install the app in the other computer and overwrite the empty data file it creates with the file that contains the data of your previous ClinicMate home folder.
+**Q**: How do I load my data from another Computer?<br>
+**A**: Let's say that you want to move your data from `Computer A` to `Computer B`. You should:
+1. Delete the `data.json` file that is located at `[JAR file location]/data/clinicmate.json` in `Computer B`.
+2. Copy the `data.json` file from `Computer A` to `Computer B` at the same location as above.
+3. Run the ClinicMate in `Computer B` to load the data.
 
 **Q**: Can I export patient data from ClinicMate for reporting or backup purposes?<br>
 **A**: Currently, ClinicMate does not support direct export of patient data. However, you can manually copy the data from the data file located at `[JAR file location]/data/clinicmate.json` for backup or reporting purposes.
@@ -632,9 +653,14 @@ Furthermore, certain edits can cause the ClinicMate to behave in unexpected ways
 3. **Custom fields**: Allow users to customize fields for patient records to suit their clinic's requirements.
 4. **Date of Birth**: Add a field for date of birth to patient records for better age calculation.
 5. **Appointment scheduling**: Implement a feature to track and schedule patient appointments.
-6. **Notes tagging and labelling**: Allow users to tag and label different types of notes. For example, a tag for patient's diagnosis and another for their medication.
-7. **Flexible Find command**: Allow users to be able to find patients by their name, age, email, address, etc.
-8. **Updated Notes window**: Update the Notes window to display the most updated note of the patient the user interacted with last.
+6. **Flexible Find command**: Allow users to be able to find patients by their name, age, email, address, etc.
+7. **Updated Notes window**: Update the Notes window to display the most updated note of the patient the user interacted with last.
+8. **Support for patient identification**: Allow users to use other methods to identify patients, such as passport numbers, names or driving license numbers.
+9. **Add Note features**: 
+- Implement a feature to allow users to edit and delete specific notes. 
+- Allow users to know whose note they are viewing, by displaying the patient's name or IC number.
+- Implement a feature for users to have the option of hiding the notes section in the patient's profile card.
+- Allow users to tag and label different types of notes. For example, a tag for patient's diagnosis and another for their medication.
 
 --------------------------------------------------------------------------------------------------------------------
 <div style="page-break-after: always;"></div>
@@ -663,13 +689,22 @@ These descriptions will help you understand the key terms used in ClinicMate.
 | Parameter | Description                  | Constraints                                                                                                                         |
 |-----------|------------------------------|-------------------------------------------------------------------------------------------------------------------------------------|
 | NAME      | Name of the patient.         | Only contain alphanumeric characters and spaces, and should not be blank. Maximum of 100 characters (excluding spaces).             |
-| PHONE     | Phone number of the patient. | Only contain numbers, be at least 3 digits and at most 8 digits long. Should not be blank.                                          |
+| PHONE     | Phone number of the patient. | Only contain numbers, be at least 3 digits. Should not be blank.                                          |
 | EMAIL     | Email of the patient.        | Should be in the format of [`local-part@domain`](#email-format-description) and should not be blank.                                |
 | IC_NUMBER | IC number of the patient.    | Case insensitive and should not be blank. It should start with one letter (S, F, G or M), followed by 7 digits and 1 letter behind. |
 | AGE       | Age of the patient.          | Only contain numbers, and should not be blank.                                                                                      |
 | SEX       | Sex of the patient.          | Case insensitive and should not be blank. Only accepts `m`, `f`, `M`, `F` as inputs.                                                |
 | ADDRESS   | Address of the patient.      | Case insensitive and should not be blank.                                                                                           |
 | NOTE      | Note of the patient          | Case insensitive and should not be blank.                                                                                           |
+
+
+<div markdown="block" class="alert alert-info">
+
+**:memo: Note:**<br>
+- Constraints are designed to be less restrictive to accommodate to a wide range of user inputs.
+- Instances include having phone numbers with less than 3 digits, or names with special characters.
+
+</div>
 
 <div markdown="block" class="alert alert-info">
 
@@ -702,7 +737,7 @@ Action     | Format, Examples
 **Add**    | `add n\NAME p\PHONE e\EMAIL i\IC_NUMBER ag\AGE s\SEX a\ADDRESS` <br> e.g., `add n\John Doe p\88888888 e\johndoe@mail.com i\T0123456A ag\12 s\M a\John street, block 123, #01-01`
 **Clear**  | `clear`
 **Delete** | `delete IC_NUMBER`<br> e.g., `delete T0123456A`
-**Edit**   | `edit IC_NUMBER n\NAME p\PHONE e\EMAIL i\IC_NUMBER ag\AGE s\SEX a\ADDRESS`<br> e.g., `edit T0123456A p\88888888`
+**Edit**   | `edit IC_NUMBER [n\NAME] [p\PHONE] [e\EMAIL] [i\IC_NUMBER] [ag\AGE] [s\SEX] [a\ADDRESS]`<br> e.g., `edit T0123456A p\88888888`
 **Add Note** | `addnote IC_NUMBER n\NOTE [-replace]`<br> e.g., `addnote T0123456A n\Patient has diabetes`<br> e.g., `addnote T0123456A n\Patient has diabetes -replace`
 **Find**   | `find IC_NUMBER`<br> e.g., `find T0123456A`
 **Show**   | `show [IC_NUMBER]`<br> e.g., `show T0123456A` <br> e.g., `show`

@@ -610,6 +610,7 @@ Furthermore, certain edits can cause the ClinicMate to behave in unexpected ways
 3. **Custom fields**: Allow users to customize fields for patient records to suit their clinic's requirements.
 4. **Date of Birth**: Add a field for date of birth to patient records for better age calculation.
 5. **Appointment scheduling**: Implement a feature to track and schedule patient appointments.
+6. **Notes tagging and labelling**: Allow users to tag and label different types of notes. For example, a tag for patient's diagnosis and another for their medication.
 
 --------------------------------------------------------------------------------------------------------------------
 ## Glossary

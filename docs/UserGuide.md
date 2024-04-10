@@ -324,7 +324,7 @@ Steps:
 
 <div markdown="block" class="alert alert-success">
 
-**<i class="material-icons-outlined">edit</i> Tip:**<br>
+**<i class="material-icons-outlined">lightbulb</i> Useful Tip:**<br>
 
 ClinicMate will display their contact information on the left-hand side of the screen and their full notes on the right-hand side, for a more comprehensive view.
 
@@ -486,7 +486,6 @@ Examples:
 What a successful `delete` message looks like:
 ![successful_deletemessage](images/deletemessage.png)
 
-<<<<<<< HEAD
 **Possible Errors that you might encounter:**
 
 There might be cases that the `IC_NUMBER` you keyed in does not exist in ClinicMate as shown below. Do check if the `IC_NUMBER` is registered before before trying to delete it.

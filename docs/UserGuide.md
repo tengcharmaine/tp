@@ -30,10 +30,12 @@ ClinicMate is a desktop application featuring a **Command Line Interface (CLI)**
 
 Bid farewell to cumbersome paperwork and embrace the efficiency of ClinicMate in organizing your clinic's patient data.
 
+<div style="page-break-after: always;"></div>
 
 <!-- * Table of Contents -->
 <page-nav-print />
 
+<div style="page-break-after: always;"></div>
 
 # Guide Usage
 
@@ -43,25 +45,21 @@ Before we dive into the details, let's acquaint ourselves with the annotations y
 
 <div markdown="block" class="alert alert-success">
 
-**:bulb: Useful Tip:**<br>
-
+**<i class="material-icons-outlined">lightbulb</i> Useful Tip:**<br>
 - Provides additional insights and tips to enhance your ClinicMate experience.
 </div>
 
 <div markdown="block" class="alert alert-info">
 
-**:memo: Note:**<br>
+**<i class="material-icons-outlined">edit</i> Note:**<br>
 - Provides valuable additional details for using ClinicMate effectively.
-
 </div>
 
 <div markdown="block" class="alert alert-danger">
 
-**:warning: Warning:**<br>
+**<i class="material-icons-outlined">warning</i> Warning:**<br>
 - Alerts you to potential pitfalls or issues to be mindful of when using ClinicMate.
 </div>
-
-<div style="page-break-after: always;"></div><br/>
 
 Throughout this guide, you'll also encounter various text styles. Here's what they represent:
 
@@ -72,6 +70,7 @@ Throughout this guide, you'll also encounter various text styles. Here's what th
 
 Now that you're familiar with the annotations and text styles, we will give you a tour on how to navigate this user guide based on your level of expertise.
 
+<div style="page-break-after: always;"></div>
 
 ## Quick start
 
@@ -111,7 +110,7 @@ In this section, you will learn how to set up ClinicMate on your computer.
 
 <div markdown="block" class="alert alert-danger">
 
-**:warning: Warning:**<br>
+**<i class="material-icons-outlined">warning</i> Warning:**<br>
 - You may notice that a new folder named `data` is newly created. This folder contains the data file for ClinicMate.
 - Do not delete this folder or its contents as it contains your patient data.
 </div>
@@ -138,7 +137,7 @@ The GUI consists of the following components:
 
 <div markdown="block" class="alert alert-success">
 
-**:bulb: Useful Tip:**<br>
+**<i class="material-icons-outlined">lightbulb</i> Useful Tip:**<br>
 
 - To maximise your viewing experience, opt for full-screen mode in ClinicMate!
 </div>
@@ -186,7 +185,7 @@ But what about the `[]` around `-replace`? Here's more about it:
 | None | Indicates a mandatory parameter | `n\NOTE` | The `n\NOTE` parameter is mandatory and must be included in the command. |
 
 
-
+<div style="page-break-after: always;"></div>
 
 --------------------------------------------------------------------------------------------------------------------
 
@@ -203,7 +202,7 @@ This section gives you a step-by-step guide on how to use ClinicMate's feature. 
 
 <div markdown="block" class="alert alert-info">
 
-**:memo: Note:**<br>
+**<i class="material-icons-outlined">edit</i> Note:**<br>
 
 * Words in `UPPER_CASE` are the parameters to be supplied by the user.<br>
   e.g. in `add n\NAME`, `NAME` is a parameter which can be used as `add n\John Doe`.
@@ -245,7 +244,7 @@ Navigation and Assistance Functions in ClinicMate serve to enhance user experien
 
 <div markdown="block" class="alert alert-danger">
 
-**:warning: Warning:**<br>
+**<i class="material-icons-outlined">warning</i> Warning:**<br>
 `clear` is a one-time deletion of all of your entries in ClinicMate. Please use it with consideration and care. You will not be able to retrieve any information back once command has been called.
 </div>
 
@@ -262,7 +261,7 @@ Navigation and Assistance Functions in ClinicMate serve to enhance user experien
 
 <div markdown="block" class="alert alert-info">
 
-**:memo: Note:**<br>
+**<i class="material-icons-outlined">edit</i> Note:**<br>
 
 Don't worry about losing your data when exiting. They will be automatically saved!
 
@@ -280,7 +279,7 @@ Steps:
 
 <div markdown="block" class="alert alert-info">
 
-**:memo: Note:**<br>
+**<i class="material-icons-outlined">edit</i> Note:**<br>
 
 * Parameters can be in any order
 * A person will be uniquely identified by his/her personal identification number.
@@ -297,7 +296,7 @@ What a successful `add` command looks like:
 
 <div markdown="block" class="alert alert-success">
 
-**:bulb: Useful Tip:**<br>
+**<i class="material-icons-outlined">lightbulb</i> Useful Tip:**<br>
 
 A person can have a note included (See [addnote](#adding-a-note--addnote) command).
 </div>
@@ -323,7 +322,7 @@ Steps:
 
 <div markdown="block" class="alert alert-success">
 
-**:memo: Tip:**<br>
+**<i class="material-icons-outlined">edit</i> Tip:**<br>
 
 ClinicMate will display their contact information on the left-hand side of the screen and their full notes on the right-hand side, for a more comprehensive view.
 
@@ -337,7 +336,7 @@ Steps:
 
 <div markdown="block" class="alert alert-info">
 
-**:memo: Note:**<br>
+**<i class="material-icons-outlined">edit</i> Note:**<br>
 
 * Only one patient record will be retrieved at any one time.
 * Finds the person with the specified `IC_NUMBER`.
@@ -386,7 +385,7 @@ There might be cases that the `IC_NUMBER` you keyed in is invalid as shown below
 
 <div markdown="block" class="alert alert-info">
 
-**:memo: Note:**<br>
+**<i class="material-icons-outlined">edit</i> Note:**<br>
 * Rules for valid IC_NUMBER are the same as the `find` command.
 * Displays the full note of the person with the specified IC_NUMBER.
 * Does NOT modify the list of persons displayed.
@@ -410,7 +409,7 @@ Example:
 
 <div markdown="block" class="alert alert-info">
 
-**:memo: Note:**<br>
+**<i class="material-icons-outlined">edit</i> Note:**<br>
 * Clears the note display on the left.
 * Does NOT modify the list of persons displayed.
 </div>
@@ -428,7 +427,7 @@ Format: `edit IC_NUMBER [n\NAME] [p\PHONE] [e\EMAIL] [i\IC_NUMBER] [ag\AGE] [s\S
 
 <div markdown="block" class="alert alert-success">
 
-**:bulb: Useful Tip:**<br>
+**<i class="material-icons-outlined">lightbulb</i> Useful Tip:**<br>
 
 Optional fields are indicated by square brackets `[]`.
 
@@ -440,7 +439,7 @@ Steps:
 
 <div markdown="block" class="alert alert-info">
 
-**:memo: Note:**<br>
+**<i class="material-icons-outlined">edit</i> Note:**<br>
 
 * Edits the details of the person with the specified `IC_NUMBER`.
 * The fields to be edited are indicated by the prefixes `n\`, `p\`, `e\`, `i\`, `ag\`, `s\`, `a\`.
@@ -467,7 +466,7 @@ Steps:
 
 <div markdown="block" class="alert alert-info">
 
-**:memo: Note:**<br>
+**<i class="material-icons-outlined">edit</i> Note:**<br>
 
 * Deletes the person with the specified `IC_NUMBER`.
 * The IC_NUMBER refers to the IC number shown in the displayed person list.
@@ -493,7 +492,7 @@ There might be cases that the `IC_NUMBER` you keyed in does not exist in ClinicM
 
 <div markdown="block" class="alert alert-danger">
 
-**:warning: Warning:**<br>
+**<i class="material-icons-outlined">warning</i> Warning:**<br>
 
 `IC_NUMBER` tend to be long. Please make sure that the `IC_NUMBER` you want to delete is correct as we would not be able to recover lost patient information once deleted.
 
@@ -545,7 +544,7 @@ There might be cases that the `IC_NUMBER` you keyed in does not exist in ClinicM
 
 <div markdown="block" class="alert alert-info">
 
-**:memo: Note:**<br>
+**<i class="material-icons-outlined">edit</i> Note:**<br>
 
 * The IC number refers to the IC number shown in the displayed person list. The `IC_NUMBER` **must be the FULL IC NUMBER**.
 * IC number must be valid and currently exist in the database.
@@ -563,7 +562,7 @@ Examples:
 
 <div markdown="block" class="alert alert-success">
 
-**:bulb: Useful Tip:**<br>
+**<i class="material-icons-outlined">lightbulb</i> Useful Tip:**<br>
 
 Users will be able to see specific patient notes on the notes section using the `show` command. (See [show](#changing-the-displayn-note--show) command)
 </div>
@@ -586,6 +585,7 @@ Furthermore, certain edits can cause the ClinicMate to behave in unexpected ways
 </box>
 
 --------------------------------------------------------------------------------------------------------------------
+<div style="page-break-after: always;"></div>
 
 ## FAQ
 
@@ -625,6 +625,8 @@ Furthermore, certain edits can cause the ClinicMate to behave in unexpected ways
 7. **Flexible Find command**: Allow users to be able to find patients by their name, age, email, address, etc.
 
 --------------------------------------------------------------------------------------------------------------------
+<div style="page-break-after: always;"></div>
+
 ## Glossary
 
 ### Definitions of Key Terms
@@ -659,7 +661,7 @@ These descriptions will help you understand the key terms used in ClinicMate.
 
 <div markdown="block" class="alert alert-info">
 
-**:memo: Note:**<br>
+**<i class="material-icons-outlined">edit</i> Note:**<br>
 - If you enter an invalid input for any of the prefixes, you will see an error message in the command box.
   Refer to the error message, check the description for the respective prefix and try the command again! An example of an error message is shown below.
 

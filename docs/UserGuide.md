@@ -497,7 +497,7 @@ There might be cases that the `IC_NUMBER` you keyed in does not exist in ClinicM
 *As doctors, it's essential to document prescriptions and notes for each patient. Simplify this process with the `addnote` command, ensuring efficient and accurate record-keeping.*
 
 
-*General Format*: `addnote IC_NUMBER n\NOTE (-replace)`
+*General Format*: `addnote IC_NUMBER n\NOTE [-replace]`
 
 #### To append notes
 
@@ -536,11 +536,12 @@ There might be cases that the `IC_NUMBER` you keyed in does not exist in ClinicM
 
 **:memo: Note:**<br>
 
-* The IC number refers to the IC number shown in the displayed person list. The IC_NUMBER **must be the FULL IC NUMBER**.
+* The IC number refers to the IC number shown in the displayed person list. The `IC_NUMBER` **must be the FULL IC NUMBER**.
 * IC number must be valid and currently exist in the database.
 * Existing values will be updated to the input values.
 * When adding notes, the new note added will be appended to the current note of the person. i.e. current note is preserved.
 * The `-replace` flag can be used to replace the current note with the new note.
+  * Anything after the `-replace` flag will be ignored. For example, `-replacefdshareh` will be interpreted as `-replace`.
 
 </div>
 

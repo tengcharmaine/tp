@@ -700,7 +700,7 @@ Action     | Format, Examples
 **Add**    | `add n\NAME p\PHONE e\EMAIL i\IC_NUMBER ag\AGE s\SEX a\ADDRESS` <br> e.g., `add n\John Doe p\88888888 e\johndoe@mail.com i\T0123456A ag\12 s\Male a\John street, block 123, #01-01`
 **Clear**  | `clear`
 **Delete** | `delete IC_NUMBER`<br> e.g., `delete T0123456A`
-**Edit**   | `edit IC_NUMBER n\NAME p\PHONE e\EMAIL i\IC_NUMBER ag\AGE s\SEX a\ADDRESS`<br> e.g., `edit T0123456A p\88888888`
+**Edit**   | `edit IC_NUMBER [n\NAME] [p\PHONE] [e\EMAIL] [i\IC_NUMBER] [ag\AGE] [s\SEX] [a\ADDRESS]`<br> e.g., `edit T0123456A p\88888888`
 **Add Note** | `addnote IC_NUMBER n\NOTE [-replace]`<br> e.g., `addnote T0123456A n\Patient has diabetes`<br> e.g., `addnote T0123456A n\Patient has diabetes -replace`
 **Find**   | `find IC_NUMBER`<br> e.g., `find T0123456A`
 **Show**   | `show [IC_NUMBER]`<br> e.g., `show T0123456A` <br> e.g., `show`

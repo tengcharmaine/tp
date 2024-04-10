@@ -566,7 +566,11 @@ Examples:
 
 **<i class="material-icons-outlined">lightbulb</i> Useful Tip:**<br>
 
-Users will be able to see specific patient notes on the notes section using the `show` command. (See [show](#changing-the-displayn-note--show) command)
+Users will be able to see specific patient notes on the notes section using the `show` command. (See [show](#changing-the-displayed-note-show) command)
+
+An alternative to check if the note is updated correctly, use the `find` command. (See [find](#locating-persons-by-ic-number-find) command)
+On the left side of the window, the contact list will be filtered to that specific patient; On the right side of the window, the updated notes of the specific patient will be shown.
+
 </div>
 
 ## Data Files
@@ -618,6 +622,9 @@ Furthermore, certain edits can cause the ClinicMate to behave in unexpected ways
 **Q**: I am not able to directly access the user guide by pressing on the icon in the help window.<br>
 **A**: Linux users might face some difficulties when trying to directly access. Unfortunately, we currently do not have a solution for this. Please access our user guide in the alternative way, which is to copy the URL and pasting it in your web browser.
 
+**Q**: The right side of the window (Notes window) does not display the most updated contact I interacted with.
+**A**: Currently, our implementation of the Notes window is that it will only be changed when you use the `find ` command. No other command changes the content of the Notes window.
+
 --------------------------------------------------------------------------------------------------------------------
 ## Appendix: Planned Enhancements
 
@@ -628,6 +635,7 @@ Furthermore, certain edits can cause the ClinicMate to behave in unexpected ways
 5. **Appointment scheduling**: Implement a feature to track and schedule patient appointments.
 6. **Notes tagging and labelling**: Allow users to tag and label different types of notes. For example, a tag for patient's diagnosis and another for their medication.
 7. **Flexible Find command**: Allow users to be able to find patients by their name, age, email, address, etc.
+8. **Updated Notes window**: Update the Notes window to display the most updated note of the patient the user interacted with last.
 
 --------------------------------------------------------------------------------------------------------------------
 <div style="page-break-after: always;"></div>

@@ -232,7 +232,7 @@ Navigation and Assistance Functions in ClinicMate serve to enhance user experien
 1. Enter `help` into the command box. A help window should pop up.
 2. You can access help by either:
 - Copying our User Guide's link through the **Copy URL** button.
-- Directing accessing our website through pressing on the icon.
+- Directly accessing our website through pressing on the icon.
 
 ### Clearing all entries : `clear`
 *Transitioning to a new clinic? Easily clear existing data from ClinicMate with a simple `clear` command!*
@@ -614,6 +614,9 @@ Furthermore, certain edits can cause the ClinicMate to behave in unexpected ways
 
 **Q**: Can I use ClinicMate on multiple computers?<br>
 **A**: Yes, you can use ClinicMate on multiple computers. Simply copy the ClinicMate `.jar` file and the `clinicmate.json` data file to the other computer and run the application as usual.
+
+**Q**: I am not able to directly access the user guide by pressing on the icon in the help window.<br>
+**A**: Linux users might face some difficulties when trying to directly access. Unfortunately, we currently do not have a solution for this. Please access our user guide in the alternative way, which is to copy the URL and pasting it in your web browser.
 
 --------------------------------------------------------------------------------------------------------------------
 ## Appendix: Planned Enhancements

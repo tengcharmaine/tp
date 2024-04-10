@@ -32,6 +32,7 @@ Bid farewell to cumbersome paperwork and embrace the efficiency of ClinicMate in
 
 <div style="page-break-after: always;"></div>
 
+
 <!-- * Table of Contents -->
 <page-nav-print />
 
@@ -120,6 +121,7 @@ In this section, you will learn how to set up ClinicMate on your computer.
 6. Great job! You have successfully set up ClinicMate on your computer. You are now ready to learn about the **GUI** of ClinicMate!
 
 --------------------------------------------------------------------------------------------------------------------
+<div style="page-break-after: always;"></div>
 
 ## GUI Overview
 

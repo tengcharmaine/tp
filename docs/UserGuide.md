@@ -494,7 +494,7 @@ Examples:
 
 ![successful_deletemessage](images/deletemessage.png)
 
-**Possible Errors that you might encounter:**
+**Possible Error that you might encounter:**
 
 There might be cases that the `IC_NUMBER` you keyed in does not exist in ClinicMate as shown below. Do check if the `IC_NUMBER` is registered before trying to delete it.
 ![deletemessageerror.png](images/DME.png)

@@ -331,7 +331,7 @@ An example is shown below:
 </div>
 
 Examples:
-* `addnote T0123456A n\Patient has diabetes` Adds a note `Patient has diabetes` to the person with the IC number `T0123456A` in ClinicMate.
+* `ddnote T0123456A n\Patient has diabetes` Adds a note `Patient has diabetes` to the person with the IC number `T0123456A` in ClinicMate.
 * `addnote T0123456A n\Patient has diabetes -replace` Replaces the note of the person with the IC number `T0123456A` with `Patient has diabetes`.
 
 ### Listing all entries : `list`
@@ -667,17 +667,20 @@ Furthermore, certain edits can cause the ClinicMate to behave in unexpected ways
 **Q**: I am not able to directly access the user guide by pressing on the icon in the help window.<br>
 **A**: Linux users might face some difficulties when trying to directly access. Unfortunately, we currently do not have a solution for this. Please access our user guide in the alternative way, which is to copy the URL and pasting it in your web browser.
 
-**Q**: The right side of the window (Notes window) does not display the most updated contact I interacted with.
+**Q**: The right side of the window (Notes window) does not display the most updated contact I interacted with.<br>
 **A**: Currently, our implementation of the Notes window is that it will only be changed when you use the `find ` command. No other command changes the content of the Notes window.
 
 **Q**: The notes display is not showing the full note. Can I expand the display?<br>
-**A**: ClinicMate does not currently support expanding the notes display. However, you can scroll through the notes using the scrollbar provided.
+**A**: ClinicMate does not currently support expanding the notes display. However, you can scroll through the notes both vertically and horizontally using the scrollbar provided.
 
 **Q**: Some of my patient information is being truncated in the display. How can I view the full information?<br>
 **A**: Unfortunately, ClinicMate displays patient information in a fixed format, including sections such as email and note, in a fixed format that might cause long entries to be truncated (eg. An excessively long name would cause the name, age and gender to be truncated). This will be fixed in a future release.
 
 **Q**: Long lines of notes in the patient list are being unevenly truncated. Is this normal?<br>
-**A**: Yes, this is a known issue. You can view the full using the `show` command.
+**A**: Yes, this is a known issue. You can still view the full note using the `show` command through the note display.
+
+**Q**: Can I use `addnote` repeatedly with the same message?<br>
+**A**: Yes! ClinicMate does not restrict the number of times you can use the `addnote` command with the same message.
 
 --------------------------------------------------------------------------------------------------------------------
 ## Appendix: Planned Enhancements

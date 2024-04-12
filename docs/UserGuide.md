@@ -65,7 +65,7 @@ Before we dive into the details, let's acquaint ourselves with the annotations y
 Throughout this guide, you'll also encounter various text styles. Here's what they represent:
 
 - _Used to illustrate possible scenarios for utilizing a feature (mostly in feature sections)._
-- [Represents hyperlinks that you can click to navigate to another section of this user guide or to an external website.]()
+- [Represents hyperlinks that you can click to navigate to another section of this user guide or to an external website.](https://github.com/AY2324S2-CS2103T-F14-2/tp)
 - `Highlights specific elements such as file names, commands, or any text that should be treated as code.`
 - > Provides information about the parameters that you can input into a command.
 
@@ -210,7 +210,7 @@ This section gives you a step-by-step guide on how to use ClinicMate's feature. 
 * Words in `UPPER_CASE` are the parameters to be supplied by the user.<br>
   e.g. in `add n\NAME`, `NAME` is a parameter which can be used as `add n\John Doe`.
 
-* Parameters with a prefix can be in any order.<br>
+* Parameters that have a slash prefix (1 or more letters followed by a `\`) can be in any order.<br>
   e.g. if the command specifies `n\NAME i\IC_NUMBER`, `i\IC_NUMBER n\NAME` is also acceptable.
 
 * Extraneous parameters for commands that do not take in parameters (such as `help`, `list`, `exit` and `clear`) will be ignored.<br>
@@ -317,6 +317,23 @@ You might encounter error messages due to the lack of familiarity with the appli
 An example is shown below:
 ![ErrorForAdd.png](images/ErrorForAdd.png)
 
+* Adds a note to the person with the specified `IC_NUMBER`. The `IC_NUMBER` refers to the IC number shown in the displayed person list. The `IC_NUMBER` **must be the FULL IC NUMBER**.
+* IC number must be valid and currently exist in the database.
+* Existing values will be updated to the input values.
+* When adding notes, the new note added will be appended to the current note of the person. i.e. current note is preserved.
+* The `-replace` flag can be used to replace the current note with the new note. 
+* Notes will not wrap around. Notes added with separate uses of the `addnote` command will appear as separate lines.
+
+<div markdown="block" class="alert alert-danger">
+
+**:warning: Warning:**<br>
+- In the current version of the app, having more than one `n\` in the command might cause undefined behaviour. Please avoid having `n\` in the note body.
+</div>
+
+Examples:
+* `ddnote T0123456A n\Patient has diabetes` Adds a note `Patient has diabetes` to the person with the IC number `T0123456A` in ClinicMate.
+* `addnote T0123456A n\Patient has diabetes -replace` Replaces the note of the person with the IC number `T0123456A` with `Patient has diabetes`.
+
 ### Listing all entries : `list`
 *Looking for a comprehensive overview of your patient entries in ClinicMate? Utilize the `list` command for quick access to all your patient records.*
 
@@ -350,8 +367,8 @@ Steps:
 
 * Only one patient record will be retrieved at any one time.
 * Finds the person with the specified `IC_NUMBER`.
-* The IC_NUMBER refers to the IC number shown in the displayed person list.
-* The IC_NUMBER **must be the FULL IC NUMBER**.
+* The `IC_NUMBER` refers to the IC number shown in the displayed person list.
+* The `IC_NUMBER` **must be the FULL IC NUMBER**.
 * The search is case-insensitive. e.g `t0123456a` will match `T0123456A`.
 * Only the IC number is searched.
 * Only full IC number will be matched e.g. `T0123456A` will not match `T0123A`.
@@ -369,7 +386,7 @@ What successful `find` commands look like:
 >What this means: There is no one matching the `IC_NUMBER` in the list of patients in ClinicMate.
 
 
-**Possible Errors that you might encounter:**
+**Possible errors that you might encounter:**
 
 There might be cases that the `IC_NUMBER` you keyed in is invalid as shown below. Do check if the `IC_NUMBER` is in the correct format.
 ![findmessageerror.png](images/FME.png)
@@ -420,14 +437,14 @@ Example:
 <div markdown="block" class="alert alert-info">
 
 **<i class="material-icons-outlined">edit</i> Note:**<br>
-* Clears the note display on the left.
+* Clears the note display on the right.
 * Does NOT modify the list of persons displayed.
 </div>
 
 Example:
 * `show` clears any note that was being displayed on the right.
 
-**Possible Errors that you might encounter:**
+**Possible errors that you might encounter:**
 Refer to `find`.
 
 ### Editing a person : `edit`
@@ -479,8 +496,8 @@ Steps:
 **<i class="material-icons-outlined">edit</i> Note:**<br>
 
 * Deletes the person with the specified `IC_NUMBER`.
-* The IC_NUMBER refers to the IC number shown in the displayed person list.
-* The IC_NUMBER **must be the FULL IC NUMBER**.
+* The `IC_NUMBER` refers to the IC number shown in the displayed person list.
+* The `IC_NUMBER` **must be the FULL IC NUMBER**.
 * The search is case-insensitive. e.g `t0123456a` will match `T0123456A`.
 * Only the IC number is searched.
 * Only full IC number will be matched e.g. `T0123456A` will not match `T0123A`.
@@ -489,12 +506,12 @@ Steps:
 </div>
 
 Examples:
-* `delete T0123456A` deletes `John Doe` who has `IC_NUMBER` of `T0123456A` from ClinicMate.
+* `delete T0123456A` deletes `John Doe` who has IC number `T0123456A` from ClinicMate.
 
 What a successful `delete` message looks like:
 ![successful_deletemessage](images/deletemessage.png)
 
-**Possible Errors that you might encounter:**
+**Possible errors that you might encounter:**
 
 There might be cases that the `IC_NUMBER` you keyed in does not exist in ClinicMate as shown below. Do check if the `IC_NUMBER` is registered before before trying to delete it.
 ![deletemessageerror.png](images/DME.png)
@@ -539,7 +556,7 @@ There might be cases that the `IC_NUMBER` you keyed in does not exist in ClinicM
 
 <div markdown="block" class="alert alert-info">
 
-**:memo: Note:**<br>
+**<i class="material-icons-outlined">edit</i> Note:**<br>
 
 * The IC number refers to the IC number shown in the displayed person list. The IC_NUMBER **must be the FULL IC NUMBER**.
 * IC number must be valid and currently exist in the database.
@@ -650,8 +667,20 @@ Furthermore, certain edits can cause the ClinicMate to behave in unexpected ways
 **Q**: I am not able to directly access the user guide by pressing on the icon in the help window.<br>
 **A**: Linux users might face some difficulties when trying to directly access. Unfortunately, we currently do not have a solution for this. Please access our user guide in the alternative way, which is to copy the URL and pasting it in your web browser.
 
-**Q**: The right side of the window (Notes window) does not display the most updated contact I interacted with.
+**Q**: The right side of the window (Notes window) does not display the most updated contact I interacted with.<br>
 **A**: Currently, our implementation of the Notes window is that it will only be changed when you use the `find ` command. No other command changes the content of the Notes window.
+
+**Q**: The notes display is not showing the full note. Can I expand the display?<br>
+**A**: ClinicMate does not currently support expanding the notes display. However, you can scroll through the notes both vertically and horizontally using the scrollbar provided.
+
+**Q**: Some of my patient information is being truncated in the display. How can I view the full information?<br>
+**A**: Unfortunately, ClinicMate displays patient information in a fixed format, including sections such as email and note, in a fixed format that might cause long entries to be truncated (eg. An excessively long name would cause the name, age and gender to be truncated). This will be fixed in a future release.
+
+**Q**: Long lines of notes in the patient list are being unevenly truncated. Is this normal?<br>
+**A**: Yes, this is a known issue. You can still view the full note using the `show` command through the note display.
+
+**Q**: Can I use `addnote` repeatedly with the same message?<br>
+**A**: Yes! ClinicMate does not restrict the number of times you can use the `addnote` command with the same message.
 
 --------------------------------------------------------------------------------------------------------------------
 ## Appendix: Planned Enhancements
@@ -689,7 +718,7 @@ These descriptions will help you understand the key terms used in ClinicMate.
 | **GUI**              | GUI, or Graphical User Interface, facilitates user interaction with software through visual elements like icons, buttons, and windows, providing a more intuitive alternative to text-based commands.                |
 | **JAR**              | JAR, short for Java Archive, represents a package file format used to bundle multiple Java class files, along with associated metadata and resources, into a single file for distribution purposes.                  |
 | **JSON**             | JSON, standing for JavaScript Object Notation, serves as a lightweight data interchange format that is human-readable and easy for machines to parse, commonly utilized in web applications and configuration files. |
-| **Parameter**        | A parameter resembles a field in a form that requires input. In the command `edit S1234567A ag\AGE nNAME`, `AGE` and `NAME` are parameters within the command.                                                       |
+| **Parameter**        | A parameter resembles a field in a form that requires input. In the command `edit S1234567A ag\AGE n\NAME`, `AGE` and `NAME` are parameters within the command.                                                      |
 | **Prefix**           | A prefix acts as a keyword used to identify a parameter. In the command `edit S1234567A ag\AGE n\NAME`, `ag\` and `n\` function as prefixes.                                                                         |
 
 
@@ -697,19 +726,19 @@ These descriptions will help you understand the key terms used in ClinicMate.
 
 | Parameter | Description                  | Constraints                                                                                                                         |
 |-----------|------------------------------|-------------------------------------------------------------------------------------------------------------------------------------|
-| NAME      | Name of the patient.         | Only contain alphanumeric characters and spaces, and should not be blank. Maximum of 100 characters (excluding spaces).             |
-| PHONE     | Phone number of the patient. | Only contain numbers, be at least 3 digits. Should not be blank.                                          |
-| EMAIL     | Email of the patient.        | Should be in the format of [`local-part@domain`](#email-format-description) and should not be blank.                                |
-| IC_NUMBER | IC number of the patient.    | Case insensitive and should not be blank. It should start with one letter (S, F, G or M), followed by 7 digits and 1 letter behind. |
-| AGE       | Age of the patient.          | Only contain numbers, and should not be blank.                                                                                      |
-| SEX       | Sex of the patient.          | Case insensitive and should not be blank. Only accepts `m`, `f`, `M`, `F` as inputs.                                                |
-| ADDRESS   | Address of the patient.      | Case insensitive and should not be blank.                                                                                           |
-| NOTE      | Note of the patient          | Case insensitive and should not be blank.                                                                                           |
+| `NAME`      | Name of the patient.         | Only contain alphanumeric characters and spaces, and should not be blank. Maximum of 100 characters (excluding spaces).             |
+| `PHONE`     | Phone number of the patient. | Only contain numbers, be at least 3 digits. Should not be blank.                                          |
+| `EMAIL`     | Email of the patient.        | Should be in the format of [`local-part@domain`](#email-format-description) and should not be blank.                                |
+| `IC_NUMBER` | IC number of the patient.    | Case insensitive and should not be blank. It should start with one letter (S, F, G or M), followed by 7 digits and 1 letter behind. |
+| `AGE`       | Age of the patient.          | Only contain numbers, and should not be blank.                                                                                      |
+| `SEX`       | Sex of the patient.          | Case insensitive and should not be blank. Only accepts `m`, `f`, `M`, `F` as inputs.                                                |
+| `ADDRESS`   | Address of the patient.      | Case insensitive and should not be blank.                                                                                           |
+| `NOTE`      | Note of the patient          | Case insensitive and should not be blank.                                                                                           |
 
 
 <div markdown="block" class="alert alert-info">
 
-**:memo: Note:**<br>
+**<i class="material-icons-outlined">edit</i> Note:**<br>
 - Constraints are designed to be less restrictive to accommodate to a wide range of user inputs.
 - Instances include having phone numbers with less than 3 digits, or names with special characters.
 

@@ -30,10 +30,13 @@ ClinicMate is a desktop application featuring a **Command Line Interface (CLI)**
 
 Bid farewell to cumbersome paperwork and embrace the efficiency of ClinicMate in organizing your clinic's patient data.
 
+<div style="page-break-after: always;"></div>
+
 
 <!-- * Table of Contents -->
 <page-nav-print />
 
+<div style="page-break-after: always;"></div>
 
 # Guide Usage
 
@@ -43,25 +46,21 @@ Before we dive into the details, let's acquaint ourselves with the annotations y
 
 <div markdown="block" class="alert alert-success">
 
-**:bulb: Useful Tip:**<br>
-
+**<i class="material-icons-outlined">lightbulb</i> Useful Tip:**<br>
 - Provides additional insights and tips to enhance your ClinicMate experience.
 </div>
 
 <div markdown="block" class="alert alert-info">
 
-**:memo: Note:**<br>
+**<i class="material-icons-outlined">edit</i> Note:**<br>
 - Provides valuable additional details for using ClinicMate effectively.
-
 </div>
 
 <div markdown="block" class="alert alert-danger">
 
-**:warning: Warning:**<br>
+**<i class="material-icons-outlined">warning</i> Warning:**<br>
 - Alerts you to potential pitfalls or issues to be mindful of when using ClinicMate.
 </div>
-
-<div style="page-break-after: always;"></div><br/>
 
 Throughout this guide, you'll also encounter various text styles. Here's what they represent:
 
@@ -72,6 +71,7 @@ Throughout this guide, you'll also encounter various text styles. Here's what th
 
 Now that you're familiar with the annotations and text styles, we will give you a tour on how to navigate this user guide based on your level of expertise.
 
+<div style="page-break-after: always;"></div>
 
 ## Quick start
 
@@ -111,7 +111,7 @@ In this section, you will learn how to set up ClinicMate on your computer.
 
 <div markdown="block" class="alert alert-danger">
 
-**:warning: Warning:**<br>
+**<i class="material-icons-outlined">warning</i> Warning:**<br>
 - You may notice that a new folder named `data` is newly created. This folder contains the data file for ClinicMate.
 - Do not delete this folder or its contents as it contains your patient data.
 </div>
@@ -121,6 +121,7 @@ In this section, you will learn how to set up ClinicMate on your computer.
 6. Great job! You have successfully set up ClinicMate on your computer. You are now ready to learn about the **GUI** of ClinicMate!
 
 --------------------------------------------------------------------------------------------------------------------
+<div style="page-break-after: always;"></div>
 
 ## GUI Overview
 
@@ -138,7 +139,7 @@ The GUI consists of the following components:
 
 <div markdown="block" class="alert alert-success">
 
-**:bulb: Useful Tip:**<br>
+**<i class="material-icons-outlined">lightbulb</i> Useful Tip:**<br>
 
 - To maximise your viewing experience, opt for full-screen mode in ClinicMate!
 </div>
@@ -186,7 +187,7 @@ But what about the `[]` around `-replace`? Here's more about it:
 | None | Indicates a mandatory parameter | `n\NOTE` | The `n\NOTE` parameter is mandatory and must be included in the command. |
 
 
-
+<div style="page-break-after: always;"></div>
 
 --------------------------------------------------------------------------------------------------------------------
 
@@ -203,7 +204,7 @@ This section gives you a step-by-step guide on how to use ClinicMate's feature. 
 
 <div markdown="block" class="alert alert-info">
 
-**:memo: Note:**<br>
+**<i class="material-icons-outlined">edit</i> Note:**<br>
 
 * Words in `UPPER_CASE` are the parameters to be supplied by the user.<br>
   e.g. in `add n\NAME`, `NAME` is a parameter which can be used as `add n\John Doe`.
@@ -231,7 +232,7 @@ Navigation and Assistance Functions in ClinicMate serve to enhance user experien
 1. Enter `help` into the command box. A help window should pop up.
 2. You can access help by either:
 - Copying our User Guide's link through the **Copy URL** button.
-- Directing accessing our website through pressing on the icon.
+- Directly accessing our website through pressing on the icon.
 
 ### Clearing all entries : `clear`
 *Transitioning to a new clinic? Easily clear existing data from ClinicMate with a simple `clear` command!*
@@ -245,7 +246,7 @@ Navigation and Assistance Functions in ClinicMate serve to enhance user experien
 
 <div markdown="block" class="alert alert-danger">
 
-**:warning: Warning:**<br>
+**<i class="material-icons-outlined">warning</i> Warning:**<br>
 `clear` is a one-time deletion of all of your entries in ClinicMate. Please use it with consideration and care. You will not be able to retrieve any information back once command has been called.
 </div>
 
@@ -262,7 +263,7 @@ Navigation and Assistance Functions in ClinicMate serve to enhance user experien
 
 <div markdown="block" class="alert alert-info">
 
-**:memo: Note:**<br>
+**<i class="material-icons-outlined">edit</i> Note:**<br>
 
 Don't worry about losing your data when exiting. They will be automatically saved!
 
@@ -280,7 +281,7 @@ Steps:
 
 <div markdown="block" class="alert alert-info">
 
-**:memo: Note:**<br>
+**<i class="material-icons-outlined">edit</i> Note:**<br>
 
 * Parameters can be in any order
 * A person will be uniquely identified by his/her personal identification number.
@@ -297,7 +298,7 @@ What a successful `add` command looks like:
 
 <div markdown="block" class="alert alert-success">
 
-**:bulb: Useful Tip:**<br>
+**<i class="material-icons-outlined">lightbulb</i> Useful Tip:**<br>
 
 A person can have a note included (See [addnote](#adding-a-note--addnote) command).
 </div>
@@ -321,7 +322,13 @@ Steps:
 ### Locating persons by IC number: `find`
 *Today, your regular patient arrives at the clinic, and you need to retrieve her record. However, with a multitude of contacts, locating hers seems daunting. Fear not! Utilize the find command to swiftly pinpoint the specific patient you're searching for using their `IC_NUMBER`.*
 
-> ClinicMate will display their contact information on the left-hand side of the screen and their full notes on the right-hand side, for a more comprehensive view.
+<div markdown="block" class="alert alert-success">
+
+**<i class="material-icons-outlined">lightbulb</i> Useful Tip:**<br>
+
+ClinicMate will display their contact information on the left-hand side of the screen and their full notes on the right-hand side, for a more comprehensive view.
+
+</div>
 
 Format: `find IC_NUMBER`
 
@@ -331,7 +338,7 @@ Steps:
 
 <div markdown="block" class="alert alert-info">
 
-**:memo: Note:**<br>
+**<i class="material-icons-outlined">edit</i> Note:**<br>
 
 * Only one patient record will be retrieved at any one time.
 * Finds the person with the specified `IC_NUMBER`.
@@ -346,8 +353,13 @@ Steps:
 Examples:
 * `find T0123456A` returns `John Doe`.
 
-What a successful `find` command looks like:
+What successful `find` commands look like:
 ![successful_find](images/findmessage.png)
+>What this means: There is a person matching the `IC_NUMBER` in the list of patients in ClinicMate.
+
+![successful_find2](images/successful_find2.png)
+>What this means: There is no one matching the `IC_NUMBER` in the list of patients in ClinicMate.
+
 
 **Possible Errors that you might encounter:**
 
@@ -375,7 +387,7 @@ There might be cases that the `IC_NUMBER` you keyed in is invalid as shown below
 
 <div markdown="block" class="alert alert-info">
 
-**:memo: Note:**<br>
+**<i class="material-icons-outlined">edit</i> Note:**<br>
 * Rules for valid IC_NUMBER are the same as the `find` command.
 * Displays the full note of the person with the specified IC_NUMBER.
 * Does NOT modify the list of persons displayed.
@@ -399,7 +411,7 @@ Example:
 
 <div markdown="block" class="alert alert-info">
 
-**:memo: Note:**<br>
+**<i class="material-icons-outlined">edit</i> Note:**<br>
 * Clears the note display on the left.
 * Does NOT modify the list of persons displayed.
 </div>
@@ -417,7 +429,7 @@ Format: `edit IC_NUMBER [n\NAME] [p\PHONE] [e\EMAIL] [i\IC_NUMBER] [ag\AGE] [s\S
 
 <div markdown="block" class="alert alert-success">
 
-**:bulb: Useful Tip:**<br>
+**<i class="material-icons-outlined">lightbulb</i> Useful Tip:**<br>
 
 Optional fields are indicated by square brackets `[]`.
 
@@ -429,7 +441,7 @@ Steps:
 
 <div markdown="block" class="alert alert-info">
 
-**:memo: Note:**<br>
+**<i class="material-icons-outlined">edit</i> Note:**<br>
 
 * Edits the details of the person with the specified `IC_NUMBER`.
 * The fields to be edited are indicated by the prefixes `n\`, `p\`, `e\`, `i\`, `ag\`, `s\`, `a\`.
@@ -456,7 +468,7 @@ Steps:
 
 <div markdown="block" class="alert alert-info">
 
-**:memo: Note:**<br>
+**<i class="material-icons-outlined">edit</i> Note:**<br>
 
 * Deletes the person with the specified `IC_NUMBER`.
 * The IC_NUMBER refers to the IC number shown in the displayed person list.
@@ -474,7 +486,6 @@ Examples:
 What a successful `delete` message looks like:
 ![successful_deletemessage](images/deletemessage.png)
 
-<<<<<<< HEAD
 **Possible Errors that you might encounter:**
 
 There might be cases that the `IC_NUMBER` you keyed in does not exist in ClinicMate as shown below. Do check if the `IC_NUMBER` is registered before before trying to delete it.
@@ -482,7 +493,7 @@ There might be cases that the `IC_NUMBER` you keyed in does not exist in ClinicM
 
 <div markdown="block" class="alert alert-danger">
 
-**:warning: Warning:**<br>
+**<i class="material-icons-outlined">warning</i> Warning:**<br>
 
 `IC_NUMBER` tend to be long. Please make sure that the `IC_NUMBER` you want to delete is correct as we would not be able to recover lost patient information once deleted.
 
@@ -545,11 +556,18 @@ There might be cases that the `IC_NUMBER` you keyed in does not exist in ClinicM
 
 <div markdown="block" class="alert alert-info">
 
-**:memo: Usage of `-replace` flag:**<br>
+**<i class="material-icons-outlined">edit</i> Note:**<br>
 
-* It can be used to clear the existing note and replace it with the new note.
-* It must only be used once.
-* It must only be used at the end of the command.
+* The IC number refers to the IC number shown in the displayed person list. The `IC_NUMBER` **must be the FULL IC NUMBER**.
+* IC number must be valid and currently exist in the database.
+* Existing values will be updated to the input values.
+* When adding notes, the new note added will be appended to the current note of the person. i.e. current note is preserved.
+
+
+* The `-replace` flag can be used to replace the current note with the new note.
+  * It must only be used once.
+  * It must only be used at the end of the command.
+  * Anything after the `-replace` flag will be ignored. For example, `-replacefdshareh` will be interpreted as `-replace`.
 
 </div>
 
@@ -560,9 +578,13 @@ Examples:
 
 <div markdown="block" class="alert alert-success">
 
-**:bulb: Useful Tip:**<br>
+**<i class="material-icons-outlined">lightbulb</i> Useful Tip:**<br>
 
-Users will be able to see specific patient notes on the notes section using the `show` command. (See [show](#changing-the-displayn-note--show) command)
+Users will be able to see specific patient notes on the notes section using the `show` command. (See [show](#changing-the-displayed-note-show) command)
+
+An alternative to check if the note is updated correctly, use the `find` command. (See [find](#locating-persons-by-ic-number-find) command)
+On the left side of the window, the contact list will be filtered to that specific patient; On the right side of the window, the updated notes of the specific patient will be shown.
+
 </div>
 
 ## Data Files
@@ -583,6 +605,7 @@ Furthermore, certain edits can cause the ClinicMate to behave in unexpected ways
 </box>
 
 --------------------------------------------------------------------------------------------------------------------
+<div style="page-break-after: always;"></div>
 
 ## FAQ
 
@@ -613,6 +636,15 @@ Furthermore, certain edits can cause the ClinicMate to behave in unexpected ways
 **Q**: Is there a way to import patient data into ClinicMate from other software?<br>
 **A**: ClinicMate does not currently support direct import of patient data from other software. However, you can manually enter patient data using the `add` command.
 
+**Q**: Can I use ClinicMate on multiple computers?<br>
+**A**: Yes, you can use ClinicMate on multiple computers. Simply copy the ClinicMate `.jar` file and the `clinicmate.json` data file to the other computer and run the application as usual.
+
+**Q**: I am not able to directly access the user guide by pressing on the icon in the help window.<br>
+**A**: Linux users might face some difficulties when trying to directly access. Unfortunately, we currently do not have a solution for this. Please access our user guide in the alternative way, which is to copy the URL and pasting it in your web browser.
+
+**Q**: The right side of the window (Notes window) does not display the most updated contact I interacted with.
+**A**: Currently, our implementation of the Notes window is that it will only be changed when you use the `find ` command. No other command changes the content of the Notes window.
+
 --------------------------------------------------------------------------------------------------------------------
 ## Appendix: Planned Enhancements
 
@@ -621,13 +653,18 @@ Furthermore, certain edits can cause the ClinicMate to behave in unexpected ways
 3. **Custom fields**: Allow users to customize fields for patient records to suit their clinic's requirements.
 4. **Date of Birth**: Add a field for date of birth to patient records for better age calculation.
 5. **Appointment scheduling**: Implement a feature to track and schedule patient appointments.
-6. **Support for patient identification**: Allow users to use other methods to identify patients, such as passport numbers, names or driving license numbers.
-7. **Add Note features**: 
+6. **Flexible Find command**: Allow users to be able to find patients by their name, age, email, address, etc.
+7. **Updated Notes window**: Update the Notes window to display the most updated note of the patient the user interacted with last.
+8. **Support for patient identification**: Allow users to use other methods to identify patients, such as passport numbers, names or driving license numbers.
+9. **Add Note features**: 
 - Implement a feature to allow users to edit and delete specific notes. 
 - Allow users to know whose note they are viewing, by displaying the patient's name or IC number.
 - Implement a feature for users to have the option of hiding the notes section in the patient's profile card.
+- Allow users to tag and label different types of notes. For example, a tag for patient's diagnosis and another for their medication.
 
 --------------------------------------------------------------------------------------------------------------------
+<div style="page-break-after: always;"></div>
+
 ## Glossary
 
 ### Definitions of Key Terms
@@ -671,7 +708,7 @@ These descriptions will help you understand the key terms used in ClinicMate.
 
 <div markdown="block" class="alert alert-info">
 
-**:memo: Note:**<br>
+**<i class="material-icons-outlined">edit</i> Note:**<br>
 - If you enter an invalid input for any of the prefixes, you will see an error message in the command box.
   Refer to the error message, check the description for the respective prefix and try the command again! An example of an error message is shown below.
 
@@ -697,7 +734,7 @@ The email format is `local-part@domain`.
 
 Action     | Format, Examples
 -----------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------
-**Add**    | `add n\NAME p\PHONE e\EMAIL i\IC_NUMBER ag\AGE s\SEX a\ADDRESS` <br> e.g., `add n\John Doe p\88888888 e\johndoe@mail.com i\T0123456A ag\12 s\Male a\John street, block 123, #01-01`
+**Add**    | `add n\NAME p\PHONE e\EMAIL i\IC_NUMBER ag\AGE s\SEX a\ADDRESS` <br> e.g., `add n\John Doe p\88888888 e\johndoe@mail.com i\T0123456A ag\12 s\M a\John street, block 123, #01-01`
 **Clear**  | `clear`
 **Delete** | `delete IC_NUMBER`<br> e.g., `delete T0123456A`
 **Edit**   | `edit IC_NUMBER [n\NAME] [p\PHONE] [e\EMAIL] [i\IC_NUMBER] [ag\AGE] [s\SEX] [a\ADDRESS]`<br> e.g., `edit T0123456A p\88888888`

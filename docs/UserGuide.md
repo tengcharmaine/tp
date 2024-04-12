@@ -7,7 +7,7 @@
 # Welcome to ClinicMate!
 *Your solution to streamlining patient contact management.*
 
-Greetings to esteemed healthcare professionals! Are you still grappling with traditional methods to manage patient details and jot down doctor's notes on paper? Are you overwhelmed by the challenge of organizing all your clinic's patient data?
+Greetings to esteemed General Practitioners (GPs)! Are you still grappling with traditional methods to manage patient details and take patients' histories? Are you overwhelmed by the challenge of organizing all your clinic's patient data?
 
 Fret not! **ClinicMate** is your solution.
 
@@ -21,7 +21,7 @@ Here is a **quick overview** of how ClinicMate streamlines contact management:
 - ***Navigation and Assistance Functions***: Reset the interface using `clear`, access comprehensive guidance through `help`, and `exit` ClinicMate with ease. 
 
 
-- ***Data Management Functions***: Easily input, modify, and remove patient details through `add`, `edit` and `delete`. View detailed a comprehensive lists of patient information effortlessly with `lists` and `show` command. Effortlessly search for specific patient records with `find`.
+- ***Data Management Functions***: Easily input, modify, and remove patient details through `add`, `edit` and `delete`. View a detailed and comprehensive list of patient information effortlessly with `list` and `show` command. Effortlessly search for specific patient records with `find`.
 
 
 - ***Note-Taking Function***: Use `addnote` to quickly append relevant notes to patient records for future reference.
@@ -82,10 +82,12 @@ In this section, you will learn how to set up ClinicMate on your computer.
 1. Open Command Prompt (for Windows) or Terminal (for MacOS and Linux) on your desktop.
 2. Run the command `java -version` to check if you have Java 11 or above installed in your computer.
 * Assuming that you have Java installed in your computer,
-  * If you have a Windows, in this case the Java version is 19.0.2.
+  * If you are running Windows, this is what you should see after running the command.
+  * Over here, the Java version is 19.0.2, which means that Java 19 is installed.
      ![javaWindows](images/javaWindows.png)
   
-  * If you have a Mac,  in this case the Java version is 11.0.19.
+  * If you are running MacOS, this is what you should see after running the command.
+  * Over here, the Java version is 11.0.19, which means that Java 11 is installed.
      ![javaMac](images/javaMac.png)
 
 3. If you do not have Java 11 or above installed in your computer, download it from [here](https://www.oracle.com/java/technologies/javase-jdk11-downloads.html).
@@ -95,10 +97,10 @@ In this section, you will learn how to set up ClinicMate on your computer.
 2. You will see this screen after clicking on the link above.
    * Click on the `clinicmate.jar` file to download it.
 ![ClinicMateJar.png](images/ClinicMateJar.png)
-3. Move the file to the folder you want to use as the _home folder_ for your ClinicMate.
-   * For example, if you want to use the `Documents` folder as the _home folder_ for your ClinicMate, create a new folder named `clinicmate` in the `Documents` folder.
-   * You can then move the `.jar` file to a folder named `clinicmate` in your `Documents` folder.
-
+3. Move the file to an empty folder that you want to use for your ClinicMate.
+    * For example, you can create an empty folder named `clinicmate` in your `Documents` folder.
+    * You can then move the `.jar` file to that folder named `clinicmate` in your `Documents` folder.
+    
 ### Running the application
 1. Open Command Prompt (for Windows) or Terminal (for MacOS and Linux) on your desktop.
 2. Run the `cd` command into the folder you put the jar file in.
@@ -112,12 +114,12 @@ In this section, you will learn how to set up ClinicMate on your computer.
 
 **<i class="material-icons-outlined">warning</i> Warning:**<br>
 
-- If you do not see a sample data when running `java -jar clinicmate.jar`, that means you have an existing datafile which needs to be remove.
+- If you do not see sample data when running `java -jar clinicmate.jar`, that means you have an existing data file which needs to be removed.
 - You may notice that a new folder named `data` is newly created. This folder contains the data file for ClinicMate.
 - Do not delete this folder or its contents as it contains your patient data.
 </div>
 
-5. You should see the following screen after running the command.
+5. You should see the following screen after running the `java -jar clinicmate.jar` command.
 ![Ui](images/updatedUI.png)
 6. Great job! You have successfully set up ClinicMate on your computer. You are now ready to learn about the **GUI** of ClinicMate!
 
@@ -131,12 +133,12 @@ ClinicMate features a Graphical User Interface (GUI) that provides a seamless us
 The GUI consists of the following components:
 ![GUI.png](images/GUIFeatures.png)
 
-| **Number** | **Component**       | **Description**                                              |
-|------------|---------------------|--------------------------------------------------------------|
-| 1          | Command Box         | Enter commands here to interact with ClinicMate.             |
-| 2          | Message Box         | Displays the output of commands executed in the Command Box. |
-| 3          | Patient List Panel  | Displays the list of patients in ClinicMate.                 |
-| 4          | Patient Notes Panel | Displays the notes of the patient that you are viewing.      |
+| **Number** | **Component**       | **Description**                                                  |
+|------------|---------------------|------------------------------------------------------------------|
+| 1          | Command Box         | Enter commands here to interact with ClinicMate.                 |
+| 2          | Message Box         | Displays the output of commands executed in the Command Box.     |
+| 3          | Patient List Panel  | Displays the list of patients in ClinicMate.                     |
+| 4          | Patient Notes Panel | Displays the notes of the patient that you are viewing any note. |
 
 <div markdown="block" class="alert alert-success">
 
@@ -145,7 +147,7 @@ The GUI consists of the following components:
 - To maximise your viewing experience, opt for full-screen mode in ClinicMate!
 </div>
 
-Now that you have been introduced to the GUI components, let's proceed to learn how you can use the CLI to interact with ClinicMate.
+Now that you have been introduced to the GUI components, let's proceed to learn how you can use the **CLI** to interact with ClinicMate.
 
 ## CLI Overview
 Experience the seamless power of ClinicMate's Command Line Interface (CLI) - where interaction is as simple as typing commands. 
@@ -182,10 +184,10 @@ You can substitute specific parameter values into the parameters in the command 
 
 But what about the `[]` around `-replace`? Here's more about it:
 
-| **Symbol** | **Description**                                    | **Example**   |**Meaning**|
-|------------|----------------------------------------------------|---------------|-----------|
-| `[]`       | Indicates an optional parameter                    | `[-replace]`  | The `-replace` flag is optional and can be included or excluded in the command. |
-| None | Indicates a mandatory parameter | `n\NOTE` | The `n\NOTE` parameter is mandatory and must be included in the command. |
+| **Symbol** | **Description**                               | **Example**   |**Meaning**|
+|------------|-----------------------------------------------|---------------|-----------|
+| `[]`       | Indicates that something is optional | `[-replace]`  | The `-replace` flag is optional and can be included or excluded in the command. |
+| None | Indicates a mandatory prefix and/or parameter | `n\NOTE` | The `n\NOTE` is mandatory and must be included in the command. |
 
 
 <div style="page-break-after: always;"></div>
@@ -193,11 +195,11 @@ But what about the `[]` around `-replace`? Here's more about it:
 --------------------------------------------------------------------------------------------------------------------
 
 # Existing Features
-This section gives you a step-by-step guide on how to use ClinicMate's feature. The 3 categories of ClinicMate's features are as follows:
+This section gives you a step-by-step guide on how to use ClinicMate's features. The 3 categories of ClinicMate's features are as follows:
 - ***Navigation and Assistance Functions***: `clear`, `help`, `exit`
 
 
-- ***Data Management Functions***:  `add`, `edit`, `delete`, `show`, `find`,list
+- ***Data Management Functions***:  `add`, `edit`, `delete`, `show`, `find`, `list`
 
 
 - ***Note-Taking Function***: `addnote` 
@@ -212,6 +214,9 @@ This section gives you a step-by-step guide on how to use ClinicMate's feature. 
 
 * Parameters that have a slash prefix (1 or more letters followed by a `\`) can be in any order.<br>
   e.g. if the command specifies `n\NAME i\IC_NUMBER`, `i\IC_NUMBER n\NAME` is also acceptable.
+
+* Parameters that have no prefix must follow the specified order.<br>
+  e.g. if the command specifies `IC_NUMBER n\NAME i\IC_NUMBER`, `IC_NUMBER` must come before any of the parameters with a prefix.
 
 * Extraneous parameters for commands that do not take in parameters (such as `help`, `list`, `exit` and `clear`) will be ignored.<br>
   e.g. if the command specifies `help 123`, it will be interpreted as `help`.
@@ -232,7 +237,7 @@ Navigation and Assistance Functions in ClinicMate serve to enhance user experien
 **Steps**:
 1. Enter `help` into the command box. A help window should pop up.
 2. You can access help by either:
-- Copying our User Guide's link through the **Copy URL** button.
+- Copying our User Guide's link through the **Copy URL** button and paste it in your web browser.
 - Directly accessing our website through pressing on the icon.
 
 ### Clearing all entries : `clear`
@@ -248,7 +253,7 @@ Navigation and Assistance Functions in ClinicMate serve to enhance user experien
 <div markdown="block" class="alert alert-danger">
 
 **<i class="material-icons-outlined">warning</i> Warning:**<br>
-`clear` is a one-time deletion of all of your entries in ClinicMate. Please use it with consideration and care. You will not be able to retrieve any information back once command has been called.
+`clear` is a one-time deletion of all of your entries in ClinicMate. Please use it with consideration and care. You will not be able to retrieve any information back once the command has been called.
 </div>
 
 <div style="page-break-after: always;"></div><br/>
@@ -257,9 +262,9 @@ Navigation and Assistance Functions in ClinicMate serve to enhance user experien
 
 *Concluding your session? Simply use the `exit` command to gracefully exit the program and conclude your session.*
 
-*Format*: `exit`
+**Format**: `exit`
 
-*Steps*:
+**Steps**:
 1. Enter `exit` into the command box. You will then be directed out of ClinicMate.
 
 <div markdown="block" class="alert alert-info">
@@ -272,11 +277,11 @@ Don't worry about losing your data when exiting. They will be automatically save
 
 ## Data Management Functions ##
 ### Adding a person: `add`
-*Encounter a new patient without a record? No worries! Our `add command` simplifies the process of swiftly adding their details to ClinicMate.*
+*Encounter a new patient without a record? No worries! Our `add` command simplifies the process of adding their details to ClinicMate.*
 
-Format: `add n\NAME p\PHONE e\EMAIL i\IC_NUMBER ag\AGE s\SEX a\ADDRESS`
+**Format**: `add n\NAME p\PHONE e\EMAIL i\IC_NUMBER ag\AGE s\SEX a\ADDRESS`
 
-Steps:
+**Steps**:
 1. Enter `add n\NAME p\PHONE e\EMAIL i\IC_NUMBER ag\AGE s\SEX a\ADDRESS` into the command box. 
 2. New entry with particulars of `n\NAME p\PHONE e\EMAIL i\IC_NUMBER ag\AGE s\SEX a\ADDRESS` is added.
 
@@ -284,21 +289,15 @@ Steps:
 
 **<i class="material-icons-outlined">edit</i> Note:**<br>
 
-* Parameters can be in any order
 * A person will be uniquely identified by his/her personal identification number.
 * ClinicMate does not allow the same identification number to be used twice.
-* A name can have the special characters `-`, `,`, `/` in it.
+* Most of our fields do not have constraints as we want the application to be less restrictive :)
+* Do refer to our [Parameters Description section](#parameters-description) to find out more about our parameter constraints.
 
 </div>
 
-<div markdown="block" class="alert alert-info">
 
-**<i class="material-icons-outlined">edit</i> Note:**<br>
-Most of our fields do not have constraints as we want the application to be less restrictive :) Please refer to the [constraints](#parameters-description) section for more information on what is being restricted.
-</div>
-
-
-Examples:
+Example:
 * `add n\John Doe p\88888888 e\johndoe@mail.com i\T0123456A ag\12 s\M a\John street, block 123, #01-01`
 
 What a successful `add` command looks like:
@@ -311,55 +310,38 @@ What a successful `add` command looks like:
 A person can have a note included (See [addnote](#adding-a-note--addnote) command).
 </div>
 
-**Possible Errors that you might encounter:**
+**Possible Error that you might encounter:**
 
 You might encounter error messages due to the lack of familiarity with the application. There is no need to panic as our error messages will tell you how you can solve them!
 An example is shown below:
 ![ErrorForAdd.png](images/ErrorForAdd.png)
 
-* Adds a note to the person with the specified `IC_NUMBER`. The `IC_NUMBER` refers to the IC number shown in the displayed person list. The `IC_NUMBER` **must be the FULL IC NUMBER**.
-* IC number must be valid and currently exist in the database.
-* Existing values will be updated to the input values.
-* When adding notes, the new note added will be appended to the current note of the person. i.e. current note is preserved.
-* The `-replace` flag can be used to replace the current note with the new note. 
-* Notes will not wrap around. Notes added with separate uses of the `addnote` command will appear as separate lines.
-
-<div markdown="block" class="alert alert-danger">
-
-**:warning: Warning:**<br>
-- In the current version of the app, having more than one `n\` in the command might cause undefined behaviour. Please avoid having `n\` in the note body.
-</div>
-
-Examples:
-* `ddnote T0123456A n\Patient has diabetes` Adds a note `Patient has diabetes` to the person with the IC number `T0123456A` in ClinicMate.
-* `addnote T0123456A n\Patient has diabetes -replace` Replaces the note of the person with the IC number `T0123456A` with `Patient has diabetes`.
-
 ### Listing all entries : `list`
 *Looking for a comprehensive overview of your patient entries in ClinicMate? Utilize the `list` command for quick access to all your patient records.*
 
-Format: `list`
+**Format**: `list`
 
-Steps:
+**Steps**:
 1. Enter `list` into the command box. All of your patient details will then be displayed.
 
 ![listcommand.png](images/listcommand.png)
 
 ### Locating persons by IC number: `find`
-*Today, your regular patient arrives at the clinic, and you need to retrieve her record. However, with a multitude of contacts, locating hers seems daunting. Fear not! Utilize the find command to swiftly pinpoint the specific patient you're searching for using their `IC_NUMBER`.*
+*Today, your regular patient arrives at the clinic, and you need to retrieve her record. However, with a multitude of contacts, locating hers seems daunting. Fear not! Utilize the `find` command to swiftly pinpoint the specific patient you're searching for using their `IC_NUMBER`.*
 
 <div markdown="block" class="alert alert-success">
 
 **<i class="material-icons-outlined">lightbulb</i> Useful Tip:**<br>
 
-ClinicMate will display their contact information on the left-hand side of the screen and their full notes on the right-hand side, for a more comprehensive view.
+ClinicMate will display their contact information on the patient list panel and their full notes on the patient notes panel, for a more comprehensive view.
 
 </div>
 
-Format: `find IC_NUMBER`
+**Format**: `find IC_NUMBER`
 
-Steps:
+**Steps**:
 1. Enter `find IC_NUMBER` into the command box.
-2. The patient record with the corresponding `IC_NUMBER` will be retrieved, with his/her notes shown in the notes panel.
+2. The patient record with the corresponding `IC_NUMBER` will be retrieved, with his/her notes shown in the patient notes panel.
 
 <div markdown="block" class="alert alert-info">
 
@@ -367,7 +349,7 @@ Steps:
 
 * Only one patient record will be retrieved at any one time.
 * Finds the person with the specified `IC_NUMBER`.
-* The `IC_NUMBER` refers to the IC number shown in the displayed person list.
+* The `IC_NUMBER` refers to the IC number shown in the displayed patient list panel.
 * The `IC_NUMBER` **must be the FULL IC NUMBER**.
 * The search is case-insensitive. e.g `t0123456a` will match `T0123456A`.
 * Only the IC number is searched.
@@ -375,92 +357,93 @@ Steps:
 
 </div>
 
-Examples:
+Example:
 * `find T0123456A` returns `John Doe`.
 
 What successful `find` commands look like:
 ![successful_find](images/findmessage.png)
->What this means: There is a person matching the `IC_NUMBER` in the list of patients in ClinicMate.
+What this means: There is a person matching the `IC_NUMBER` in the patient list panel in ClinicMate.
 
 ![successful_find2](images/successful_find2.png)
->What this means: There is no one matching the `IC_NUMBER` in the list of patients in ClinicMate.
+What this means: There is no one matching the `IC_NUMBER` in the patient list panel in ClinicMate.
 
 
-**Possible errors that you might encounter:**
+**Possible Error that you might encounter:**
 
 There might be cases that the `IC_NUMBER` you keyed in is invalid as shown below. Do check if the `IC_NUMBER` is in the correct format.
 ![findmessageerror.png](images/FME.png)
 
 
 ### Changing the displayed note: `show`
-*Need to view the notes of another patient by adjusting the display on the right? Or perhaps you want to clear the current display altogether? Enter the `show` command for effortless management of note displays.*
+*Need to view the notes of another patient by adjusting the display on the patient notes panel? Or perhaps you want to clear the current display altogether? Enter the `show` command for effortless management of note displays.*
 
 *General Format*: `show [IC_NUMBER]`
 
-#### To change display (IC_NUMBER is provided)
+#### To change display 
 
-*Format*: `show IC_NUMBER`
+**Format**: `show IC_NUMBER`
 
-*Steps*:
+**Steps**:
 1. Enter `show IC_NUMBER` into the command box as shown below.
 
 ![SCM1.png](images/SCM1.png)
 
-2. Notes display will be updated to the notes corresponding to the IC_NUMBER.
+2. Patient notes panel will be updated to the notes corresponding to the `IC_NUMBER`.
 
 ![SCM2.png](images/SCM2.png)
 
 <div markdown="block" class="alert alert-info">
 
 **<i class="material-icons-outlined">edit</i> Note:**<br>
-* Rules for valid IC_NUMBER are the same as the `find` command.
-* Displays the full note of the person with the specified IC_NUMBER.
-* Does NOT modify the list of persons displayed.
+* Rules for valid `IC_NUMBER` follows the parameter constraints [here](#parameters-description).
+* Displays the full note of the person with the specified `IC_NUMBER` in the patient notes panel.
+* Does NOT modify the patient list panel.
+
  </div>
 
 Example:
-* `show T0123456A` updates the note display on the right to show `John Doe`'s note.
+* `show T0123456A` updates the patient notes panel on the right to show `John Doe`'s note.
 
-#### To clear display (IC_NUMBER is not provided)
+#### To clear display 
 
-*Format*: `show`
+**Format**: `show`
 
-*Steps*:
+**Steps**:
 1. Enter `show` into the command box as shown below.
 
 ![SCM3.png](images/SCM3.png)
 
-2. Notes display will be cleared.
+2. Patient notes panel will be cleared.
 
 ![SCM4.png](images/SCM4.png)
 
 <div markdown="block" class="alert alert-info">
 
 **<i class="material-icons-outlined">edit</i> Note:**<br>
-* Clears the note display on the right.
-* Does NOT modify the list of persons displayed.
+* Clears the patient notes panel.
+* Does NOT modify the patient list panel.
 </div>
 
 Example:
-* `show` clears any note that was being displayed on the right.
+* `show` clears any note that was being displayed in the patient notes panel.
 
-**Possible errors that you might encounter:**
-Refer to `find`.
+**Possible Error that you might encounter:**
+Refer to `find` command.
 
 ### Editing a person : `edit`
-Made a typo in a detail? Don't worry! The `edit` command is here to assist you in correcting any mistakes effortlessly using the patients' `IC_NUMBER`.
+_Made a typo? Don't worry! The `edit` command is here to assist you in correcting any mistakes effortlessly using the patients' `IC_NUMBER`._
 
-Format: `edit IC_NUMBER [n\NAME] [p\PHONE] [e\EMAIL] [i\IC_NUMBER] [ag\AGE] [s\SEX] [a\ADDRESS]`
+**Format**: `edit IC_NUMBER [n\NAME] [p\PHONE] [e\EMAIL] [i\IC_NUMBER] [ag\AGE] [s\SEX] [a\ADDRESS]`
 
 <div markdown="block" class="alert alert-success">
 
 **<i class="material-icons-outlined">lightbulb</i> Useful Tip:**<br>
 
-Optional fields are indicated by square brackets `[]`.
+Remember that optional fields are indicated by square brackets `[]`!
 
 </div>
 
-Steps:
+**Steps**:
 1. Enter `edit IC_NUMBER [n\NAME] [p\PHONE] [e\EMAIL] [i\IC_NUMBER] [ag\AGE] [s\SEX] [a\ADDRESS]` into the command box.
 2. The patient record with the corresponding `IC_NUMBER` will be edited.
 
@@ -471,6 +454,7 @@ Steps:
 * Edits the details of the person with the specified `IC_NUMBER`.
 * The fields to be edited are indicated by the prefixes `n\`, `p\`, `e\`, `i\`, `ag\`, `s\`, `a\`.
 * Only the fields that are provided will be updated.
+* At least one field must be provided.
 
 </div>
 
@@ -483,11 +467,11 @@ What a successful `edit` message looks like:
 
 ### Deleting a person : `delete`
 
-*The delete command enables the removal of patient records from ClinicMate. Use it to efficiently manage patient data by removing outdated or unnecessary entries.*
+*The `delete` command enables the removal of patient records from ClinicMate. Use it to efficiently manage patient data by removing outdated or unnecessary entries.*
 
-Format: `delete IC_NUMBER`
+**Format**: `delete IC_NUMBER`
 
-Steps:
+**Steps**:
 1. Enter `delete IC_NUMBER` into the command box.
 2. The patient record with the corresponding `IC_NUMBER` will be deleted.
 
@@ -496,61 +480,58 @@ Steps:
 **<i class="material-icons-outlined">edit</i> Note:**<br>
 
 * Deletes the person with the specified `IC_NUMBER`.
-* The `IC_NUMBER` refers to the IC number shown in the displayed person list.
+* The `IC_NUMBER` refers to the IC number shown in the displayed patient list panel.
 * The `IC_NUMBER` **must be the FULL IC NUMBER**.
 * The search is case-insensitive. e.g `t0123456a` will match `T0123456A`.
 * Only the IC number is searched.
 * Only full IC number will be matched e.g. `T0123456A` will not match `T0123A`.
-* You can only delete one patient at any one time
+* You can only delete one patient at any one time.
 
 </div>
 
 Examples:
 * `delete T0123456A` deletes `John Doe` who has IC number `T0123456A` from ClinicMate.
 
-What a successful `delete` message looks like:
 ![successful_deletemessage](images/deletemessage.png)
 
-**Possible errors that you might encounter:**
+**Possible Errors that you might encounter:**
 
-There might be cases that the `IC_NUMBER` you keyed in does not exist in ClinicMate as shown below. Do check if the `IC_NUMBER` is registered before before trying to delete it.
+There might be cases that the `IC_NUMBER` you keyed in does not exist in ClinicMate as shown below. Do check if the `IC_NUMBER` is registered before trying to delete it.
 ![deletemessageerror.png](images/DME.png)
 
 <div markdown="block" class="alert alert-danger">
 
 **<i class="material-icons-outlined">warning</i> Warning:**<br>
 
-`IC_NUMBER` tend to be long. Please make sure that the `IC_NUMBER` you want to delete is correct as we would not be able to recover lost patient information once deleted.
+`IC_NUMBER` tends to be long. Please make sure that the `IC_NUMBER` you want to delete is correct as we would not be able to recover lost patient information once deleted.
 
 </div>
 
 
 
 ## Note-Taking Function ##
-*This feature is tailored specifically for doctors, offering seamless note-taking capabilities to enhance efficiency and precision in documentation.*
+*This feature is tailored specifically for GPs, offering seamless note-taking capabilities to enhance efficiency and precision in history taking.*
 
 ### Adding a note : `addnote`
-*As doctors, it's essential to document prescriptions and notes for each patient. Simplify this process with the `addnote` command, ensuring efficient and accurate record-keeping.*
+*As GPs, it's essential to take accurate and detailed patient history. Simplify this process with the `addnote` command, ensuring efficient and accurate record-keeping.*
 
 
-*General Format*: `addnote IC_NUMBER n\NOTE [-replace]`
+**General Format**: `addnote IC_NUMBER n\NOTE [-replace]`
 
 #### To append notes
 
-*Format*: `addnote IC_NUMBER n\NOTE`
+**Format**: `addnote IC_NUMBER n\NOTE`
 
-*Steps*:
+**Steps**:
 1.  Enter `addnote IC_NUMBER n\NOTE ` into the command box.
 
 ![addnoteapp1.png](images/addnoteapp1.png)
 
-2.  System will then add a note to the person with the specifies `IC_NUMBER`.
+2.  A note will be added to the person with the specified `IC_NUMBER`.
 
 ![addnoteapp2.png](images/addnoteapp2.png)
 
-3.  New note will appear in notes field. If notes field already have existing notes, new notes will be appended to the previous notes.
-
-![addnoteapp3.png](images/addnoteapp3.png)
+3.  New note will appear in the patient notes panel. If notes already exists, the new note will be appended to the previous notes on a new line.
 
 ![addnoteapp4.png](images/addnoteapp4.png)
 
@@ -558,24 +539,23 @@ There might be cases that the `IC_NUMBER` you keyed in does not exist in ClinicM
 
 **<i class="material-icons-outlined">edit</i> Note:**<br>
 
-* The IC number refers to the IC number shown in the displayed person list. The IC_NUMBER **must be the FULL IC NUMBER**.
+* The `IC_number` refers to the IC number shown in the displayed patient list panel. 
+* The `IC_NUMBER` **must be the FULL IC NUMBER**.
 * IC number must be valid and currently exist in the database.
-* Existing values will be updated to the input values.
 * When adding notes, the new note added will be appended to the current note of the person. i.e. current note is preserved.
 
 </div>
 
 #### To replace notes
 
-*Format*: `addnote IC_NUMBER n\NOTE -replace`
+**Format**: `addnote IC_NUMBER n\NOTE -replace`
 
-*Steps*:
+**Steps**:
 1.  Enter `addnote IC_NUMBER n\NOTE -replace` into the command box.
 
 ![addnoterplc1.png](images/addnoterplc1.png)
 
-2.  System will then replace a note to the person with the specifies `IC_NUMBER`
-3.  New note will replace previous note.
+2.  The note of the person with the specified `IC_NUMBER` will be replaced with the new note.
 
 ![addnoterplc2.png](images/addnoterplc2.png)
 
@@ -583,13 +563,11 @@ There might be cases that the `IC_NUMBER` you keyed in does not exist in ClinicM
 
 **<i class="material-icons-outlined">edit</i> Note:**<br>
 
-* The IC number refers to the IC number shown in the displayed person list. The `IC_NUMBER` **must be the FULL IC NUMBER**.
+* The `IC_number` refers to the IC number shown in the displayed patient list panel. 
+* The `IC_NUMBER` **must be the FULL IC NUMBER**.
 * IC number must be valid and currently exist in the database.
-* Existing values will be updated to the input values.
-* When adding notes, the new note added will be appended to the current note of the person. i.e. current note is preserved.
-
-
-* The `-replace` flag can be used to replace the current note with the new note.
+* Notes will not wrap around. Notes added with separate uses of the `addnote` command will appear as separate lines.
+* The `-replace` flag is used to replace the current note with the new note.
   * It must only be used once.
   * It must only be used at the end of the command.
   * Anything after the `-replace` flag will be ignored. For example, `-replacefdshareh` will be interpreted as `-replace`.
@@ -597,18 +575,23 @@ There might be cases that the `IC_NUMBER` you keyed in does not exist in ClinicM
 </div>
 
 Examples:
-* `addnote T0123456A n\Patient has diabetes` Adds a note `Patient has diabetes` to the person with the IC number `T0123456A` in ClinicMate.
-* `addnote T0123456A n\Patient has diabetes -replace` Replaces the note of the person with the IC number `T0123456A` with `Patient has diabetes`.
+* `addnote T0123456A n\Patient has diabetes` adds a note `Patient has diabetes` to the person with the IC number `T0123456A` in ClinicMate.
+* `addnote T0123456A n\Patient has diabetes -replace` replaces the note of the person with the IC number `T0123456A` to `Patient has diabetes`.
 
+<div markdown="block" class="alert alert-danger">
+
+**:warning: Warning:**<br>
+- In the current version of the app, having more than one `n\` in the command might cause undefined behaviour. Please avoid having `n\` in the note body.
+</div>
 
 <div markdown="block" class="alert alert-success">
 
 **<i class="material-icons-outlined">lightbulb</i> Useful Tip:**<br>
 
-Users will be able to see specific patient notes on the notes section using the `show` command. (See [show](#changing-the-displayed-note-show) command)
+Users will be able to see specific patient notes on the patient notes panel using the `show` command. (See [show](#changing-the-displayed-note-show) command)
 
 An alternative to check if the note is updated correctly, use the `find` command. (See [find](#locating-persons-by-ic-number-find) command)
-On the left side of the window, the contact list will be filtered to that specific patient; On the right side of the window, the updated notes of the specific patient will be shown.
+On the patient list panel, the list will be filtered to that specific patient; On the patient notes panel, the updated notes of the specific patient will be shown.
 
 </div>
 
@@ -616,26 +599,26 @@ On the left side of the window, the contact list will be filtered to that specif
 
 ### Saving the data
 
-ClinicMate data are saved in the hard disk automatically after any command that changes the data. There is no need to save manually.
+ClinicMate data is saved in the hard disk automatically after any command that changes the data. There is no need to save manually.
 
 ### Editing the data file
 
-ClinicMate data are saved automatically as a JSON file `[JAR file location]/data/clinicmate.json`. Advanced users are welcome to update data directly by editing that data file.
+ClinicMate data is saved automatically as a JSON file `[JAR file location]/data/clinicmate.json`. Advanced users are welcome to update data directly by editing that data file.
 
-<box type="warning" seamless>
+<div markdown="block" class="alert alert-danger">
 
-**Caution:**
-If your changes to the data file makes its format invalid, ClinicMate will discard all data and start with an empty data file at the next run.  Hence, it is recommended to take a backup of the file before editing it.<br>
-Furthermore, certain edits can cause the ClinicMate to behave in unexpected ways (e.g., if a value entered is outside the acceptable range). Therefore, edit the data file only if you are confident that you can update it correctly.
-</box>
+**:warning: Warning:**<br>
+- If your changes to the data file makes its format invalid, ClinicMate will discard all data and start with an empty data file at the next run.  Hence, it is recommended to make a backup of the file before editing it.<br>
+Furthermore, certain edits can cause ClinicMate to behave in unexpected ways (e.g. if a value entered is outside the acceptable range). Therefore, edit the data file only if you are confident that you can update it correctly.
+</div>
 
 --------------------------------------------------------------------------------------------------------------------
 <div style="page-break-after: always;"></div>
 
 ## FAQ
 
-**Q**: When will my note be cleared? <br>
-**A**: The note will be cleared when you use the `show` command without any `IC_NUMBER`. Unfortunately, `clear` or `delete` command will not clear the note. 
+**Q**: When will the patient notes panel be cleared? <br>
+**A**: The patient notes panel will be cleared when you use the `show` command without any `IC_NUMBER`. Unfortunately, `clear` or `delete` command will not clear the patient notes panel. 
 
 **Q**: When using multiple screens, moving the application to a secondary screen and later switching to using only the primary screen, the GUI opens off-screen. What do I do?<br>
 **A**: Delete the `preferences.json` file created by the application before running the application again.
@@ -643,11 +626,11 @@ Furthermore, certain edits can cause the ClinicMate to behave in unexpected ways
 **Q**: Is there a limit to the number of patient records ClinicMate can manage?<br>
 **A**: ClinicMate is designed to handle a large number of patient records efficiently. However, performance may vary depending on the hardware specifications of your computer and the amount of data being managed.
 
-**Q**: How do I load my data from another Computer?<br>
-**A**: Let's say that you want to move your data from `Computer A` to `Computer B`. You should:
-1. Delete the `data.json` file that is located at `[JAR file location]/data/clinicmate.json` in `Computer B`.
-2. Copy the `data.json` file from `Computer A` to `Computer B` at the same location as above.
-3. Run the ClinicMate in `Computer B` to load the data.
+**Q**: How do I load my data from another computer?<br>
+**A**: Let's say that you want to move your data from computer A to computer B. You should:
+1. Delete the `clinicmate.json` file that is located at `[JAR file location]/data/clinicmate.json` in computer B.
+2. Copy the `clinicmate.json` file from computer A to computer B at the same location as above.
+3. Run the ClinicMate in computer B to load the data.
 
 **Q**: Can I export patient data from ClinicMate for reporting or backup purposes?<br>
 **A**: Currently, ClinicMate does not support direct export of patient data. However, you can manually copy the data from the data file located at `[JAR file location]/data/clinicmate.json` for backup or reporting purposes.
@@ -661,44 +644,36 @@ Furthermore, certain edits can cause the ClinicMate to behave in unexpected ways
 **Q**: Is there a way to import patient data into ClinicMate from other software?<br>
 **A**: ClinicMate does not currently support direct import of patient data from other software. However, you can manually enter patient data using the `add` command.
 
-**Q**: Can I use ClinicMate on multiple computers?<br>
-**A**: Yes, you can use ClinicMate on multiple computers. Simply copy the ClinicMate `.jar` file and the `clinicmate.json` data file to the other computer and run the application as usual.
-
 **Q**: I am not able to directly access the user guide by pressing on the icon in the help window.<br>
 **A**: Linux users might face some difficulties when trying to directly access. Unfortunately, we currently do not have a solution for this. Please access our user guide in the alternative way, which is to copy the URL and pasting it in your web browser.
 
-**Q**: The right side of the window (Notes window) does not display the most updated contact I interacted with.<br>
-**A**: Currently, our implementation of the Notes window is that it will only be changed when you use the `find ` command. No other command changes the content of the Notes window.
+**Q**: The patient notes panel does not display the most updated contact I interacted with.<br>
+**A**: Currently, our implementation of the patient notes panel is that it will only be changed when you use the `find ` or `show` command. No other command changes the content of the patient notes panel.
 
-**Q**: The notes display is not showing the full note. Can I expand the display?<br>
-**A**: ClinicMate does not currently support expanding the notes display. However, you can scroll through the notes both vertically and horizontally using the scrollbar provided.
+**Q**: The patient notes panel is not showing the full note. Can I expand the display?<br>
+**A**: ClinicMate does not currently support expanding the patient notes panel. However, you can scroll through the notes both vertically and horizontally using the scrollbar provided.
 
-**Q**: Some of my patient information is being truncated in the display. How can I view the full information?<br>
-**A**: Unfortunately, ClinicMate displays patient information in a fixed format, including sections such as email and note, in a fixed format that might cause long entries to be truncated (eg. An excessively long name would cause the name, age and gender to be truncated). This will be fixed in a future release.
+**Q**: Some of my patient information is being truncated in the patient list panel. How can I view the full information?<br>
+**A**: Unfortunately, ClinicMate displays patient information in a fixed format, including sections such as email and note, that might cause long entries to be truncated (e.g. An excessively long name would cause the name, age and gender to be truncated). This will be fixed in a future release.
 
-**Q**: Long lines of notes in the patient list are being unevenly truncated. Is this normal?<br>
-**A**: Yes, this is a known issue. You can still view the full note using the `show` command through the note display.
+**Q**: Long lines of notes in the patient list panel are being unevenly truncated. Is this normal?<br>
+**A**: Yes, this is a known issue. You can still view the full note using the `show` command through the patient notes panel.
 
 **Q**: Can I use `addnote` repeatedly with the same message?<br>
 **A**: Yes! ClinicMate does not restrict the number of times you can use the `addnote` command with the same message.
 
+**Q**: Do you support non-english inputs?
+**A**: We do not have dedicated support for non-english inputs, and some features might not work as expected. We recommend using English inputs for the best experience.
+
 --------------------------------------------------------------------------------------------------------------------
-## Appendix: Planned Enhancements
+<div style="page-break-after: always;"></div>
+
+## Coming Soon
 
 1. **Support for multiple phone numbers**: Allow users to add multiple phone numbers for a single patient record.
-2. **Error handling**: Improve error messages in `edit` command to check for existence of IC number in the event of empty fields.
-3. **Custom fields**: Allow users to customize fields for patient records to suit their clinic's requirements.
-4. **Date of Birth**: Add a field for date of birth to patient records for better age calculation.
-5. **Appointment scheduling**: Implement a feature to track and schedule patient appointments.
-6. **Flexible Find command**: Allow users to be able to find patients by their name, age, email, address, etc.
-7. **Updated Notes window**: Update the Notes window to display the most updated note of the patient the user interacted with last.
-8. **Support for patient identification**: Allow users to use other methods to identify patients, such as passport numbers, names or driving license numbers.
-9. **Add Note features**: 
-- Implement a feature to allow users to edit and delete specific notes. 
-- Allow users to know whose note they are viewing, by displaying the patient's name or IC number.
-- Implement a feature for users to have the option of hiding the notes section in the patient's profile card.
-- Allow users to tag and label different types of notes. For example, a tag for patient's diagnosis and another for their medication.
-10. **Optional fields**: Allowing some fields e.g. email, phone number to be optional fields.
+2. **Date of Birth**: Add a field for date of birth to patient records for better age calculation.
+3. **Appointment scheduling**: Implement a feature to track and schedule patient appointments.
+4. **Support for patient identification**: Allow users to use other methods to identify patients, such as passport numbers, names or driving license numbers.
 
 --------------------------------------------------------------------------------------------------------------------
 <div style="page-break-after: always;"></div>
@@ -724,35 +699,34 @@ These descriptions will help you understand the key terms used in ClinicMate.
 
 ### Parameters Description
 
-| Parameter | Description                  | Constraints                                                                                                                         |
-|-----------|------------------------------|-------------------------------------------------------------------------------------------------------------------------------------|
-| `NAME`      | Name of the patient.         | Only contain alphanumeric characters and spaces, and should not be blank. Maximum of 100 characters (excluding spaces).             |
-| `PHONE`     | Phone number of the patient. | Only contain numbers, be at least 3 digits. Should not be blank.                                          |
-| `EMAIL`     | Email of the patient.        | Should be in the format of [`local-part@domain`](#email-format-description) and should not be blank.                                |
-| `IC_NUMBER` | IC number of the patient.    | Case insensitive and should not be blank. It should start with one letter (S, F, G or M), followed by 7 digits and 1 letter behind. |
-| `AGE`       | Age of the patient.          | Only contain numbers, and should not be blank.                                                                                      |
-| `SEX`       | Sex of the patient.          | Case insensitive and should not be blank. Only accepts `m`, `f`, `M`, `F` as inputs.                                                |
-| `ADDRESS`   | Address of the patient.      | Case insensitive and should not be blank.                                                                                           |
-| `NOTE`      | Note of the patient          | Case insensitive and should not be blank.                                                                                           |
+| Parameter | Description                  | Constraints                                                                                                                       |
+|-----------|------------------------------|-----------------------------------------------------------------------------------------------------------------------------------|
+| `NAME`      | Name of the patient.         | Only contain alphanumeric characters and spaces, and should not be blank.                                                         |
+| `PHONE`     | Phone number of the patient. | Only contain numbers, be at least 3 digits. Should not be blank.                                                                  |
+| `EMAIL`     | Email of the patient.        | Should be in the format of `local-part@domain` and should not be blank.                                |
+| `IC_NUMBER` | IC number of the patient.    | Case-insensitive and should not be blank. It should start with one letter (S, F, G or M), followed by 7 digits and 1 letter behind. |
+| `AGE`       | Age of the patient.          | Only contain numbers, and should not be blank.                                                                                    |
+| `SEX`       | Sex of the patient.          | Case-insensitive and should not be blank. Only accepts `m`, `f`, `M`, `F` as inputs.                                              |
+| `ADDRESS`   | Address of the patient.      | Case-insensitive and should not be blank.                                                                                         |
+| `NOTE`      | Note of the patient          | Case-insensitive and should not be blank.                                                                                         |
 
 
 <div markdown="block" class="alert alert-info">
 
 **<i class="material-icons-outlined">edit</i> Note:**<br>
 - Constraints are designed to be less restrictive to accommodate to a wide range of user inputs.
-- Instances include having phone numbers with less than 3 digits, or names with special characters.
+- Instances include having names with special characters.
 
 </div>
 
-<div markdown="block" class="alert alert-info">
+<div markdown="block" class="alert alert-success">
 
-**<i class="material-icons-outlined">edit</i> Note:**<br>
+**<i class="material-icons-outlined">lightbulb</i> Useful Tip:**<br>
 - If you enter an invalid input for any of the prefixes, you will see an error message in the command box.
   Refer to the error message, check the description for the respective prefix and try the command again! An example of an error message is shown below.
-
+  ![FindCommandError](images/FindCommandError.png)
 </div>
 
-![FindCommandError](images/FindCommandError.png)
 
 #### Email Format Description
 The email format is `local-part@domain`.
@@ -763,8 +737,8 @@ The email format is `local-part@domain`.
 
 `domain` name constraints:
 * Made up of domain labels separated by periods.
-* End with a domain label at least 2 characters long
-* Have each domain label start and end with alphanumeric characters
+* End with a domain label at least 2 characters long.
+* Have each domain label start and end with alphanumeric characters.
 * Have each domain label consist of alphanumeric characters, separated only by hyphens, if any.
 
 
@@ -772,13 +746,13 @@ The email format is `local-part@domain`.
 
 Action     | Format, Examples
 -----------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------
-**Add**    | `add n\NAME p\PHONE e\EMAIL i\IC_NUMBER ag\AGE s\SEX a\ADDRESS` <br> e.g., `add n\John Doe p\88888888 e\johndoe@mail.com i\T0123456A ag\12 s\M a\John street, block 123, #01-01`
+**Add**    | `add n\NAME p\PHONE e\EMAIL i\IC_NUMBER ag\AGE s\SEX a\ADDRESS` <br> e.g. `add n\John Doe p\88888888 e\johndoe@mail.com i\T0123456A ag\12 s\M a\John street, block 123, #01-01`
 **Clear**  | `clear`
-**Delete** | `delete IC_NUMBER`<br> e.g., `delete T0123456A`
-**Edit**   | `edit IC_NUMBER [n\NAME] [p\PHONE] [e\EMAIL] [i\IC_NUMBER] [ag\AGE] [s\SEX] [a\ADDRESS]`<br> e.g., `edit T0123456A p\88888888`
-**Add Note** | `addnote IC_NUMBER n\NOTE [-replace]`<br> e.g., `addnote T0123456A n\Patient has diabetes`<br> e.g., `addnote T0123456A n\Patient has diabetes -replace`
-**Find**   | `find IC_NUMBER`<br> e.g., `find T0123456A`
-**Show**   | `show [IC_NUMBER]`<br> e.g., `show T0123456A` <br> e.g., `show`
+**Delete** | `delete IC_NUMBER`<br> e.g. `delete T0123456A`
+**Edit**   | `edit IC_NUMBER [n\NAME] [p\PHONE] [e\EMAIL] [i\IC_NUMBER] [ag\AGE] [s\SEX] [a\ADDRESS]`<br> e.g. `edit T0123456A p\88888888`
+**Add Note** | `addnote IC_NUMBER n\NOTE [-replace]`<br> e.g., `addnote T0123456A n\Patient has diabetes`<br> e.g. `addnote T0123456A n\Patient has diabetes -replace`
+**Find**   | `find IC_NUMBER`<br> e.g. `find T0123456A`
+**Show**   | `show [IC_NUMBER]`<br> e.g. `show T0123456A` <br> e.g. `show`
 **Help**   | `help`
 **List**   | `list`
 **Exit**   | `exit`

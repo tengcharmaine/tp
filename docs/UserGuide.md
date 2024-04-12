@@ -608,8 +608,8 @@ ClinicMate data is saved automatically as a JSON file `[JAR file location]/data/
 <div markdown="block" class="alert alert-danger">
 
 **:warning: Warning:**<br>
-- If your changes to the data file makes its format invalid, ClinicMate will discard all data and start with an empty data file at the next run.  Hence, it is recommended to make a backup of the file before editing it.<br>
-Furthermore, certain edits can cause ClinicMate to behave in unexpected ways (e.g. if a value entered is outside the acceptable range). Therefore, edit the data file only if you are confident that you can update it correctly.
+- If your changes to the data file makes its format invalid, ClinicMate will discard all data and start with an empty data file at the next run.  Hence, it is recommended to make a backup of the file before editing it. 
+- Furthermore, certain edits can cause ClinicMate to behave in unexpected ways (e.g. if a value entered is outside the acceptable range). Therefore, edit the data file only if you are confident that you can update it correctly.
 </div>
 
 --------------------------------------------------------------------------------------------------------------------
@@ -648,7 +648,7 @@ Furthermore, certain edits can cause ClinicMate to behave in unexpected ways (e.
 **A**: Linux users might face some difficulties when trying to directly access. Unfortunately, we currently do not have a solution for this. Please access our user guide in the alternative way, which is to copy the URL and pasting it in your web browser.
 
 **Q**: The patient notes panel does not display the most updated contact I interacted with.<br>
-**A**: Currently, our implementation of the patient notes panel is that it will only be changed when you use the `find ` or `show` command. No other command changes the content of the patient notes panel.
+**A**: Currently, only the `find` or `show` command will change whose notes are displayed in the patient notes panel.
 
 **Q**: The patient notes panel is not showing the full note. Can I expand the display?<br>
 **A**: ClinicMate does not currently support expanding the patient notes panel. However, you can scroll through the notes both vertically and horizontally using the scrollbar provided.
@@ -662,8 +662,8 @@ Furthermore, certain edits can cause ClinicMate to behave in unexpected ways (e.
 **Q**: Can I use `addnote` repeatedly with the same message?<br>
 **A**: Yes! ClinicMate does not restrict the number of times you can use the `addnote` command with the same message.
 
-**Q**: Do you support non-english inputs?
-**A**: We do not have dedicated support for non-english inputs, and some features might not work as expected. We recommend using English inputs for the best experience.
+**Q**: Do you support non-English inputs?
+**A**: We do not have dedicated support for non-English inputs, and some features might not work as expected. We recommend using English inputs for the best experience.
 
 --------------------------------------------------------------------------------------------------------------------
 <div style="page-break-after: always;"></div>

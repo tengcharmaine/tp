@@ -311,11 +311,18 @@ What a successful `add` command looks like:
 A person can have a note included (See [addnote](#adding-a-note--addnote) command).
 </div>
 
-**Possible Errors that you might encounter:**
+**Possible errors that you might encounter:**
 
 You might encounter error messages due to the lack of familiarity with the application. There is no need to panic as our error messages will tell you how you can solve them!
 An example is shown below:
 ![ErrorForAdd.png](images/ErrorForAdd.png)
+
+* Adds a note to the person with the specified `IC_NUMBER`. The `IC_NUMBER` refers to the IC number shown in the displayed person list. The `IC_NUMBER` **must be the FULL IC NUMBER**.
+* IC number must be valid and currently exist in the database.
+* Existing values will be updated to the input values.
+* When adding notes, the new note added will be appended to the current note of the person. i.e. current note is preserved.
+* The `-replace` flag can be used to replace the current note with the new note. 
+* Notes will not wrap around. Notes added with separate uses of the `addnote` command will appear as separate lines.
 
 <div markdown="block" class="alert alert-danger">
 
@@ -360,8 +367,8 @@ Steps:
 
 * Only one patient record will be retrieved at any one time.
 * Finds the person with the specified `IC_NUMBER`.
-* The IC_NUMBER refers to the IC number shown in the displayed person list.
-* The IC_NUMBER **must be the FULL IC NUMBER**.
+* The `IC_NUMBER` refers to the IC number shown in the displayed person list.
+* The `IC_NUMBER` **must be the FULL IC NUMBER**.
 * The search is case-insensitive. e.g `t0123456a` will match `T0123456A`.
 * Only the IC number is searched.
 * Only full IC number will be matched e.g. `T0123456A` will not match `T0123A`.
@@ -379,7 +386,7 @@ What successful `find` commands look like:
 >What this means: There is no one matching the `IC_NUMBER` in the list of patients in ClinicMate.
 
 
-**Possible Errors that you might encounter:**
+**Possible errors that you might encounter:**
 
 There might be cases that the `IC_NUMBER` you keyed in is invalid as shown below. Do check if the `IC_NUMBER` is in the correct format.
 ![findmessageerror.png](images/FME.png)
@@ -430,14 +437,14 @@ Example:
 <div markdown="block" class="alert alert-info">
 
 **<i class="material-icons-outlined">edit</i> Note:**<br>
-* Clears the note display on the left.
+* Clears the note display on the right.
 * Does NOT modify the list of persons displayed.
 </div>
 
 Example:
 * `show` clears any note that was being displayed on the right.
 
-**Possible Errors that you might encounter:**
+**Possible errors that you might encounter:**
 Refer to `find`.
 
 ### Editing a person : `edit`
@@ -489,8 +496,8 @@ Steps:
 **<i class="material-icons-outlined">edit</i> Note:**<br>
 
 * Deletes the person with the specified `IC_NUMBER`.
-* The IC_NUMBER refers to the IC number shown in the displayed person list.
-* The IC_NUMBER **must be the FULL IC NUMBER**.
+* The `IC_NUMBER` refers to the IC number shown in the displayed person list.
+* The `IC_NUMBER` **must be the FULL IC NUMBER**.
 * The search is case-insensitive. e.g `t0123456a` will match `T0123456A`.
 * Only the IC number is searched.
 * Only full IC number will be matched e.g. `T0123456A` will not match `T0123A`.
@@ -499,12 +506,12 @@ Steps:
 </div>
 
 Examples:
-* `delete T0123456A` deletes `John Doe` who has `IC_NUMBER` of `T0123456A` from ClinicMate.
+* `delete T0123456A` deletes `John Doe` who has IC number `T0123456A` from ClinicMate.
 
 What a successful `delete` message looks like:
 ![successful_deletemessage](images/deletemessage.png)
 
-**Possible Errors that you might encounter:**
+**Possible errors that you might encounter:**
 
 There might be cases that the `IC_NUMBER` you keyed in does not exist in ClinicMate as shown below. Do check if the `IC_NUMBER` is registered before before trying to delete it.
 ![deletemessageerror.png](images/DME.png)

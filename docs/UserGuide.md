@@ -311,7 +311,7 @@ What a successful `add` command looks like:
 A person can have a note included (See [addnote](#adding-a-note--addnote) command).
 </div>
 
-**Possible errors that you might encounter:**
+**Possible Errors that you might encounter:**
 
 You might encounter error messages due to the lack of familiarity with the application. There is no need to panic as our error messages will tell you how you can solve them!
 An example is shown below:

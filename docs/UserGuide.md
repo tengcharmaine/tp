@@ -98,7 +98,6 @@ In this section, you will learn how to set up ClinicMate on your computer.
 3. Move the file to the folder you want to use as the _home folder_ for your ClinicMate.
    * For example, if you want to use the `Documents` folder as the _home folder_ for your ClinicMate, create a new folder named `clinicmate` in the `Documents` folder.
    * You can then move the `.jar` file to a folder named `clinicmate` in your `Documents` folder.
-   
 
 ### Running the application
 1. Open Command Prompt (for Windows) or Terminal (for MacOS and Linux) on your desktop.
@@ -112,6 +111,8 @@ In this section, you will learn how to set up ClinicMate on your computer.
 <div markdown="block" class="alert alert-danger">
 
 **<i class="material-icons-outlined">warning</i> Warning:**<br>
+
+- If you do not see a sample data when running `java -jar clinicmate.jar`, that means you have an existing datafile which needs to be remove.
 - You may notice that a new folder named `data` is newly created. This folder contains the data file for ClinicMate.
 - Do not delete this folder or its contents as it contains your patient data.
 </div>
@@ -289,6 +290,13 @@ Steps:
 * A name can have the special characters `-`, `,`, `/` in it.
 
 </div>
+
+<div markdown="block" class="alert alert-info">
+
+**<i class="material-icons-outlined">edit</i> Note:**<br>
+Most of our fields do not have constraints as we want the application to be less restrictive :) Please refer to the [constraints](#parameters-description) section for more information on what is being restricted.
+</div>
+
 
 Examples:
 * `add n\John Doe p\88888888 e\johndoe@mail.com i\T0123456A ag\12 s\M a\John street, block 123, #01-01`
@@ -661,6 +669,7 @@ Furthermore, certain edits can cause the ClinicMate to behave in unexpected ways
 - Allow users to know whose note they are viewing, by displaying the patient's name or IC number.
 - Implement a feature for users to have the option of hiding the notes section in the patient's profile card.
 - Allow users to tag and label different types of notes. For example, a tag for patient's diagnosis and another for their medication.
+10. **Optional fields**: Allowing some fields e.g. email, phone number to be optional fields.
 
 --------------------------------------------------------------------------------------------------------------------
 <div style="page-break-after: always;"></div>

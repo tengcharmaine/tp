@@ -64,7 +64,7 @@ public class EditCommand extends Command {
             + "Sex: %6$s\n"
             + "Address: %7$s\n";
     public static final String MESSAGE_NOT_EDITED = "At least one field to edit must be provided.";
-    public static final String MESSAGE_DUPLICATE_PERSON = "This person already exists in the address book.";
+    public static final String MESSAGE_DUPLICATE_PERSON = "This person already exists in ClinicMate.";
     private final EditPersonDescriptor editPersonDescriptor;
     private final IdentityCardNumberMatchesPredicate predicate;
 

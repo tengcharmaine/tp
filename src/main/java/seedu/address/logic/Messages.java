@@ -25,7 +25,7 @@ public class Messages {
     public static final String MESSAGE_DUPLICATE_FIELDS =
                 "Multiple values specified for the following single-valued field(s): ";
     public static final String MESSAGE_NO_MATCHING_IC = "There is nobody with the IC you specified. \n"
-            + "You may use the add command to add the specific person to the address book.";
+            + "You may use the add command to add the specific person to ClinicMate.";
     public static final String MESSAGE_NO_MATCHING_IC_DELETE = "There is nobody with the IC you specified. \n";
 
 

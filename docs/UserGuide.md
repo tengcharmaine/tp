@@ -17,7 +17,6 @@ This comprehensive user guide will effortlessly navigate you through ClinicMate'
 
 Here is a **quick overview** of how ClinicMate streamlines contact management:
 
-**Data Management Functions**:
 - ***Navigation and Assistance Functions***: Reset the interface using `clear`, access comprehensive guidance through `help`, and `exit` ClinicMate with ease. 
 
 
@@ -101,7 +100,7 @@ In this section, you will learn how to set up ClinicMate on your computer.
 
 ### Prerequisites
 
-1. Open Command Prompt (for Windows) or Terminal (for MacOS and Linux) on your desktop.
+1. Open Command Prompt (for Windows) or Terminal (for MacOS and Linux) on your desktop. Refer to our [FAQ](#faq) on how to do so.
 2. Run the command `java -version` to check if you have Java 11 or above installed in your computer.
 * Assuming that you have Java installed in your computer,
   * If you are running Windows, this is what you should see after running the command.
@@ -124,7 +123,7 @@ In this section, you will learn how to set up ClinicMate on your computer.
     * You can then move the `.jar` file to that folder named `clinicmate` in your `Documents` folder.
     
 ### Running the application
-1. Open Command Prompt (for Windows) or Terminal (for MacOS and Linux) on your desktop.
+1. Open Command Prompt (for Windows) or Terminal (for MacOS and Linux) on your desktop. Refer to our [FAQ](#faq) on how to do so.
 2. Run the `cd` command into the folder you put the jar file in.
    * `cd` is the command to change directory.
    * e.g. `cd Documents/clinicmate`
@@ -312,6 +311,8 @@ Don't worry about losing your data when exiting. They will be automatically save
 <span class="print-only">[&uarr; Back to Table of Contents](#table-of-contents)</span>
 
 ## Data Management Functions ##
+Data Management Functions in ClinicMate serve to simplify the process of adding, editing and deleting patient's information. It also enables you to view a comprehensive list of patient information and effortlessly search for specific patient records.
+
 ### Adding a person: `add`
 *Encounter a new patient without a record? No worries! Our `add` command simplifies the process of adding their details to ClinicMate.*
 
@@ -448,6 +449,12 @@ There might be cases that the `IC_NUMBER` you keyed in is invalid as shown below
 Example:
 * `show T0123456A` updates the patient notes panel on the right to show `John Doe`'s note.
 
+**Possible Error that you might encounter:**
+
+There might be cases that the `IC_NUMBER` you keyed in does not exist in ClinicMate as shown below. Do check if the `IC_NUMBER` is registered before trying to show it.
+Alternatively, you can add the patient into ClinicMate using our [`add` command](#adding-a-person-add) before doing a `show`.
+![showerror2.png](images/showerror2.png)
+
 #### To clear display 
 
 **Format**: `show`
@@ -470,9 +477,6 @@ Example:
 
 Example:
 * `show` clears any note that was being displayed in the patient notes panel.
-
-**Possible Error that you might encounter:**
-Refer to `find` command.
 
 <span class="generated-only">[&uarr; Back to Top](#welcome-to-clinicmate)</span>
 <span class="print-only">[&uarr; Back to Table of Contents](#table-of-contents)</span>
@@ -511,6 +515,11 @@ Examples:
 What a successful `edit` message looks like:
 
 ![EditCommand.png](images/EditCommand.png)
+
+**Possible Error that you might encounter:**
+
+At least one edit field is needed for this command! Do check if you have included a field in your input.
+![editerror.png](images/editerror.png)
 
 <span class="generated-only">[&uarr; Back to Top](#welcome-to-clinicmate)</span>
 <span class="print-only">[&uarr; Back to Table of Contents](#table-of-contents)</span>
@@ -673,6 +682,12 @@ ClinicMate data is saved automatically as a JSON file `[JAR file location]/data/
 
 ## FAQ
 
+**Q**: How do I open my terminal?<br>
+**A**: Here are the instructions to open your terminal for the different types of operating systems:
+- Windows: Click on the Windows Start button, and type 'Command Prompt' or 'cmd' into the search bar. Press Enter to open it.
+- macOS: Click on 'F4' and type 'terminal'. Press Enter when 'terminal' appears in the search results.
+- Linux: Press 'Ctrl', 'Alt' and 'T' simultaneously to open the terminal.
+
 **Q**: When will the patient notes panel be cleared? <br>
 **A**: The patient notes panel will be cleared when you use the `show` command without any `IC_NUMBER`. Unfortunately, `clear` or `delete` command will not clear the patient notes panel. 
 
@@ -718,7 +733,7 @@ ClinicMate data is saved automatically as a JSON file `[JAR file location]/data/
 **Q**: Can I use `addnote` repeatedly with the same message?<br>
 **A**: Yes! ClinicMate does not restrict the number of times you can use the `addnote` command with the same message.
 
-**Q**: Do you support non-English inputs?
+**Q**: Do you support non-English inputs?<br>
 **A**: We do not have dedicated support for non-English inputs, and some features might not work as expected. We recommend using English inputs for the best experience.
 
 <span class="generated-only">[&uarr; Back to Top](#welcome-to-clinicmate)</span>

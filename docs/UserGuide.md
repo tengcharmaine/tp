@@ -258,7 +258,7 @@ For new patients, the first step always involves registration. Similarly, let's 
 
 Congratulations! You've successfully added James Tan to ClinicMate. Go ahead and try adding more patients of your own to practice!
 
-If you wish to learn more about the `add` command, you can go [here](#adding-a-person-add).
+If you wish to learn more about the `add` command, you can refer to [this](#adding-a-person-add).
 
 ## 2. Finding a Patient
 
@@ -270,7 +270,7 @@ Many walk in patients tend to be regulars at the clinic. ClinicMate is optimized
 
 Go ahead and try viewing the details of other patients using the `find` command!
 
-If you wish to learn more about the `find` command, you can go [here](#locating-persons-by-ic-number-find).
+If you wish to learn more about the `find` command, you can refer to [this](#locating-persons-by-ic-number-find).
 
 ## 3. Adding Notes to a Patient
 
@@ -282,7 +282,7 @@ A big part of a GP consultation is taking patient history. ClinicMate allows you
 
 Notice that the notes are appended without replacing what was originally there, so that you can quickly keep adding all notes you find important without worry!
 
-If you wish to replace the notes, or find out more about the `addnote` command, you can look [here](#adding-a-note-addnote).
+If you wish to replace the notes, or find out more about the `addnote` command, you can refer to [this](#adding-a-note-addnote).
 
 ## 4. Deleting a Patient from ClinicMate
 
@@ -294,7 +294,7 @@ Suppose James Tan informs you that he is shifting house, and will be no longer b
 
 Go ahead and try deleting some of the sample patients from ClinicMate.
 
-If you with to find out more about the `delete` command, you can look [here](#deleting-a-person-delete).
+If you wish to find out more about the `delete` command, you can refer to [this](#deleting-a-person-delete).
 
 You've now reached the end of the Quick Tour. **Congratulations!**
 To remove the sample data, you can use the `clear` command followed by the `show` command to reset the patient list and notes panels.

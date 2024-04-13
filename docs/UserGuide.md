@@ -582,7 +582,7 @@ There might be cases that the `IC_NUMBER` you keyed in does not exist in ClinicM
 **Format**: `addnote IC_NUMBER n\NOTE`
 
 **Steps**:
-1.  Enter `addnote IC_NUMBER n\NOTE ` into the command box.
+1.  Enter `addnote IC_NUMBER n\NOTE` into the command box.
 
 ![addnoteapp1.png](images/addnoteapp1.png)
 
@@ -647,10 +647,13 @@ Examples:
 
 **<i class="material-icons-outlined">lightbulb</i> Useful Tip:**<br>
 
-Users will be able to see specific patient notes on the patient notes panel using the `show` command. (See [show](#changing-the-displayed-note-show) command)
+- Users will be able to see specific patient notes on the patient notes panel using the `show` command. (See [show](#changing-the-displayed-note-show) command)
 
-An alternative to check if the note is updated correctly, use the `find` command. (See [find](#locating-persons-by-ic-number-find) command)
+- An alternative to check if the note is updated correctly, use the `find` command. (See [find](#locating-persons-by-ic-number-find) command)
 On the patient list panel, the list will be filtered to that specific patient; On the patient notes panel, the updated notes of the specific patient will be shown.
+
+- If you'd like to add empty line(s), you can use a ` ` (i.e. a normal space) as the note's contents 1 or more times.
+Do note that the person list panel will not display the empty line(s) unless there is a note with other characters before and after the note with just spaces.
 
 </div>
 

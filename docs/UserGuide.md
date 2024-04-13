@@ -17,7 +17,6 @@ This comprehensive user guide will effortlessly navigate you through ClinicMate'
 
 Here is a **quick overview** of how ClinicMate streamlines contact management:
 
-**Data Management Functions**:
 - ***Navigation and Assistance Functions***: Reset the interface using `clear`, access comprehensive guidance through `help`, and `exit` ClinicMate with ease. 
 
 
@@ -276,6 +275,8 @@ Don't worry about losing your data when exiting. They will be automatically save
 </div>
 
 ## Data Management Functions ##
+Data Management Functions in ClinicMate serve to simplify the process of adding, editing and deleting patient's information. It also enables you to view a comprehensive list of patient information and effortlessly search for specific patient records.
+
 ### Adding a person: `add`
 *Encounter a new patient without a record? No worries! Our `add` command simplifies the process of adding their details to ClinicMate.*
 

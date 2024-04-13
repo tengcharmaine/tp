@@ -31,8 +31,10 @@ Bid farewell to cumbersome paperwork and embrace the efficiency of ClinicMate in
 
 <div style="page-break-after: always;"></div>
 
+# Table of Contents
 
 <!-- * Table of Contents -->
+
 <page-nav-print />
 
 <div style="page-break-after: always;"></div>
@@ -69,6 +71,26 @@ Throughout this guide, you'll also encounter various text styles. Here's what th
 - > Provides information about the parameters that you can input into a command.
 
 Now that you're familiar with the annotations and text styles, we will give you a tour on how to navigate this user guide based on your level of expertise.
+
+## ClinicMate Beginner?
+
+Thank you for choosing ClinicMate for your patient management needs! We're excited to help you jump right in.
+
+1. To get started, head over to the [Quick Start](#quick-start) section to set up ClinicMate on your computer.
+2. Once you've set up ClinicMate, go through the [Quick Tour](#TODO) to discover key features of ClinicMate that you'll use frequently.
+3. If you're keen to explore ClinicMate by yourself, take a look at the [Existing Features](#existing-features) to dive deep into ClinicMate's functionalities.
+
+## Seasoned ClinicMate User?
+
+Welcome back! We're thrilled to have you with us again.
+
+1. If you want a reminder on how to use a feature, head over to the [Existing Features](#existing-features) section to get **detailed instructions** for each feature and **examples** that you can learn from.
+2. If you just need a quick reference of a command format, you can refer to the [Command Summary](#command-summary) section for a table of all the commands and their format available in ClinicMate.
+
+If you have more questions, do check out the [FAQ](#faq) section to see if there are answers to your queries.
+
+<span class="generated-only">[&uarr; Back to Top](#welcome-to-clinicmate)</span>
+<span class="print-only">[&uarr; Back to Table of Contents](#table-of-contents)</span>
 
 <div style="page-break-after: always;"></div>
 
@@ -122,6 +144,9 @@ In this section, you will learn how to set up ClinicMate on your computer.
 ![Ui](images/updatedUI.png)
 6. Great job! You have successfully set up ClinicMate on your computer. You are now ready to learn about the **GUI** of ClinicMate!
 
+<span class="generated-only">[&uarr; Back to Top](#welcome-to-clinicmate)</span>
+<span class="print-only">[&uarr; Back to Table of Contents](#table-of-contents)</span>
+
 --------------------------------------------------------------------------------------------------------------------
 <div style="page-break-after: always;"></div>
 
@@ -130,7 +155,7 @@ In this section, you will learn how to set up ClinicMate on your computer.
 ClinicMate features a Graphical User Interface (GUI) that provides a seamless user experience. The GUI is designed to be intuitive and user-friendly, allowing you to navigate through the application effortlessly.
 
 The GUI consists of the following components:
-![GUI.png](images/GUIFeatures.png)
+![GUI](images/GUIFeature.png)
 
 | **Number** | **Component**       | **Description**                                                  |
 |------------|---------------------|------------------------------------------------------------------|
@@ -188,6 +213,8 @@ But what about the `[]` around `-replace`? Here's more about it:
 | `[]`       | Indicates that something is optional | `[-replace]`  | The `-replace` flag is optional and can be included or excluded in the command. |
 | None | Indicates a mandatory prefix and/or parameter | `n\NOTE` | The `n\NOTE` is mandatory and must be included in the command. |
 
+<span class="generated-only">[&uarr; Back to Top](#welcome-to-clinicmate)</span>
+<span class="print-only">[&uarr; Back to Table of Contents](#table-of-contents)</span>
 
 <div style="page-break-after: always;"></div>
 
@@ -238,6 +265,9 @@ Navigation and Assistance Functions in ClinicMate serve to enhance user experien
 2. You can access help by either:
 - Copying our User Guide's link through the **Copy URL** button and paste it in your web browser.
 - Directly accessing our website through pressing on the icon.
+ 
+<span class="generated-only">[&uarr; Back to Top](#welcome-to-clinicmate)</span>
+<span class="print-only">[&uarr; Back to Table of Contents](#table-of-contents)</span>
 
 ### Clearing all entries : `clear`
 *Transitioning to a new clinic? Easily clear existing data from ClinicMate with a simple `clear` command!*
@@ -247,13 +277,16 @@ Navigation and Assistance Functions in ClinicMate serve to enhance user experien
 ![clear_command](images/clearcommand.png)
 
 **Steps**:
-1. Enter `clear` into the command box. All entries will then be cleared.
+1. Enter `clear` into the command box. The patient list panel containing all the entries will then be cleared.
 
 <div markdown="block" class="alert alert-danger">
 
 **<i class="material-icons-outlined">warning</i> Warning:**<br>
 `clear` is a one-time deletion of all of your entries in ClinicMate. Please use it with consideration and care. You will not be able to retrieve any information back once the command has been called.
 </div>
+
+<span class="generated-only">[&uarr; Back to Top](#welcome-to-clinicmate)</span>
+<span class="print-only">[&uarr; Back to Table of Contents](#table-of-contents)</span>
 
 <div style="page-break-after: always;"></div><br/>
 
@@ -273,6 +306,9 @@ Navigation and Assistance Functions in ClinicMate serve to enhance user experien
 Don't worry about losing your data when exiting. They will be automatically saved!
 
 </div>
+
+<span class="generated-only">[&uarr; Back to Top](#welcome-to-clinicmate)</span>
+<span class="print-only">[&uarr; Back to Table of Contents](#table-of-contents)</span>
 
 ## Data Management Functions ##
 Data Management Functions in ClinicMate serve to simplify the process of adding, editing and deleting patient's information. It also enables you to view a comprehensive list of patient information and effortlessly search for specific patient records.
@@ -308,7 +344,7 @@ What a successful `add` command looks like:
 
 **<i class="material-icons-outlined">lightbulb</i> Useful Tip:**<br>
 
-A person can have a note included (See [addnote](#adding-a-note--addnote) command).
+A person can have a note included (See [addnote](#adding-a-note-addnote) command).
 </div>
 
 **Possible Error that you might encounter:**
@@ -316,6 +352,9 @@ A person can have a note included (See [addnote](#adding-a-note--addnote) comman
 You might encounter error messages due to the lack of familiarity with the application. There is no need to panic as our error messages will tell you how you can solve them!
 An example is shown below:
 ![ErrorForAdd.png](images/ErrorForAdd.png)
+
+<span class="generated-only">[&uarr; Back to Top](#welcome-to-clinicmate)</span>
+<span class="print-only">[&uarr; Back to Table of Contents](#table-of-contents)</span>
 
 ### Listing all entries : `list`
 *Looking for a comprehensive overview of your patient entries in ClinicMate? Utilize the `list` command for quick access to all your patient records.*
@@ -326,6 +365,9 @@ An example is shown below:
 1. Enter `list` into the command box. All of your patient details will then be displayed.
 
 ![listcommand.png](images/listcommand.png)
+
+<span class="generated-only">[&uarr; Back to Top](#welcome-to-clinicmate)</span>
+<span class="print-only">[&uarr; Back to Table of Contents](#table-of-contents)</span>
 
 ### Locating persons by IC number: `find`
 *Today, your regular patient arrives at the clinic, and you need to retrieve her record. However, with a multitude of contacts, locating hers seems daunting. Fear not! Utilize the `find` command to swiftly pinpoint the specific patient you're searching for using their `IC_NUMBER`.*
@@ -374,6 +416,8 @@ What this means: There is no one matching the `IC_NUMBER` in the patient list pa
 There might be cases that the `IC_NUMBER` you keyed in is invalid as shown below. Do check if the `IC_NUMBER` is in the correct format.
 ![findmessageerror.png](images/FME.png)
 
+<span class="generated-only">[&uarr; Back to Top](#welcome-to-clinicmate)</span>
+<span class="print-only">[&uarr; Back to Table of Contents](#table-of-contents)</span>
 
 ### Changing the displayed note: `show`
 *Need to view the notes of another patient by adjusting the display on the patient notes panel? Or perhaps you want to clear the current display altogether? Enter the `show` command for effortless management of note displays.*
@@ -434,6 +478,9 @@ Alternatively, you can add the patient into ClinicMate using our [`add` command]
 Example:
 * `show` clears any note that was being displayed in the patient notes panel.
 
+<span class="generated-only">[&uarr; Back to Top](#welcome-to-clinicmate)</span>
+<span class="print-only">[&uarr; Back to Table of Contents](#table-of-contents)</span>
+
 ### Editing a person : `edit`
 _Made a typo? Don't worry! The `edit` command is here to assist you in correcting any mistakes effortlessly using the patients' `IC_NUMBER`._
 
@@ -473,6 +520,9 @@ What a successful `edit` message looks like:
 
 At least one edit field is needed for this command! Do check if you have included a field in your input.
 ![editerror.png](images/editerror.png)
+
+<span class="generated-only">[&uarr; Back to Top](#welcome-to-clinicmate)</span>
+<span class="print-only">[&uarr; Back to Table of Contents](#table-of-contents)</span>
 
 ### Deleting a person : `delete`
 
@@ -604,6 +654,9 @@ On the patient list panel, the list will be filtered to that specific patient; O
 
 </div>
 
+<span class="generated-only">[&uarr; Back to Top](#welcome-to-clinicmate)</span>
+<span class="print-only">[&uarr; Back to Table of Contents](#table-of-contents)</span>
+
 ## Data Files
 
 ### Saving the data
@@ -620,6 +673,9 @@ ClinicMate data is saved automatically as a JSON file `[JAR file location]/data/
 - If your changes to the data file makes its format invalid, ClinicMate will discard all data and start with an empty data file at the next run.  Hence, it is recommended to make a backup of the file before editing it. 
 - Furthermore, certain edits can cause ClinicMate to behave in unexpected ways (e.g. if a value entered is outside the acceptable range). Therefore, edit the data file only if you are confident that you can update it correctly.
 </div>
+
+<span class="generated-only">[&uarr; Back to Top](#welcome-to-clinicmate)</span>
+<span class="print-only">[&uarr; Back to Table of Contents](#table-of-contents)</span>
 
 --------------------------------------------------------------------------------------------------------------------
 <div style="page-break-after: always;"></div>
@@ -680,6 +736,9 @@ ClinicMate data is saved automatically as a JSON file `[JAR file location]/data/
 **Q**: Do you support non-English inputs?<br>
 **A**: We do not have dedicated support for non-English inputs, and some features might not work as expected. We recommend using English inputs for the best experience.
 
+<span class="generated-only">[&uarr; Back to Top](#welcome-to-clinicmate)</span>
+<span class="print-only">[&uarr; Back to Table of Contents](#table-of-contents)</span>
+
 --------------------------------------------------------------------------------------------------------------------
 <div style="page-break-after: always;"></div>
 
@@ -689,6 +748,9 @@ ClinicMate data is saved automatically as a JSON file `[JAR file location]/data/
 2. **Date of Birth**: Add a field for date of birth to patient records for better age calculation.
 3. **Appointment scheduling**: Implement a feature to track and schedule patient appointments.
 4. **Support for patient identification**: Allow users to use other methods to identify patients, such as passport numbers, names or driving license numbers.
+
+<span class="generated-only">[&uarr; Back to Top](#welcome-to-clinicmate)</span>
+<span class="print-only">[&uarr; Back to Table of Contents](#table-of-contents)</span>
 
 --------------------------------------------------------------------------------------------------------------------
 <div style="page-break-after: always;"></div>
@@ -756,6 +818,8 @@ The email format is `local-part@domain`.
 * Have each domain label start and end with alphanumeric characters.
 * Have each domain label consist of alphanumeric characters, separated only by hyphens, if any.
 
+<span class="generated-only">[&uarr; Back to Top](#welcome-to-clinicmate)</span>
+<span class="print-only">[&uarr; Back to Table of Contents](#table-of-contents)</span>
 
 ## Command summary
 
@@ -771,3 +835,6 @@ Action     | Format, Examples
 **Help**   | `help`
 **List**   | `list`
 **Exit**   | `exit`
+
+<span class="generated-only">[&uarr; Back to Top](#welcome-to-clinicmate)</span>
+<span class="print-only">[&uarr; Back to Table of Contents](#table-of-contents)</span>

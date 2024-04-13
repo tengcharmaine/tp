@@ -670,13 +670,13 @@ to allow users to find contacts using different fields such as `name`, `age`, `e
 - find `John` returns contact with `name` of `John Doe` and corresponding `IC_NUMBER` of `T0123456A`
 - find `johndoe@mail.com` returns contact with `email` of `johndoe@mail.com` and corresponding `IC_NUMBER` of `T0123456A`
 
-### Update notes window during execution of `find` command
+### Update notes window during execution of commands
 
 **Potential Issues With Current Feature**
 
 Users have given us the feedback that our notes window on the right hand side of the split pane does not update with the use of other commands.
 For instance, if our notes panel currently already have `John`'s notes reflected on it, using the `addnote` command to add a note of another contact who is not `John` will not cause the 
-notes panel to update accordingly. `John`'s notes will still exist on the notes panel despite the executing the `addnote` command to edit the note of another person.
+notes panel to update accordingly. `John`'s notes will still exist on the notes panel despite executing the `addnote` command to edit the note of another person.
 This could bring inconvenience to the user as users will not be able to view a contact's notes immediately upon using other commands. 
 They would then have to go through the hassle of typing the `show` command to allow the new contact's note to be displayed on the notes panel.
 

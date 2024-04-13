@@ -131,7 +131,7 @@ In this section, you will learn how to set up ClinicMate on your computer.
 ClinicMate features a Graphical User Interface (GUI) that provides a seamless user experience. The GUI is designed to be intuitive and user-friendly, allowing you to navigate through the application effortlessly.
 
 The GUI consists of the following components:
-![GUI.png](images/GUIFeatures.png)
+![GUI](images/GUIFeature.png)
 
 | **Number** | **Component**       | **Description**                                                  |
 |------------|---------------------|------------------------------------------------------------------|
@@ -248,7 +248,7 @@ Navigation and Assistance Functions in ClinicMate serve to enhance user experien
 ![clear_command](images/clearcommand.png)
 
 **Steps**:
-1. Enter `clear` into the command box. All entries will then be cleared.
+1. Enter `clear` into the command box. The patient list panel containing all the entries will then be cleared.
 
 <div markdown="block" class="alert alert-danger">
 

@@ -434,9 +434,6 @@ Alternatively, you can add the patient into ClinicMate using our [`add` command]
 Example:
 * `show` clears any note that was being displayed in the patient notes panel.
 
-**Possible Error that you might encounter:**
-Refer to `find` command.
-
 ### Editing a person : `edit`
 _Made a typo? Don't worry! The `edit` command is here to assist you in correcting any mistakes effortlessly using the patients' `IC_NUMBER`._
 
@@ -471,6 +468,11 @@ Examples:
 What a successful `edit` message looks like:
 
 ![EditCommand.png](images/EditCommand.png)
+
+**Possible Error that you might encounter:**
+
+At least one edit field is needed for this command! Do check if you have included a field in your input.
+![editerror.png](images/editerror.png)
 
 ### Deleting a person : `delete`
 

@@ -626,7 +626,164 @@ Priorities: High (must have) - `* * *`, Medium (nice to have) - `* *`, Low (unli
 
 --------------------------------------------------------------------------------------------------------------------
 
-## **Appendix: Instructions for manual testing**
+## **Appendix B: Planned Enhancements**
+
+### Customisable fields
+
+**Potential Issues With Current Feature**
+
+Existing `Person` class has all fields: `name`, `age`, `sex`, `ic`, `phone`, `email` and `address`. However, users might not require all of these fields. 
+User A might not require the `phone` field while User B might require all fields, including those that ClinicMate has yet to implement. 
+Hence, it is important that ClinicMate allows for users to customize the fields they require to make it less restrictive and allow for flexibility.
+
+**Proposed Enhancements**
+
+Before users initialize their own version of ClinicMate, they will be able to choose the fields from 
+a whole range of fields which we offer. The fields could also be made optional depending on user's choice. 
+Their application will thus be initialized with user's very own fields which they require.
+
+**Examples**
+
+- User A could have the `Person` class with only `name`, `age`, `sex`, and `ic`.
+- User B could have the `Person` class with only `name`, `age`, `sex`,` ic` and `phone` with the `phone` field optional.
+- `add n\John Doe p\12345678 i\T0123456A ag\12 s\M a\311, Clementi Ave 2, #02-25` will be allowed.
+- `add n\John Doe e\johndoe@mail.com i\T0123456A ag\12 s\M a\311, Clementi Ave 2, #02-25` will be allowed.
+- `add n\John Doe i\T0123456A ag\12 s\M a\311, Clementi Ave 2, #02-25` will be allowed.
+
+
+
+### Flexible find command 
+
+**Potential Issues With Current Feature**
+
+Currently, the `find` command only allows users to find patient details using their `IC_NUMBER`. This could be inconvenient and troublesome 
+at times as users are required to type out the full `IC_NUMBER`. A single wrong character thus requires the user to re-look at the whole string of
+`IC_NUMBER` again in order to identify their mistakes.
+
+**Proposed Enhancements**
+
+In light of this issue, we would be working on our application to provide an update to the `find` command 
+to allow users to find contacts using different fields such as `name`, `age`, `email` etc. They will be case-insensitive to allow for better search results.
+
+**Examples**
+
+- find `John` returns contact with `name` of `John Doe` and corresponding `IC_NUMBER` of `T0123456A`
+- find `johndoe@mail.com` returns contact with `email` of `johndoe@mail.com` and corresponding `IC_NUMBER` of `T0123456A`
+
+### Update notes window during execution of commands
+
+**Potential Issues With Current Feature**
+
+Users have given us the feedback that our the notes in our patient notes panel does not update with the use of other commands.
+For instance, if our notes panel currently already have `John`'s notes reflected on it, using the `addnote` command to add a note of another contact who is not `John` will not cause the 
+notes panel to update accordingly. `John`'s notes will still exist on the notes panel despite executing the `addnote` command to edit the note of another person.
+This could bring inconvenience to the user as users will not be able to view a contact's notes immediately upon using other commands. 
+They would then have to go through the hassle of typing the `show` command to allow the new contact's note to be displayed on the notes panel.
+
+**Proposed Enhancements**
+
+In order to make it more convenient for the users, we will enhance all of our commands such that the notes of the contact involved in the last executed command will have his/her 
+notes replace the current notes in the notes panel. We will also allow users to know whose note they are viewing, by displaying the patient's name or IC number.
+
+**Examples**
+
+- If the notes panel is currently displaying the notes of the user with `IC_NUMBER` of `T1234567C`, 
+executing `addnote T0123456A n\diabetes`, will cause the notes panel to update to the notes of user with `IC_NUMBER` of `T0123456A`
+- If the notes panel is currently displaying the notes of the user with `IC_NUMBER` of `T1234567C`,
+executing `edit T0123456A p\12345678`, will cause the notes panel to update to the notes of user with `IC_NUMBER` of `T0123456A`
+
+### Support more languages 
+
+**Potential Issues With Current Feature**
+
+Currently, ClinicMate only support English and does not support other languages such as Chinese, Japanese, Arabic etc. This restricts the usability of 
+users who does not use English. In another scenario where the patient name might not be in English, the user will also not be able to perform most commands such as `add`, `edit` etc.
+
+**Proposed Enhancements**
+
+We will be allowing more languages to be supported in ClinicMate 
+
+**Examples**
+
+- `add n\ジョン p\12345678 e\johndoe@mail.com i\T0123456A ag\12 s\M a\311, Clementi Ave 2, #02-25` will be allowed.
+- `edit n\ジョン p\12345678` will be allowed.
+
+### Improving error handling for `edit` command
+
+**Potential Issues With Current Feature**
+
+Currently, the `edit` command does not check the existence of `IC_NUMBER` upon entering an `edit` command with an empty field.
+For instance, entering `edit S1234567P` in the event that the contact with the `IC_NUMBER` of `S1234567P` does not exist returns an error message 
+of *at least one field to edit must be provided*. However, the error message should be that *the `IC_NUMBER` provided does
+not exist* as the existence of the `IC_NUMBER` should be checked first. This is a problem as users might go on to provide a field for a non-existing contact, thus returning them another error message.
+
+**Proposed Enhancements**
+
+We will check the existence of the `IC_NUMBER` first during the execution of the `edit` command. 
+
+**Examples**
+
+`edit S1234567P` should return the error message *the `IC_NUMBER` provided does not exist.*
+
+### Allowing for multiple phone numbers
+
+**Potential Issues With Current Feature**
+
+Currently, our `phone` number field only allows for one number. However, since ClinicMate is targeted at doctors working at the GP clinics with their contacts being patients, it 
+is only natural for the `phone` number field to allow for multiple numbers. Reason being that a patient might have a caregiver or is required to contact his/her 
+family members. Therefore, restricting the `phone` to only one is very restrictive and could bring about inconvenience.
+
+**Proposed Enhancements**
+
+We will allow for the addition of multiple numbers under the `phone` field through the `add` command.
+
+**Examples**
+
+- `add n\John Doe p\12345678 e\johndoe@mail.com i\T0123456A ag\12 s\M a\311, Clementi Ave 2, #02-25` will cause the `phone` number `12345678` to be added for user `T0123456A`
+- `add n\John Doe p\12345678, 09876544, 99999999 e\johndoe@mail.com i\T0123456A ag\12 s\M a\311, Clementi Ave 2, #02-25` will cause the `phone` number `12345678, 09876544, 99999999` to be added for user `T0123456A`
+
+### Allowing for derivation of age through Date-Of-Birth
+
+**Potential Issues With Current Feature**
+
+Existing features require the users to manually enter the age of contacts. For example, `add n\John Doe p\12345678 e\johndoe@mail.com i\T0123456A ag\12 s\M a\311, Clementi Ave 2, #02-25`.
+However, it is very cumbersome for users to edit the age of their contact individually through the `edit` command.
+
+**Proposed Enhancements**
+
+In order to save the time of our users, we will adding in a new field called `DOB` which is Date of Birth in the form of `DD/MM/YYYY`. 
+`age` of the contacts will thus be derived from their `DOB` with reference to the current year which we are in. Hence, streamlining the contact management process.
+
+**Examples**
+
+Given that we are in the year 2024, the patient with the `DOB` of 
+
+- `10/10/2003` will be at the age of 21 
+- `12/12/1990` will be at the age of 34
+
+### Further enhancements for `addnote` command
+
+**Potential Issues With Current Feature**
+
+Firstly, our current `addnote` command only allows user to add a new note, which will be appended to the previous one. However,
+there might be many instances in which the users need to edit or delete specific notes. Disallowing this will make adding notes quite frustrating at times.
+
+Secondly, each of the contacts in the patient list panel has a notes section which cannot be hidden and will appear in the UI. Users might not want to see all the notes for each contact as it might be very long and distracting.
+
+Lastly, there is a lack of organisation for the notes and users might want to categorize their notes into different sections.
+
+**Proposed Enhancements**
+
+We will thus:
+- Implement a feature to allow users to edit and delete specific notes.
+- Implement a feature for users to have the option of hiding the notes section for each patient in the patient list panel.
+- Allow users to tag and label different types of notes such as a tag for patient's diagnosis and another for their medication.
+
+**Examples**
+
+Since this is a work in progress, please do stay tune for any updates to see how these could be implemented. We thank you for your patience.
+
+## **Appendix C: Instructions for manual testing**
 
 Given below are instructions to test the app manually.
 
@@ -726,3 +883,60 @@ testers are expected to do more *exploratory* testing.
 
     1. Other incorrect find commands to try: `edit`, `edit x`, `...` (where x is the identification number which does not exist in the list)<br>
        Expected: Similar to previous.
+
+
+
+## **Appendix D: Effort**
+
+### Effort 
+
+#### New Addition to classes
+New classes were added which enhanced ClinicMate's Features. Below are some examples of the new classes added:
+
+`Model` classes: IdentityCardNumber, Sex, Note 
+
+`Command` classes: `show`, `addnote`
+
+We ensured that these new classes follow the code quality standard strictly and practiced defensive programming.
+A couple of test cases were also crafted in order to ensure that the new classes function as expected and meet the specified requirements. These test cases cover various scenarios and edge cases to validate the robustness and reliability of the code. 
+
+#### Enhancements to existing functions
+
+Other than making changes to the existing commands by adding in more parameters, we put in significant effort to make sure the edited commands fits the features of ClinicMate.
+For instance, the `find` command will allow users to find contact details with their IC, and more importantly, the user's notes will also appear on the patient notes panel.
+This allowed for a more comprehensive view of contact's notes which is an important field that GPs will require. Hence, much effort was placed into enhancing existing features to improve usability of ClinicMate.
+
+
+#### Improve User Interface of ClinicMate 
+
+Rather than the dark theme which ClinicMate originally had, we chose to go with a lighter theme and a bigger font size in order to improve readability of ClinicMate.
+Effort was put in by us to learn different JavaFX markup elements such as the `ScrollPane` and `SplitPanel` in order to allow for a wider and better view of patient details in ClinicMate. 
+
+### Challenges faced and how it was resolved
+
+#### Challenge 1: Getting used to working in a team
+The team definitely had a rough start during the beginning of the team project since most of the team were new to the GitHub workflow.
+The process of picking up the workflow was rocky, as we had difficulties understanding how issues, pull request and merging of branches worked. 
+Merge conflict hindered the efficiency of our teamwork.
+However, after much help and guidance within the team, everyone in the team became more familiar with the workflow, which enhanced our collaboration.
+
+#### Challenge 2: Delivering our product on time for each iteration
+The team also faced difficulties in keeping track of the deliverables every week and during every iteration. We were not sure of the requirements 
+that we needed to fulfill. Therefore, the team came together weekly to meet in order to better understand the deliverables needed and also to split the workload, 
+increasing the productivity of the team.
+
+#### Challenge 3: Enhancing our UI 
+To make our app look nicer and easier to understand, we had a tough time dealing with JavaFX features as we were newly introduced to it. Changing how things look on the screen was tricky because we needed to see it visually. 
+Despite the challenge, we kept working on improving how our app looks and feels for users.
+
+#### Challenge 4: Modifying the code to fit ClinicMate's features
+The hardest challenge in which the team faced was to perform edits to the initial code which was provided to us. The large codebase required 
+a very long time to understand and digest. This was made even more tough as we only started working on the code in the second half of the semester with 
+limited time. However, through clarifying each other's doubts and questions, we were able to comprehend and made edits to the code eventually.
+
+### Achievements
+
+Throughout the module, the team has gained much experience both in technical and soft skills. We definitely made significant 
+improvements to our product through self-research, teamwork and support from each other. We got accustomed to the GitHub workflow, 
+made use of JavaFx to implement our UI and most importantly, we developed a CLI application that adheres to rigorous code quality standards, 
+ensuring readability and maintainability at the same time. The team definitely had many takeaways from this module. 

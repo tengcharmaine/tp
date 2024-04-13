@@ -221,6 +221,93 @@ But what about the `[]` around `-replace`? Here's more about it:
 
 --------------------------------------------------------------------------------------------------------------------
 
+# Quick Tour: A First Look At ClinicMate
+
+_If this is your first time using ClinicMate, welcome!
+We know that patient management can be tedious and cumbersome, and learning a new tool might seem like a daunting task.
+But fret not! ClinicMate is designed to be user-friendly and intuitive so that you can start streamlining your patient management right away._
+
+This tour will guide you through the key features of ClinicMate, giving you a quick overview of how to use the application effectively,
+especially the more commonly used commands. You'll learn how to:
+
+1. [add a patient](#1-adding-a-patient)
+2. [find a patient](#2-finding-a-patient)
+3. [add notes to a patient](#3-adding-notes-to-a-patient)
+4. [delete a patient from ClinicMate](#4-deleting-a-patient-from-clinicmate)
+
+Make sure you've set up ClinicMate on your computer by following the [Quick Start](#quick-start) guide, if you haven't already.
+Once you're ready, let's dive in!
+
+## 1. Adding a Patient
+
+Adding a patient is a fundamental feature of ClinicMate for tracking patient details. Let's say you have a new patient with the following particulars:
+
+- **Name**: James Tan
+- **Phone**: 92223344
+- **Email**: james.tan@mail.com
+- **IC Number**: S1234567A
+- **Age**: 22
+- **Sex**: M
+- **Address**: Block 11, #07-07, Jurong West Ave 6
+
+For new patients, the first step always involves registration. Similarly, let's add James Tan to ClinicMate!
+
+**Steps**:
+1. Using his details, simply type `add n\James Tan p\92223344 e\james.tan@mail.com i\S1234567A ag\35 s\M a\Block 11, #07-07, Jurong West Ave 6` into the Command Box and hit enter.
+2. The patient list panel will be updated with James Tan's details.
+
+Congratulations! You've successfully added James Tan to ClinicMate. Go ahead and try adding more patients of your own to practice!
+
+If you wish to learn more about the `add` command, you can go [here](#adding-a-person-add).
+
+## 2. Finding a Patient
+
+Many walk in patients tend to be regulars at the clinic. ClinicMate is optimized to retrieve patient details quickly and easily. All you need is their IC number!
+
+**Steps**:
+1. Let's say you want to find James Tan's details after adding him in the previous step. Type `find S1234567A` into the Command Box and hit enter.
+2. The patient list panel will display James Tan's details only. The patient notes panel will show any notes associated with James Tan.
+
+Go ahead and try viewing the details of other patients using the `find` command!
+
+If you wish to learn more about the `find` command, you can go [here](#locating-persons-by-ic-number-find).
+
+## 3. Adding Notes to a Patient
+
+A big part of a GP consultation is taking patient history. ClinicMate allows you to add notes for patients based on their IC number.
+
+**Steps**:
+1. Suppose in your consultation, James Tan complains of frequent urination (polyuria) and excessive thirst (polydipsia), and you suspect he might have Diabetes Mellitus. You can note this down using the shorthands that you're used too! Simply type `addnote S1234567A n\Polyuria & polydipsia. DM?` into the Command Box and hit enter.
+2. Through the consultation, you also find out he has a family history of Diabetes Mellitus. `addnote` let's you quickly append this information by simply typing `addnote S1234567A n\Fam his of DM.` into the Command Box and hit enter.
+
+Notice that the notes are appended without replacing what was originally there, so that you can quickly keep adding all notes you find important without worry!
+
+If you wish to replace the notes, or find out more about the `addnote` command, you can look [here](#adding-a-note-addnote).
+
+## 4. Deleting a Patient from ClinicMate
+
+Suppose James Tan informs you that he is shifting house, and will be no longer be visiting your clinic. ClinicMate lets you remove his details from the database with ease.
+
+**Steps**:
+1. Type `delete S1234567A` into the Command Box and hit enter.
+2. `James Tan` details will be removed from the patient list panel. There is no change to the patient notes panel.
+
+Go ahead and try deleting some of the sample patients from ClinicMate.
+
+If you with to find out more about the `delete` command, you can look [here](#deleting-a-person-delete).
+
+You've now reached the end of the Quick Tour. **Congratulations!**
+To remove the sample data, you can use the `clear` command followed by the `show` command to reset the patient list and notes panels.
+Find out more about the `clear` and `show` commands [here](#clearing-all-entries-clear) and [here](#changing-the-displayed-note-show) respectively.
+
+There are more features in ClinicMate that you can explore. If you're interested, you can refer to the [Existing Features](#existing-features) section for a detailed guide on each feature.
+Also check out the [FAQ](#faq) section for answers to common queries!
+
+<span class="generated-only">[&uarr; Back to Top](#welcome-to-clinicmate)</span>
+<span class="print-only">[&uarr; Back to Table of Contents](#table-of-contents)</span>
+
+--------------------------------------------------------------------------------------------------------------------
+
 # Existing Features
 This section gives you a step-by-step guide on how to use ClinicMate's features. The 3 categories of ClinicMate's features are as follows:
 - ***Navigation and Assistance Functions***: `clear`, `help`, `exit`

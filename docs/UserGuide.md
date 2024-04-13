@@ -286,7 +286,7 @@ If you wish to replace the notes, or find out more about the `addnote` command, 
 
 ## 4. Deleting a Patient from ClinicMate
 
-Suppose James Tan informs you that he is shifting house, and will be no longer be visiting your clinic. ClinicMate lets you remove his details from the database with ease.
+Suppose James Tan informs you that he is moving house, and will be no longer be visiting your clinic. ClinicMate lets you remove his details from the database with ease.
 
 **Steps**:
 1. Type `delete S1234567A` into the Command Box and hit enter.

@@ -405,6 +405,12 @@ There might be cases that the `IC_NUMBER` you keyed in is invalid as shown below
 Example:
 * `show T0123456A` updates the patient notes panel on the right to show `John Doe`'s note.
 
+**Possible Error that you might encounter:**
+
+There might be cases that the `IC_NUMBER` you keyed in does not exist in ClinicMate as shown below. Do check if the `IC_NUMBER` is registered before trying to show it.
+Alternatively, you can add the patient into ClinicMate using our [`add` command](#adding-a-person-add) before doing a `show`.
+![showerror2.png](images/showerror2.png)
+
 #### To clear display 
 
 **Format**: `show`

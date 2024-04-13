@@ -94,6 +94,14 @@ mark {
 }
 
 @media screen {
+  .nav-component #table-of-contents {
+    display: none;
+  }
+
+  #page-nav a[href="#table-of-contents"]{
+    display: none;
+  }
+
   #table-of-contents {
     display: none;
   }

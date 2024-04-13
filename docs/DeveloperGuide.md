@@ -713,7 +713,7 @@ We will be allowing more languages to be supported in ClinicMate
 **Potential Issues With Current Feature**
 
 Currently, the `edit` command does not check the existence of `IC_NUMBER` upon entering an `edit` command with an empty field.
-For instance, entering `edit S1234567P` in the event that the contact with the `IC_NUMBER` of `S1234567P` do not exist returns an error message 
+For instance, entering `edit S1234567P` in the event that the contact with the `IC_NUMBER` of `S1234567P` does not exist return an error message 
 of *at least one field to edit must be provided*. However, the error message should be that *the `IC_NUMBER` provided does
 not exist* as the existence of the `IC_NUMBER` should be checked first. This is a problem as users might go on to provide a field for a non-existing contact, thus returning them another error message.
 

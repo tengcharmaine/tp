@@ -674,7 +674,7 @@ to allow users to find contacts using different fields such as `name`, `age`, `e
 
 **Potential Issues With Current Feature**
 
-Users have given us the feedback that our notes window on the right hand side of the split pane does not update with the use of other commands.
+Users have given us the feedback that our the notes in our patient notes panel does not update with the use of other commands.
 For instance, if our notes panel currently already have `John`'s notes reflected on it, using the `addnote` command to add a note of another contact who is not `John` will not cause the 
 notes panel to update accordingly. `John`'s notes will still exist on the notes panel despite executing the `addnote` command to edit the note of another person.
 This could bring inconvenience to the user as users will not be able to view a contact's notes immediately upon using other commands. 
@@ -689,14 +689,14 @@ notes replace the current notes in the notes panel. We will also allow users to 
 
 - If the notes panel is currently displaying the notes of the user with `IC_NUMBER` of `T1234567C`, 
 executing `addnote T0123456A n\diabetes`, will cause the notes panel to update to the notes of user with `IC_NUMBER` of `T0123456A`
-- - If the notes panel is currently displaying the notes of the user with `IC_NUMBER` of `T1234567C`,
-    executing `edit T0123456A p\12345678`, will cause the notes panel to update to the notes of user with `IC_NUMBER` of `T0123456A`
+- If the notes panel is currently displaying the notes of the user with `IC_NUMBER` of `T1234567C`,
+executing `edit T0123456A p\12345678`, will cause the notes panel to update to the notes of user with `IC_NUMBER` of `T0123456A`
 
 ### Support more languages 
 
 **Potential Issues With Current Feature**
 
-Currently, ClinicMate only support English and does not support other language such as Chinese, Japanese, Arabic etc. This restricts the usability of 
+Currently, ClinicMate only support English and does not support other languages such as Chinese, Japanese, Arabic etc. This restricts the usability of 
 users who does not use English. In another scenario where the patient name might not be in English, the user will also not be able to perform most commands such as `add`, `edit` etc.
 
 **Proposed Enhancements**
@@ -705,7 +705,7 @@ We will be allowing more languages to be supported in ClinicMate
 
 **Examples**
 
-- `add n\ジョン p\12345678 e\johndoe@mail.com　i\T0123456A ag\12 s\M a\311, Clementi Ave 2, #02-25` will be allowed.
+- `add n\ジョン p\12345678 e\johndoe@mail.com i\T0123456A ag\12 s\M a\311, Clementi Ave 2, #02-25` will be allowed.
 - `edit n\ジョン p\12345678` will be allowed.
 
 ### Improving error handling for `edit` command
@@ -713,7 +713,7 @@ We will be allowing more languages to be supported in ClinicMate
 **Potential Issues With Current Feature**
 
 Currently, the `edit` command does not check the existence of `IC_NUMBER` upon entering an `edit` command with an empty field.
-For instance, entering `edit S1234567P` in the event that the contact with the `IC_NUMBER` of `S1234567P` does not exist return an error message 
+For instance, entering `edit S1234567P` in the event that the contact with the `IC_NUMBER` of `S1234567P` does not exist returns an error message 
 of *at least one field to edit must be provided*. However, the error message should be that *the `IC_NUMBER` provided does
 not exist* as the existence of the `IC_NUMBER` should be checked first. This is a problem as users might go on to provide a field for a non-existing contact, thus returning them another error message.
 
@@ -751,7 +751,7 @@ However, it is very cumbersome for users to edit the age of their contact indivi
 
 **Proposed Enhancements**
 
-In order to allow GPs to save the time of our users, we will adding in a new field called `DOB` which Date of Birth in the form of `DD/MM/YYYY`. 
+In order to save the time of our users, we will adding in a new field called `DOB` which is Date of Birth in the form of `DD/MM/YYYY`. 
 `age` of the contacts will thus be derived from their `DOB` with reference to the current year which we are in. Hence, streamlining the contact management process.
 
 **Examples**
@@ -766,7 +766,7 @@ Given that we are in the year 2024, the patient with the `DOB` of
 **Potential Issues With Current Feature**
 
 Firstly, our current `addnote` command only allows user to add a new note, which will be appended to the previous one. However,
-there might be many instances in which the users need to edit or delete specific note. Disallowing this will make adding notes quite frustrating at times.
+there might be many instances in which the users need to edit or delete specific notes. Disallowing this will make adding notes quite frustrating at times.
 
 Secondly, each of the contacts in the patient list panel has a notes section which cannot be hidden and will appear in the UI. Users might not want to see all the notes for each contact as it might be very long and distracting.
 
@@ -781,7 +781,7 @@ We will thus:
 
 **Examples**
 
-Since this is work in progress, please do stay tune for any updates to see how these could be implemented. We thank you for your patience.
+Since this is a work in progress, please do stay tune for any updates to see how these could be implemented. We thank you for your patience.
 
 ## **Appendix C: Instructions for manual testing**
 
@@ -895,29 +895,29 @@ New classes were added which enhanced ClinicMate's Features. Below are some exam
 
 `Model` classes: IdentityCardNumber, Sex, Note 
 
-`Command` classes: show, addnote
+`Command` classes: `show`, `addnote`
 
 We ensured that these new classes follow the code quality standard strictly and practiced defensive programming.
 A couple of test cases were also crafted in order to ensure that the new classes function as expected and meet the specified requirements. These test cases cover various scenarios and edge cases to validate the robustness and reliability of the code. 
 
 #### Enhancements to existing functions
 
-Other than making changes to the existing commands by adding in more parameters, we put in significant effort to make sure the edited commands works fits the features of ClinicMate.
-For instance, the `find` command will allow users to find contact details with their IC, and more importantly, and more importantly, the user's notes will also appear on the patient notes panel.
-This allowed for a more comprehensive view of contact's notes which is an important field which is an important field that GPs will require. Hence, much effort was placed into enhancing existing features to improve usability of ClinicMate.
+Other than making changes to the existing commands by adding in more parameters, we put in significant effort to make sure the edited commands fits the features of ClinicMate.
+For instance, the `find` command will allow users to find contact details with their IC, and more importantly, the user's notes will also appear on the patient notes panel.
+This allowed for a more comprehensive view of contact's notes which is an important field that GPs will require. Hence, much effort was placed into enhancing existing features to improve usability of ClinicMate.
 
 
 #### Improve User Interface of ClinicMate 
 
 Rather than the dark theme which ClinicMate originally had, we chose to go with a lighter theme and a bigger font size in order to improve readability of ClinicMate.
-Effort was put in by us to learn different JavaFX functions such as the `ScrollPane` and `SplitPanel` in order to allow for a wider and better view of patient details in ClinicMate. 
+Effort was put in by us to learn different JavaFX markup elements such as the `ScrollPane` and `SplitPanel` in order to allow for a wider and better view of patient details in ClinicMate. 
 
 ### Challenges faced and how it was resolved
 
-#### Challenge 1: Getting use to working in a team
+#### Challenge 1: Getting used to working in a team
 The team definitely had a rough start during the beginning of the team project since most of the team were new to the GitHub workflow.
 The process of picking up the workflow was rocky, as we had difficulties understanding how issues, pull request and merging of branches worked. 
-Merged conflict hindered the efficiency of our teamwork.
+Merge conflict hindered the efficiency of our teamwork.
 However, after much help and guidance within the team, everyone in the team became more familiar with the workflow, which enhanced our collaboration.
 
 #### Challenge 2: Delivering our product on time for each iteration

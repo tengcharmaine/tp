@@ -307,7 +307,7 @@ What a successful `add` command looks like:
 
 **<i class="material-icons-outlined">lightbulb</i> Useful Tip:**<br>
 
-A person can have a note included (See [addnote](#adding-a-note--addnote) command).
+A person can have a note included (See [addnote](#adding-a-note-addnote) command).
 </div>
 
 **Possible Error that you might encounter:**

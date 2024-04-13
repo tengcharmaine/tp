@@ -71,6 +71,23 @@ Throughout this guide, you'll also encounter various text styles. Here's what th
 
 Now that you're familiar with the annotations and text styles, we will give you a tour on how to navigate this user guide based on your level of expertise.
 
+## ClinicMate Beginner?
+
+Thank you for choosing ClinicMate for your patient management needs! We're excited to help you jump right in.
+
+1. To get started, head over to the [Quick Start](#quick-start) section to set up ClinicMate on your computer.
+2. Once you've set up ClinicMate, go through the [Quick Tour](#TODO) to discover key features of ClinicMate that you'll use frequently.
+3. If you're keen to explore ClinicMate by yourself, take a look at the [Existing Features](#existing-features) to dive deep into ClinicMate's functionalities.
+
+## Seasoned ClinicMate User?
+
+Welcome back! We're thrilled to have you with us again.
+
+1. If you want a reminder on how to use a feature, head over to the [Existing Features](#existing-features) section to get **detailed instructions** for each feature and **examples** for you can learn from.
+2. If you just need a quick reference of a command format, you can refer to the [Command Summary](#command-summary) section for a table of all the commands and their format available in ClinicMate.
+
+If you have more questions, do check out the [FAQ](#faq) section to see if there are answers to your queries.
+
 <div style="page-break-after: always;"></div>
 
 ## Quick start

@@ -78,7 +78,7 @@ In this section, you will learn how to set up ClinicMate on your computer.
 
 ### Prerequisites
 
-1. Open Command Prompt (for Windows) or Terminal (for MacOS and Linux) on your desktop.
+1. Open Command Prompt (for Windows) or Terminal (for MacOS and Linux) on your desktop. Refer to our [FAQ](#faq) on how to do so.
 2. Run the command `java -version` to check if you have Java 11 or above installed in your computer.
 * Assuming that you have Java installed in your computer,
   * If you are running Windows, this is what you should see after running the command.
@@ -101,7 +101,7 @@ In this section, you will learn how to set up ClinicMate on your computer.
     * You can then move the `.jar` file to that folder named `clinicmate` in your `Documents` folder.
     
 ### Running the application
-1. Open Command Prompt (for Windows) or Terminal (for MacOS and Linux) on your desktop.
+1. Open Command Prompt (for Windows) or Terminal (for MacOS and Linux) on your desktop. Refer to our [FAQ](#faq) on how to do so.
 2. Run the `cd` command into the folder you put the jar file in.
    * `cd` is the command to change directory.
    * e.g. `cd Documents/clinicmate`
@@ -618,6 +618,12 @@ ClinicMate data is saved automatically as a JSON file `[JAR file location]/data/
 
 ## FAQ
 
+**Q**: How do I open my terminal?<br>
+**A**: Here are the instructions to open your terminal for the different types of operating systems:
+- Windows: Click on the Windows Start button, and type 'Command Prompt' or 'cmd' into the search bar. Press Enter to open it.
+- macOS: Click on 'F4' and type 'terminal'. Press Enter when 'terminal' appears in the search results.
+- Linux: Press 'Ctrl', 'Alt' and 'T' simultaneously to open the terminal.
+
 **Q**: When will the patient notes panel be cleared? <br>
 **A**: The patient notes panel will be cleared when you use the `show` command without any `IC_NUMBER`. Unfortunately, `clear` or `delete` command will not clear the patient notes panel. 
 
@@ -663,7 +669,7 @@ ClinicMate data is saved automatically as a JSON file `[JAR file location]/data/
 **Q**: Can I use `addnote` repeatedly with the same message?<br>
 **A**: Yes! ClinicMate does not restrict the number of times you can use the `addnote` command with the same message.
 
-**Q**: Do you support non-English inputs?
+**Q**: Do you support non-English inputs?<br>
 **A**: We do not have dedicated support for non-English inputs, and some features might not work as expected. We recommend using English inputs for the best experience.
 
 --------------------------------------------------------------------------------------------------------------------

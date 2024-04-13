@@ -78,7 +78,7 @@ Now that you're familiar with the annotations and text styles, we will give you 
 Thank you for choosing ClinicMate for your patient management needs! We're excited to help you jump right in.
 
 1. To get started, head over to the [Quick Start](#quick-start) section to set up ClinicMate on your computer.
-2. Once you've set up ClinicMate, go through the [Quick Tour](#TODO) to discover key features of ClinicMate that you'll use frequently.
+2. Once you've set up ClinicMate, go through the [Quick Tour](#quick-tour-a-first-look-at-clinicmate) to discover key features of ClinicMate that you'll use frequently.
 3. If you're keen to explore ClinicMate by yourself, take a look at the [Existing Features](#existing-features) to dive deep into ClinicMate's functionalities.
 
 ## Seasoned ClinicMate User?

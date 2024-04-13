@@ -280,7 +280,7 @@ A big part of a GP consultation is taking patient history. ClinicMate allows you
 1. Suppose in your consultation, James Tan complains of frequent urination (polyuria) and excessive thirst (polydipsia), and you suspect he might have Diabetes Mellitus. You can note this down using the shorthands that you're used too! Simply type `addnote S1234567A n\Polyuria & polydipsia. DM?` into the Command Box and hit enter.
 2. Through the consultation, you also find out he has a family history of Diabetes Mellitus. `addnote` let's you quickly append this information by simply typing `addnote S1234567A n\Fam his of DM.` into the Command Box and hit enter.
 
-Notice that the notes are appended without replacing what was originally there, so that you can quickly keep adding all notes you find important without worry!
+Notice that the notes are appended without replacing what was originally there, so you can quickly add all notes you find important without worry!
 
 If you wish to replace the notes, or find out more about the `addnote` command, you can refer to [this](#adding-a-note-addnote).
 

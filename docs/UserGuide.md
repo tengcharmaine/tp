@@ -85,7 +85,7 @@ Thank you for choosing ClinicMate for your patient management needs! We're excit
 
 Welcome back! We're thrilled to have you with us again.
 
-1. If you want a reminder on how to use a feature, head over to the [Existing Features](#existing-features) section to get **detailed instructions** for each feature and **examples** for you can learn from.
+1. If you want a reminder on how to use a feature, head over to the [Existing Features](#existing-features) section to get **detailed instructions** for each feature and **examples** that you can learn from.
 2. If you just need a quick reference of a command format, you can refer to the [Command Summary](#command-summary) section for a table of all the commands and their format available in ClinicMate.
 
 If you have more questions, do check out the [FAQ](#faq) section to see if there are answers to your queries.

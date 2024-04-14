@@ -94,11 +94,11 @@ If you have more questions, do check out the [FAQ](#faq) section to see if there
 
 <div style="page-break-after: always;"></div>
 
-## Quick start
+# Quick start
 
 In this section, you will learn how to set up ClinicMate on your computer. 
 
-### Prerequisites
+## Prerequisites
 
 1. Open Command Prompt (for Windows) or Terminal (for MacOS and Linux) on your desktop. Refer to our [FAQ](#faq) on how to do so.
 2. Run the command `java -version` to check if you have Java 11 or above installed in your computer.
@@ -113,7 +113,7 @@ In this section, you will learn how to set up ClinicMate on your computer.
 
 3. If you do not have Java 11 or above installed in your computer, download it from [here](https://www.oracle.com/java/technologies/javase-jdk11-downloads.html).
 
-### Setting up
+## Setting up
 1. Download the latest `.jar` file [here](https://github.com/AY2324S2-CS2103T-F14-2/tp/releases/latest)
 2. You will see this screen after clicking on the link above.
    * Click on the `clinicmate.jar` file to download it.
@@ -122,7 +122,7 @@ In this section, you will learn how to set up ClinicMate on your computer.
     * For example, you can create an empty folder named `clinicmate` in your `Documents` folder.
     * You can then move the `.jar` file to that folder named `clinicmate` in your `Documents` folder.
     
-### Running the application
+## Running the application
 1. Open Command Prompt (for Windows) or Terminal (for MacOS and Linux) on your desktop. Refer to our [FAQ](#faq) on how to do so.
 2. Run the `cd` command into the folder you put the jar file in.
    * `cd` is the command to change directory.
@@ -150,7 +150,7 @@ In this section, you will learn how to set up ClinicMate on your computer.
 --------------------------------------------------------------------------------------------------------------------
 <div style="page-break-after: always;"></div>
 
-## GUI Overview
+# GUI Overview
 
 ClinicMate features a Graphical User Interface (GUI) that provides a seamless user experience. The GUI is designed to be intuitive and user-friendly, allowing you to navigate through the application effortlessly.
 
@@ -173,7 +173,7 @@ The GUI consists of the following components:
 
 Now that you have been introduced to the GUI components, let's proceed to learn how you can use the **CLI** to interact with ClinicMate.
 
-## CLI Overview
+# CLI Overview
 Experience the seamless power of ClinicMate's Command Line Interface (CLI) - where interaction is as simple as typing commands. 
 Say goodbye to juggling between typing and clicking, and welcome the streamlined efficiency of CLI!
 
@@ -184,7 +184,7 @@ your input and delivers responses through the Message Box. It's all about intera
 
 Ready to dive in? Let's explore writing command lines and get you started with ClinicMate!
 
-## Command Format
+# Command Format
 
 To use our CLI, here is an overview of the command formats. 
 
@@ -200,7 +200,7 @@ you can refer to the [Command Summary Section](#command-summary).
 
 Let's see how these components are used in a command!
 
-### Example Command: `addnote`
+## Example Command: `addnote`
 
 ![labelled](images/LabelledAddNote.png)
 
@@ -762,13 +762,13 @@ Do note that the person list panel will not display the empty line(s) unless the
 <span class="generated-only">[&uarr; Back to Top](#welcome-to-clinicmate)</span>
 <span class="print-only">[&uarr; Back to Table of Contents](#table-of-contents)</span>
 
-## Data Files
+# Data Files
 
-### Saving the data
+## Saving the data
 
 ClinicMate data is saved in the hard disk automatically after any command that changes the data. There is no need to save manually.
 
-### Editing the data file
+## Editing the data file
 
 ClinicMate data is saved automatically as a JSON file `[JAR file location]/data/clinicmate.json`. Advanced users are welcome to update data directly by editing that data file.
 
@@ -785,7 +785,7 @@ ClinicMate data is saved automatically as a JSON file `[JAR file location]/data/
 --------------------------------------------------------------------------------------------------------------------
 <div style="page-break-after: always;"></div>
 
-## FAQ
+# FAQ
 
 **Q**: How do I open my terminal?<br>
 **A**: Here are the instructions to open your terminal for the different types of operating systems:
@@ -847,7 +847,7 @@ ClinicMate data is saved automatically as a JSON file `[JAR file location]/data/
 --------------------------------------------------------------------------------------------------------------------
 <div style="page-break-after: always;"></div>
 
-## Coming Soon
+# Coming Soon
 
 1. **Support for multiple phone numbers**: Allow users to add multiple phone numbers for a single patient record.
 2. **Date of Birth**: Add a field for date of birth to patient records for better age calculation.
@@ -860,9 +860,9 @@ ClinicMate data is saved automatically as a JSON file `[JAR file location]/data/
 --------------------------------------------------------------------------------------------------------------------
 <div style="page-break-after: always;"></div>
 
-## Glossary
+# Glossary
 
-### Definitions of Key Terms
+## Definitions of Key Terms
 
 These descriptions will help you understand the key terms used in ClinicMate.
 
@@ -879,7 +879,7 @@ These descriptions will help you understand the key terms used in ClinicMate.
 | **Prefix**           | A prefix acts as a keyword used to identify a parameter. In the command `edit S1234567A ag\AGE n\NAME`, `ag\` and `n\` function as prefixes.                                                                         |
 
 
-### Parameters Description
+## Parameters Description
 
 | Parameter | Description                  | Constraints                                                                                                                        |
 |-----------|------------------------------|------------------------------------------------------------------------------------------------------------------------------------|
@@ -910,7 +910,7 @@ These descriptions will help you understand the key terms used in ClinicMate.
 </div>
 
 
-#### Email Format Description
+### Email Format Description
 The email format is `local-part@domain`.
 
 `local-part` constraints:
@@ -926,7 +926,7 @@ The email format is `local-part@domain`.
 <span class="generated-only">[&uarr; Back to Top](#welcome-to-clinicmate)</span>
 <span class="print-only">[&uarr; Back to Table of Contents](#table-of-contents)</span>
 
-## Command summary
+# Command summary
 
 Action     | Format, Examples
 -----------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------

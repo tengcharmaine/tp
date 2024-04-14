@@ -2,11 +2,14 @@ package seedu.address.logic.commands;
 
 import static java.util.Objects.requireNonNull;
 
+import seedu.address.commons.core.LogsCenter;
 import seedu.address.commons.util.ToStringBuilder;
 import seedu.address.logic.Messages;
 import seedu.address.model.Model;
 import seedu.address.model.person.IdentityCardNumberMatchesPredicate;
 import seedu.address.model.person.Person;
+
+import java.util.logging.Logger;
 
 /**
  * Finds and lists all persons in address book whose IC matches the argument IC.
@@ -20,6 +23,8 @@ public class FindCommand extends Command {
             + "the specified IC (case-insensitive) and displays them.\n"
             + "Parameters: IC\n"
             + "Example: " + COMMAND_WORD + " t1234567A";
+
+    private static final Logger logger = LogsCenter.getLogger(FindCommand.class);
 
     private final IdentityCardNumberMatchesPredicate predicate;
 
@@ -37,6 +42,9 @@ public class FindCommand extends Command {
         if (model.getFilteredPersonList().size() == 1) {
             Person person = model.getFilteredPersonList().get(0);
             model.setDisplayNote(person);
+            logger.info("Find command has been executed on Person with IC Number: " + predicate);
+        } else {
+            logger.info("Find command has been executed with no matching Person found.");
         }
 
         return new CommandResult(

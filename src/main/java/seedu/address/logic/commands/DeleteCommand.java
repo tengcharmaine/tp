@@ -3,7 +3,9 @@ package seedu.address.logic.commands;
 import static java.util.Objects.requireNonNull;
 
 import java.util.List;
+import java.util.logging.Logger;
 
+import seedu.address.commons.core.LogsCenter;
 import seedu.address.commons.util.ToStringBuilder;
 import seedu.address.logic.Messages;
 import seedu.address.logic.commands.exceptions.CommandException;
@@ -32,6 +34,8 @@ public class DeleteCommand extends Command {
             + "Sex: %6$s\n"
             + "Address: %7$s\n";;
 
+    private static final Logger logger = LogsCenter.getLogger(DeleteCommand.class);
+
     private final IdentityCardNumberMatchesPredicate predicate;
 
     public DeleteCommand(IdentityCardNumberMatchesPredicate predicate) {
@@ -49,6 +53,7 @@ public class DeleteCommand extends Command {
                 .orElseThrow(() -> new CommandException(Messages.MESSAGE_NO_MATCHING_IC_DELETE));
 
         model.deletePerson(personToDelete);
+        logger.info("Delete command has been executed on Person with IC Number: " + predicate);
         String successMessage = String.format(MESSAGE_DELETE_PERSON_SUCCESS,
                 personToDelete.getName(),
                 personToDelete.getPhone(),

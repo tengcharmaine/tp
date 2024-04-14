@@ -59,7 +59,6 @@ public class AddCommandParser implements Parser<AddCommand> {
         Set<Tag> tagList = ParserUtil.parseTags(argMultimap.getAllValues(PREFIX_TAG));
 
         // Use the same add person, but create a DEFAULT object for every thing else
-        // TODO: change this when the command is updated
         Person person = new Person(name, phone, email, ic, age, sex,
                 address, Note.DEFAULT, tagList);
 

@@ -16,7 +16,9 @@ import java.util.List;
 import java.util.Objects;
 import java.util.Optional;
 import java.util.Set;
+import java.util.logging.Logger;
 
+import seedu.address.commons.core.LogsCenter;
 import seedu.address.commons.util.CollectionUtil;
 import seedu.address.commons.util.ToStringBuilder;
 import seedu.address.logic.Messages;
@@ -65,6 +67,7 @@ public class EditCommand extends Command {
             + "Address: %7$s\n";
     public static final String MESSAGE_NOT_EDITED = "At least one field to edit must be provided.";
     public static final String MESSAGE_DUPLICATE_PERSON = "This person already exists in ClinicMate.";
+    private static final Logger logger = LogsCenter.getLogger(EditCommand.class);
     private final EditPersonDescriptor editPersonDescriptor;
     private final IdentityCardNumberMatchesPredicate predicate;
 
@@ -97,6 +100,7 @@ public class EditCommand extends Command {
         }
 
         model.setPerson(personToEdit, editedPerson);
+        logger.info("Edit command has been executed on Person with IC Number: " + predicate);
         model.updateFilteredPersonList(PREDICATE_SHOW_ALL_PERSONS);
         String successMessage = String.format(MESSAGE_EDIT_PERSON_SUCCESS,
                 editedPerson.getName(),
@@ -116,6 +120,7 @@ public class EditCommand extends Command {
      */
     private static Person createEditedPerson(Person personToEdit, EditPersonDescriptor editPersonDescriptor) {
         assert personToEdit != null;
+        assert editPersonDescriptor != null;
 
         Name updatedName = editPersonDescriptor.getName().orElse(personToEdit.getName());
         Phone updatedPhone = editPersonDescriptor.getPhone().orElse(personToEdit.getPhone());
@@ -127,7 +132,6 @@ public class EditCommand extends Command {
         Set<Tag> updatedTags = editPersonDescriptor.getTags().orElse(personToEdit.getTags());
 
         // Use the same person for existing fields, but copies the object for every thing else
-        // TODO: change this when the command is updated
         return new Person(updatedName, updatedPhone, updatedEmail, updatedIC,
                 updatedAge, updatedSex, updatedAddress, personToEdit.getNote(), updatedTags);
     }

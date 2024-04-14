@@ -3,12 +3,17 @@ package seedu.address.logic.commands;
 import static java.util.Objects.requireNonNull;
 import static seedu.address.model.Model.PREDICATE_SHOW_ALL_PERSONS;
 
+import seedu.address.commons.core.LogsCenter;
 import seedu.address.model.Model;
+
+import java.util.logging.Logger;
 
 /**
  * Lists all persons in the address book to the user.
  */
 public class ListCommand extends Command {
+    private static final Logger logger = LogsCenter.getLogger(ListCommand.class);
+
 
     public static final String COMMAND_WORD = "list";
 
@@ -18,6 +23,7 @@ public class ListCommand extends Command {
     public CommandResult execute(Model model) {
         requireNonNull(model);
         model.updateFilteredPersonList(PREDICATE_SHOW_ALL_PERSONS);
+        logger.info("Executed list command.");
         return new CommandResult(MESSAGE_SUCCESS);
     }
 }

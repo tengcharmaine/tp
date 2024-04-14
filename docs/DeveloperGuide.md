@@ -1052,59 +1052,59 @@ testers are expected to do more *exploratory* testing.
     1. Test case: `delete T0123A`<br>
        Expected: No person is deleted. Error details shown in the status message. Status bar remains the same.
 
-    1. Other incorrect delete commands to try: `delete`, `delete x`, `...` (where x is the identification number which does not exist in the list)<br>
+    1. Other incorrect delete commands to try: `delete`, `delete x`, `...` (where x is the IC number which does not exist in the list)<br>
        Expected: Similar to previous.
 
 ### Adding note to a person
 
 1. Adding a note to a person while all persons are being shown
 
-    1. Prerequisites: List all persons using the `list` command. Multiple persons in the list.
+    1. Prerequisites: List all persons using the `list` command. Multiple persons will be shown in the list.
 
     1. Test case: `addnote T0123456A n\Diabetes`<br>
-       Expected: The note `Diabetes` will be added to contact with the unique identification number `T0123456A`. Successful note update message will be shown in the status message.
+       Expected: The note `Diabetes` will be added to contact with the unique IC number `T0123456A`. Successful note update message will be shown in the status message.
 
     1. Test case: `addnote T0123A`<br>
        Expected: No note is added. Error details shown in the status message. Status bar remains the same.
 
-    1. Other incorrect addnote commands to try: `addnote`, `addnote x`, `...` (where x is the identification number which does not exist in the list)<br>
+    1. Other incorrect addnote commands to try: `addnote`, `addnote x`, `...` (where x is the IC number which does not exist in the list)<br>
        Expected: Similar to previous.
 
 ### Finding a person
 
 1. Finding a person while all persons are being shown
 
-    1. Prerequisites: List all persons using the `list` command. Multiple persons in the list.
+    1. Prerequisites: List all persons using the `list` command. Multiple persons will be shown in the list.
 
     1. Test case: `find T0123456A`<br>
-       Expected: The contact with the unique identification number `T0123456A` will be displayed in the list. Details of person found will be shown in the status message.
+       Expected: The contact with the unique IC number `T0123456A` will be displayed in the list. Details of person found will be shown in the status message.
 
     1. Test case: `find T0123A`<br>
        Expected: No contact is found. Error details shown in the status message. Status bar remains the same.
 
-    1. Other incorrect find commands to try: `find`, `find x`, `...` (where x is the identification number which does not exist in the list)<br>
+    1. Other incorrect find commands to try: `find`, `find x`, `...` (where x is the IC number which does not exist in the list)<br>
        Expected: Similar to previous.
 
 ### Editing a person
 
 1. Editing a person while all persons are being shown
 
-    1. Prerequisites: List all persons using the `list` command. Multiple persons in the list.
+    1. Prerequisites: List all persons using the `list` command. Multiple persons will be shown in the list.
 
     1. Test case: `edit T0123456A p\91234567 e\johndoe@example.com`<br>
-       Expected: The contact with the unique identification number `T0123456A` will be edited in the list. Updated details of person found will be shown in the status message.
+       Expected: The contact with the unique IC number `T0123456A` will be edited in the list. Updated details of person found will be shown in the status message.
 
     1. Test case: `edit T0123A`<br>
        Expected: No contact is edited. Error details shown in the status message. Status bar remains the same.
 
-    1. Other incorrect find commands to try: `edit`, `edit x`, `...` (where x is the identification number which does not exist in the list)<br>
+    1. Other incorrect find commands to try: `edit`, `edit x`, `...` (where x is the IC number which does not exist in the list)<br>
        Expected: Similar to previous.
 
 ### Showing a person
 
 1. Showing the note of a person while all persons are being shown
 
-    1. Prerequisites: List all persons using the `list` command. Multiple persons in the list.
+    1. Prerequisites: List all persons using the `list` command. Multiple persons will be shown in the list.
 
     1. Test case: `show T0123456A`<br>
        Expected: The note of the contact with the unique IC number `T0123456A` will be shown in the patient notes panel. Successful show message will be shown in the status message.
@@ -1116,7 +1116,7 @@ testers are expected to do more *exploratory* testing.
        Expected: If patient notes panel is previously empty, no note will be shown; If the patient notes panel already has a note, the note of the specified `IC_NUMBER` will not be shown.
        Error details shown in the status message.
 
-    1. Other incorrect find commands to try: `show x`, `...` (where x is the identification number which does not exist in the list)<br>
+    1. Other incorrect find commands to try: `show x`, `...` (where x is the IC number which does not exist in the list)<br>
        Expected: Similar to previous.
 
 ## **Appendix D: Effort**
@@ -1160,7 +1160,7 @@ increasing the productivity of the team.
 
 #### Challenge 3: Enhancing our UI 
 To make our app look nicer and easier to understand, we had a tough time dealing with JavaFX features as we were newly introduced to it. Changing how things look on the screen was tricky because we needed to see it visually. 
-Despite the challenge, we kept working on improving how our app looks and feels for users.
+Despite the challenge, we kept working on improving how our app looked and felt for users.
 
 #### Challenge 4: Modifying the code to fit ClinicMate's features
 The hardest challenge in which the team faced was to perform edits to the initial code which was provided to us. The large codebase required 
@@ -1171,5 +1171,5 @@ limited time. However, through clarifying each other's doubts and questions, we 
 
 Throughout the module, the team has gained much experience both in technical and soft skills. We definitely made significant 
 improvements to our product through self-research, teamwork and support from each other. We got accustomed to the GitHub workflow, 
-made use of JavaFx to implement our UI and most importantly, we developed a CLI application that adheres to rigorous code quality standards, 
+made use of JavaFX to implement our UI and most importantly, we developed a CLI application that adheres to rigorous code quality standards, 
 ensuring readability and maintainability at the same time. The team definitely had many takeaways from this module. 

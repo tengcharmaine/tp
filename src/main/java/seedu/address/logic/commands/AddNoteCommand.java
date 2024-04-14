@@ -61,12 +61,12 @@ public class AddNoteCommand extends Command {
         if (isReplace || personToEdit.getNote().equals(Note.DEFAULT)) {
             editedPerson = new Person(personToEdit.getName(), personToEdit.getPhone(), personToEdit.getEmail(),
                     personToEdit.getIdentityCardNumber(), personToEdit.getAge(), personToEdit.getSex(),
-                    personToEdit.getAddress(), note, personToEdit.getTags());
+                    personToEdit.getAddress(), note);
         } else {
             Note updatedNote = personToEdit.getNote().append("\n" + note.toString());
             editedPerson = new Person(personToEdit.getName(), personToEdit.getPhone(), personToEdit.getEmail(),
                     personToEdit.getIdentityCardNumber(), personToEdit.getAge(), personToEdit.getSex(),
-                    personToEdit.getAddress(), updatedNote, personToEdit.getTags());
+                    personToEdit.getAddress(), updatedNote);
         }
 
         model.setPerson(personToEdit, editedPerson);

@@ -14,7 +14,6 @@ import java.util.Collections;
 import java.util.HashSet;
 import java.util.Objects;
 import java.util.Optional;
-import java.util.Set;
 
 import seedu.address.commons.util.CollectionUtil;
 import seedu.address.commons.util.ToStringBuilder;
@@ -30,7 +29,6 @@ import seedu.address.model.person.Name;
 import seedu.address.model.person.Person;
 import seedu.address.model.person.Phone;
 import seedu.address.model.person.Sex;
-import seedu.address.model.tag.Tag;
 
 /**
  * Edits the details of an existing person in the address book.
@@ -119,12 +117,11 @@ public class EditCommand extends Command {
         Age updatedAge = editPersonDescriptor.getAge().orElse(personToEdit.getAge());
         Sex updatedSex = editPersonDescriptor.getSex().orElse(personToEdit.getSex());
         Address updatedAddress = editPersonDescriptor.getAddress().orElse(personToEdit.getAddress());
-        Set<Tag> updatedTags = editPersonDescriptor.getTags().orElse(personToEdit.getTags());
 
         // Use the same person for existing fields, but copies the object for every thing else
         // TODO: change this when the command is updated
         return new Person(updatedName, updatedPhone, updatedEmail, updatedIC,
-                updatedAge, updatedSex, updatedAddress, personToEdit.getNote(), updatedTags);
+                updatedAge, updatedSex, updatedAddress, personToEdit.getNote());
     }
 
     @Override
@@ -160,7 +157,6 @@ public class EditCommand extends Command {
         private Phone phone;
         private Email email;
         private Address address;
-        private Set<Tag> tags;
         private IdentityCardNumber ic;
         private Age age;
         private Sex sex;
@@ -178,14 +174,13 @@ public class EditCommand extends Command {
             setAge(toCopy.age);
             setSex(toCopy.sex);
             setAddress(toCopy.address);
-            setTags(toCopy.tags);
         }
 
         /**
          * Returns true if at least one field is edited.
          */
         public boolean isAnyFieldEdited() {
-            return CollectionUtil.isAnyNonNull(name, phone, email, ic, sex, age, address, tags);
+            return CollectionUtil.isAnyNonNull(name, phone, email, ic, sex, age, address);
         }
 
         public void setName(Name name) {
@@ -238,23 +233,6 @@ public class EditCommand extends Command {
             return Optional.ofNullable(sex);
         }
 
-        /**
-         * Sets {@code tags} to this object's {@code tags}.
-         * A defensive copy of {@code tags} is used internally.
-         */
-        public void setTags(Set<Tag> tags) {
-            this.tags = (tags != null) ? new HashSet<>(tags) : null;
-        }
-
-        /**
-         * Returns an unmodifiable tag set, which throws {@code UnsupportedOperationException}
-         * if modification is attempted.
-         * Returns {@code Optional#empty()} if {@code tags} is null.
-         */
-        public Optional<Set<Tag>> getTags() {
-            return (tags != null) ? Optional.of(Collections.unmodifiableSet(tags)) : Optional.empty();
-        }
-
         @Override
         public boolean equals(Object other) {
             if (other == this) {
@@ -273,8 +251,7 @@ public class EditCommand extends Command {
                     && Objects.equals(ic, otherEditPersonDescriptor.ic)
                     && Objects.equals(age, otherEditPersonDescriptor.age)
                     && Objects.equals(sex, otherEditPersonDescriptor.sex)
-                    && Objects.equals(address, otherEditPersonDescriptor.address)
-                    && Objects.equals(tags, otherEditPersonDescriptor.tags);
+                    && Objects.equals(address, otherEditPersonDescriptor.address);
         }
 
         @Override
@@ -287,7 +264,6 @@ public class EditCommand extends Command {
                     .add("age", age)
                     .add("sex", sex)
                     .add("address", address)
-                    .add("tags", tags)
                     .toString();
         }
     }

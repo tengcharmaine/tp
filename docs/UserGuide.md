@@ -177,7 +177,7 @@ Now that you have been introduced to the GUI components, let's proceed to learn 
 Experience the seamless power of ClinicMate's Command Line Interface (CLI) - where interaction is as simple as typing commands. 
 Say goodbye to juggling between typing and clicking, and welcome the streamlined efficiency of CLI!
 
-![CLI](images/CLIfeatures.png)
+![CLI](images/CLIFeatures.png)
 
 CLI is straightforward to use. The Command Box acts as your entry point for commands. Once you hit enter, ClinicMate processes 
 your input and delivers responses through the Message Box. It's all about interacting with ClinicMate effortlessly through text.

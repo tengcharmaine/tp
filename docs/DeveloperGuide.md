@@ -375,7 +375,7 @@ These operations are exposed in the `Model` interface as `Model#setPerson(Person
 
 The `edit` feature has the following operations in `ModelManager` which implements the `Model` interface:
 
-- Model#setPerson: Replaces the given person target with `editedPerson`. target must exist in the address book. The person identity of `editedPerson` must not be the same as another existing person in the address book.
+- Model#setPerson: Replaces the given person target with `editedPerson`. Target must exist in the address book. The person identity of `editedPerson` must not be the same as another existing person in the address book.
 
 - Model#hasPerson: Returns true if a person with the same identity as person exists in the address book.
 
@@ -425,7 +425,7 @@ The following activity diagram summarizes what happens when a user executes a ne
 
 The `show` mechanism is facilitated by `ModelManager`. It implements 
 - `ModelManager#setDisplayNote(Person person)` - which allows users to display
-the notes of a selected contacts on the `NoteDisplay`. 
+the notes of selected contacts on the `NoteDisplay`. 
 - `ModelManager#clear()` -  which clears the notes in `NoteDislay`.
 
 The `ShowCommandParser` parses the user input and implements `ShowCommand#createClearCommand()` if input is an empty string, else, 
@@ -433,17 +433,17 @@ it implements `ShowCommand#createShowCommad(IdentityCardNumberMatchesPredicate i
 
 Given below is an example usage scenario and how the `show` mechanism behaves at each step.
 
-Step 1: the user launches the application. The `AddressBook` will be initialized with the initial address book state.
+Step 1: The user launches the application. The `AddressBook` will be initialized with the initial address book state.
 
 Step 2:
 
-- Scenario 1: The user executes `show T0123456A ...` to show the notes of the person in the address book with the unique identification number of `T0123456A`. 
+- Scenario 1: The user executes `show T0123456A ...` to show the notes of the person in the address book with the unique IC number of `T0123456A`. 
 The `show` command calls `ModelManager#setDisplayNote(Person person)`, causing the modified state of the address book after the `show T0123456A ...` command executes to be displayed.
 
-- Scenario 2: The user executes `show` to clear the notes of the person in `NotesDisplay` of the address book.
+- Scenario 2: The user executes `show` to clear the notes of the person in patient notes display of the address book.
   The `show` command calls `ModelManager#clear()`, causing the modified state of the address book after the `show` command executes to be displayed.
 
-The following sequence diagram illustrates how a `show` operation goes through the `Logic` component and sets the Patient Note Display. 
+The following sequence diagram illustrates how a `show` operation goes through the `Logic` component and sets the patient notes display. 
 
 <puml src="diagrams/ShowSequenceDiagram.puml" alt="FindSequenceDiagram" />
 
@@ -453,16 +453,16 @@ The following sequence diagram illustrates how a `show` operation goes through t
 
 </box>
 
-The following activity diagram summarizes what happens when a user executes a new command:
+The following activity diagram summarizes what happens when a user executes a `show` command:
 <div style="text-align: center;">
     <puml src="diagrams/ShowCommandActivityDiagram.puml" width="600"/>
 </div>
 
 #### Design Considerations & Alternatives Considered 
 
-**Aspect: How to show the notes of patient on Patient Note Display.**
+**Aspect: How to show the notes of patient on patient notes display.**
 
-- **Alternative 1 (Current Choice):** Show patient's notes on one command using `IC_NUMBER`.
+- **Alternative 1 (Current Choice):** Show patient's notes in one command using `IC_NUMBER`.
 
     - Pros: Users are able to view specific user's notes.
 
@@ -473,14 +473,14 @@ The following activity diagram summarizes what happens when a user executes a ne
 
     - Cons: Brings inconvenience to users if they only want to view a specific user's notes.
 
-**Aspect: How to clear the notes of patient on Patient Note Display.**
+**Aspect: How to clear the notes of patient on patient notes display.**
 
-- **Alternative 1 (Current Choice):** Clears patient's notes on Patient Note Display using one command.
+- **Alternative 1 (Current Choice):** Clears patient's notes on patient notes display using one command.
     - Pros: Easy to implement. Users do not need to remember so many commands.
 
     - Cons: The command might not be intuitive.
 
-- **Alternative 2:** Clears patient's notes on Patient Note Display with another command.
+- **Alternative 2:** Clears patient's notes on patient notes display with another command.
 
     - Pros: The command is more intuitive.
 

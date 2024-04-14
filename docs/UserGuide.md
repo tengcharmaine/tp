@@ -363,7 +363,7 @@ Navigation and Assistance Functions in ClinicMate serve to enhance user experien
 **Steps**:
 1. Enter `help` into the command box. A help window should pop up.
 2. You can access help by either:
-- Copying our User Guide's link through the **Copy URL** button and paste it in your web browser.
+- Copying our User Guide's link through the **Copy URL** button and pasting it in your web browser.
 - Directly accessing our website through pressing on the icon.
  
 <span class="generated-only">[&uarr; Back to Top](#welcome-to-clinicmate)</span>

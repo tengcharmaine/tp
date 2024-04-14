@@ -266,7 +266,7 @@ If you wish to learn more about the `add` command, you can refer to [this](#addi
 
 ## 2. Finding a Patient
 
-Many walk in patients tend to be regulars at the clinic. ClinicMate is optimized to retrieve patient details quickly and easily. All you need is their IC number!
+Many walk-in patients tend to be regulars at the clinic. ClinicMate is optimized to retrieve patient details quickly and easily. All you need is their IC number!
 
 **Steps**:
 1. Let's say you want to find James Tan's details after adding him in the previous step. Type `find S1234567A` into the Command Box and hit enter.

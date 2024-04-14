@@ -469,7 +469,7 @@ An example is shown below:
 <span class="generated-only">[&uarr; Back to Top](#welcome-to-clinicmate)</span>
 <span class="print-only">[&uarr; Back to Table of Contents](#table-of-contents)</span>
 
-### Locating persons by IC number: `find`
+### Finding person by IC number: `find`
 *Today, your regular patient arrives at the clinic, and you need to retrieve her record. However, with a multitude of contacts, locating hers seems daunting. Fear not! Utilize the `find` command to swiftly pinpoint the specific patient you're searching for using their `IC_NUMBER`.*
 
 <div markdown="block" class="alert alert-success">

@@ -371,7 +371,15 @@ The following activity diagram summarizes what happens when a user executes a ne
 
 The edit mechanism is facilitated by `AddressBook`. It implements `AddressBook#setPerson(Person target, Person editedPerson)` which allow users to edit patient’s details in the addressbook.
 
-These operations are exposed in the `Model` interface as `Model#setPerson(Person target, Person editedPerson)`
+These operations are exposed in the `Model` interface as `Model#setPerson(Person target, Person editedPerson)`. 
+
+The `edit` feature has the following operations in `ModelManager` which implements the `Model` interface:
+
+- Model#setPerson: Replaces the given person target with `editedPerson`. target must exist in the address book. The person identity of `editedPerson` must not be the same as another existing person in the address book.
+
+- Model#hasPerson: Returns true if a person with the same identity as person exists in the address book.
+
+- Model#updateFilteredPersonList: Updates the filter of the filtered person list to filter by the given predicate.
 
 Given below is an example usage scenario and how the edit note mechanism behaves at each step.
 

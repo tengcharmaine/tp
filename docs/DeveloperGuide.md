@@ -16,14 +16,15 @@
 This project is based on the AddressBook-Level3 project created by the [SE-EDU initiative](https://se-education.org).
 
 This project also utilised CoPilot and ChatGPT to assist in the development and documentation process.
+
 Jayne - I had ChatGPT's assistance for HelpCommand code, documentation and UI edits done by me.
 
-JiaHui - I used the assistance of Github CoPilot for most of my code. I also used the assistance of ChatGPT mainly for documentation, UI edits for my code.
+Jia Hui - I used the assistance of Github CoPilot for most of my code. I also used the assistance of ChatGPT mainly for documentation, UI edits for my code.
 
 Drustan - I had Github CoPilot's assistance for most of the code attributed to me. Including but not limited to functional code, test code, github workflow files, and documentation.
 
 Charmaine - I had the assistance of ChatGPT for some of my functional code (other than AddNote Command which was referenced from the tutorial for Remark Command). 
-I mainly had assistance in test code, documentation and UI edits done by me.
+I mainly had assistance for test code, documentation and UI edits done by me.
 
 --------------------------------------------------------------------------------------------------------------------
 
@@ -40,7 +41,8 @@ Refer to the guide [_Setting up and getting started_](SettingUp.md).
 **<i class="material-icons-outlined">lightbulb</i> Useful Tip:**<br>
 - The `.puml` files used to create diagrams in this document are in the `docs/diagrams` folder in our code repository. 
 - Refer to the _PlantUML Tutorial_ at se-edu/guides to learn how to create and edit diagrams.
-- </div>
+ 
+</div>
 
 ### Architecture
 

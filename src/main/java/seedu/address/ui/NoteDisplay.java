@@ -3,6 +3,7 @@ package seedu.address.ui;
 import javafx.fxml.FXML;
 import javafx.scene.control.TextArea;
 import javafx.scene.layout.Region;
+import seedu.address.model.person.Note;
 
 
 /**
@@ -19,7 +20,7 @@ public class NoteDisplay extends UiPart<Region> {
         super(FXML);
     }
 
-    public void setNoteToUser(String noteToUser) {
-        noteDisplay.setText(noteToUser);
+    public void setNoteToUser(Note noteToUser) {
+        noteDisplay.setText(noteToUser.getDisplayString());
     }
 }

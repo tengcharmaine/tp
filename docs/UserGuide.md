@@ -382,7 +382,7 @@ Navigation and Assistance Functions in ClinicMate serve to enhance user experien
 <div markdown="block" class="alert alert-danger">
 
 **<i class="material-icons-outlined">warning</i> Warning:**<br>
-`clear` is a one-time deletion of all of your entries in ClinicMate. Please use it with consideration and care. You will not be able to retrieve any information back once the command has been called.
+`clear` is a one-time deletion of all of your entries in ClinicMate. Please use it with consideration and care. You will not be able to retrieve any information back once the command has been executed.
 </div>
 
 <span class="generated-only">[&uarr; Back to Top](#welcome-to-clinicmate)</span>

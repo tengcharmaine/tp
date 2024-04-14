@@ -157,12 +157,12 @@ ClinicMate features a Graphical User Interface (GUI) that provides a seamless us
 The GUI consists of the following components:
 ![GUI](images/GUIFeature.png)
 
-| **Number** | **Component**       | **Description**                                                  |
-|------------|---------------------|------------------------------------------------------------------|
-| 1          | Command Box         | Enter commands here to interact with ClinicMate.                 |
-| 2          | Message Box         | Displays the output of commands executed in the Command Box.     |
-| 3          | Patient List Panel  | Displays the list of patients in ClinicMate.                     |
-| 4          | Patient Notes Panel | Displays the notes of the patient that you are viewing any note. |
+| **Number** | **Component**       | **Description**                                              |
+|------------|---------------------|--------------------------------------------------------------|
+| 1          | Command Box         | Enter commands here to interact with ClinicMate.             |
+| 2          | Message Box         | Displays the output of commands executed in the Command Box. |
+| 3          | Patient List Panel  | Displays the list of patients in ClinicMate.                 |
+| 4          | Patient Notes Panel | Displays the notes of the patient that you are viewing.      |
 
 <div markdown="block" class="alert alert-success">
 
@@ -177,7 +177,7 @@ Now that you have been introduced to the GUI components, let's proceed to learn 
 Experience the seamless power of ClinicMate's Command Line Interface (CLI) - where interaction is as simple as typing commands. 
 Say goodbye to juggling between typing and clicking, and welcome the streamlined efficiency of CLI!
 
-![CLI.png](images/CLIfeatures.png)
+![CLI](images/CLIfeatures.png)
 
 CLI is straightforward to use. The Command Box acts as your entry point for commands. Once you hit enter, ClinicMate processes 
 your input and delivers responses through the Message Box. It's all about interacting with ClinicMate effortlessly through text.

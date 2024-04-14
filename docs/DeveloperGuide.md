@@ -192,7 +192,7 @@ The following sequence diagram illustrates how the `add` command works and goes 
 
 <box type="info" seamless>
 
-**Note:** The lifeline for `AddCommandParser` should end at the destroy marker (X) but due to a limitation of PlantUML, the lifeline reaches the end of diagram.
+**Note:** The lifeline for `AddCommandParser` and `AddCommand` should end at the destroy marker (X) but due to a limitation of PlantUML, the lifeline reaches the end of diagram.
 
 </box>
 
@@ -260,7 +260,7 @@ The following sequence diagram shows how an `addnote` operation goes through the
 
 <box type="info" seamless>
 
-**Note:** The lifeline for `AddNoteCommandParser` should end at the destroy marker (X) but due to a limitation of PlantUML, the lifeline reaches the end of diagram.
+**Note:** The lifeline for `AddNoteCommandParser` and `AddNoteCommand` should end at the destroy marker (X) but due to a limitation of PlantUML, the lifeline reaches the end of diagram.
 
 </box>
 
@@ -323,7 +323,7 @@ The following sequence diagram shows how a find operation goes through the `Logi
 
 <box type="info" seamless>
 
-**Note:** The lifeline for `FindCommand` should end at the destroy marker (X) but due to a limitation of PlantUML, the lifeline reaches the end of diagram.
+**Note:** The lifeline for `FindCommand` and `FindCommandParser` should end at the destroy marker (X) but due to a limitation of PlantUML, the lifeline reaches the end of diagram.
 
 </box>
 
@@ -378,7 +378,7 @@ The following sequence diagram shows how a delete operation goes through the `Lo
 
 <box type="info" seamless>
 
-**Note:** The lifeline for `DeleteCommandParser` should end at the destroy marker (X) but due to a limitation of PlantUML, the lifeline reaches the end of diagram.
+**Note:** The lifeline for `DeleteCommandParser` and `DeleteCommand` should end at the destroy marker (X) but due to a limitation of PlantUML, the lifeline reaches the end of diagram.
 
 </box>
 
@@ -424,7 +424,7 @@ The following sequence diagram shows how an edit operation goes through the `Log
 
 <box type="info" seamless>
 
-**Note:** The lifeline for `EditCommand` should end at the destroy marker (X) but due to a limitation of PlantUML, the lifeline reaches the end of diagram.
+**Note:** The lifeline for `EditCommand` and `EditCommandParser` should end at the destroy marker (X) but due to a limitation of PlantUML, the lifeline reaches the end of diagram.
 
 </box>
 

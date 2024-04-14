@@ -159,7 +159,7 @@ The `add` feature is implemented using the `AddCommand` class. The `AddCommand` 
 - all compulsory parameters are present
 - no duplicate `Person` in ClinicMate
 
-The `add` mechanism is facilitated by `AddressBook`. It implements `ModelManager#addPerson(Person p)`which allows users to add patients’ contacts 
+The add mechanism is facilitated by `AddressBook`. It implements `ModelManager#addPerson(Person p)`which allows users to add patients’ contacts 
 and relevant patient information into ClinicMate. These operations are exposed in the `Model` interface as `Model#addPerson(Person p)`. 
 
 Apart from that, the feature also includes the following operation in `ModelManager`, which implements the `Model` interface:
@@ -225,7 +225,7 @@ The following activity diagram summarizes what happens when a user executes a ne
 
 #### Implementation
 
-The `addnote` mechanism is facilitated by `AddressBook`. It implements `AddressBook#setPerson(Person target, Person editedPerson)` which allow users to add/replace patients’ notes in the addressbook.
+The add/replace note mechanism is facilitated by `AddressBook`. It implements `AddressBook#setPerson(Person target, Person editedPerson)` which allow users to add/replace patients’ notes in the addressbook.
 
 These operations are exposed in the `Model` interface as `Model#setPerson(Person target, Person editedPerson)`
 
@@ -301,7 +301,8 @@ Given below is an example usage scenario and how the find mechanism behaves at e
 
 Step 1. The user launches the application. The `AddressBook` will be initialized with the initial address book state.
 
-Step 2. The user executes `find T0123456A …` to find the person in the address book with the unique identification number `T0123456A`. The find command calls `Model#updateFilteredPersonList(Predicate predicate)`, causing the modified state of the address book after the `find T0123456A …` command executes to be displayed.
+Step 2. The user executes `find S0123456A` to find the person in the address book with the unique identification number `S0123456A`. The find command calls `Model#updateFilteredPersonList(Predicate predicate)`, 
+causing the modified state of the address book after the `find S0123456A` command executes to be displayed.
 
 <box type="info" seamless>
 
@@ -347,7 +348,7 @@ The following activity diagram summarizes what happens when a user executes a ne
 
 #### Implementation
 
-The find mechanism is facilitated by `Addressbook`. It implements `Addressbook#removePerson(Person key)` which allow users to delete patients in the addressbook.
+The delete mechanism is facilitated by `Addressbook`. It implements `Addressbook#removePerson(Person key)` which allow users to delete patients in the addressbook.
 
 These operations are exposed in the `Model` interface as `Model#deletePerson(Person target)`.
 
@@ -355,8 +356,8 @@ Given below is an example usage scenario and how the delete mechanism behaves at
 
 Step 1. The user launches the application. The `AddressBook` will be initialized with the initial address book state.
 
-Step 2. The user executes `delete T0123456A` to delete the person in the address book with the unique identification number `T0123456A`. 
-The delete command calls `Model#deletePerson(Person target)`, causing the modified state of the address book after the `delete T0123456A` command executes to be saved.
+Step 2. The user executes `delete S0123456A` to delete the person in the address book with the unique identification number `S0123456A`. 
+The delete command calls `Model#deletePerson(Person target)`, causing the modified state of the address book after the `delete S0123456A` command executes to be saved.
 
 <box type="info" seamless>
 
@@ -370,7 +371,7 @@ The following sequence diagram shows how a delete operation goes through the `Lo
 
 <box type="info" seamless>
 
-**Note:** The lifeline for `DeleteCommand` should end at the destroy marker (X) but due to a limitation of PlantUML, the lifeline reaches the end of diagram.
+**Note:** The lifeline for `DeleteCommandParser` should end at the destroy marker (X) but due to a limitation of PlantUML, the lifeline reaches the end of diagram.
 
 </box>
 
@@ -387,7 +388,7 @@ The following activity diagram summarizes what happens when a user executes a ne
   * Rationale: Users will be able to view the updated contact list easily.
 
 **Aspect: Display of error message when command is unsuccessful:**
-* Current choice: Displays the correct error message based on the type of error made (e.g. missing fields, invalid ic format).
+* Current choice: Displays the correct error message based on the type of error made (e.g. missing fields, invalid IC number format).
   * Rationale: Users will be able to learn of their error quickly and have an idea of what to edit to make the command successful.
 
 ### Edit feature

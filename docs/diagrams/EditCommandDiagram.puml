@@ -13,7 +13,7 @@ participant "r:CommandResult" as CommandResult LOGIC_COLOR
 end box
 
 box Model MODEL_COLOR_T1
-participant ":ModelManager" as Model MODEL_COLOR
+participant "m:Model" as Model MODEL_COLOR
 end box
 
 note left of LogicManager
@@ -52,10 +52,10 @@ EditPersonDescriptor --> EditCommandParser
 deactivate EditPersonDescriptor
 
 create EditCommand
-EditCommandParser -> EditCommand
+EditCommandParser -> EditCommand : new EditCommand(i, d)
 activate EditCommand
 
-EditCommand --> EditCommandParser :
+EditCommand --> EditCommandParser : e
 deactivate EditCommand
 
 EditCommandParser --> AddressBookParser : e
@@ -97,6 +97,10 @@ deactivate CommandResult
 
 EditCommand --> LogicManager : r
 deactivate EditCommand
+
+'Hidden arrow to position the destroy marker below the end of the activation bar.
+EditCommand -[hidden]-> LogicManager
+destroy EditCommand
 
 [<--LogicManager
 deactivate LogicManager

@@ -14,7 +14,7 @@ participant "r:CommandResult" as CommandResult LOGIC_COLOR
 end box
 
 box Model MODEL_COLOR_T1
-participant ":ModelManager" as Model MODEL_COLOR
+participant "m:Model" as Model MODEL_COLOR
 end box
 
 note left of LogicManager
@@ -53,7 +53,7 @@ Note --> AddNoteCommandParser
 deactivate Note
 
 create AddNoteCommand
-AddNoteCommandParser -> AddNoteCommand
+AddNoteCommandParser -> AddNoteCommand : new AddNoteCommand(i, n, false)
 activate AddNoteCommand
 
 AddNoteCommand --> AddNoteCommandParser : a
@@ -65,7 +65,7 @@ deactivate AddNoteCommandParser
 AddNoteCommandParser -[hidden]-> AddressBookParser
 destroy AddNoteCommandParser
 
-AddressBookParser --> LogicManager : n
+AddressBookParser --> LogicManager : a
 deactivate AddressBookParser
 
 LogicManager -> AddNoteCommand : execute(m)
@@ -105,6 +105,10 @@ deactivate CommandResult
 
 AddNoteCommand --> LogicManager : r
 deactivate AddNoteCommand
+
+'Hidden arrow to position the destroy marker below the end of the activation bar.
+AddNoteCommand -[hidden]-> LogicManager
+destroy AddNoteCommand
 
 [<--LogicManager
 deactivate LogicManager

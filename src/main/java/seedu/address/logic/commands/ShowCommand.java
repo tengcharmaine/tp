@@ -67,13 +67,7 @@ public class ShowCommand extends Command {
             return new CommandResult(MESSAGE_CLEAR_NOTE_SUCCESS);
         }
 
-        List<Person> allPatients = model.getAddressBook().getPersonList();
-
-        Person person = allPatients.stream()
-            .filter(icPredicate::test)
-            .findFirst()
-            .orElseThrow(() -> new CommandException(Messages.MESSAGE_NO_MATCHING_IC));
-
+        Person person = model.getPersonIfExists(icPredicate);
         model.setDisplayNote(person);
 
         return new CommandResult(

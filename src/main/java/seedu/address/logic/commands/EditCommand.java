@@ -83,13 +83,8 @@ public class EditCommand extends Command {
     @Override
     public CommandResult execute(Model model) throws CommandException {
         requireNonNull(model);
-        List<Person> allPatients = model.getAddressBook().getPersonList();
 
-        Person personToEdit = allPatients.stream()
-                .filter(predicate::test)
-                .findFirst()
-                .orElseThrow(() -> new CommandException(Messages.MESSAGE_NO_MATCHING_IC));
-
+        Person personToEdit = model.getPersonIfExists(predicate);
         Person editedPerson = createEditedPerson(personToEdit, editPersonDescriptor);
 
         if (!personToEdit.isSamePerson(editedPerson) && model.hasPerson(editedPerson)) {

@@ -54,13 +54,8 @@ public class AddNoteCommand extends Command {
     @Override
     public CommandResult execute(Model model) throws CommandException {
         requireNonNull(model);
-        List<Person> allPatients = model.getAddressBook().getPersonList();
 
-        Person personToEdit = allPatients.stream()
-                .filter(icPredicate::test)
-                .findFirst()
-                .orElseThrow(() -> new CommandException(Messages.MESSAGE_NO_MATCHING_IC));
-
+        Person personToEdit = model.getPersonIfExists(icPredicate);
         Person editedPerson;
 
         if (isReplace || personToEdit.getNote().equals(Note.DEFAULT)) {

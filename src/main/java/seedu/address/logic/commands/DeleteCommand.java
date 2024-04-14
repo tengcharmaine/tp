@@ -41,12 +41,8 @@ public class DeleteCommand extends Command {
     @Override
     public CommandResult execute(Model model) throws CommandException {
         requireNonNull(model);
-        List<Person> allPatients = model.getAddressBook().getPersonList();
 
-        Person personToDelete = allPatients.stream()
-                .filter(predicate::test)
-                .findFirst()
-                .orElseThrow(() -> new CommandException(Messages.MESSAGE_NO_MATCHING_IC_DELETE));
+        Person personToDelete = model.getPersonIfExists(predicate);
 
         model.deletePerson(personToDelete);
         String successMessage = String.format(MESSAGE_DELETE_PERSON_SUCCESS,

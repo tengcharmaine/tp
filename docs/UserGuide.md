@@ -845,7 +845,6 @@ ClinicMate data is saved automatically as a JSON file `[JAR file location]/data/
 <span class="print-only">[&uarr; Back to Table of Contents](#table-of-contents)</span>
 
 --------------------------------------------------------------------------------------------------------------------
-<div style="page-break-after: always;"></div>
 
 # Coming Soon
 

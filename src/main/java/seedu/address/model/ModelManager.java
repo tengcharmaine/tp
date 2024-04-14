@@ -5,6 +5,7 @@ import static seedu.address.commons.util.CollectionUtil.requireAllNonNull;
 
 import java.nio.file.Path;
 import java.util.List;
+import java.util.Optional;
 import java.util.function.Predicate;
 import java.util.logging.Logger;
 
@@ -12,8 +13,6 @@ import javafx.collections.ObservableList;
 import javafx.collections.transformation.FilteredList;
 import seedu.address.commons.core.GuiSettings;
 import seedu.address.commons.core.LogsCenter;
-import seedu.address.logic.Messages;
-import seedu.address.logic.commands.exceptions.CommandException;
 import seedu.address.model.person.IdentityCardNumberMatchesPredicate;
 import seedu.address.model.person.Note;
 import seedu.address.model.person.Person;
@@ -174,16 +173,17 @@ public class ModelManager implements Model {
         addressBook.clearDisplayPerson();
     }
 
+    /**
+     * Returns the specified person if they exist in the list.
+     * If the person does not exist, an empty Optional is returned.
+     */
     @Override
-    public Person getPersonIfExists(IdentityCardNumberMatchesPredicate icPredicate) throws CommandException {
+    public Optional<Person> getPersonIfExists(IdentityCardNumberMatchesPredicate icPredicate) {
         List<Person> allPatients = addressBook.getPersonList();
 
-        Person personToEdit = allPatients.stream()
+        return allPatients.stream()
                 .filter(icPredicate::test)
-                .findFirst()
-                .orElseThrow(() -> new CommandException(Messages.MESSAGE_NO_MATCHING_IC));
-
-        return personToEdit;
+                .findFirst();
     }
 
     @Override

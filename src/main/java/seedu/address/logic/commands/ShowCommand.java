@@ -3,6 +3,7 @@ package seedu.address.logic.commands;
 import static java.util.Objects.requireNonNull;
 
 import seedu.address.commons.util.ToStringBuilder;
+import seedu.address.logic.Messages;
 import seedu.address.logic.commands.exceptions.CommandException;
 import seedu.address.model.Model;
 import seedu.address.model.person.IdentityCardNumberMatchesPredicate;
@@ -62,7 +63,8 @@ public class ShowCommand extends Command {
             return new CommandResult(MESSAGE_CLEAR_NOTE_SUCCESS);
         }
 
-        Person person = model.getPersonIfExists(icPredicate);
+        Person person = model.getPersonIfExists(icPredicate)
+                .orElseThrow(() -> new CommandException(Messages.MESSAGE_NO_MATCHING_IC));
         model.setDisplayNote(person);
 
         return new CommandResult(

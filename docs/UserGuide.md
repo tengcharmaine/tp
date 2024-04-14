@@ -414,7 +414,7 @@ Don't worry about losing your data when exiting. They will be automatically save
 Data Management Functions in ClinicMate serve to simplify the process of adding, editing and deleting patient's information. It also enables you to view a comprehensive list of patient information and effortlessly search for specific patient records.
 
 ### Adding a person: `add`
-*Encounter a new patient without a record? No worries! Our `add` command simplifies the process of adding their details to ClinicMate.*
+*Registering a new patient? No worries! Our `add` command simplifies the process of adding their details to ClinicMate.*
 
 **Format**: `add n\NAME p\PHONE e\EMAIL i\IC_NUMBER ag\AGE s\SEX a\ADDRESS`
 

@@ -21,6 +21,7 @@ import seedu.address.model.AddressBook;
 import seedu.address.model.Model;
 import seedu.address.model.ReadOnlyAddressBook;
 import seedu.address.model.ReadOnlyUserPrefs;
+import seedu.address.model.person.IdentityCardNumberMatchesPredicate;
 import seedu.address.model.person.Note;
 import seedu.address.model.person.Person;
 import seedu.address.testutil.PersonBuilder;
@@ -190,6 +191,11 @@ public class AddCommandTest {
         @Override
         public void clearDisplayNote() {
             throw new AssertionError("This method should not be called.");
+        }
+
+        @Override
+        public Person getPersonIfExists(IdentityCardNumberMatchesPredicate icPredicate) {
+            throw new AssertionError("This method should not be called");
         }
     }
 

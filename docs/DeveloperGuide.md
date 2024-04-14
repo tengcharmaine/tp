@@ -16,14 +16,15 @@
 This project is based on the AddressBook-Level3 project created by the [SE-EDU initiative](https://se-education.org).
 
 This project also utilised CoPilot and ChatGPT to assist in the development and documentation process.
+
 Jayne - I had ChatGPT's assistance for HelpCommand code, documentation and UI edits done by me.
 
-JiaHui - I used the assistance of Github CoPilot for most of my code. I also used the assistance of ChatGPT mainly for documentation, UI edits for my code.
+Jia Hui - I used the assistance of Github CoPilot for most of my code. I also used the assistance of ChatGPT mainly for documentation, UI edits for my code.
 
 Drustan - I had Github CoPilot's assistance for most of the code attributed to me. Including but not limited to functional code, test code, github workflow files, and documentation.
 
 Charmaine - I had the assistance of ChatGPT for some of my functional code (other than AddNote Command which was referenced from the tutorial for Remark Command). 
-I mainly had assistance in test code, documentation and UI edits done by me.
+I mainly had assistance for test code, documentation and UI edits done by me.
 
 --------------------------------------------------------------------------------------------------------------------
 
@@ -40,7 +41,8 @@ Refer to the guide [_Setting up and getting started_](SettingUp.md).
 **<i class="material-icons-outlined">lightbulb</i> Useful Tip:**<br>
 - The `.puml` files used to create diagrams in this document are in the `docs/diagrams` folder in our code repository. 
 - Refer to the _PlantUML Tutorial_ at se-edu/guides to learn how to create and edit diagrams.
-- </div>
+ 
+</div>
 
 ### Architecture
 
@@ -90,7 +92,7 @@ The **API** of this component is specified in [`Ui.java`](https://github.com/se-
 
 The UI consists of a `MainWindow` that is made up of parts e.g.`CommandBox`, `ResultDisplay`, `PersonListPanel`, `StatusBarFooter` etc. All these, including the `MainWindow`, inherit from the abstract `UiPart` class which captures the commonalities between classes that represent parts of the visible GUI.
 
-The `UI` component uses the JavaFx UI framework. The layout of these UI parts are defined in matching `.fxml` files that are in the `src/main/resources/view` folder. For example, the layout of the [`MainWindow`](https://github.com/se-edu/addressbook-level3/tree/master/src/main/java/seedu/address/ui/MainWindow.java) is specified in [`MainWindow.fxml`](https://github.com/se-edu/addressbook-level3/tree/master/src/main/resources/view/MainWindow.fxml)
+The `UI` component uses the JavaFX UI framework. The layout of these UI parts are defined in matching `.fxml` files that are in the `src/main/resources/view` folder. For example, the layout of the [`MainWindow`](https://github.com/se-edu/addressbook-level3/tree/master/src/main/java/seedu/address/ui/MainWindow.java) is specified in [`MainWindow.fxml`](https://github.com/se-edu/addressbook-level3/tree/master/src/main/resources/view/MainWindow.fxml)
 
 The `UI` component,
 
@@ -113,7 +115,7 @@ The sequence diagram below illustrates the interactions within the `Logic` compo
 
 <box type="info" seamless>
 
-**Note:** The lifeline for `DeleteCommandParser` should end at the destroy marker (X) but due to a limitation of PlantUML, the lifeline continues till the end of diagram.
+**Note:** The lifeline for `DeleteCommandParser` and `DeleteCommand` should end at the destroy marker (X) but due to a limitation of PlantUML, the lifeline continues till the end of diagram.
 </box>
 
 How the `Logic` component works:
@@ -121,7 +123,7 @@ How the `Logic` component works:
 1. When `Logic` is called upon to execute a command, it is passed to an `AddressBookParser` object which in turn creates a parser that matches the command (e.g., `DeleteCommandParser`) and uses it to parse the command.
 1. This results in a `Command` object (more precisely, an object of one of its subclasses e.g., `DeleteCommand`) which is executed by the `LogicManager`.
 1. The command can communicate with the `Model` when it is executed (e.g. to delete a person).<br>
-   Note that although this is shown as a single step in the diagram above (for simplicity), in the code it can take several interactions (between the command object and the `Model`) to achieve.
+   Note that the diagram above is simplified. In the code there might be more interactions (between the command object and the `Model`).
 1. The result of the command execution is encapsulated as a `CommandResult` object which is returned back from `Logic`.
 
 Here are the other classes in `Logic` (omitted from the class diagram above) that are used for parsing a user command:
@@ -141,9 +143,9 @@ How the parsing works:
 The `Model` component,
 
 * stores the address book data i.e., all `Person` objects (which are contained in a `UniquePersonList` object).
-* stores the currently 'selected' `Person` objects (e.g., results of a search query) as a separate _filtered_ list which is exposed to outsiders as an unmodifiable `ObservableList<Person>` that can be 'observed' e.g. the UI can be bound to this list so that the UI automatically updates when the data in the list change.
-* stores a `UserPref` object that represents the user’s preferences. This is exposed to the outside as a `ReadOnlyUserPref` objects.
-* does not depend on any of the other three components (as the `Model` represents data entities of the domain, they should make sense on their own without depending on other components)
+* stores the currently 'selected' `Person` objects (e.g. results of a search query) as a separate _filtered_ list which is exposed to outsiders as an unmodifiable `ObservableList<Person>` that can be 'observed' e.g. the UI can be bound to this list so that the UI automatically updates when the data in the list changes.
+* stores a `UserPref` object that represents the user’s preferences. This is exposed to the outside as a `ReadOnlyUserPref` object.
+* does not depend on any of the other three components (as the `Model` represents data entities of the domain, they should make sense on their own without depending on other components).
 
 ### Storage component
 
@@ -154,7 +156,7 @@ The `Model` component,
 The `Storage` component,
 * can save both address book data and user preference data in JSON format, and read them back into corresponding objects.
 * inherits from both `AddressBookStorage` and `UserPrefStorage`, which means it can be treated as either one (if only the functionality of only one is needed).
-* depends on some classes in the `Model` component (because the `Storage` component's job is to save/retrieve objects that belong to the `Model`)
+* depends on some classes in the `Model` component (because the `Storage` component's job is to save/retrieve objects that belong to the `Model`).
 
 ### Common classes
 
@@ -176,10 +178,10 @@ The `add` feature is implemented using the `AddCommand` class. The `AddCommand` 
 - all compulsory parameters are present
 - no duplicate `Person` in ClinicMate
 
-The add mechanism is facilitated by `AddressBook`. It implements `ModelManager#addPerson(Person p)`which allows users to add patients’ contacts 
+The `add` mechanism is facilitated by `AddressBook`. It implements `Model#addPerson(Person p)`which allows users to add patients’ contacts 
 and relevant patient information into ClinicMate. These operations are exposed in the `Model` interface as `Model#addPerson(Person p)`. 
 
-Apart from that, the feature also includes the following operation in `ModelManager`, which implements the `Model` interface:
+Apart from that, the feature also includes the following operation in `Model`, which implements the `Model` interface:
 - `Model#hasPerson(Person person)`: Checks if the `Person` to be added is already an existing `Person` profile in ClinicMate
 
 Given below is an example usage scenario and how the `add` mechanism behaves at each step.
@@ -225,7 +227,8 @@ The following activity diagram summarizes what happens when a user executes a ne
       * For long time users: Command is very long to type.
 
 * **Alternative 2:** Allow users to add patients by adding fields as and when is needed (i.e. not make all the fields compulsory).
-    * Pros: Shorter command to type to add a patient.
+    * Pros:
+      * Shorter command to type to add a patient.
     * Cons: 
       * We must ensure that the implementation of each individual commands is correct. 
       * Might not have all the relevant information of patients. Messy to keep track.
@@ -242,15 +245,15 @@ The following activity diagram summarizes what happens when a user executes a ne
 
 #### Implementation
 
-The add/replace note mechanism is facilitated by `AddressBook`. It implements `AddressBook#setPerson(Person target, Person editedPerson)` which allow users to add/replace patients’ notes in the addressbook.
+The `addnote` mechanism is facilitated by `AddressBook`. It implements `AddressBook#setPerson(Person target, Person editedPerson)` which allow users to add/replace patients’ notes in the addressbook.
 
 These operations are exposed in the `Model` interface:
-- `Model#getPersonIfExists`: Checks if the person with the predicate exists
-- `Model#setPerson`: Changes the note parameter of the target Person
+- `Model#getPersonIfExists`: Checks if the `Person` with the predicate exists
+- `Model#setPerson`: Changes the note parameter of the target `Person`
 - `Model#isPersonDisplayed`: Checks if the `Person` has their notes displayed in the patient notes panel
 - `Model#setDisplayedNote`: If `Model#isPersonDisplayed` returns true, the notes displayed will be updated
 
-Given below is an example usage scenario and how the add/replace note mechanism behaves at each step.
+Given below is an example usage scenario and how the `addnote` mechanism behaves at each step.
 
 Step 1. The user launches the application. The `AddressBook` will be initialized with the initial address book state.
 
@@ -276,7 +279,7 @@ The following sequence diagram shows how an `addnote` operation goes through the
 The following activity diagram summarizes what happens when a user executes a new `addnote` command:
 
 <div style="text-align: center;">
-    <puml src="diagrams/AddNoteCommandActivityDiagram.puml" width="250"/>
+    <puml src="diagrams/AddNoteCommandActivityDiagram.puml" width="600"/>
 </div>
 
 #### Design Considerations & Alternatives Considered
@@ -290,6 +293,7 @@ The following activity diagram summarizes what happens when a user executes a ne
       * Gives users the freedom to decide how they want to keep notes. 
     * Cons:
       * Users might not want to replace all the notes they have, and might just want to edit a section.
+
 
 * **Alternative 2:** Allow users to only add notes to patients.
     * Pros: More structured command to add notes to patient.
@@ -307,13 +311,13 @@ The following activity diagram summarizes what happens when a user executes a ne
 
 #### Implementation
 
-The find mechanism is facilitated by `ModelManager`. It implements `ModelManager#updateFilteredPersonList(Predicate predicate)` 
+The `find` mechanism is facilitated by `ModelManager`. It implements `ModelManager#updateFilteredPersonList(Predicate predicate)` 
 which allow users to find patients in ClinicMate.
 
 These operations are exposed in the `Model` interface as `Model#updateFilteredPersonList(Predicate predicate)`.
-`predicate` takes in a `IdentityCardNumberMatchesPredicate` to filter the list of patients.
+The `predicate` argument takes in a `IdentityCardNumberMatchesPredicate` to filter the list of patients.
 
-Given below is an example usage scenario and how the find mechanism behaves at each step.
+Given below is an example usage scenario and how the `find` mechanism behaves at each step.
 
 Step 1. The user launches the application. The `AddressBook` will be initialized with the initial address book state.
 
@@ -326,7 +330,7 @@ causing the modified state of the address book after the `find S0123456A` comman
 
 </box>
 
-The following sequence diagram shows how a find operation goes through the `Logic` component:
+The following sequence diagram shows how a `find` operation goes through the `Logic` component:
 
 <puml src="diagrams/FindSequenceDiagram.puml" alt="FindSequenceDiagram" />
 
@@ -348,7 +352,8 @@ The following activity diagram summarizes what happens when a user executes a ne
 * **Alternative 1 (Current Choice):** Requires users to input a full and valid IC number
   * Pros: Precise results, allows users to directly single out the patient's details
   * Cons: Might omit relevant results if the user types the IC number incorrectly
-* Alternative 2: Match all relevant patients' profiles even if the user enters a partial IC number
+
+* **Alternative 2:** Match all relevant patients' profiles even if the user enters a partial IC number
   * Pros: Flexible search, more time-efficient, returns results even without typing the whole IC number
   * Cons: Might produce more results than expected. Might incorrectly refer to the wrong patient details.
 
@@ -364,12 +369,12 @@ The following activity diagram summarizes what happens when a user executes a ne
 
 #### Implementation
 
-The delete mechanism is facilitated by `Addressbook`. It implements `Addressbook#removePerson(Person key)` which allow users to delete patients in the addressbook.
+The `delete` mechanism is facilitated by `Addressbook`. It implements `Addressbook#removePerson(Person key)` which allow users to delete patients in the addressbook.
 
 These operations are exposed in the `Model` interface as `Model#getPersonIfExists(Predicate predicate)` and `Model#deletePerson(Person target)`. 
 
 
-Given below is an example usage scenario and how the delete mechanism behaves at each step.
+Given below is an example usage scenario and how the `delete` mechanism behaves at each step.
 
 Step 1. The user launches the application. The `AddressBook` will be initialized with the initial address book state.
 
@@ -382,7 +387,7 @@ The delete command calls `Model#deletePerson(Person target)`, causing the modifi
 
 </box>
 
-The following sequence diagram shows how a delete operation goes through the `Logic` component:
+The following sequence diagram shows how a `delete` operation goes through the `Logic` component:
 
 <puml src="diagrams/DeleteSequenceDiagram.puml" alt="DeleteSequenceDiagram" />
 
@@ -412,25 +417,25 @@ The following activity diagram summarizes what happens when a user executes a ne
 
 #### Implementation
 
-The edit mechanism is facilitated by `AddressBook`. It implements `AddressBook#setPerson(Person target, Person editedPerson)` which allow users to edit patient’s details in the addressbook.
+The `edit` mechanism is facilitated by `AddressBook`. It implements `AddressBook#setPerson(Person target, Person editedPerson)` which allow users to edit patient’s details in the addressbook.
 
 These operations are exposed in the `Model` interface as `Model#setPerson(Person target, Person editedPerson)`. 
 
 The `edit` feature has the following operations in `ModelManager` which implements the `Model` interface:
 
-- `Model#getPersonIfExists(predicate)` - returns the specified person if they exist in the list.
+- `Model#getPersonIfExists(predicate)` : Returns the specified `Person` if they exist in the list.
 
-- `Model#setPerson`: Replaces the given person target with `editedPerson`. Target must exist in the address book. The person identity of `editedPerson` must not be the same as another existing person in the address book.
+- `Model#setPerson`: Replaces the given `Person` target with `editedPerson`. Target must exist in the address book. The identity of `editedPerson` must not be the same as another existing person in the address book.
 
-- `Model#hasPerson`: Returns true if a person with the same identity as person exists in the address book.
+- `Model#hasPerson`: Returns true if the address book contains the person in question.
 
 - `Model#updateFilteredPersonList`: Updates the filter of the filtered person list to filter by the given predicate.
 
-Given below is an example usage scenario and how the edit note mechanism behaves at each step.
+Given below is an example usage scenario and how the `edit` mechanism behaves at each step.
 
 Step 1. The user launches the application. The `AddressBook` will be initialized with the initial address book state.
 
-Step 2. The user executes `edit T0123456A …` to edit details of the person in the address book with the unique identification number `T0123456A`. The edit command calls `Model#setPerson(Person target, Person editedPerson)`, causing the modified state of the address book after the `edit T0123456A …` command executes to be saved.
+Step 2. The user executes `edit T0123456A …` to edit details of the person in the address book with the unique IC number `T0123456A`. The `edit` command calls `Model#setPerson(Person target, Person editedPerson)`, causing the modified state of the address book after the `edit T0123456A …` command executes to be saved.
 
 <box type="info" seamless>
 
@@ -438,7 +443,7 @@ Step 2. The user executes `edit T0123456A …` to edit details of the person in 
 
 </box>
 
-The following sequence diagram shows how an edit operation goes through the `Logic` component:
+The following sequence diagram shows how an `edit` operation goes through the `Logic` component:
 
 <puml src="diagrams/EditCommandDiagram.puml" alt="EditCommandDiagram" />
 
@@ -470,10 +475,10 @@ The following activity diagram summarizes what happens when a user executes a ne
 
 The `show` mechanism is facilitated by `ModelManager`. It implements 
 
-- `ModelManager#getPersonIfExists(predicate)` - returns the specified person if they exist in the list. 
-- `ModelManager#setDisplayNote(Person person)` - which allows users to display
+- `ModelManager#getPersonIfExists(predicate)` : Returns the specified `Person` if they exist in the list. 
+- `ModelManager#setDisplayNote(Person person)` : Which allows users to display
 the notes of selected contacts on the `NoteDisplay`. 
-- `ModelManager#clear()` -  which clears the notes in `NoteDislay`.
+- `ModelManager#clear()` : Which clears the notes in `NoteDislay`.
 
 The `ShowCommandParser` parses the user input and implements `ShowCommand#createClearCommand()` if input is an empty string, else, 
 it implements `ShowCommand#createShowCommad(IdentityCardNumberMatchesPredicate icPredicate)`. 
@@ -486,19 +491,18 @@ Step 2:
 
 - Scenario 1: The user executes `show T0123456A ...` to show the notes of the person in the address book with the unique IC number of `T0123456A`. 
 The `show` command calls `ModelManager#getPersonIfExists(predicate)` to check if the specific person exists in the addressbook.
+`ModelManager#setDisplayNote(Person person)` is then called, causing the modified state of the address book after the `show T0123456A ...` command executes to be displayed.
 
-- `ModelManager#setDisplayNote(Person person)` is then called, causing the modified state of the address book after the `show T0123456A ...` command executes to be displayed.
-
-- Scenario 2: The user executes `show` to clear the notes of the person in patient notes display of the address book.
+- Scenario 2: The user executes `show` to clear the notes of the person in patient notes panel of the address book.
   The `show` command calls `ModelManager#clear()`, causing the modified state of the address book after the `show` command executes to be displayed.
 
-The following sequence diagram illustrates how a `show` operation goes through the `Logic` component and sets the patient notes display. 
+The following sequence diagram illustrates how a `show` operation goes through the `Logic` component and sets the patient notes panel. 
 
 <puml src="diagrams/ShowSequenceDiagram.puml" alt="FindSequenceDiagram" />
 
 <box type="info" seamless>
 
-**Note:** The lifeline for `ShowCommand` should end at the destroy marker (X) but due to a limitation of PlantUML, the lifeline reaches the end of diagram.
+**Note:** The lifeline for `ShowCommandParser` and `ShowCommand` should end at the destroy marker (X) but due to a limitation of PlantUML, the lifeline reaches the end of diagram.
 
 </box>
 
@@ -509,7 +513,7 @@ The following activity diagram summarizes what happens when a user executes a `s
 
 #### Design Considerations & Alternatives Considered 
 
-**Aspect: How to show the notes of patient on patient notes display.**
+**Aspect: How to show the notes of patient on patient notes panel.**
 
 - **Alternative 1 (Current Choice):** Show patient's notes in one command using `IC_NUMBER`.
 
@@ -547,8 +551,8 @@ The `NoteDisplay` allows the users to view the notes of the selected patient in 
     <puml src="diagrams/NoteDisplayClassDiagram.puml" width="450"/>
 </div>
 
-`NoteDisplay` has a private field `noteDisplay` which is of type `TextArea`. The `NoteDisplay` has a method called `setNoteToUser` which takes in a string input and changes the `noteDisplay` through its `settext` method. 
-The notes will then be display in a section which is a FXML `VBox`. 
+`NoteDisplay` has a private field `noteDisplay` which is of type `TextArea`. The `NoteDisplay` has a method called `setNoteToUser` which takes in a `Note` and changes the `noteDisplay` through its `settext` method. 
+The notes will then be displayed in a section which is a FXML `VBox`. 
 
 #### Design Consideration & Alternatives Considered 
 
@@ -559,7 +563,7 @@ The notes will then be display in a section which is a FXML `VBox`.
   
     - Cons: One additional command is needed to view the notes of the patients.
 
-- **Alternative 2:** Display the notes of the patients in the `PersonCard` with the rest the of the details.
+- **Alternative 2:** Display the notes of the patients in the `PersonCard` with the rest of the details.
 
     - Pros: The user does not need to enter an extra command to view the notes of the patients.
   
@@ -598,21 +602,21 @@ The notes will then be display in a section which is a FXML `VBox`.
 
 Priorities: High (must have) - `* * *`, Medium (nice to have) - `* *`, Low (unlikely to have) - `*`
 
-| Priority | As a …​                     | I want to …​                                                        | So that I can…​                                                                                       |
-|------|-----------------------------|---------------------------------------------------------------------|-------------------------------------------------------------------------------------------------------|
-| `* * *` | user                        | add a new patient                                                   | manage patient information for that new patient                                                       |
-| `* * *` | organised user              | easily delete unnecessary data to reduce clutter in ClinicMate      | maintain a clean and organised patient database                                                       |
+| Priority | As a …​                     | I want to …​                                                         | So that I can…​                                                                                       |
+|------|-----------------------------|----------------------------------------------------------------------|-------------------------------------------------------------------------------------------------------|
+| `* * *` | user                        | add a new patient                                                    | manage patient information for that new patient                                                       |
+| `* * *` | organised user              | easily delete unnecessary data to reduce clutter in ClinicMate       | maintain a clean and organised patient database                                                       |
 | `* * *` | user                        | add notes associated to each patient (including past diagnosis etc.) | easily follow up on necessary actions and understand the patient better                               |
-| `* * *` | user                        | exit ClinicMate quickly                                             | conclude my session at the end of the day and ensure that ClinicMate is not running in the background |
-| `* *` | user                        | remove notes associated to each patient                             | remove irrelevant information and keep my notes up to date                                            |
-| `* *` | user managing many patients | filter the data based on ic number                                  | view the information quickly without searching through the whole list                                 |
-| `* *` | careless user               | edit patient information                                            | keep accurate records of my patients                                                                  |
-| `* *` | new user                    | see usage instructions                                              | refer to instructions when I have difficulty using ClinicMate                                         |
-| `* *` | new user                    | clear all sample data                                               | insert my own patient information into ClinicMate                                                     |
-| `* *` | new user                    | see ClinicMate populated with sample data                           | see how ClinicMate looks like when it is in use                                                       |
-| `*`  | user                        | show individual patient information                                 | focus on the patient's details during consultations                                                   |
-| `*`  | creative user               | be able to change the theme of ClinicMate                           | personalise the apperance of the user interface based on my preferences                               |
-| `*`  | new user                    | be able to export patient data for reporting purposes               | analyse health trends of a patient over time                                                          |
+| `* * *` | user                        | exit ClinicMate quickly                                              | conclude my session at the end of the day and ensure that ClinicMate is not running in the background |
+| `* *` | user                        | remove notes associated to each patient                              | remove irrelevant information and keep my notes up to date                                            |
+| `* *` | user managing many patients | filter the data based on ic number                                   | view the information quickly without searching through the whole list                                 |
+| `* *` | careless user               | edit patient information                                             | keep accurate records of my patients                                                                  |
+| `* *` | new user                    | see usage instructions                                               | refer to instructions when I have difficulty using ClinicMate                                         |
+| `* *` | new user                    | clear all sample data                                                | insert my own patient information into ClinicMate                                                     |
+| `* *` | new user                    | see ClinicMate populated with sample data                            | see how ClinicMate looks like when it is in use                                                       |
+| `*`  | user                        | show individual patient information                                  | focus on the patient's details during consultations                                                   |
+| `*`  | creative user               | be able to change the theme of ClinicMate                            | personalise the apperance of the user interface based on my preferences                               |
+| `*`  | new user                    | be able to export patient data                                       | analyse health trends of a patient over time                                                          |
 
 ### Use cases
 
@@ -783,31 +787,27 @@ For all use cases below, the **System** is the `ClinicMate` and the **Actor** is
 
 **MSS**
 
-1.  User requests to list patients.
-2.  ClinicMate shows a list of patients. 
-3.  User requests to exit the program. 
-4.  ClinicMate exits.
+1.  User requests to exit the program. 
+2.  ClinicMate exits.
 
     Use case ends.
 
 **Extensions**
 
-* 3a. The given command format is wrong → handled similarly to UC01 3a.
+* 1a. The given command format is wrong → handled similarly to UC01 3a.
 
 **Use case: UC09 - View help**
 
 **MSS**
 
-1.  User requests to list patients.
-2.  ClinicMate shows a list of patients.
-3.  User requests to help to use ClinicMate.
-4.  ClinicMate shows a help window with a link to the user guide.
+1.  User requests for help to use ClinicMate.
+2.  ClinicMate shows a help window with a link to the user guide.
 
     Use case ends.
 
 **Extensions**
 
-* 3a. The given command format is wrong → handled similarly to UC01 3a.
+* 1a. The given command format is wrong → handled similarly to UC01 3a.
 
 
 ### Non-Functional Requirements
@@ -831,7 +831,7 @@ For all use cases below, the **System** is the `ClinicMate` and the **Actor** is
 Some definitions have been omitted as they have already been defined in the user guide.
 </div>
 
-* **Mainstream OS**: Windows, Linux, Unix, MacOS
+* **Mainstream OS**: Windows, Linux, MacOS
 * **GP**: General Practitioner, a general physician who provides primary care (usually in a clinic).
 * **Taking History**: A medical term for recording a patient's symptoms, medical history, and other relevant information.
 * **IC Number**: Short for NRIC (National Registration Identity Card) Number, a unique identifier for Singapore citizens and permanent residents.
@@ -889,8 +889,8 @@ to allow users to find contacts using different fields such as `name`, `age`, `e
 
 **Potential Issues With Current Feature**
 
-Users have given us the feedback that our the notes in our patient notes panel does not update with the use of other commands.
-For instance, if our notes panel currently already have `John`'s notes reflected on it, using the `addnote` command to add a note of another contact who is not `John` will not cause the 
+Users have given us the feedback that the notes in our patient notes panel does not update with the use of other commands.
+For instance, if our notes panel currently already has `John`'s notes reflected on it, using the `addnote` command to add a note of another contact who is not `John` will not cause the 
 notes panel to update accordingly. `John`'s notes will still exist on the notes panel despite executing the `addnote` command to edit the note of another person.
 This could bring inconvenience to the user as users will not be able to view a contact's notes immediately upon using other commands. 
 They would then have to go through the hassle of typing the `show` command to allow the new contact's note to be displayed on the notes panel.
@@ -911,8 +911,8 @@ executing `edit T0123456A p\12345678`, will cause the notes panel to update to t
 
 **Potential Issues With Current Feature**
 
-Currently, ClinicMate only support English and does not support other languages such as Chinese, Japanese, Arabic etc. This restricts the usability of 
-users who does not use English. In another scenario where the patient name might not be in English, the user will also not be able to perform most commands such as `add`, `edit` etc.
+Currently, ClinicMate only supports English and does not support other languages such as Chinese, Japanese, Arabic etc. This restricts the usability of 
+users who does not use English. In another scenario where a patient's name might not be in English, the user will also not be able to perform most commands such as `add`, `edit` etc.
 
 **Proposed Enhancements**
 
@@ -923,22 +923,24 @@ We will be allowing more languages to be supported in ClinicMate
 - `add n\ジョン p\12345678 e\johndoe@mail.com i\T0123456A ag\12 s\M a\311, Clementi Ave 2, #02-25` will be allowed.
 - `edit n\ジョン p\12345678` will be allowed.
 
-### Improving error handling for `edit` command
+### Improving error handling specificity for user-facing commands
 
 **Potential Issues With Current Feature**
 
-Currently, the `edit` command does not check the existence of `IC_NUMBER` upon entering an `edit` command with an empty field.
+While most of the error messages are specific, there are some instances where the error messages are too general. For instance,
+currently, the `edit` command does not check the existence of `IC_NUMBER` upon entering an `edit` command with an empty field.
 For instance, entering `edit S1234567P` in the event that the contact with the `IC_NUMBER` of `S1234567P` does not exist returns an error message 
 of *at least one field to edit must be provided*. However, the error message should be that *the `IC_NUMBER` provided does
 not exist* as the existence of the `IC_NUMBER` should be checked first. This is a problem as users might go on to provide a field for a non-existing contact, thus returning them another error message.
 
 **Proposed Enhancements**
 
-We will check the existence of the `IC_NUMBER` first during the execution of the `edit` command. 
+We will add more specific conditionals to verify the validity of parsed inputs in the various `Parser` classes.
 
 **Examples**
 
-`edit S1234567P` should return the error message *the `IC_NUMBER` provided does not exist.*
+- `edit S1234567P` should return the error message *the `IC_NUMBER` provided does not exist.*
+- `edit S1234567P e\` should return the error message *email field should not be blank.*
 
 ### Allowing for multiple phone numbers
 
@@ -955,7 +957,7 @@ We will allow for the addition of multiple numbers under the `phone` field throu
 **Examples**
 
 - `add n\John Doe p\12345678 e\johndoe@mail.com i\T0123456A ag\12 s\M a\311, Clementi Ave 2, #02-25` will cause the `phone` number `12345678` to be added for user `T0123456A`
-- `add n\John Doe p\12345678, 09876544, 99999999 e\johndoe@mail.com i\T0123456A ag\12 s\M a\311, Clementi Ave 2, #02-25` will cause the `phone` number `12345678, 09876544, 99999999` to be added for user `T0123456A`
+- `add n\John Doe p\12345678, 09876544, 99999999 e\johndoe@mail.com i\T0123456A ag\12 s\M a\311, Clementi Ave 2, #02-25` will cause the `phone` numbers `12345678, 09876544, 99999999` to be added for user `T0123456A`
 
 ### Allowing for derivation of age through Date-Of-Birth
 
@@ -966,7 +968,7 @@ However, it is very cumbersome for users to edit the age of their contact indivi
 
 **Proposed Enhancements**
 
-In order to save the time of our users, we will adding in a new field called `DOB` which is Date of Birth in the form of `DD/MM/YYYY`. 
+In order to save the time of our users, we will be adding in a new field called `DOB` which is Date of Birth in the form of `DD/MM/YYYY`. 
 `age` of the contacts will thus be derived from their `DOB` with reference to the current year which we are in. Hence, streamlining the contact management process.
 
 **Examples**
@@ -976,11 +978,11 @@ Given that we are in the year 2024, the patient with the `DOB` of
 - `10/10/2003` will be at the age of 21 
 - `12/12/1990` will be at the age of 34
 
-### Further enhancements for `addnote` command
+### Storing notes as a doubly linked list
 
 **Potential Issues With Current Feature**
 
-Firstly, our current `addnote` command only allows user to add a new note, which will be appended to the previous one. However,
+Firstly, our current `addnote` command only allows users to add a new note, which will be appended to the previous one. However,
 there might be many instances in which the users need to edit or delete specific notes. Disallowing this will make adding notes quite frustrating at times.
 
 Secondly, each of the contacts in the patient list panel has a notes section which cannot be hidden and will appear in the UI. Users might not want to see all the notes for each contact as it might be very long and distracting.
@@ -989,14 +991,12 @@ Lastly, there is a lack of organisation for the notes and users might want to ca
 
 **Proposed Enhancements**
 
-We will thus:
-- Implement a feature to allow users to edit and delete specific notes.
-- Implement a feature for users to have the option of hiding the notes section for each patient in the patient list panel.
-- Allow users to tag and label different types of notes such as a tag for patient's diagnosis and another for their medication.
+Convert the way notes are stored to use a doubly linked list. This will allow for the independent updating and manipulation of separate notes,
+while still maintaining the chronological effect of notes being appended.
 
 **Examples**
 
-Since this is a work in progress, please do stay tune for any updates to see how these could be implemented. We thank you for your patience.
+Since this is a work in progress, please do stay tuned for any updates to see how these could be implemented. We thank you for your patience.
 
 ## **Appendix C: Instructions for manual testing**
 
@@ -1013,9 +1013,9 @@ testers are expected to do more *exploratory* testing.
 
 1. Initial launch
 
-   1. Download the jar file and copy into an empty folder
+   1. Download the jar file and copy into an empty folder.
 
-   1. Double-click the jar file 
+   1. Double-click the jar file.<br>
       Expected: Shows the GUI with a set of sample contacts. The window size may not be optimum.
 
 2. Saving window preferences
@@ -1029,10 +1029,10 @@ testers are expected to do more *exploratory* testing.
 
 1. Adding a person while all persons are being shown
 
-   1. Prerequisites: List all persons using the `list` command. Multiple persons in the list.
+   1. Prerequisites: List all persons using the `list` command. Multiple persons will be shown in the list.
 
    1. Test case: `add n\John Doe p\12345678 e\JohnDoe@mail.com i\T0123456A ag\12 s\M a\311, Clementi Ave 2, #02-25`<br>
-      Expected: New contact with the unique identification number `T0123456A` is added to the list. Details of the new contact shown in the status message.
+      Expected: New contact with the unique IC number `T0123456A` is added to the list. Details of the new contact shown in the status message.
 
    1. Test case: `add T0123A`<br>
       Expected: No person is added. Error details shown in the status message. Status bar remains the same.
@@ -1044,67 +1044,67 @@ testers are expected to do more *exploratory* testing.
 
 1. Deleting a person while all persons are being shown
 
-    1. Prerequisites: List all persons using the `list` command. Multiple persons in the list.
+    1. Prerequisites: List all persons using the `list` command. Multiple persons will be shown in the list.
 
     1. Test case: `delete T0123456A`<br>
-       Expected: The contact with the unique identification number `T0123456A` is deleted from the list. Details of the deleted contact shown in the status message.
+       Expected: The contact with the unique IC number `T0123456A` is deleted from the list. Details of the deleted contact shown in the status message.
 
     1. Test case: `delete T0123A`<br>
        Expected: No person is deleted. Error details shown in the status message. Status bar remains the same.
 
-    1. Other incorrect delete commands to try: `delete`, `delete x`, `...` (where x is the identification number which does not exist in the list)<br>
+    1. Other incorrect delete commands to try: `delete`, `delete x`, `...` (where x is the IC number which does not exist in the list)<br>
        Expected: Similar to previous.
 
 ### Adding note to a person
 
 1. Adding a note to a person while all persons are being shown
 
-    1. Prerequisites: List all persons using the `list` command. Multiple persons in the list.
+    1. Prerequisites: List all persons using the `list` command. Multiple persons will be shown in the list.
 
     1. Test case: `addnote T0123456A n\Diabetes`<br>
-       Expected: The note `Diabetes` will be added to contact with the unique identification number `T0123456A`. Successful note update message will be shown in the status message.
+       Expected: The note `Diabetes` will be added to contact with the unique IC number `T0123456A`. Successful note update message will be shown in the status message.
 
     1. Test case: `addnote T0123A`<br>
        Expected: No note is added. Error details shown in the status message. Status bar remains the same.
 
-    1. Other incorrect addnote commands to try: `addnote`, `addnote x`, `...` (where x is the identification number which does not exist in the list)<br>
+    1. Other incorrect addnote commands to try: `addnote`, `addnote x`, `...` (where x is the IC number which does not exist in the list)<br>
        Expected: Similar to previous.
 
 ### Finding a person
 
 1. Finding a person while all persons are being shown
 
-    1. Prerequisites: List all persons using the `list` command. Multiple persons in the list.
+    1. Prerequisites: List all persons using the `list` command. Multiple persons will be shown in the list.
 
     1. Test case: `find T0123456A`<br>
-       Expected: The contact with the unique identification number `T0123456A` will be displayed in the list. Details of person found will be shown in the status message.
+       Expected: The contact with the unique IC number `T0123456A` will be displayed in the list. Details of person found will be shown in the status message.
 
     1. Test case: `find T0123A`<br>
        Expected: No contact is found. Error details shown in the status message. Status bar remains the same.
 
-    1. Other incorrect find commands to try: `find`, `find x`, `...` (where x is the identification number which does not exist in the list)<br>
+    1. Other incorrect find commands to try: `find`, `find x`, `...` (where x is the IC number which does not exist in the list)<br>
        Expected: Similar to previous.
 
 ### Editing a person
 
 1. Editing a person while all persons are being shown
 
-    1. Prerequisites: List all persons using the `list` command. Multiple persons in the list.
+    1. Prerequisites: List all persons using the `list` command. Multiple persons will be shown in the list.
 
     1. Test case: `edit T0123456A p\91234567 e\johndoe@example.com`<br>
-       Expected: The contact with the unique identification number `T0123456A` will be edited in the list. Updated details of person found will be shown in the status message.
+       Expected: The contact with the unique IC number `T0123456A` will be edited in the list. Updated details of person found will be shown in the status message.
 
     1. Test case: `edit T0123A`<br>
        Expected: No contact is edited. Error details shown in the status message. Status bar remains the same.
 
-    1. Other incorrect find commands to try: `edit`, `edit x`, `...` (where x is the identification number which does not exist in the list)<br>
+    1. Other incorrect find commands to try: `edit`, `edit x`, `...` (where x is the IC number which does not exist in the list)<br>
        Expected: Similar to previous.
 
 ### Showing a person
 
 1. Showing the note of a person while all persons are being shown
 
-    1. Prerequisites: List all persons using the `list` command. Multiple persons in the list.
+    1. Prerequisites: List all persons using the `list` command. Multiple persons will be shown in the list.
 
     1. Test case: `show T0123456A`<br>
        Expected: The note of the contact with the unique IC number `T0123456A` will be shown in the patient notes panel. Successful show message will be shown in the status message.
@@ -1116,7 +1116,7 @@ testers are expected to do more *exploratory* testing.
        Expected: If patient notes panel is previously empty, no note will be shown; If the patient notes panel already has a note, the note of the specified `IC_NUMBER` will not be shown.
        Error details shown in the status message.
 
-    1. Other incorrect find commands to try: `show x`, `...` (where x is the identification number which does not exist in the list)<br>
+    1. Other incorrect find commands to try: `show x`, `...` (where x is the IC number which does not exist in the list)<br>
        Expected: Similar to previous.
 
 ## **Appendix D: Effort**
@@ -1160,7 +1160,7 @@ increasing the productivity of the team.
 
 #### Challenge 3: Enhancing our UI 
 To make our app look nicer and easier to understand, we had a tough time dealing with JavaFX features as we were newly introduced to it. Changing how things look on the screen was tricky because we needed to see it visually. 
-Despite the challenge, we kept working on improving how our app looks and feels for users.
+Despite the challenge, we kept working on improving how our app looked and felt for users.
 
 #### Challenge 4: Modifying the code to fit ClinicMate's features
 The hardest challenge in which the team faced was to perform edits to the initial code which was provided to us. The large codebase required 
@@ -1171,5 +1171,5 @@ limited time. However, through clarifying each other's doubts and questions, we 
 
 Throughout the module, the team has gained much experience both in technical and soft skills. We definitely made significant 
 improvements to our product through self-research, teamwork and support from each other. We got accustomed to the GitHub workflow, 
-made use of JavaFx to implement our UI and most importantly, we developed a CLI application that adheres to rigorous code quality standards, 
+made use of JavaFX to implement our UI and most importantly, we developed a CLI application that adheres to rigorous code quality standards, 
 ensuring readability and maintainability at the same time. The team definitely had many takeaways from this module. 

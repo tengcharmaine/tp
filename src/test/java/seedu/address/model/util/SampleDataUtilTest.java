@@ -21,9 +21,4 @@ public class SampleDataUtilTest {
     public void getSampleAddressBookTest() {
         assertEquals(SampleDataUtil.getSampleAddressBook().getPersonList().size(), 6);
     }
-
-    @Test
-    public void getEmptyTagSetTest() {
-        assertEquals(SampleDataUtil.getEmptyTagSet().size(), 0);
-    }
 }

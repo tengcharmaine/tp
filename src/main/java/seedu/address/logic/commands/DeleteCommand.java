@@ -53,7 +53,8 @@ public class DeleteCommand extends Command {
                 .orElseThrow(() -> new CommandException(Messages.MESSAGE_NO_MATCHING_IC_DELETE));
 
         model.deletePerson(personToDelete);
-        logger.info("Delete command has been executed on Person with IC Number: " + predicate);
+        logger.info("Delete command has been executed on Person with IC Number: "
+                + personToDelete.getIdentityCardNumber());
         String successMessage = String.format(MESSAGE_DELETE_PERSON_SUCCESS,
                 personToDelete.getName(),
                 personToDelete.getPhone(),

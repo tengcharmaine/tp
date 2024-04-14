@@ -82,7 +82,8 @@ public class ShowCommand extends Command {
 
         model.setDisplayNote(person);
 
-        logger.info("Show command has been executed, displaying note of Person with IC " + icPredicate);
+        logger.info("Show command has been executed, displaying note of Person with IC Number:"
+                + person.getIdentityCardNumber());
         return new CommandResult(
                 String.format(MESSAGE_SHOW_NOTE_SUCCESS, person.getIdentityCardNumber())
         );

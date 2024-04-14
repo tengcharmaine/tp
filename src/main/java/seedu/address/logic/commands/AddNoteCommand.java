@@ -84,7 +84,8 @@ public class AddNoteCommand extends Command {
             model.setDisplayNote(editedPerson);
         }
 
-        logger.info("Addnote command has been successfully executed on Person with IC: " + icPredicate);
+        logger.info("Addnote command has been successfully executed on Person with IC: "
+                + personToEdit.getIdentityCardNumber());
         return new CommandResult(generateSuccessMessage(editedPerson));
     }
 

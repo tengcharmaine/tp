@@ -417,25 +417,25 @@ The following activity diagram summarizes what happens when a user executes a ne
 
 #### Implementation
 
-The edit mechanism is facilitated by `AddressBook`. It implements `AddressBook#setPerson(Person target, Person editedPerson)` which allow users to edit patient’s details in the addressbook.
+The `edit` mechanism is facilitated by `AddressBook`. It implements `AddressBook#setPerson(Person target, Person editedPerson)` which allow users to edit patient’s details in the addressbook.
 
 These operations are exposed in the `Model` interface as `Model#setPerson(Person target, Person editedPerson)`. 
 
 The `edit` feature has the following operations in `ModelManager` which implements the `Model` interface:
 
-- `Model#getPersonIfExists(predicate)` - returns the specified person if they exist in the list.
+- `Model#getPersonIfExists(predicate)` : Returns the specified `Person` if they exist in the list.
 
-- `Model#setPerson`: Replaces the given person target with `editedPerson`. Target must exist in the address book. The person identity of `editedPerson` must not be the same as another existing person in the address book.
+- `Model#setPerson`: Replaces the given `Person` target with `editedPerson`. Target must exist in the address book. The identity of `editedPerson` must not be the same as another existing person in the address book.
 
-- `Model#hasPerson`: Returns true if a person with the same identity as person exists in the address book.
+- `Model#hasPerson`: Returns true if the address book contains the person in question.
 
 - `Model#updateFilteredPersonList`: Updates the filter of the filtered person list to filter by the given predicate.
 
-Given below is an example usage scenario and how the edit note mechanism behaves at each step.
+Given below is an example usage scenario and how the `edit` mechanism behaves at each step.
 
 Step 1. The user launches the application. The `AddressBook` will be initialized with the initial address book state.
 
-Step 2. The user executes `edit T0123456A …` to edit details of the person in the address book with the unique identification number `T0123456A`. The edit command calls `Model#setPerson(Person target, Person editedPerson)`, causing the modified state of the address book after the `edit T0123456A …` command executes to be saved.
+Step 2. The user executes `edit T0123456A …` to edit details of the person in the address book with the unique IC number `T0123456A`. The `edit` command calls `Model#setPerson(Person target, Person editedPerson)`, causing the modified state of the address book after the `edit T0123456A …` command executes to be saved.
 
 <box type="info" seamless>
 
@@ -443,7 +443,7 @@ Step 2. The user executes `edit T0123456A …` to edit details of the person in 
 
 </box>
 
-The following sequence diagram shows how an edit operation goes through the `Logic` component:
+The following sequence diagram shows how an `edit` operation goes through the `Logic` component:
 
 <puml src="diagrams/EditCommandDiagram.puml" alt="EditCommandDiagram" />
 
@@ -475,10 +475,10 @@ The following activity diagram summarizes what happens when a user executes a ne
 
 The `show` mechanism is facilitated by `ModelManager`. It implements 
 
-- `ModelManager#getPersonIfExists(predicate)` - returns the specified person if they exist in the list. 
-- `ModelManager#setDisplayNote(Person person)` - which allows users to display
+- `ModelManager#getPersonIfExists(predicate)` : Returns the specified `Person` if they exist in the list. 
+- `ModelManager#setDisplayNote(Person person)` : Which allows users to display
 the notes of selected contacts on the `NoteDisplay`. 
-- `ModelManager#clear()` -  which clears the notes in `NoteDislay`.
+- `ModelManager#clear()` : Which clears the notes in `NoteDislay`.
 
 The `ShowCommandParser` parses the user input and implements `ShowCommand#createClearCommand()` if input is an empty string, else, 
 it implements `ShowCommand#createShowCommad(IdentityCardNumberMatchesPredicate icPredicate)`. 
@@ -491,19 +491,18 @@ Step 2:
 
 - Scenario 1: The user executes `show T0123456A ...` to show the notes of the person in the address book with the unique IC number of `T0123456A`. 
 The `show` command calls `ModelManager#getPersonIfExists(predicate)` to check if the specific person exists in the addressbook.
+`ModelManager#setDisplayNote(Person person)` is then called, causing the modified state of the address book after the `show T0123456A ...` command executes to be displayed.
 
-- `ModelManager#setDisplayNote(Person person)` is then called, causing the modified state of the address book after the `show T0123456A ...` command executes to be displayed.
-
-- Scenario 2: The user executes `show` to clear the notes of the person in patient notes display of the address book.
+- Scenario 2: The user executes `show` to clear the notes of the person in patient notes panel of the address book.
   The `show` command calls `ModelManager#clear()`, causing the modified state of the address book after the `show` command executes to be displayed.
 
-The following sequence diagram illustrates how a `show` operation goes through the `Logic` component and sets the patient notes display. 
+The following sequence diagram illustrates how a `show` operation goes through the `Logic` component and sets the patient notes panel. 
 
 <puml src="diagrams/ShowSequenceDiagram.puml" alt="FindSequenceDiagram" />
 
 <box type="info" seamless>
 
-**Note:** The lifeline for `ShowCommand` should end at the destroy marker (X) but due to a limitation of PlantUML, the lifeline reaches the end of diagram.
+**Note:** The lifeline for `ShowCommandParser` and `ShowCommand` should end at the destroy marker (X) but due to a limitation of PlantUML, the lifeline reaches the end of diagram.
 
 </box>
 

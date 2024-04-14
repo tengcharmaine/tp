@@ -689,7 +689,7 @@ There might be cases that the `IC_NUMBER` you keyed in does not exist in ClinicM
 
 2.  A note will be added to the person with the specified `IC_NUMBER`.
 
-![addnoteapp2.png](images/addnoteapp2.png)
+![UG4.png](images/UG4.png)
 
 3.  New note will appear in the patient notes panel. If notes already exists, the new note will be appended to the previous notes on a new line.
 

@@ -15,6 +15,8 @@
 
 This project is based on the AddressBook-Level3 project created by the [SE-EDU initiative](https://se-education.org).
 
+This project also utilised CoPilot and ChatGPT to assist in the development and documentation process.
+
 --------------------------------------------------------------------------------------------------------------------
 
 ## **Setting up, getting started**
@@ -423,7 +425,7 @@ The following activity diagram summarizes what happens when a user executes a ne
 
 --------------------------------------------------------------------------------------------------------------------
 
-## **Appendix: Requirements**
+## **Appendix A: Requirements**
 
 ### Product scope
 
@@ -444,28 +446,38 @@ The following activity diagram summarizes what happens when a user executes a ne
 
 Priorities: High (must have) - `* * *`, Medium (nice to have) - `* *`, Low (unlikely to have) - `*`
 
-| Priority | As a …​                                    | I want to …​                                                               | So that I can…​                                                               |
-|---------|--------------------------------------------|----------------------------------------------------------------------------|-------------------------------------------------------------------------------|
-| `* * *` | new user                                   | see usage instructions                                                     | refer to instructions when I forget how to use the App                        |
-| `* * *` | user                                       | add a new patient                                                          |                                                                               |
-| `* * *` | user                                       | easily delete unnecessary data to reduce clutter in the app                | I can maintain a clean and organised patient database                         |
-| `* * *` | user                                       | add information associated to each patient (including past diagnosis etc.) | I can easily follow up on necessary actions and understand the patient better |
-| `* * *` | user                                       | filter the data based on ic number                                         | I can view the information quickily without searching through the whole list  |
-| `* *`   | user | edit patient information                                                   | keep accurate records of my patients                                          |
-| `* `    | user | show individual patient information                                        | focus on the patients details during consultations                            |
+| Priority | As a …​                     | I want to …​                                                         | So that I can…​                                                                                       |
+|------|-----------------------------|----------------------------------------------------------------------|-------------------------------------------------------------------------------------------------------|
+| `* * *` | user                        | add a new patient                                                    | manage patient information for that new patient                                                       |
+| `* * *` | tidy user                   | easily delete unnecessary data to reduce clutter in ClinicMate       | maintain a clean and organised patient database                                                       |
+| `* * *` | user                        | add notes associated to each patient (including past diagnosis etc.) | easily follow up on necessary actions and understand the patient better                               |
+| `* * *` | user                        | exit ClinicMate quickily                                             | conclude my session at the end of the day and ensure that ClinicMate is not running in the background |
+| `* *` | user                        | remove notes associated to each patient                              | remove irrelevant information and keep my notse up to data                                            |
+| `* *` | user managing many patients | filter the data based on ic number                                   | view the information quickily without searching through the whole list                                |
+| `* *` | careless user               | edit patient information                                             | keep accurate records of my patients                                                                  |
+| `* *` | new user                    | see usage instructions                                               | refer to instructions when I forget how to use ClinicMate                                             |
+| `* *` | new user                    | clear all sample data                                                | fill ClinicMate with all my patients information                                                      |
+| `* *` | new user                    | see ClinicMate populated with sample data                            | see how ClinicMate looks like when it is in use                                                       |
+| `*`  | user                        | show individual patient information                                  | focus on the patients details during consultations                                                    |
+| `*`  | creative user               | be able to change the theme of ClinicMate                            | personalise the apperance of the user interface based on my preferences                               |
+| `*`  | new user                    | be able to export patient data for reporting purposes                | analyse health trends in a patient over time                                                          |
 
 ### Use cases
 
-(For all use cases below, the **System** is the `ClinicMate` and the **Actor** is the `user`, unless specified otherwise)
+<div markdown="block" class="alert alert-info">
 
-**Use case: Add a person**
+**<i class="material-icons-outlined">edit</i> Note:**<br>
+For all use cases below, the **System** is the `ClinicMate` and the **Actor** is the `user`, unless specified otherwise
+</div>
+
+**Use case: UC01 - Add a person**
 
 **MSS**
 
-1.  User requests to list persons
-2.  ClinicMate shows a list of persons
-3.  User requests to add a specific person in the list
-4.  ClinicMate adds the person
+1.  User requests to list patients.
+2.  ClinicMate shows a list of patients.
+3.  User requests to add a specific patient in the list.
+4.  ClinicMate adds the patient.
 
     Use case ends.
 
@@ -487,14 +499,14 @@ Priorities: High (must have) - `* * *`, Medium (nice to have) - `* *`, Low (unli
 
       Use case resumes at step 2.
 
-**Use case: Add notes for a person**
+**Use case: UC02 - Add notes for a person**
 
 **MSS**
 
-1.  User requests to list persons
-2.  ClinicMate shows a list of persons
-3.  User requests to add notes for a specific person in the list
-4.  ClinicMate adds notes for the person
+1.  User requests to list patients.
+2.  ClinicMate shows a list of patients.
+3.  User requests to add notes for a specific patient in the list.
+4.  ClinicMate adds notes for the patient.
 
     Use case ends.
 
@@ -504,11 +516,7 @@ Priorities: High (must have) - `* * *`, Medium (nice to have) - `* *`, Low (unli
 
   Use case ends.
 
-* 3a. The given command format is wrong.
-
-    * 3a1. ClinicMate shows an error message.
-
-      Use case resumes at step 2.
+* 3a. The given command format is wrong → handled similarly to UC01 3a.
 
 * 4a. The given IC number is invalid.
 
@@ -516,14 +524,14 @@ Priorities: High (must have) - `* * *`, Medium (nice to have) - `* *`, Low (unli
 
       Use case resumes at step 2.
 
-**Use case: Delete a person**
+**Use case: UC03 - Delete a person**
 
 **MSS**
 
-1.  User requests to list persons
-2.  ClinicMate shows a list of persons
-3.  User requests to delete a specific person in the list
-4.  ClinicMate deletes the person
+1.  User requests to list patients.
+2.  ClinicMate shows a list of patients.
+3.  User requests to delete a specific patient in the list.
+4.  ClinicMate deletes the patient.
 
     Use case ends.
 
@@ -533,26 +541,18 @@ Priorities: High (must have) - `* * *`, Medium (nice to have) - `* *`, Low (unli
 
   Use case ends.
 
-* 3a. The given IC number is invalid.
+* 3a. The given command format is wrong → handled similarly to UC01 3a.
 
-    * 3a1. ClinicMate shows an error message.
+* 4a. The given IC number is invalid → handled similarly to UC02 4a.
 
-      Use case resumes at step 2.
-
-* 4a. The given command format is wrong.
-
-    * 4a1. ClinicMate shows an error message.
-
-      Use case resumes at step 2.
-
-**Use case: Find a person**
+**Use case: UC04 - Find a person**
 
 **MSS**
 
-1.  User requests to list persons
-2.  ClinicMate shows a list of persons
-3.  User requests to find a specific person in the list
-4.  ClinicMate finds the person
+1.  User requests to list patients.
+2.  ClinicMate shows a list of patients.
+3.  User requests to find a specific patient in the list.
+4.  ClinicMate finds the patient.
 
     Use case ends.
 
@@ -562,26 +562,18 @@ Priorities: High (must have) - `* * *`, Medium (nice to have) - `* *`, Low (unli
 
   Use case ends.
 
-* 3a. The given IC number is invalid.
+* 3a. The given command format is wrong → handled similarly to UC01 3a.
 
-    * 3a1. ClinicMate shows an error message.
+* 4a. The given IC number is invalid → handled similarly to UC02 4a.
 
-      Use case resumes at step 2.
-
-* 4a. The given command format is wrong.
-
-    * 4a1. ClinicMate shows an error message.
-
-      Use case resumes at step 2.
-
-**Use case: Edit a person**
+**Use case: UC05 - Edit a person**
 
 **MSS**
 
-1.  User requests to list persons
-2.  ClinicMate shows a list of persons
-3.  User requests to edit a specific person in the list
-4.  ClinicMate edits the person
+1.  User requests to list patients.
+2.  ClinicMate shows a list of patients.
+3.  User requests to edit a specific patient in the list.
+4.  ClinicMate edits the patient.
 
     Use case ends.
 
@@ -591,17 +583,80 @@ Priorities: High (must have) - `* * *`, Medium (nice to have) - `* *`, Low (unli
 
   Use case ends.
 
-* 3a. The given IC number is invalid.
+* 3a. The given command format is wrong → handled similarly to UC01 3a.
 
-    * 3a1. ClinicMate shows an error message.
+* 4a. The given IC number is invalid → handled similarly to UC02 4a.
 
-      Use case resumes at step 2.
+**Use case: UC06 - Show a person**
 
-* 4a. The given command format is wrong.
+**MSS**
 
-    * 4a1. ClinicMate shows an error message.
+1.  User requests to list patients.
+2.  ClinicMate shows a list of patients.
+3.  User requests to show a specific patient in the list.
+4.  ClinicMate shows the patient.
 
-      Use case resumes at step 2.
+    Use case ends.
+
+**Extensions**
+
+* 2a. The list is empty.
+
+  Use case ends.
+
+* 3a. The given command format is wrong → handled similarly to UC01 3a.
+
+* 4a. The given IC number is invalid → handled similarly to UC02 4a.
+
+**Use case: UC07 - Clear all patients**
+
+**MSS**
+
+1.  User requests to list patients.
+2.  ClinicMate shows a list of patients. 
+3.  User requests clear all patients from the full list of patients. 
+4.  ClinicMate clear all patients in the list.
+
+    Use case ends.
+
+**Extensions**
+
+* 2a. The list is empty.
+
+  Use case ends.
+
+* 3a. The given command format is wrong → handled similarly to UC01 3a.
+
+**Use case: UC08 - Exit the program**
+
+**MSS**
+
+1.  User requests to list patients.
+2.  ClinicMate shows a list of patients. 
+3.  User requests to exit the program. 
+4.  ClinicMate exits.
+
+    Use case ends.
+
+**Extensions**
+
+* 3a. The given command format is wrong → handled similarly to UC01 3a.
+
+**Use case: UC09 - View help**
+
+**MSS**
+
+1.  User requests to list patients.
+2.  ClinicMate shows a list of patients.
+3.  User requests to help to use ClinicMate.
+4.  ClinicMate shows a help window with a link to the user guide.
+
+    Use case ends.
+
+**Extensions**
+
+* 3a. The given command format is wrong → handled similarly to UC01 3a.
+
 
 ### Non-Functional Requirements
 
@@ -618,11 +673,19 @@ Priorities: High (must have) - `* * *`, Medium (nice to have) - `* *`, Low (unli
 
 ### Glossary
 
+<div markdown="block" class="alert alert-info">
+
+**<i class="material-icons-outlined">edit</i> Note:**<br>
+Some definitions have been omitted as they have already been defined in the user guide.
+</div>
+
 * **Mainstream OS**: Windows, Linux, Unix, MacOS
-* **GP**: General Practitioner, a general physician who provides primary care (usually in a clinic)
-* **Taking History**: A medical term for recording a patient's symptoms, medical history, and other relevant information
-* **Differential Diagnosis**: A medical term for a possible alternative diagnosis for a patient's symptoms
-* **IC Number**: Short for NRIC (National Registration Identity Card) Number, a unique identifier for Singapore citizens and permanent residents
+* **GP**: General Practitioner, a general physician who provides primary care (usually in a clinic).
+* **Taking History**: A medical term for recording a patient's symptoms, medical history, and other relevant information.
+* **IC Number**: Short for NRIC (National Registration Identity Card) Number, a unique identifier for Singapore citizens and permanent residents.
+* **JavaFX**: The User Interface framework used in this project.
+* **PlantUML**: The tool used to make diagrams in this guide.
+* **System**: Refers to ClinicMate.
 
 --------------------------------------------------------------------------------------------------------------------
 
@@ -649,8 +712,6 @@ Their application will thus be initialized with user's very own fields which the
 - `add n\John Doe p\12345678 i\T0123456A ag\12 s\M a\311, Clementi Ave 2, #02-25` will be allowed.
 - `add n\John Doe e\johndoe@mail.com i\T0123456A ag\12 s\M a\311, Clementi Ave 2, #02-25` will be allowed.
 - `add n\John Doe i\T0123456A ag\12 s\M a\311, Clementi Ave 2, #02-25` will be allowed.
-
-
 
 ### Flexible find command 
 
@@ -802,12 +863,12 @@ testers are expected to do more *exploratory* testing.
 
    1. Double-click the jar file Expected: Shows the GUI with a set of sample contacts. The window size may not be optimum.
 
-1. Saving window preferences
+2. Saving window preferences
 
    1. Resize the window to an optimum size. Move the window to a different location. Close the window.
 
    1. Re-launch the app by double-clicking the jar file.<br>
-       Expected: The most recent window size and location is retained.
+      Expected: The most recent window size and location is retained.
 
 ### Adding a person
 
@@ -883,8 +944,6 @@ testers are expected to do more *exploratory* testing.
 
     1. Other incorrect find commands to try: `edit`, `edit x`, `...` (where x is the identification number which does not exist in the list)<br>
        Expected: Similar to previous.
-
-
 
 ## **Appendix D: Effort**
 

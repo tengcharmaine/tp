@@ -153,16 +153,24 @@ This section describes some noteworthy details on how certain features are imple
 
 #### Implementation:
 
-The add mechanism is facilitated by `AddressBook`. It implements `AddressBook#addPerson(Person p)`which allow users to add patients’ contacts and relevant patient information into the addressbook.
+The `add` feature is implemented using the `AddCommand` class. The `AddCommand` object takes in a `Person` object. 
+`Person` object is created if the following conditions are satisfied:
+- all the inputs for the parameters are valid
+- all compulsory parameters are present
+- no duplicate `Person` in ClinicMate
 
-These operations are exposed in the `Model` interface as `Model#addPerson(Person p)`.
+The `add` mechanism is facilitated by `AddressBook`. It implements `ModelManager#addPerson(Person p)`which allows users to add patients’ contacts 
+and relevant patient information into ClinicMate. These operations are exposed in the `Model` interface as `Model#addPerson(Person p)`. 
 
-Given below is an example usage scenario and how the add mechanism behaves at each step.
+Apart from that, the feature also includes the following operation in `ModelManager`, which implements the `Model` interface:
+- `Model#hasPerson(Person person)`: Checks if the `Person` to be added is already an existing `Person` profile in ClinicMate
 
-Step 1. The user launches the application for the first time. The `AddressBook` will be initialized with the initial address book state.
+Given below is an example usage scenario and how the `add` mechanism behaves at each step.
 
-Step 2. The user executes `add n/John Doe …` to add the person in the address book with the unique identification number `T0123456A`. The add command calls `Model#addPerson(Person p)`, causing the modified state of the address book after the `add n/John Doe …` command executes to be saved.
+Step 1. The user launches the application for the first time. `ClinicMate` will be initialized with the initial address book state.
 
+Step 2. The user executes `add n\John Doe p\12345678 e\john@mail.com i\T0123456A ag\12 s\M a\John street, block 123, #01-01` to add the person in the address book with the unique identification number `T0123456A`. 
+The add command calls `Model#addPerson(Person p)`, causing the modified state of the address book after the `add n/John Doe …` command executes to be saved.
 
 <box type="info" seamless>
 
@@ -171,17 +179,17 @@ Step 2. The user executes `add n/John Doe …` to add the person in the address 
 
 </box>
 
-The following sequence diagram shows how an undo operation goes through the `Logic` component:
+The following sequence diagram illustrates how the `add` command works and goes through the `Logic` and `Model` components.
 
 <puml src="diagrams/AddCommandDiagram.puml" alt="AddCommandDiagram" />
 
 <box type="info" seamless>
 
-**Note:** The lifeline for `AddCommand` should end at the destroy marker (X) but due to a limitation of PlantUML, the lifeline reaches the end of diagram.
+**Note:** The lifeline for `AddCommandParser` should end at the destroy marker (X) but due to a limitation of PlantUML, the lifeline reaches the end of diagram.
 
 </box>
 
-The following activity diagram summarizes what happens when a user executes a new command:
+The following activity diagram summarizes what happens when a user executes a new `add` command:
 
 <div style="text-align: center;">
     <puml src="diagrams/AddCommandActivityDiagram.puml" width="250"/>
@@ -202,30 +210,36 @@ The following activity diagram summarizes what happens when a user executes a ne
 * **Alternative 2:** Allow users to add patients by adding fields as and when is needed (i.e. not make all the fields compulsory).
     * Pros: Shorter command to type to add a patient.
     * Cons: 
-      * We must ensure that the implementation of each individual command are correct. 
-      * Might not have all the relevant information of all patients. Messy to keep track.
+      * We must ensure that the implementation of each individual commands is correct. 
+      * Might not have all the relevant information of the patients. Messy to keep track.
 
 **Aspect: Display of new contact when command is successful:**
-* Current choice: Displays the new contact with relevant patient information in the addressbook.
+* Current choice: Displays the new contact with relevant patient information in ClinicMate.
   * Rationale: Users will be able to view the patient and the information added easily.
 
 **Aspect: Display of error message when command is unsuccessful:**
-* Current choice: Displays the correct error message based on the type of error made (e.g. missing fields, duplicate person, invalid ic format).
+* Current choice: Displays the correct error message based on the type of error made (e.g. missing fields, duplicate person, invalid IC number format).
   * Rationale: Users will be able to learn of their error quickly and have an idea of what to edit to make the command successful.
 
 ### Add/replace note feature
 
 #### Implementation
 
-The add/replace notes mechanism is facilitated by `AddressBook`. It implements `AddressBook#setPerson(Person target, Person editedPerson)` which allow users to add/replace patients’ notes in the addressbook.
+The `addnote` mechanism is facilitated by `AddressBook`. It implements `AddressBook#setPerson(Person target, Person editedPerson)` which allow users to add/replace patients’ notes in the addressbook.
 
 These operations are exposed in the `Model` interface as `Model#setPerson(Person target, Person editedPerson)`
+
+The `addnote` feature has the following operations in `ModelManager` which implements the `Model` interface:
+- `Model#setPerson`: Changes the note parameter of the target Person
+- `Model#isPersonDisplayed`: Checks if the `Person` has their notes displayed in the person notes panel
+- `Model#setDisplayedNote`: If `Model#isPersonDisplayed` returns true, the notes displayed will be updated
 
 Given below is an example usage scenario and how the add/replace note mechanism behaves at each step.
 
 Step 1. The user launches the application. The `AddressBook` will be initialized with the initial address book state.
 
-Step 2. The user executes `addnote T0123456A …` to add a note to the person in the address book with the unique identification number `T0123456A`. The addnote command calls `Model#setPerson(Person target, Person editedPerson)`, causing the modified state of the address book after the `addnote T0123456A …` command executes to be saved.
+Step 2. The user executes `addnote T0123456A n\Covid` to add a note to the person in ClinicMate with the unique identification number `T0123456A`. 
+The `addnote` command calls `Model#setPerson(Person target, Person editedPerson)`, causing the modified state of ClinicMate after the `addnote T0123456A n\Covid` command executes to be saved.
 
 <box type="info" seamless>
 
@@ -233,17 +247,17 @@ Step 2. The user executes `addnote T0123456A …` to add a note to the person in
 
 </box>
 
-The following sequence diagram shows how an addnote operation goes through the `Logic` component:
+The following sequence diagram shows how an `addnote` operation goes through the `Logic` component:
 
 <puml src="diagrams/AddNoteSequenceDiagram.puml" alt="AddNoteSequenceDiagram" />
 
 <box type="info" seamless>
 
-**Note:** The lifeline for `AddNoteCommand` should end at the destroy marker (X) but due to a limitation of PlantUML, the lifeline reaches the end of diagram.
+**Note:** The lifeline for `AddNoteCommandParser` should end at the destroy marker (X) but due to a limitation of PlantUML, the lifeline reaches the end of diagram.
 
 </box>
 
-The following activity diagram summarizes what happens when a user executes a new command:
+The following activity diagram summarizes what happens when a user executes a new `addnote` command:
 
 <div style="text-align: center;">
     <puml src="diagrams/AddNoteCommandActivityDiagram.puml" width="250"/>
@@ -253,32 +267,35 @@ The following activity diagram summarizes what happens when a user executes a ne
 
 **Aspect: How to add or replace:**
 
-* **Alternative 1 (current choice):** Have a flag (-replace) to allow users to replace the whole note section of specified patient. This is on top of the normal add note command where new notes are appended to the existing note itself.
+* **Alternative 1 (Current Choice):** Have a flag (-replace) to allow users to replace the whole note section of specified patient. 
+* This is an extension of the normal `addnote` command where new notes are appended to the existing note itself.
     * Pros:
       * Able to edit/clean up notes section. 
       * Gives users the freedom to decide how they want to keep notes. 
     * Cons:
-      * Users might not want to replace all the notes they have (just want to edit a section).
+      * Users might not want to replace all the notes they have, and might just want to edit a section.
 
 * **Alternative 2:** Allow users to only add notes to patients.
     * Pros: More structured command to add notes to patient.
     * Cons: Not able to give users the freedom to ‘edit’ the notes they have.
 
 **Aspect: Display of new note when command is successful:**
-* Current choice: Displays the new note in the correct patient’s section in the addressbook.
+* Current choice: Displays the new note in the correct patient’s section in ClinicMate.
     * Rationale: Users will be able to view the new note added easily.
 
 **Aspect: Display of error message when command is unsuccessful:**
-* Current choice: Displays the correct error message based on the type of error made (e.g. missing fields, invalid ic format).
+* Current choice: Displays the correct error message based on the type of error made (e.g. missing fields, invalid IC number format).
     * Rationale: Users will be able to learn of their error quickly and have an idea of what to edit to make the command successful.
 
 ### Find feature
 
 #### Implementation
 
-The find mechanism is facilitated by `ModelManager`. It implements `ModelManager#updateFilteredPersonList(Predicate predicate)` which allow users to find patients in the addressbook.
+The find mechanism is facilitated by `ModelManager`. It implements `ModelManager#updateFilteredPersonList(Predicate predicate)` 
+which allow users to find patients in ClinicMate.
 
 These operations are exposed in the `Model` interface as `Model#updateFilteredPersonList(Predicate predicate)`.
+`predicate` takes in a `IdentityCardNumberMatchesPredicate` to filter the list of patients.
 
 Given below is an example usage scenario and how the find mechanism behaves at each step.
 
@@ -310,12 +327,20 @@ The following activity diagram summarizes what happens when a user executes a ne
 
 #### Design Considerations & Alternatives Considered
 
-**Aspect: Display of filtered list/contact when command is successful:**
-* Current choice: Displays the correct patient’s contact in the addressbook. 
+**Aspect: Filtering patients**
+* **Alternative 1 (Current Choice):** Requires user to input a full and valid IC number
+  * Pros: Precise results, allows user to directly single out the patient details
+  * Cons: Might omit relevant results if the user types the IC number incorrectly
+* Alternative 2: Match all relevant patients' profiles even if the user enters a partial IC number
+  * Pros: Flexible search, more time-efficient, returns results even without typing the whole IC number
+  * Cons: Might produce more results than expected. Might incorrectly refer to the wrong patient details.
+
+**Aspect: Display of filtered list when command is successful:**
+* Current choice: Displays the correct patient’s contact in the patient list panel. 
     * Rationale: Users will be able to view the contact added easily.
 
 **Aspect: Display of error message when command is unsuccessful:**
-* Current choice: Displays the correct error message based on the type of error made (e.g. missing fields, invalid ic format).
+* Current choice: Displays the correct error message based on the type of error made (e.g. missing fields, invalid IC number format).
   * Rationale: Users will be able to learn of their error quickly and have an idea of what to edit to make the command successful.
 
 ### Delete feature

@@ -161,7 +161,7 @@ Given below is an example usage scenario and how the add mechanism behaves at ea
 
 Step 1. The user launches the application for the first time. The `AddressBook` will be initialized with the initial address book state.
 
-Step 2. The user executes `add n/John Doe …` to add the person in the address book with the unique identification number `T0123456A`. The add command calls `Model#addPerson(Person p)`, causing the modified state of the address book after the `add n/John Doe …` command executes to be saved.
+Step 2. The user executes `add n\John Doe …` to add the person in the address book with the unique identification number `T0123456A`. The add command calls `Model#addPerson(Person p)`, causing the modified state of the address book after the `add n\John Doe …` command executes to be saved.
 
 
 <box type="info" seamless>
@@ -171,7 +171,7 @@ Step 2. The user executes `add n/John Doe …` to add the person in the address 
 
 </box>
 
-The following sequence diagram shows how an undo operation goes through the `Logic` component:
+The following sequence diagram shows how an add operation goes through the `Logic` component:
 
 <puml src="diagrams/AddCommandDiagram.puml" alt="AddCommandDiagram" />
 
@@ -184,7 +184,7 @@ The following sequence diagram shows how an undo operation goes through the `Log
 The following activity diagram summarizes what happens when a user executes a new command:
 
 <div style="text-align: center;">
-    <puml src="diagrams/AddCommandActivityDiagram.puml" width="250"/>
+    <puml src="diagrams/AddCommandActivityDiagram.puml" width="600"/>
 </div>
 
 #### Design Considerations & Alternatives Considered:
@@ -363,7 +363,7 @@ The following activity diagram summarizes what happens when a user executes a ne
 
 **Aspect: Display of error message when command is unsuccessful:**
 * Current choice: Displays the correct error message based on the type of error made (e.g. missing fields, invalid ic format).
-  * Rationale: Users will be able to learn of their error quickly and have an idea of what to edit to make the command successful.
+  * Rationale: Users will be able to learn of their error quickly annd have an idea of what to edit to make the command successful.
 
 ### Edit feature
 

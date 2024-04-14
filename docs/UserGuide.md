@@ -698,7 +698,7 @@ There might be cases that the `IC_NUMBER` you keyed in does not exist in ClinicM
 
 **<i class="material-icons-outlined">edit</i> Note:**<br>
 
-* The `IC_number` refers to the IC number shown in the displayed patient list panel. 
+* The `IC_NUMBER` refers to the IC number shown in the displayed patient list panel. 
 * The `IC_NUMBER` **must be the FULL IC NUMBER**.
 * IC number must be valid and currently exist in the database.
 * When adding notes, the new note added will be appended to the current note of the person. i.e. current note is preserved.
@@ -722,7 +722,7 @@ There might be cases that the `IC_NUMBER` you keyed in does not exist in ClinicM
 
 **<i class="material-icons-outlined">edit</i> Note:**<br>
 
-* The `IC_number` refers to the IC number shown in the displayed patient list panel. 
+* The `IC_NUMBER` refers to the IC number shown in the displayed patient list panel. 
 * The `IC_NUMBER` **must be the FULL IC NUMBER**.
 * IC number must be valid and currently exist in the database.
 * Notes will not wrap around. Notes added with separate uses of the `addnote` command will appear as separate lines.

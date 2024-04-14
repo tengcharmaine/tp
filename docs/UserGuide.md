@@ -287,7 +287,7 @@ A big part of a GP consultation is taking patient history. ClinicMate allows you
 
 ![quicktouraddnotesuccess](images/addnotequicktour.png)
 
-2. Through the consultation, you also find out he has a family history of Diabetes Mellitus. `addnote` let's you quickly append this information by simply typing `addnote S1234567A n\Fam his of DM.` into the Command Box and hit enter.
+2. Through the consultation, you also find out he has a family history of Diabetes Mellitus. `addnote` lets you quickly append this information by simply typing `addnote S1234567A n\Fam his of DM.` into the Command Box and hit enter.
 
 Notice that the notes are appended without replacing what was originally there, so you can quickly add all notes you find important without worry!
 

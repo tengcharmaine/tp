@@ -120,7 +120,7 @@ In this section, you will learn how to set up ClinicMate on your computer.
 ![ClinicMateJar.png](images/ClinicMateJar.png)
 3. Move the file to an empty folder that you want to use for your ClinicMate.
     * For example, you can create an empty folder named `clinicmate` in your `Documents` folder.
-    * You can then move the `.jar` file to that folder named `clinicmate` in your `Documents` folder.
+    * You can then move the `clinicmate.jar` file to that folder named `clinicmate` in your `Documents` folder.
     
 ## Running the application
 1. Open Command Prompt (for Windows) or Terminal (for MacOS and Linux) on your desktop. Refer to our [FAQ](#faq) on how to do so.

@@ -248,12 +248,12 @@ The following activity diagram summarizes what happens when a user executes a ne
 The `addnote` mechanism is facilitated by `AddressBook`. It implements `AddressBook#setPerson(Person target, Person editedPerson)` which allow users to add/replace patients’ notes in the addressbook.
 
 These operations are exposed in the `Model` interface:
-- `Model#getPersonIfExists`: Checks if the person with the predicate exists
-- `Model#setPerson`: Changes the note parameter of the target Person
+- `Model#getPersonIfExists`: Checks if the `Person` with the predicate exists
+- `Model#setPerson`: Changes the note parameter of the target `Person`
 - `Model#isPersonDisplayed`: Checks if the `Person` has their notes displayed in the patient notes panel
 - `Model#setDisplayedNote`: If `Model#isPersonDisplayed` returns true, the notes displayed will be updated
 
-Given below is an example usage scenario and how the add/replace note mechanism behaves at each step.
+Given below is an example usage scenario and how the `addnote` mechanism behaves at each step.
 
 Step 1. The user launches the application. The `AddressBook` will be initialized with the initial address book state.
 
@@ -279,7 +279,7 @@ The following sequence diagram shows how an `addnote` operation goes through the
 The following activity diagram summarizes what happens when a user executes a new `addnote` command:
 
 <div style="text-align: center;">
-    <puml src="diagrams/AddNoteCommandActivityDiagram.puml" width="250"/>
+    <puml src="diagrams/AddNoteCommandActivityDiagram.puml" width="600"/>
 </div>
 
 #### Design Considerations & Alternatives Considered
@@ -293,6 +293,7 @@ The following activity diagram summarizes what happens when a user executes a ne
       * Gives users the freedom to decide how they want to keep notes. 
     * Cons:
       * Users might not want to replace all the notes they have, and might just want to edit a section.
+
 
 * **Alternative 2:** Allow users to only add notes to patients.
     * Pros: More structured command to add notes to patient.
@@ -310,13 +311,13 @@ The following activity diagram summarizes what happens when a user executes a ne
 
 #### Implementation
 
-The find mechanism is facilitated by `ModelManager`. It implements `ModelManager#updateFilteredPersonList(Predicate predicate)` 
+The `find` mechanism is facilitated by `ModelManager`. It implements `ModelManager#updateFilteredPersonList(Predicate predicate)` 
 which allow users to find patients in ClinicMate.
 
 These operations are exposed in the `Model` interface as `Model#updateFilteredPersonList(Predicate predicate)`.
-`predicate` takes in a `IdentityCardNumberMatchesPredicate` to filter the list of patients.
+The `predicate` argument takes in a `IdentityCardNumberMatchesPredicate` to filter the list of patients.
 
-Given below is an example usage scenario and how the find mechanism behaves at each step.
+Given below is an example usage scenario and how the `find` mechanism behaves at each step.
 
 Step 1. The user launches the application. The `AddressBook` will be initialized with the initial address book state.
 
@@ -329,7 +330,7 @@ causing the modified state of the address book after the `find S0123456A` comman
 
 </box>
 
-The following sequence diagram shows how a find operation goes through the `Logic` component:
+The following sequence diagram shows how a `find` operation goes through the `Logic` component:
 
 <puml src="diagrams/FindSequenceDiagram.puml" alt="FindSequenceDiagram" />
 
@@ -351,7 +352,8 @@ The following activity diagram summarizes what happens when a user executes a ne
 * **Alternative 1 (Current Choice):** Requires users to input a full and valid IC number
   * Pros: Precise results, allows users to directly single out the patient's details
   * Cons: Might omit relevant results if the user types the IC number incorrectly
-* Alternative 2: Match all relevant patients' profiles even if the user enters a partial IC number
+
+* **Alternative 2:** Match all relevant patients' profiles even if the user enters a partial IC number
   * Pros: Flexible search, more time-efficient, returns results even without typing the whole IC number
   * Cons: Might produce more results than expected. Might incorrectly refer to the wrong patient details.
 
@@ -367,12 +369,12 @@ The following activity diagram summarizes what happens when a user executes a ne
 
 #### Implementation
 
-The delete mechanism is facilitated by `Addressbook`. It implements `Addressbook#removePerson(Person key)` which allow users to delete patients in the addressbook.
+The `delete` mechanism is facilitated by `Addressbook`. It implements `Addressbook#removePerson(Person key)` which allow users to delete patients in the addressbook.
 
 These operations are exposed in the `Model` interface as `Model#getPersonIfExists(Predicate predicate)` and `Model#deletePerson(Person target)`. 
 
 
-Given below is an example usage scenario and how the delete mechanism behaves at each step.
+Given below is an example usage scenario and how the `delete` mechanism behaves at each step.
 
 Step 1. The user launches the application. The `AddressBook` will be initialized with the initial address book state.
 
@@ -385,7 +387,7 @@ The delete command calls `Model#deletePerson(Person target)`, causing the modifi
 
 </box>
 
-The following sequence diagram shows how a delete operation goes through the `Logic` component:
+The following sequence diagram shows how a `delete` operation goes through the `Logic` component:
 
 <puml src="diagrams/DeleteSequenceDiagram.puml" alt="DeleteSequenceDiagram" />
 

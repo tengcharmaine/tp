@@ -10,7 +10,7 @@ start
 
 if () then ([command successful])
     :Filters list in
-    addressbook;
+    the app;
 else ([command unsuccessful])
     :Error messages;
     :Edit command

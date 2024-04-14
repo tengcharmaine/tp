@@ -553,7 +553,8 @@ Example:
 
 There might be cases that the `IC_NUMBER` you keyed in does not exist in ClinicMate as shown below. Do check if the `IC_NUMBER` is registered before trying to show it.
 Alternatively, you can add the patient into ClinicMate using our [`add` command](#adding-a-person-add) before doing a `show`.
-![showerror2.png](images/showerror2.png)
+
+![UG3.png](images/UG3.png)
 
 #### To clear display 
 
@@ -562,7 +563,7 @@ Alternatively, you can add the patient into ClinicMate using our [`add` command]
 **Steps**:
 1. Enter `show` into the command box as shown below.
 
-![SCM3.png](images/SCM3.png)
+![UG2.png](images/UG2.png)
 
 2. Patient notes panel will be cleared.
 

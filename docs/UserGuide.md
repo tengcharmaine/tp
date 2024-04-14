@@ -690,7 +690,7 @@ There might be cases that the `IC_NUMBER` you keyed in does not exist in ClinicM
 
 ![addnoteapp2.png](images/addnoteapp2.png)
 
-3.  New note will appear in the patient notes panel. If notes already exists, the new note will be appended to the previous notes on a new line.
+3.  New note will appear in the patient list panel. If notes already exist, the new note will be appended to the previous notes on a new line.
 
 ![addnoteapp4.png](images/addnoteapp4.png)
 

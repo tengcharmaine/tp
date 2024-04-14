@@ -161,7 +161,7 @@ Given below is an example usage scenario and how the add mechanism behaves at ea
 
 Step 1. The user launches the application for the first time. The `AddressBook` will be initialized with the initial address book state.
 
-Step 2. The user executes `add n/John Doe …` to add the person in the address book with the unique identification number `T0123456A`. The add command calls `Model#addPerson(Person p)`, causing the modified state of the address book after the `add n/John Doe …` command executes to be saved.
+Step 2. The user executes `add n\John Doe …` to add the person in the address book with the unique identification number `T0123456A`. The add command calls `Model#addPerson(Person p)`, causing the modified state of the address book after the `add n\John Doe …` command executes to be saved.
 
 
 <box type="info" seamless>
@@ -171,7 +171,7 @@ Step 2. The user executes `add n/John Doe …` to add the person in the address 
 
 </box>
 
-The following sequence diagram shows how an undo operation goes through the `Logic` component:
+The following sequence diagram shows how an add operation goes through the `Logic` component:
 
 <puml src="diagrams/AddCommandDiagram.puml" alt="AddCommandDiagram" />
 

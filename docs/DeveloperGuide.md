@@ -686,6 +686,8 @@ Some definitions have been omitted as they have already been defined in the user
 * **JavaFX**: The User Interface framework used in this project.
 * **PlantUML**: The tool used to make diagrams in this guide.
 * **System**: Refers to ClinicMate.
+* **Patient list panel**: Refers to the list of patient contacts displayed on the left hand side of the screen in ClinicMate.
+* **Patient notes panel**: Refers to the notes section displayed on the right hand side of the screen in ClinicMate.
 
 --------------------------------------------------------------------------------------------------------------------
 
@@ -846,14 +848,14 @@ Since this is a work in progress, please do stay tune for any updates to see how
 
 ## **Appendix C: Instructions for manual testing**
 
-Given below are instructions to test the app manually.
+Given below are instructions to test ClinicMate manually.
 
-<box type="info" seamless>
+<div markdown="block" class="alert alert-info">
 
-**Note:** These instructions only provide a starting point for testers to work on;
+**<i class="material-icons-outlined">edit</i> Note:**<br>
+These instructions only provide a starting point for testers to work on;
 testers are expected to do more *exploratory* testing.
-
-</box>
+</div>
 
 ### Launch and shutdown
 
@@ -861,7 +863,8 @@ testers are expected to do more *exploratory* testing.
 
    1. Download the jar file and copy into an empty folder
 
-   1. Double-click the jar file Expected: Shows the GUI with a set of sample contacts. The window size may not be optimum.
+   1. Double-click the jar file 
+      Expected: Shows the GUI with a set of sample contacts. The window size may not be optimum.
 
 2. Saving window preferences
 
@@ -876,13 +879,13 @@ testers are expected to do more *exploratory* testing.
 
    1. Prerequisites: List all persons using the `list` command. Multiple persons in the list.
 
-   1. Test case: `add n/John Doe p/12345678 e/JohnDoe@mail.com i/T0123456A ag/12 s/M a/311, Clementi Ave 2, #02-25`<br>
+   1. Test case: `add n\John Doe p\12345678 e\JohnDoe@mail.com i\T0123456A ag\12 s\M a\311, Clementi Ave 2, #02-25`<br>
       Expected: New contact with the unique identification number `T0123456A` is added to the list. Details of the new contact shown in the status message.
 
    1. Test case: `add T0123A`<br>
       Expected: No person is added. Error details shown in the status message. Status bar remains the same.
 
-   1. Other incorrect add commands to try: `add`, `add n/`, `...` <br>
+   1. Other incorrect add commands to try: `add`, `add n\`, `...` <br>
       Expected: Similar to previous.
 
 ### Deleting a person
@@ -906,7 +909,7 @@ testers are expected to do more *exploratory* testing.
 
     1. Prerequisites: List all persons using the `list` command. Multiple persons in the list.
 
-    1. Test case: `addnote T0123456A n/ Diabetes`<br>
+    1. Test case: `addnote T0123456A n\Diabetes`<br>
        Expected: The note `Diabetes` will be added to contact with the unique identification number `T0123456A`. Successful note update message will be shown in the status message.
 
     1. Test case: `addnote T0123A`<br>
@@ -936,13 +939,32 @@ testers are expected to do more *exploratory* testing.
 
     1. Prerequisites: List all persons using the `list` command. Multiple persons in the list.
 
-    1. Test case: `edit T0123456A p/91234567 e/johndoe@example.com`<br>
+    1. Test case: `edit T0123456A p\91234567 e\johndoe@example.com`<br>
        Expected: The contact with the unique identification number `T0123456A` will be edited in the list. Updated details of person found will be shown in the status message.
 
     1. Test case: `edit T0123A`<br>
        Expected: No contact is edited. Error details shown in the status message. Status bar remains the same.
 
     1. Other incorrect find commands to try: `edit`, `edit x`, `...` (where x is the identification number which does not exist in the list)<br>
+       Expected: Similar to previous.
+
+### Showing a person
+
+1. Showing the note of a person while all persons are being shown
+
+    1. Prerequisites: List all persons using the `list` command. Multiple persons in the list.
+
+    1. Test case: `show T0123456A`<br>
+       Expected: The note of the contact with the unique identification number `T0123456A` will be shown in the patient notes panel. Successful show message will be shown in the status message.
+
+    1. Test case: `show`<br>
+       Expected: The notes in the patient notes panel will be removed. Successful notes cleared message will be shown in the status message.
+
+    1. Test case: `show T0123`<br>
+       Expected: If patient notes panel is previously empty, no note will be shown; If the patient notes panel already has a note, the note of the specified `IC_NUMBER` will not be shown.
+       Error details shown in the status message.
+
+    1. Other incorrect find commands to try: `show x`, `...` (where x is the identification number which does not exist in the list)<br>
        Expected: Similar to previous.
 
 ## **Appendix D: Effort**

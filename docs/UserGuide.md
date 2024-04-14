@@ -753,7 +753,7 @@ Examples:
 On the patient list panel, the list will be filtered to that specific patient; On the patient notes panel, the updated notes of the specific patient will be shown.
 
 - If you'd like to add empty line(s), you can add an empty note (i.e. `addnote T0123456A n\` 1 or more times.
-Do note that the person list panel will not display the empty line(s) unless there is a note with other characters before and after the note with just spaces.
+Do note that the patient list panel will not display the empty line(s) unless there is a note with other characters before and after the note with just spaces.
 
 - The space characters at the start and end of the note are stripped during the execution of this command. So `addnote T0123456A n\ Diabetes` and `addnote T0123456A n\Diabetes` give the same note of `Diabetes`.
 
@@ -821,7 +821,7 @@ ClinicMate data is saved automatically as a JSON file `[JAR file location]/data/
 **A**: ClinicMate does not currently support direct import of patient data from other software. However, you can manually enter patient data using the `add` command.
 
 **Q**: I am not able to directly access the user guide by pressing on the icon in the help window.<br>
-**A**: Linux users might face some difficulties when trying to directly access. Unfortunately, we currently do not have a solution for this. Please access our user guide in the alternative way, which is to copy the URL and pasting it in your web browser.
+**A**: Linux users might face some difficulties when trying to directly access the website. Unfortunately, we currently do not have a solution for this. Please access our user guide in the alternative way, which is to copy the URL and pasting it in your web browser.
 
 **Q**: The patient notes panel does not display the most updated contact I interacted with.<br>
 **A**: Currently, only the `find` or `show` command will change whose notes are displayed in the patient notes panel.

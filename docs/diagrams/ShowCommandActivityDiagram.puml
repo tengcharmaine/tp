@@ -9,14 +9,13 @@ start
 'diamond we place it as the true branch instead.
 
 if () then ([command successful])
-    :Displays contact in
-    side window;
-else ([command unsuccessful])
+else ([command
+unsuccessful])
     :Error messages;
-    :Edit command
-    accordingly;
-    :Successfully displays
-    contact in side window;
+    :Edit input according to
+    error messages;
 endif
+    :Successfully displays contact
+    in patient notes panel;
 stop
 @enduml

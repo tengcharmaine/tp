@@ -9,17 +9,14 @@ start
 'diamond we place it as the true branch instead.
 
 if () then ([command successful])
-    :Remove contact from
-    addressbook;
-else ([command unsuccessful])
+else ([command
+unsuccessful])
     :Error messages;
-    :Edit command
-    accordingly;
-    :Successfully removes
-    contact;
+    :Edit input accordingly to
+    error messages;
 endif
+:Successfully removes contact;
 :Save updated person
-list to
-addressbook;
+list to ClinicMate;
 stop
 @enduml

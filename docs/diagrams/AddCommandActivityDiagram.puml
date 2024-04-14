@@ -9,14 +9,13 @@ start
 'diamond we place it as the true branch instead.
 
 if () then ([command successful])
-    :Save new contact to
-    addressbook;
-else ([command unsuccessful])
+else ([command
+unsuccessful])
     :Error messages;
-    :Edit command
-    accordingly;
-    :Successfully saves
-    new contact;
+    :Edit input according to
+    error messages;
 endif
+    :Successfully saves new
+    contact to ClinicMate;
 stop
 @enduml

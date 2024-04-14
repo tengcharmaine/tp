@@ -176,8 +176,8 @@ Given below is an example usage scenario and how the `add` mechanism behaves at 
 
 Step 1. The user launches the application for the first time. `ClinicMate` will be initialized with the initial address book state.
 
-Step 2. The user executes `add n\John Doe p\12345678 e\john@mail.com i\T0123456A ag\12 s\M a\John street, block 123, #01-01` to add the person in the address book with the unique identification number `T0123456A`. 
-The add command calls `Model#addPerson(Person p)`, causing the modified state of the address book after the `add n/John Doe …` command executes to be saved.
+Step 2. The user executes `add n\John Doe p\12345678 e\john@mail.com i\T0123456A ag\12 s\M a\John street, block 123, #01-01` to add the person in the address book with the unique IC number `T0123456A`. 
+The `add` command calls `Model#addPerson(Person p)`, causing the modified state of the address book after the `add n\John Doe …` command executes to be saved.
 
 <box type="info" seamless>
 
@@ -218,7 +218,7 @@ The following activity diagram summarizes what happens when a user executes a ne
     * Pros: Shorter command to type to add a patient.
     * Cons: 
       * We must ensure that the implementation of each individual commands is correct. 
-      * Might not have all the relevant information of the patients. Messy to keep track.
+      * Might not have all the relevant information of patients. Messy to keep track.
 
 **Aspect: Display of new contact when command is successful:**
 * Current choice: Displays the new contact with relevant patient information in ClinicMate.
@@ -238,14 +238,14 @@ These operations are exposed in the `Model` interface as `Model#setPerson(Person
 
 The `addnote` feature has the following operations in `ModelManager` which implements the `Model` interface:
 - `Model#setPerson`: Changes the note parameter of the target Person
-- `Model#isPersonDisplayed`: Checks if the `Person` has their notes displayed in the person notes panel
+- `Model#isPersonDisplayed`: Checks if the `Person` has their notes displayed in the patient notes panel
 - `Model#setDisplayedNote`: If `Model#isPersonDisplayed` returns true, the notes displayed will be updated
 
 Given below is an example usage scenario and how the add/replace note mechanism behaves at each step.
 
 Step 1. The user launches the application. The `AddressBook` will be initialized with the initial address book state.
 
-Step 2. The user executes `addnote T0123456A n\Covid` to add a note to the person in ClinicMate with the unique identification number `T0123456A`. 
+Step 2. The user executes `addnote T0123456A n\Covid` to add a note to the person in ClinicMate with the unique IC number `T0123456A`. 
 The `addnote` command calls `Model#setPerson(Person target, Person editedPerson)`, causing the modified state of ClinicMate after the `addnote T0123456A n\Covid` command executes to be saved.
 
 <box type="info" seamless>
@@ -308,7 +308,7 @@ Given below is an example usage scenario and how the find mechanism behaves at e
 
 Step 1. The user launches the application. The `AddressBook` will be initialized with the initial address book state.
 
-Step 2. The user executes `find S0123456A` to find the person in the address book with the unique identification number `S0123456A`. The find command calls `Model#updateFilteredPersonList(Predicate predicate)`, 
+Step 2. The user executes `find S0123456A` to find the person in the address book with the unique IC number `S0123456A`. The `find` command calls `Model#updateFilteredPersonList(Predicate predicate)`, 
 causing the modified state of the address book after the `find S0123456A` command executes to be displayed.
 
 <box type="info" seamless>
@@ -336,8 +336,8 @@ The following activity diagram summarizes what happens when a user executes a ne
 #### Design Considerations & Alternatives Considered
 
 **Aspect: Filtering patients**
-* **Alternative 1 (Current Choice):** Requires user to input a full and valid IC number
-  * Pros: Precise results, allows user to directly single out the patient details
+* **Alternative 1 (Current Choice):** Requires users to input a full and valid IC number
+  * Pros: Precise results, allows users to directly single out the patient's details
   * Cons: Might omit relevant results if the user types the IC number incorrectly
 * Alternative 2: Match all relevant patients' profiles even if the user enters a partial IC number
   * Pros: Flexible search, more time-efficient, returns results even without typing the whole IC number
@@ -363,7 +363,7 @@ Given below is an example usage scenario and how the delete mechanism behaves at
 
 Step 1. The user launches the application. The `AddressBook` will be initialized with the initial address book state.
 
-Step 2. The user executes `delete S0123456A` to delete the person in the address book with the unique identification number `S0123456A`. 
+Step 2. The user executes `delete S0123456A` to delete the person in the address book with the unique IC number `S0123456A`. 
 The delete command calls `Model#deletePerson(Person target)`, causing the modified state of the address book after the `delete S0123456A` command executes to be saved.
 
 <box type="info" seamless>

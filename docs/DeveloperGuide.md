@@ -234,9 +234,8 @@ The following activity diagram summarizes what happens when a user executes a ne
 
 The add/replace note mechanism is facilitated by `AddressBook`. It implements `AddressBook#setPerson(Person target, Person editedPerson)` which allow users to add/replace patients’ notes in the addressbook.
 
-These operations are exposed in the `Model` interface as `Model#getPersonIfExists(Predicate predicate)` and `Model#setPerson(Person target, Person editedPerson)`
-
-The `addnote` feature also has the following operations in `ModelManager` which implements the `Model` interface:
+These operations are exposed in the `Model` interface:
+- `Model#getPersonIfExists`: Checks if the person with the predicate exists
 - `Model#setPerson`: Changes the note parameter of the target Person
 - `Model#isPersonDisplayed`: Checks if the `Person` has their notes displayed in the patient notes panel
 - `Model#setDisplayedNote`: If `Model#isPersonDisplayed` returns true, the notes displayed will be updated

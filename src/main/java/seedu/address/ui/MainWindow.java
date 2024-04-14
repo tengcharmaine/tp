@@ -122,7 +122,7 @@ public class MainWindow extends UiPart<Stage> {
 
         noteDisplay = new NoteDisplay();
         patientDetailsPlaceholder.getChildren().add(noteDisplay.getRoot());
-        noteDisplay.setNoteToUser(logic.getDisplayedNote().value);
+        noteDisplay.setNoteToUser(logic.getDisplayedNote());
 
         StatusBarFooter statusBarFooter = new StatusBarFooter(logic.getAddressBookFilePath());
         statusbarPlaceholder.getChildren().add(statusBarFooter.getRoot());
@@ -185,7 +185,7 @@ public class MainWindow extends UiPart<Stage> {
             CommandResult commandResult = logic.execute(commandText);
             logger.info("Result: " + commandResult.getFeedbackToUser());
             resultDisplay.setFeedbackToUser(commandResult.getFeedbackToUser());
-            noteDisplay.setNoteToUser(logic.getDisplayedNote().value);
+            noteDisplay.setNoteToUser(logic.getDisplayedNote());
 
             if (commandResult.isShowHelp()) {
                 handleHelp();

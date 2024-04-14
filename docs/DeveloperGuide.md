@@ -184,7 +184,7 @@ The following sequence diagram shows how an add operation goes through the `Logi
 The following activity diagram summarizes what happens when a user executes a new command:
 
 <div style="text-align: center;">
-    <puml src="diagrams/AddCommandActivityDiagram.puml" width="250"/>
+    <puml src="diagrams/AddCommandActivityDiagram.puml" width="600"/>
 </div>
 
 #### Design Considerations & Alternatives Considered:
@@ -363,7 +363,7 @@ The following activity diagram summarizes what happens when a user executes a ne
 
 **Aspect: Display of error message when command is unsuccessful:**
 * Current choice: Displays the correct error message based on the type of error made (e.g. missing fields, invalid ic format).
-  * Rationale: Users will be able to learn of their error quickly and have an idea of what to edit to make the command successful.
+  * Rationale: Users will be able to learn of their error quickly annd have an idea of what to edit to make the command successful.
 
 ### Edit feature
 

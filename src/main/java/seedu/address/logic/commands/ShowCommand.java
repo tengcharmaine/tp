@@ -2,6 +2,9 @@ package seedu.address.logic.commands;
 
 import static java.util.Objects.requireNonNull;
 
+import java.util.logging.Logger;
+
+import seedu.address.commons.core.LogsCenter;
 import seedu.address.commons.util.ToStringBuilder;
 import seedu.address.logic.Messages;
 import seedu.address.logic.commands.exceptions.CommandException;
@@ -26,6 +29,9 @@ public class ShowCommand extends Command {
             + "Parameters: IC (optional)\n"
             + "Example (to display note): " + COMMAND_WORD + " t1234567A\n"
             + "Example (to clear display): " + COMMAND_WORD;
+
+    private static final Logger logger = LogsCenter.getLogger(ShowCommand.class);
+
     private final IdentityCardNumberMatchesPredicate icPredicate;
 
     private final boolean isClear;
@@ -60,6 +66,7 @@ public class ShowCommand extends Command {
         requireNonNull(model);
         if (isClear) {
             model.clearDisplayNote();
+            logger.info("Show command has been executed and cleared display note.");
             return new CommandResult(MESSAGE_CLEAR_NOTE_SUCCESS);
         }
 
@@ -67,6 +74,8 @@ public class ShowCommand extends Command {
                 .orElseThrow(() -> new CommandException(Messages.MESSAGE_NO_MATCHING_IC));
         model.setDisplayNote(person);
 
+        logger.info("Show command has been executed, displaying note of Person with IC Number:"
+                + person.getIdentityCardNumber());
         return new CommandResult(
                 String.format(MESSAGE_SHOW_NOTE_SUCCESS, person.getIdentityCardNumber())
         );

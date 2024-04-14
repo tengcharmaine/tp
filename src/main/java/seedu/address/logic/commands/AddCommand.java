@@ -9,6 +9,9 @@ import static seedu.address.logic.parser.CliSyntax.PREFIX_NAME;
 import static seedu.address.logic.parser.CliSyntax.PREFIX_PHONE;
 import static seedu.address.logic.parser.CliSyntax.PREFIX_SEX;
 
+import java.util.logging.Logger;
+
+import seedu.address.commons.core.LogsCenter;
 import seedu.address.commons.util.ToStringBuilder;
 import seedu.address.logic.commands.exceptions.CommandException;
 import seedu.address.model.Model;
@@ -48,6 +51,7 @@ public class AddCommand extends Command {
             + "Sex: %6$s\n"
             + "Address: %7$s\n";
     public static final String MESSAGE_DUPLICATE_PERSON = "This person already exists in ClinicMate";
+    private static final Logger logger = LogsCenter.getLogger(AddCommand.class);
 
     private final Person toAdd;
 
@@ -68,6 +72,8 @@ public class AddCommand extends Command {
         }
 
         model.addPerson(toAdd);
+        logger.info("Add command has been successfully executed on Person with IC Number: "
+                + toAdd.getIdentityCardNumber());
         String successMessage = String.format(MESSAGE_SUCCESS,
                 toAdd.getName(),
                 toAdd.getPhone(),

@@ -2,6 +2,9 @@ package seedu.address.logic.commands;
 
 import static java.util.Objects.requireNonNull;
 
+import java.util.logging.Logger;
+
+import seedu.address.commons.core.LogsCenter;
 import seedu.address.commons.util.ToStringBuilder;
 import seedu.address.logic.Messages;
 import seedu.address.model.Model;
@@ -21,6 +24,8 @@ public class FindCommand extends Command {
             + "Parameters: IC\n"
             + "Example: " + COMMAND_WORD + " t1234567A";
 
+    private static final Logger logger = LogsCenter.getLogger(FindCommand.class);
+
     private final IdentityCardNumberMatchesPredicate predicate;
 
     public FindCommand(IdentityCardNumberMatchesPredicate predicate) {
@@ -37,6 +42,9 @@ public class FindCommand extends Command {
         if (model.getFilteredPersonList().size() == 1) {
             Person person = model.getFilteredPersonList().get(0);
             model.setDisplayNote(person);
+            logger.info("Find command has been executed on Person with IC Number: " + person.getIdentityCardNumber());
+        } else {
+            logger.info("Find command has been executed with no matching Person found.");
         }
 
         return new CommandResult(

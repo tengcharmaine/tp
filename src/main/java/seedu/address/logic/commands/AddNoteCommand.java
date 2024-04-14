@@ -4,6 +4,9 @@ import static java.util.Objects.requireNonNull;
 import static seedu.address.commons.util.CollectionUtil.requireAllNonNull;
 import static seedu.address.logic.parser.CliSyntax.PREFIX_NOTE;
 
+import java.util.logging.Logger;
+
+import seedu.address.commons.core.LogsCenter;
 import seedu.address.logic.Messages;
 import seedu.address.logic.commands.exceptions.CommandException;
 import seedu.address.model.Model;
@@ -33,6 +36,8 @@ public class AddNoteCommand extends Command {
             + PREFIX_NOTE + "Diabetes -replace";
 
     public static final String MESSAGE_MODIFY_NOTE_SUCCESS = "Note for %1$s (IC: %2$s) modified successfully!";
+    private static final Logger logger = LogsCenter.getLogger(AddNoteCommand.class);
+
     private final IdentityCardNumberMatchesPredicate icPredicate;
     private final Note note;
     private final boolean isReplace;
@@ -75,6 +80,8 @@ public class AddNoteCommand extends Command {
             model.setDisplayNote(editedPerson);
         }
 
+        logger.info("Addnote command has been successfully executed on Person with IC: "
+                + personToEdit.getIdentityCardNumber());
         return new CommandResult(generateSuccessMessage(editedPerson));
     }
 

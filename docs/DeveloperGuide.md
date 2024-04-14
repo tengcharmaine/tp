@@ -234,9 +234,9 @@ The following activity diagram summarizes what happens when a user executes a ne
 
 The add/replace note mechanism is facilitated by `AddressBook`. It implements `AddressBook#setPerson(Person target, Person editedPerson)` which allow users to add/replace patients’ notes in the addressbook.
 
-These operations are exposed in the `Model` interface as `Model#setPerson(Person target, Person editedPerson)`
+These operations are exposed in the `Model` interface as `Model#getPersonIfExists(Predicate predicate)` and `Model#setPerson(Person target, Person editedPerson)`
 
-The `addnote` feature has the following operations in `ModelManager` which implements the `Model` interface:
+The `addnote` feature also has the following operations in `ModelManager` which implements the `Model` interface:
 - `Model#setPerson`: Changes the note parameter of the target Person
 - `Model#isPersonDisplayed`: Checks if the `Person` has their notes displayed in the patient notes panel
 - `Model#setDisplayedNote`: If `Model#isPersonDisplayed` returns true, the notes displayed will be updated
@@ -357,7 +357,8 @@ The following activity diagram summarizes what happens when a user executes a ne
 
 The delete mechanism is facilitated by `Addressbook`. It implements `Addressbook#removePerson(Person key)` which allow users to delete patients in the addressbook.
 
-These operations are exposed in the `Model` interface as `Model#deletePerson(Person target)`.
+These operations are exposed in the `Model` interface as `Model#getPersonIfExists(Predicate predicate)` and `Model#deletePerson(Person target)`. 
+
 
 Given below is an example usage scenario and how the delete mechanism behaves at each step.
 

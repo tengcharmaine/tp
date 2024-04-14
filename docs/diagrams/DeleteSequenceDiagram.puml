@@ -57,6 +57,12 @@ deactivate AddressBookParser
 LogicManager -> DeleteCommand : execute(m)
 activate DeleteCommand
 
+DeleteCommand -> Model : getPersonIfExists(S0123456A)
+activate Model
+
+Model --> DeleteCommand
+deactivate Model
+
 DeleteCommand -> Model : deletePerson(S0123456A)
 activate Model
 

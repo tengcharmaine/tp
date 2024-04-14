@@ -70,6 +70,12 @@ deactivate AddressBookParser
 LogicManager -> EditCommand : execute(m)
 activate EditCommand
 
+EditCommand -> Model : getPersonIfExists(...)
+activate Model
+
+Model --> EditCommand
+deactivate Model
+
 EditCommand -> Model : hasPerson(...)
 activate Model
 

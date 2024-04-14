@@ -739,8 +739,10 @@ Examples:
 - An alternative to check if the note is updated correctly, use the `find` command. (See [find](#locating-persons-by-ic-number-find) command)
 On the patient list panel, the list will be filtered to that specific patient; On the patient notes panel, the updated notes of the specific patient will be shown.
 
-- If you'd like to add empty line(s), you can use a ` ` (i.e. a normal space) as the note's contents 1 or more times.
+- If you'd like to add empty line(s), you can add an empty note (i.e. `addnote T0123456A n\` 1 or more times.
 Do note that the person list panel will not display the empty line(s) unless there is a note with other characters before and after the note with just spaces.
+
+- The space characters at the start and end of the note are stripped during the execution of this command. So `addnote T0123456A n\ Diabetes` and `addnote T0123456A n\Diabetes` give the same note of `Diabetes`.
 
 </div>
 
@@ -866,16 +868,16 @@ These descriptions will help you understand the key terms used in ClinicMate.
 
 ### Parameters Description
 
-| Parameter | Description                  | Constraints                                                                                                                       |
-|-----------|------------------------------|-----------------------------------------------------------------------------------------------------------------------------------|
-| `NAME`      | Name of the patient.         | Only contain alphanumeric characters and spaces, and should not be blank.                                                         |
-| `PHONE`     | Phone number of the patient. | Only contain numbers, be at least 3 digits. Should not be blank.                                                                  |
-| `EMAIL`     | Email of the patient.        | Should be in the format of `local-part@domain` and should not be blank.                                |
+| Parameter | Description                  | Constraints                                                                                                                        |
+|-----------|------------------------------|------------------------------------------------------------------------------------------------------------------------------------|
+| `NAME`      | Name of the patient.         | Only contain alphanumeric characters and spaces, and should not be blank.                                                          |
+| `PHONE`     | Phone number of the patient. | Only contain numbers, be at least 3 digits. Should not be blank.                                                                   |
+| `EMAIL`     | Email of the patient.        | Should be in the format of `local-part@domain` and should not be blank.                                                            |
 | `IC_NUMBER` | IC number of the patient.    | Case-insensitive and should not be blank. It should start with one letter (S, F, G or M), followed by 7 digits and 1 letter behind. |
-| `AGE`       | Age of the patient.          | Only contain numbers, and should not be blank.                                                                                    |
-| `SEX`       | Sex of the patient.          | Case-insensitive and should not be blank. Only accepts `m`, `f`, `M`, `F` as inputs.                                              |
-| `ADDRESS`   | Address of the patient.      | Case-insensitive and should not be blank.                                                                                         |
-| `NOTE`      | Note of the patient          | Case-insensitive and should not be blank.                                                                                         |
+| `AGE`       | Age of the patient.          | Only contain numbers, and should not be blank.                                                                                     |
+| `SEX`       | Sex of the patient.          | Case-insensitive and should not be blank. Only accepts `m`, `f`, `M`, `F` as inputs.                                               |
+| `ADDRESS`   | Address of the patient.      | Case-insensitive and should not be blank.                                                                                          |
+| `NOTE`      | Note of the patient          | Case-insensitive and can be blank.                                                                                                 |
 
 
 <div markdown="block" class="alert alert-info">

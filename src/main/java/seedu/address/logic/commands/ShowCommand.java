@@ -2,16 +2,12 @@ package seedu.address.logic.commands;
 
 import static java.util.Objects.requireNonNull;
 
-import java.util.List;
-
 import seedu.address.commons.util.ToStringBuilder;
 import seedu.address.logic.Messages;
 import seedu.address.logic.commands.exceptions.CommandException;
 import seedu.address.model.Model;
 import seedu.address.model.person.IdentityCardNumberMatchesPredicate;
 import seedu.address.model.person.Person;
-
-
 
 /**
  * Shows the user a note of a person in the address book.
@@ -67,13 +63,8 @@ public class ShowCommand extends Command {
             return new CommandResult(MESSAGE_CLEAR_NOTE_SUCCESS);
         }
 
-        List<Person> allPatients = model.getAddressBook().getPersonList();
-
-        Person person = allPatients.stream()
-            .filter(icPredicate::test)
-            .findFirst()
-            .orElseThrow(() -> new CommandException(Messages.MESSAGE_NO_MATCHING_IC));
-
+        Person person = model.getPersonIfExists(icPredicate)
+                .orElseThrow(() -> new CommandException(Messages.MESSAGE_NO_MATCHING_IC));
         model.setDisplayNote(person);
 
         return new CommandResult(

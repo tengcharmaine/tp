@@ -1,10 +1,12 @@
 package seedu.address.model;
 
 import java.nio.file.Path;
+import java.util.Optional;
 import java.util.function.Predicate;
 
 import javafx.collections.ObservableList;
 import seedu.address.commons.core.GuiSettings;
+import seedu.address.model.person.IdentityCardNumberMatchesPredicate;
 import seedu.address.model.person.Note;
 import seedu.address.model.person.Person;
 
@@ -101,7 +103,6 @@ public interface Model {
      */
     boolean isPersonDisplayed(Person person);
 
-
     /**
      * Sets the display note to the first filtered person.
      * If there is no filtered person, displayed note is unchanged.
@@ -112,4 +113,10 @@ public interface Model {
      * Clears the note panel display.
      */
     void clearDisplayNote();
+
+    /**
+     * Checks if the person with the inputted ic number exists in ClinicMate.
+     * Returns the person if they exist.
+     */
+    Optional<Person> getPersonIfExists(IdentityCardNumberMatchesPredicate icPredicate);
 }

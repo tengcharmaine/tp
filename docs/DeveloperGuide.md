@@ -513,7 +513,7 @@ The following activity diagram summarizes what happens when a user executes a `s
 
 #### Design Considerations & Alternatives Considered 
 
-**Aspect: How to show the notes of patient on patient notes display.**
+**Aspect: How to show the notes of patient on patient notes panel.**
 
 - **Alternative 1 (Current Choice):** Show patient's notes in one command using `IC_NUMBER`.
 
@@ -551,8 +551,8 @@ The `NoteDisplay` allows the users to view the notes of the selected patient in 
     <puml src="diagrams/NoteDisplayClassDiagram.puml" width="450"/>
 </div>
 
-`NoteDisplay` has a private field `noteDisplay` which is of type `TextArea`. The `NoteDisplay` has a method called `setNoteToUser` which takes in a string input and changes the `noteDisplay` through its `settext` method. 
-The notes will then be display in a section which is a FXML `VBox`. 
+`NoteDisplay` has a private field `noteDisplay` which is of type `TextArea`. The `NoteDisplay` has a method called `setNoteToUser` which takes in a `Note` and changes the `noteDisplay` through its `settext` method. 
+The notes will then be displayed in a section which is a FXML `VBox`. 
 
 #### Design Consideration & Alternatives Considered 
 
@@ -563,7 +563,7 @@ The notes will then be display in a section which is a FXML `VBox`.
   
     - Cons: One additional command is needed to view the notes of the patients.
 
-- **Alternative 2:** Display the notes of the patients in the `PersonCard` with the rest the of the details.
+- **Alternative 2:** Display the notes of the patients in the `PersonCard` with the rest of the details.
 
     - Pros: The user does not need to enter an extra command to view the notes of the patients.
   
@@ -602,21 +602,21 @@ The notes will then be display in a section which is a FXML `VBox`.
 
 Priorities: High (must have) - `* * *`, Medium (nice to have) - `* *`, Low (unlikely to have) - `*`
 
-| Priority | As a …​                     | I want to …​                                                        | So that I can…​                                                                                       |
-|------|-----------------------------|---------------------------------------------------------------------|-------------------------------------------------------------------------------------------------------|
-| `* * *` | user                        | add a new patient                                                   | manage patient information for that new patient                                                       |
-| `* * *` | organised user              | easily delete unnecessary data to reduce clutter in ClinicMate      | maintain a clean and organised patient database                                                       |
+| Priority | As a …​                     | I want to …​                                                         | So that I can…​                                                                                       |
+|------|-----------------------------|----------------------------------------------------------------------|-------------------------------------------------------------------------------------------------------|
+| `* * *` | user                        | add a new patient                                                    | manage patient information for that new patient                                                       |
+| `* * *` | organised user              | easily delete unnecessary data to reduce clutter in ClinicMate       | maintain a clean and organised patient database                                                       |
 | `* * *` | user                        | add notes associated to each patient (including past diagnosis etc.) | easily follow up on necessary actions and understand the patient better                               |
-| `* * *` | user                        | exit ClinicMate quickly                                             | conclude my session at the end of the day and ensure that ClinicMate is not running in the background |
-| `* *` | user                        | remove notes associated to each patient                             | remove irrelevant information and keep my notes up to date                                            |
-| `* *` | user managing many patients | filter the data based on ic number                                  | view the information quickly without searching through the whole list                                 |
-| `* *` | careless user               | edit patient information                                            | keep accurate records of my patients                                                                  |
-| `* *` | new user                    | see usage instructions                                              | refer to instructions when I have difficulty using ClinicMate                                         |
-| `* *` | new user                    | clear all sample data                                               | insert my own patient information into ClinicMate                                                     |
-| `* *` | new user                    | see ClinicMate populated with sample data                           | see how ClinicMate looks like when it is in use                                                       |
-| `*`  | user                        | show individual patient information                                 | focus on the patient's details during consultations                                                   |
-| `*`  | creative user               | be able to change the theme of ClinicMate                           | personalise the apperance of the user interface based on my preferences                               |
-| `*`  | new user                    | be able to export patient data for reporting purposes               | analyse health trends of a patient over time                                                          |
+| `* * *` | user                        | exit ClinicMate quickly                                              | conclude my session at the end of the day and ensure that ClinicMate is not running in the background |
+| `* *` | user                        | remove notes associated to each patient                              | remove irrelevant information and keep my notes up to date                                            |
+| `* *` | user managing many patients | filter the data based on ic number                                   | view the information quickly without searching through the whole list                                 |
+| `* *` | careless user               | edit patient information                                             | keep accurate records of my patients                                                                  |
+| `* *` | new user                    | see usage instructions                                               | refer to instructions when I have difficulty using ClinicMate                                         |
+| `* *` | new user                    | clear all sample data                                                | insert my own patient information into ClinicMate                                                     |
+| `* *` | new user                    | see ClinicMate populated with sample data                            | see how ClinicMate looks like when it is in use                                                       |
+| `*`  | user                        | show individual patient information                                  | focus on the patient's details during consultations                                                   |
+| `*`  | creative user               | be able to change the theme of ClinicMate                            | personalise the apperance of the user interface based on my preferences                               |
+| `*`  | new user                    | be able to export patient data                                       | analyse health trends of a patient over time                                                          |
 
 ### Use cases
 
@@ -787,31 +787,27 @@ For all use cases below, the **System** is the `ClinicMate` and the **Actor** is
 
 **MSS**
 
-1.  User requests to list patients.
-2.  ClinicMate shows a list of patients. 
-3.  User requests to exit the program. 
-4.  ClinicMate exits.
+1.  User requests to exit the program. 
+2.  ClinicMate exits.
 
     Use case ends.
 
 **Extensions**
 
-* 3a. The given command format is wrong → handled similarly to UC01 3a.
+* 1a. The given command format is wrong → handled similarly to UC01 3a.
 
 **Use case: UC09 - View help**
 
 **MSS**
 
-1.  User requests to list patients.
-2.  ClinicMate shows a list of patients.
-3.  User requests to help to use ClinicMate.
-4.  ClinicMate shows a help window with a link to the user guide.
+1.  User requests for help to use ClinicMate.
+2.  ClinicMate shows a help window with a link to the user guide.
 
     Use case ends.
 
 **Extensions**
 
-* 3a. The given command format is wrong → handled similarly to UC01 3a.
+* 1a. The given command format is wrong → handled similarly to UC01 3a.
 
 
 ### Non-Functional Requirements
@@ -835,7 +831,7 @@ For all use cases below, the **System** is the `ClinicMate` and the **Actor** is
 Some definitions have been omitted as they have already been defined in the user guide.
 </div>
 
-* **Mainstream OS**: Windows, Linux, Unix, MacOS
+* **Mainstream OS**: Windows, Linux, MacOS
 * **GP**: General Practitioner, a general physician who provides primary care (usually in a clinic).
 * **Taking History**: A medical term for recording a patient's symptoms, medical history, and other relevant information.
 * **IC Number**: Short for NRIC (National Registration Identity Card) Number, a unique identifier for Singapore citizens and permanent residents.
@@ -893,8 +889,8 @@ to allow users to find contacts using different fields such as `name`, `age`, `e
 
 **Potential Issues With Current Feature**
 
-Users have given us the feedback that our the notes in our patient notes panel does not update with the use of other commands.
-For instance, if our notes panel currently already have `John`'s notes reflected on it, using the `addnote` command to add a note of another contact who is not `John` will not cause the 
+Users have given us the feedback that the notes in our patient notes panel does not update with the use of other commands.
+For instance, if our notes panel currently already has `John`'s notes reflected on it, using the `addnote` command to add a note of another contact who is not `John` will not cause the 
 notes panel to update accordingly. `John`'s notes will still exist on the notes panel despite executing the `addnote` command to edit the note of another person.
 This could bring inconvenience to the user as users will not be able to view a contact's notes immediately upon using other commands. 
 They would then have to go through the hassle of typing the `show` command to allow the new contact's note to be displayed on the notes panel.
@@ -915,8 +911,8 @@ executing `edit T0123456A p\12345678`, will cause the notes panel to update to t
 
 **Potential Issues With Current Feature**
 
-Currently, ClinicMate only support English and does not support other languages such as Chinese, Japanese, Arabic etc. This restricts the usability of 
-users who does not use English. In another scenario where the patient name might not be in English, the user will also not be able to perform most commands such as `add`, `edit` etc.
+Currently, ClinicMate only supports English and does not support other languages such as Chinese, Japanese, Arabic etc. This restricts the usability of 
+users who does not use English. In another scenario where a patient's name might not be in English, the user will also not be able to perform most commands such as `add`, `edit` etc.
 
 **Proposed Enhancements**
 
@@ -927,22 +923,24 @@ We will be allowing more languages to be supported in ClinicMate
 - `add n\ジョン p\12345678 e\johndoe@mail.com i\T0123456A ag\12 s\M a\311, Clementi Ave 2, #02-25` will be allowed.
 - `edit n\ジョン p\12345678` will be allowed.
 
-### Improving error handling for `edit` command
+### Improving error handling specificity for user-facing commands
 
 **Potential Issues With Current Feature**
 
-Currently, the `edit` command does not check the existence of `IC_NUMBER` upon entering an `edit` command with an empty field.
+While most of the error messages are specific, there are some instances where the error messages are too general. For instance,
+currently, the `edit` command does not check the existence of `IC_NUMBER` upon entering an `edit` command with an empty field.
 For instance, entering `edit S1234567P` in the event that the contact with the `IC_NUMBER` of `S1234567P` does not exist returns an error message 
 of *at least one field to edit must be provided*. However, the error message should be that *the `IC_NUMBER` provided does
 not exist* as the existence of the `IC_NUMBER` should be checked first. This is a problem as users might go on to provide a field for a non-existing contact, thus returning them another error message.
 
 **Proposed Enhancements**
 
-We will check the existence of the `IC_NUMBER` first during the execution of the `edit` command. 
+We will add more specific conditionals to verify the validity of parsed inputs in the various `Parser` classes.
 
 **Examples**
 
-`edit S1234567P` should return the error message *the `IC_NUMBER` provided does not exist.*
+- `edit S1234567P` should return the error message *the `IC_NUMBER` provided does not exist.*
+- `edit S1234567P e\` should return the error message *email field should not be blank.*
 
 ### Allowing for multiple phone numbers
 
@@ -959,7 +957,7 @@ We will allow for the addition of multiple numbers under the `phone` field throu
 **Examples**
 
 - `add n\John Doe p\12345678 e\johndoe@mail.com i\T0123456A ag\12 s\M a\311, Clementi Ave 2, #02-25` will cause the `phone` number `12345678` to be added for user `T0123456A`
-- `add n\John Doe p\12345678, 09876544, 99999999 e\johndoe@mail.com i\T0123456A ag\12 s\M a\311, Clementi Ave 2, #02-25` will cause the `phone` number `12345678, 09876544, 99999999` to be added for user `T0123456A`
+- `add n\John Doe p\12345678, 09876544, 99999999 e\johndoe@mail.com i\T0123456A ag\12 s\M a\311, Clementi Ave 2, #02-25` will cause the `phone` numbers `12345678, 09876544, 99999999` to be added for user `T0123456A`
 
 ### Allowing for derivation of age through Date-Of-Birth
 
@@ -970,7 +968,7 @@ However, it is very cumbersome for users to edit the age of their contact indivi
 
 **Proposed Enhancements**
 
-In order to save the time of our users, we will adding in a new field called `DOB` which is Date of Birth in the form of `DD/MM/YYYY`. 
+In order to save the time of our users, we will be adding in a new field called `DOB` which is Date of Birth in the form of `DD/MM/YYYY`. 
 `age` of the contacts will thus be derived from their `DOB` with reference to the current year which we are in. Hence, streamlining the contact management process.
 
 **Examples**
@@ -980,11 +978,11 @@ Given that we are in the year 2024, the patient with the `DOB` of
 - `10/10/2003` will be at the age of 21 
 - `12/12/1990` will be at the age of 34
 
-### Further enhancements for `addnote` command
+### Storing notes as a doubly linked list
 
 **Potential Issues With Current Feature**
 
-Firstly, our current `addnote` command only allows user to add a new note, which will be appended to the previous one. However,
+Firstly, our current `addnote` command only allows users to add a new note, which will be appended to the previous one. However,
 there might be many instances in which the users need to edit or delete specific notes. Disallowing this will make adding notes quite frustrating at times.
 
 Secondly, each of the contacts in the patient list panel has a notes section which cannot be hidden and will appear in the UI. Users might not want to see all the notes for each contact as it might be very long and distracting.
@@ -993,14 +991,12 @@ Lastly, there is a lack of organisation for the notes and users might want to ca
 
 **Proposed Enhancements**
 
-We will thus:
-- Implement a feature to allow users to edit and delete specific notes.
-- Implement a feature for users to have the option of hiding the notes section for each patient in the patient list panel.
-- Allow users to tag and label different types of notes such as a tag for patient's diagnosis and another for their medication.
+Convert the way notes are stored to use a doubly linked list. This will allow for the independent updating and manipulation of separate notes,
+while still maintaining the chronological effect of notes being appended.
 
 **Examples**
 
-Since this is a work in progress, please do stay tune for any updates to see how these could be implemented. We thank you for your patience.
+Since this is a work in progress, please do stay tuned for any updates to see how these could be implemented. We thank you for your patience.
 
 ## **Appendix C: Instructions for manual testing**
 
@@ -1017,9 +1013,9 @@ testers are expected to do more *exploratory* testing.
 
 1. Initial launch
 
-   1. Download the jar file and copy into an empty folder
+   1. Download the jar file and copy into an empty folder.
 
-   1. Double-click the jar file 
+   1. Double-click the jar file.<br>
       Expected: Shows the GUI with a set of sample contacts. The window size may not be optimum.
 
 2. Saving window preferences
@@ -1033,10 +1029,10 @@ testers are expected to do more *exploratory* testing.
 
 1. Adding a person while all persons are being shown
 
-   1. Prerequisites: List all persons using the `list` command. Multiple persons in the list.
+   1. Prerequisites: List all persons using the `list` command. Multiple persons will be shown in the list.
 
    1. Test case: `add n\John Doe p\12345678 e\JohnDoe@mail.com i\T0123456A ag\12 s\M a\311, Clementi Ave 2, #02-25`<br>
-      Expected: New contact with the unique identification number `T0123456A` is added to the list. Details of the new contact shown in the status message.
+      Expected: New contact with the unique IC number `T0123456A` is added to the list. Details of the new contact shown in the status message.
 
    1. Test case: `add T0123A`<br>
       Expected: No person is added. Error details shown in the status message. Status bar remains the same.
@@ -1048,10 +1044,10 @@ testers are expected to do more *exploratory* testing.
 
 1. Deleting a person while all persons are being shown
 
-    1. Prerequisites: List all persons using the `list` command. Multiple persons in the list.
+    1. Prerequisites: List all persons using the `list` command. Multiple persons will be shown in the list.
 
     1. Test case: `delete T0123456A`<br>
-       Expected: The contact with the unique identification number `T0123456A` is deleted from the list. Details of the deleted contact shown in the status message.
+       Expected: The contact with the unique IC number `T0123456A` is deleted from the list. Details of the deleted contact shown in the status message.
 
     1. Test case: `delete T0123A`<br>
        Expected: No person is deleted. Error details shown in the status message. Status bar remains the same.

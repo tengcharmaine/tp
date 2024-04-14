@@ -178,10 +178,10 @@ The `add` feature is implemented using the `AddCommand` class. The `AddCommand` 
 - all compulsory parameters are present
 - no duplicate `Person` in ClinicMate
 
-The add mechanism is facilitated by `AddressBook`. It implements `ModelManager#addPerson(Person p)`which allows users to add patients’ contacts 
+The `add` mechanism is facilitated by `AddressBook`. It implements `Model#addPerson(Person p)`which allows users to add patients’ contacts 
 and relevant patient information into ClinicMate. These operations are exposed in the `Model` interface as `Model#addPerson(Person p)`. 
 
-Apart from that, the feature also includes the following operation in `ModelManager`, which implements the `Model` interface:
+Apart from that, the feature also includes the following operation in `Model`, which implements the `Model` interface:
 - `Model#hasPerson(Person person)`: Checks if the `Person` to be added is already an existing `Person` profile in ClinicMate
 
 Given below is an example usage scenario and how the `add` mechanism behaves at each step.
@@ -227,7 +227,8 @@ The following activity diagram summarizes what happens when a user executes a ne
       * For long time users: Command is very long to type.
 
 * **Alternative 2:** Allow users to add patients by adding fields as and when is needed (i.e. not make all the fields compulsory).
-    * Pros: Shorter command to type to add a patient.
+    * Pros:
+      * Shorter command to type to add a patient.
     * Cons: 
       * We must ensure that the implementation of each individual commands is correct. 
       * Might not have all the relevant information of patients. Messy to keep track.
@@ -244,7 +245,7 @@ The following activity diagram summarizes what happens when a user executes a ne
 
 #### Implementation
 
-The add/replace note mechanism is facilitated by `AddressBook`. It implements `AddressBook#setPerson(Person target, Person editedPerson)` which allow users to add/replace patients’ notes in the addressbook.
+The `addnote` mechanism is facilitated by `AddressBook`. It implements `AddressBook#setPerson(Person target, Person editedPerson)` which allow users to add/replace patients’ notes in the addressbook.
 
 These operations are exposed in the `Model` interface:
 - `Model#getPersonIfExists`: Checks if the person with the predicate exists

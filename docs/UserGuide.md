@@ -253,7 +253,12 @@ For new patients, the first step always involves registration. Similarly, let's 
 
 **Steps**:
 1. Using his details, simply type `add n\James Tan p\92223344 e\james.tan@mail.com i\S1234567A ag\35 s\M a\Block 11, #07-07, Jurong West Ave 6` into the Command Box and hit enter.
+
+![quicktouradd](images/addquicktour.png)
+
 2. The patient list panel will be updated with James Tan's details.
+
+![quicktouraddsuccess](images/addsuccessquicktour.png)
 
 Congratulations! You've successfully added James Tan to ClinicMate. Go ahead and try adding more patients of your own to practice!
 
@@ -267,6 +272,8 @@ Many walk in patients tend to be regulars at the clinic. ClinicMate is optimized
 1. Let's say you want to find James Tan's details after adding him in the previous step. Type `find S1234567A` into the Command Box and hit enter.
 2. The patient list panel will display James Tan's details only. The patient notes panel will show any notes associated with James Tan.
 
+![quicktourfindsuccess](images/findquicktour.png)
+
 Go ahead and try viewing the details of other patients using the `find` command!
 
 If you wish to learn more about the `find` command, you can refer to [this](#locating-persons-by-ic-number-find).
@@ -277,6 +284,9 @@ A big part of a GP consultation is taking patient history. ClinicMate allows you
 
 **Steps**:
 1. Suppose in your consultation, James Tan complains of frequent urination (polyuria) and excessive thirst (polydipsia), and you suspect he might have Diabetes Mellitus. You can note this down using the shorthands that you're used too! Simply type `addnote S1234567A n\Polyuria & polydipsia. DM?` into the Command Box and hit enter.
+
+![quicktouraddnotesuccess](images/addnotequicktour.png)
+
 2. Through the consultation, you also find out he has a family history of Diabetes Mellitus. `addnote` let's you quickly append this information by simply typing `addnote S1234567A n\Fam his of DM.` into the Command Box and hit enter.
 
 Notice that the notes are appended without replacing what was originally there, so you can quickly add all notes you find important without worry!
@@ -289,7 +299,10 @@ Suppose James Tan informs you that he is moving house, and will no longer be vis
 
 **Steps**:
 1. Type `delete S1234567A` into the Command Box and hit enter.
-2. `James Tan` details will be removed from the patient list panel. There is no change to the patient notes panel.
+
+![quicktourdeletesuccess](images/deletequicktour.png)
+
+2. Type `list` to see your whole patient list panel. `James Tan` details will be removed from the patient list panel. There is no change to the patient notes panel.
 
 Go ahead and try deleting some of the sample patients from ClinicMate.
 

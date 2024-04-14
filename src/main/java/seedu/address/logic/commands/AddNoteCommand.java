@@ -4,7 +4,6 @@ import static java.util.Objects.requireNonNull;
 import static seedu.address.commons.util.CollectionUtil.requireAllNonNull;
 import static seedu.address.logic.parser.CliSyntax.PREFIX_NOTE;
 
-import java.util.List;
 import java.util.logging.Logger;
 
 import seedu.address.commons.core.LogsCenter;
@@ -58,11 +57,8 @@ public class AddNoteCommand extends Command {
     @Override
     public CommandResult execute(Model model) throws CommandException {
         requireNonNull(model);
-        List<Person> allPatients = model.getAddressBook().getPersonList();
 
-        Person personToEdit = allPatients.stream()
-                .filter(icPredicate::test)
-                .findFirst()
+        Person personToEdit = model.getPersonIfExists(icPredicate)
                 .orElseThrow(() -> new CommandException(Messages.MESSAGE_NO_MATCHING_IC));
 
         Person editedPerson;
@@ -70,12 +66,12 @@ public class AddNoteCommand extends Command {
         if (isReplace || personToEdit.getNote().equals(Note.DEFAULT)) {
             editedPerson = new Person(personToEdit.getName(), personToEdit.getPhone(), personToEdit.getEmail(),
                     personToEdit.getIdentityCardNumber(), personToEdit.getAge(), personToEdit.getSex(),
-                    personToEdit.getAddress(), note, personToEdit.getTags());
+                    personToEdit.getAddress(), note);
         } else {
             Note updatedNote = personToEdit.getNote().append("\n" + note.toString());
             editedPerson = new Person(personToEdit.getName(), personToEdit.getPhone(), personToEdit.getEmail(),
                     personToEdit.getIdentityCardNumber(), personToEdit.getAge(), personToEdit.getSex(),
-                    personToEdit.getAddress(), updatedNote, personToEdit.getTags());
+                    personToEdit.getAddress(), updatedNote);
         }
 
         model.setPerson(personToEdit, editedPerson);

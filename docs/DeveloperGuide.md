@@ -25,6 +25,13 @@ Refer to the guide [_Setting up and getting started_](SettingUp.md).
 
 ## **Design**
 
+<div markdown="block" class="alert alert-success">
+
+**<i class="material-icons-outlined">lightbulb</i> Useful Tip:**<br>
+- The `.puml` files used to create diagrams in this document are in the `docs/diagrams` folder in our code repository. 
+- Refer to the _PlantUML Tutorial_ at se-edu/guides to learn how to create and edit diagrams.
+- </div>
+
 ### Architecture
 
 <puml src="diagrams/ArchitectureDiagram.puml" width="280" />
@@ -192,7 +199,7 @@ The following sequence diagram illustrates how the `add` command works and goes 
 The following activity diagram summarizes what happens when a user executes a new `add` command:
 
 <div style="text-align: center;">
-    <puml src="diagrams/AddCommandActivityDiagram.puml" width="250"/>
+    <puml src="diagrams/AddCommandActivityDiagram.puml" width="600"/>
 </div>
 
 #### Design Considerations & Alternatives Considered:

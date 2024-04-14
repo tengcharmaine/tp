@@ -13,8 +13,6 @@ import seedu.address.model.Model;
 import seedu.address.model.person.IdentityCardNumberMatchesPredicate;
 import seedu.address.model.person.Person;
 
-
-
 /**
  * Shows the user a note of a person in the address book.
  * If no IC is given, the displayed note panel will be cleared.
@@ -73,13 +71,8 @@ public class ShowCommand extends Command {
             return new CommandResult(MESSAGE_CLEAR_NOTE_SUCCESS);
         }
 
-        List<Person> allPatients = model.getAddressBook().getPersonList();
-
-        Person person = allPatients.stream()
-            .filter(icPredicate::test)
-            .findFirst()
-            .orElseThrow(() -> new CommandException(Messages.MESSAGE_NO_MATCHING_IC));
-
+        Person person = model.getPersonIfExists(icPredicate)
+                .orElseThrow(() -> new CommandException(Messages.MESSAGE_NO_MATCHING_IC));
         model.setDisplayNote(person);
 
         logger.info("Show command has been executed, displaying note of Person with IC Number:"

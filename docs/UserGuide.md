@@ -253,7 +253,12 @@ For new patients, the first step always involves registration. Similarly, let's 
 
 **Steps**:
 1. Using his details, simply type `add n\James Tan p\92223344 e\james.tan@mail.com i\S1234567A ag\35 s\M a\Block 11, #07-07, Jurong West Ave 6` into the Command Box and hit enter.
+
+![quicktouradd](images/addquicktour.png)
+
 2. The patient list panel will be updated with James Tan's details.
+
+![quicktouraddsuccess](images/addsuccessquicktour.png)
 
 Congratulations! You've successfully added James Tan to ClinicMate. Go ahead and try adding more patients of your own to practice!
 
@@ -267,6 +272,8 @@ Many walk in patients tend to be regulars at the clinic. ClinicMate is optimized
 1. Let's say you want to find James Tan's details after adding him in the previous step. Type `find S1234567A` into the Command Box and hit enter.
 2. The patient list panel will display James Tan's details only. The patient notes panel will show any notes associated with James Tan.
 
+![quicktourfindsuccess](images/findquicktour.png)
+
 Go ahead and try viewing the details of other patients using the `find` command!
 
 If you wish to learn more about the `find` command, you can refer to [this](#locating-persons-by-ic-number-find).
@@ -277,6 +284,9 @@ A big part of a GP consultation is taking patient history. ClinicMate allows you
 
 **Steps**:
 1. Suppose in your consultation, James Tan complains of frequent urination (polyuria) and excessive thirst (polydipsia), and you suspect he might have Diabetes Mellitus. You can note this down using the shorthands that you're used too! Simply type `addnote S1234567A n\Polyuria & polydipsia. DM?` into the Command Box and hit enter.
+
+![quicktouraddnotesuccess](images/addnotequicktour.png)
+
 2. Through the consultation, you also find out he has a family history of Diabetes Mellitus. `addnote` let's you quickly append this information by simply typing `addnote S1234567A n\Fam his of DM.` into the Command Box and hit enter.
 
 Notice that the notes are appended without replacing what was originally there, so you can quickly add all notes you find important without worry!
@@ -289,7 +299,10 @@ Suppose James Tan informs you that he is moving house, and will no longer be vis
 
 **Steps**:
 1. Type `delete S1234567A` into the Command Box and hit enter.
-2. `James Tan` details will be removed from the patient list panel. There is no change to the patient notes panel.
+
+![quicktourdeletesuccess](images/deletequicktour.png)
+
+2. Type `list` to see your whole patient list panel. `James Tan` details will be removed from the patient list panel. There is no change to the patient notes panel.
 
 Go ahead and try deleting some of the sample patients from ClinicMate.
 
@@ -739,8 +752,10 @@ Examples:
 - An alternative to check if the note is updated correctly, use the `find` command. (See [find](#locating-persons-by-ic-number-find) command)
 On the patient list panel, the list will be filtered to that specific patient; On the patient notes panel, the updated notes of the specific patient will be shown.
 
-- If you'd like to add empty line(s), you can use a ` ` (i.e. a normal space) as the note's contents 1 or more times.
+- If you'd like to add empty line(s), you can add an empty note (i.e. `addnote T0123456A n\` 1 or more times.
 Do note that the person list panel will not display the empty line(s) unless there is a note with other characters before and after the note with just spaces.
+
+- The space characters at the start and end of the note are stripped during the execution of this command. So `addnote T0123456A n\ Diabetes` and `addnote T0123456A n\Diabetes` give the same note of `Diabetes`.
 
 </div>
 
@@ -866,16 +881,16 @@ These descriptions will help you understand the key terms used in ClinicMate.
 
 ### Parameters Description
 
-| Parameter | Description                  | Constraints                                                                                                                       |
-|-----------|------------------------------|-----------------------------------------------------------------------------------------------------------------------------------|
-| `NAME`      | Name of the patient.         | Only contain alphanumeric characters and spaces, and should not be blank.                                                         |
-| `PHONE`     | Phone number of the patient. | Only contain numbers, be at least 3 digits. Should not be blank.                                                                  |
-| `EMAIL`     | Email of the patient.        | Should be in the format of `local-part@domain` and should not be blank.                                |
+| Parameter | Description                  | Constraints                                                                                                                        |
+|-----------|------------------------------|------------------------------------------------------------------------------------------------------------------------------------|
+| `NAME`      | Name of the patient.         | Only contain alphanumeric characters and spaces, and should not be blank.                                                          |
+| `PHONE`     | Phone number of the patient. | Only contain numbers, be at least 3 digits. Should not be blank.                                                                   |
+| `EMAIL`     | Email of the patient.        | Should be in the format of `local-part@domain` and should not be blank.                                                            |
 | `IC_NUMBER` | IC number of the patient.    | Case-insensitive and should not be blank. It should start with one letter (S, F, G or M), followed by 7 digits and 1 letter behind. |
-| `AGE`       | Age of the patient.          | Only contain numbers, and should not be blank.                                                                                    |
-| `SEX`       | Sex of the patient.          | Case-insensitive and should not be blank. Only accepts `m`, `f`, `M`, `F` as inputs.                                              |
-| `ADDRESS`   | Address of the patient.      | Case-insensitive and should not be blank.                                                                                         |
-| `NOTE`      | Note of the patient          | Case-insensitive and should not be blank.                                                                                         |
+| `AGE`       | Age of the patient.          | Only contain numbers, and should not be blank.                                                                                     |
+| `SEX`       | Sex of the patient.          | Case-insensitive and should not be blank. Only accepts `m`, `f`, `M`, `F` as inputs.                                               |
+| `ADDRESS`   | Address of the patient.      | Case-insensitive and should not be blank.                                                                                          |
+| `NOTE`      | Note of the patient          | Case-insensitive and can be blank.                                                                                                 |
 
 
 <div markdown="block" class="alert alert-info">

@@ -2,13 +2,9 @@ package seedu.address.model.person;
 
 import static seedu.address.commons.util.CollectionUtil.requireAllNonNull;
 
-import java.util.Collections;
-import java.util.HashSet;
 import java.util.Objects;
-import java.util.Set;
 
 import seedu.address.commons.util.ToStringBuilder;
-import seedu.address.model.tag.Tag;
 
 /**
  * Represents a Person in the address book.
@@ -27,14 +23,13 @@ public class Person {
     private final Sex sex;
     private final Address address;
     private final Note note;
-    private final Set<Tag> tags = new HashSet<>();
 
     /**
      * Every field must be present and not null.
      */
     public Person(Name name, Phone phone, Email email, IdentityCardNumber identityCardNumber,
-                        Age age, Sex sex, Address address, Note note, Set<Tag> tags) {
-        requireAllNonNull(name, phone, email, identityCardNumber, age, sex, address, note, tags);
+                  Age age, Sex sex, Address address, Note note) {
+        requireAllNonNull(name, phone, email, identityCardNumber, age, sex, address, note);
         this.name = name;
         this.phone = phone;
         this.email = email;
@@ -75,14 +70,6 @@ public class Person {
 
     public Note getNote() {
         return note;
-    }
-
-    /**
-     * Returns an immutable tag set, which throws {@code UnsupportedOperationException}
-     * if modification is attempted.
-     */
-    public Set<Tag> getTags() {
-        return Collections.unmodifiableSet(tags);
     }
 
     /**

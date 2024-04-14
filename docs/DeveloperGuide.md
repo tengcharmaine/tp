@@ -494,6 +494,9 @@ The `NoteDisplay` allows the users to view the notes of the selected patient in 
 
 `NoteDisplay` inherits `UIPart` and is used to display the notes section of the patient details. More details of the class implementation can be seen in the class diagram below.
 
+<div style="text-align: center;">
+    <puml src="diagrams/NoteDisplayClassDiagram.puml" width="450"/>
+</div>
 
 `NoteDisplay` has a private field `noteDisplay` which is of type `TextArea`. The `NoteDisplay` has a method called `setNoteToUser` which takes in a string input and changes the `noteDisplay` through its `settext` method. 
 The notes will then be display in a section which is a FXML `VBox`. 

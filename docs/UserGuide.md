@@ -104,17 +104,17 @@ In this section, you will learn how to set up ClinicMate on your computer.
 2. Run the command `java -version` to check if you have Java 11 or above installed in your computer.
 * Assuming that you have Java installed in your computer,
   * If you are running Windows, this is what you should see after running the command.
-  * Over here, the Java version is 19.0.2, which means that Java 19 is installed.
-     ![javaWindows](images/javaWindows.png)
+      * Over here, the Java version is 19.0.2, which means that Java 19 is installed.
+         ![javaWindows](images/javaWindows.png)
   
   * If you are running MacOS, this is what you should see after running the command.
-  * Over here, the Java version is 11.0.19, which means that Java 11 is installed.
-     ![javaMac](images/javaMac.png)
+      * Over here, the Java version is 11.0.19, which means that Java 11 is installed.
+         ![javaMac](images/javaMac.png)
 
 3. If you do not have Java 11 or above installed in your computer, download it from [here](https://www.oracle.com/java/technologies/javase-jdk11-downloads.html).
 
 ## Setting up
-1. Download the latest `.jar` file [here](https://github.com/AY2324S2-CS2103T-F14-2/tp/releases/latest)
+1. Download the latest `clinicmate.jar` file [here](https://github.com/AY2324S2-CS2103T-F14-2/tp/releases/latest)
 2. You will see this screen after clicking on the link above.
    * Click on the `clinicmate.jar` file to download it.
 ![ClinicMateJar.png](images/ClinicMateJar.png)

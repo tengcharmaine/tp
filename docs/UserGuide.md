@@ -94,35 +94,35 @@ If you have more questions, do check out the [FAQ](#faq) section to see if there
 
 <div style="page-break-after: always;"></div>
 
-## Quick start
+# Quick start
 
 In this section, you will learn how to set up ClinicMate on your computer. 
 
-### Prerequisites
+## Prerequisites
 
 1. Open Command Prompt (for Windows) or Terminal (for MacOS and Linux) on your desktop. Refer to our [FAQ](#faq) on how to do so.
 2. Run the command `java -version` to check if you have Java 11 or above installed in your computer.
 * Assuming that you have Java installed in your computer,
   * If you are running Windows, this is what you should see after running the command.
-  * Over here, the Java version is 19.0.2, which means that Java 19 is installed.
-     ![javaWindows](images/javaWindows.png)
+      * Over here, the Java version is 19.0.2, which means that Java 19 is installed.
+         ![javaWindows](images/javaWindows.png)
   
   * If you are running MacOS, this is what you should see after running the command.
-  * Over here, the Java version is 11.0.19, which means that Java 11 is installed.
-     ![javaMac](images/javaMac.png)
+      * Over here, the Java version is 11.0.19, which means that Java 11 is installed.
+         ![javaMac](images/javaMac.png)
 
 3. If you do not have Java 11 or above installed in your computer, download it from [here](https://www.oracle.com/java/technologies/javase-jdk11-downloads.html).
 
-### Setting up
-1. Download the latest `.jar` file [here](https://github.com/AY2324S2-CS2103T-F14-2/tp/releases/latest)
+## Setting up
+1. Download the latest `clinicmate.jar` file [here](https://github.com/AY2324S2-CS2103T-F14-2/tp/releases/latest)
 2. You will see this screen after clicking on the link above.
    * Click on the `clinicmate.jar` file to download it.
 ![ClinicMateJar.png](images/ClinicMateJar.png)
 3. Move the file to an empty folder that you want to use for your ClinicMate.
     * For example, you can create an empty folder named `clinicmate` in your `Documents` folder.
-    * You can then move the `.jar` file to that folder named `clinicmate` in your `Documents` folder.
+    * You can then move the `clinicmate.jar` file to that folder named `clinicmate` in your `Documents` folder.
     
-### Running the application
+## Running the application
 1. Open Command Prompt (for Windows) or Terminal (for MacOS and Linux) on your desktop. Refer to our [FAQ](#faq) on how to do so.
 2. Run the `cd` command into the folder you put the jar file in.
    * `cd` is the command to change directory.
@@ -150,19 +150,19 @@ In this section, you will learn how to set up ClinicMate on your computer.
 --------------------------------------------------------------------------------------------------------------------
 <div style="page-break-after: always;"></div>
 
-## GUI Overview
+# GUI Overview
 
 ClinicMate features a Graphical User Interface (GUI) that provides a seamless user experience. The GUI is designed to be intuitive and user-friendly, allowing you to navigate through the application effortlessly.
 
 The GUI consists of the following components:
 ![GUI](images/GUIFeature.png)
 
-| **Number** | **Component**       | **Description**                                                  |
-|------------|---------------------|------------------------------------------------------------------|
-| 1          | Command Box         | Enter commands here to interact with ClinicMate.                 |
-| 2          | Message Box         | Displays the output of commands executed in the Command Box.     |
-| 3          | Patient List Panel  | Displays the list of patients in ClinicMate.                     |
-| 4          | Patient Notes Panel | Displays the notes of the patient that you are viewing any note. |
+| **Number** | **Component**       | **Description**                                              |
+|------------|---------------------|--------------------------------------------------------------|
+| 1          | Command Box         | Enter commands here to interact with ClinicMate.             |
+| 2          | Message Box         | Displays the output of commands executed in the Command Box. |
+| 3          | Patient List Panel  | Displays the list of patients in ClinicMate.                 |
+| 4          | Patient Notes Panel | Displays the notes of the patient that you are viewing.      |
 
 <div markdown="block" class="alert alert-success">
 
@@ -173,18 +173,18 @@ The GUI consists of the following components:
 
 Now that you have been introduced to the GUI components, let's proceed to learn how you can use the **CLI** to interact with ClinicMate.
 
-## CLI Overview
+# CLI Overview
 Experience the seamless power of ClinicMate's Command Line Interface (CLI) - where interaction is as simple as typing commands. 
 Say goodbye to juggling between typing and clicking, and welcome the streamlined efficiency of CLI!
 
-![CLI.png](images/CLIfeatures.png)
+![CLI](images/CLIFeatures.png)
 
 CLI is straightforward to use. The Command Box acts as your entry point for commands. Once you hit enter, ClinicMate processes 
 your input and delivers responses through the Message Box. It's all about interacting with ClinicMate effortlessly through text.
 
 Ready to dive in? Let's explore writing command lines and get you started with ClinicMate!
 
-## Command Format
+# Command Format
 
 To use our CLI, here is an overview of the command formats. 
 
@@ -200,7 +200,7 @@ you can refer to the [Command Summary Section](#command-summary).
 
 Let's see how these components are used in a command!
 
-### Example Command: `addnote`
+## Example Command: `addnote`
 
 ![labelled](images/LabelledAddNote.png)
 
@@ -266,7 +266,7 @@ If you wish to learn more about the `add` command, you can refer to [this](#addi
 
 ## 2. Finding a Patient
 
-Many walk in patients tend to be regulars at the clinic. ClinicMate is optimized to retrieve patient details quickly and easily. All you need is their IC number!
+Many walk-in patients tend to be regulars at the clinic. ClinicMate is optimized to retrieve patient details quickly and easily. All you need is their IC number!
 
 **Steps**:
 1. Let's say you want to find James Tan's details after adding him in the previous step. Type `find S1234567A` into the Command Box and hit enter.
@@ -287,7 +287,7 @@ A big part of a GP consultation is taking patient history. ClinicMate allows you
 
 ![quicktouraddnotesuccess](images/addnotequicktour.png)
 
-2. Through the consultation, you also find out he has a family history of Diabetes Mellitus. `addnote` let's you quickly append this information by simply typing `addnote S1234567A n\Fam his of DM.` into the Command Box and hit enter.
+2. Through the consultation, you also find out he has a family history of Diabetes Mellitus. `addnote` lets you quickly append this information by simply typing `addnote S1234567A n\Fam his of DM.` into the Command Box and hit enter.
 
 Notice that the notes are appended without replacing what was originally there, so you can quickly add all notes you find important without worry!
 
@@ -363,7 +363,7 @@ Navigation and Assistance Functions in ClinicMate serve to enhance user experien
 **Steps**:
 1. Enter `help` into the command box. A help window should pop up.
 2. You can access help by either:
-- Copying our User Guide's link through the **Copy URL** button and paste it in your web browser.
+- Copying our User Guide's link through the **Copy URL** button and pasting it in your web browser.
 - Directly accessing our website through pressing on the icon.
  
 <span class="generated-only">[&uarr; Back to Top](#welcome-to-clinicmate)</span>
@@ -382,7 +382,7 @@ Navigation and Assistance Functions in ClinicMate serve to enhance user experien
 <div markdown="block" class="alert alert-danger">
 
 **<i class="material-icons-outlined">warning</i> Warning:**<br>
-`clear` is a one-time deletion of all of your entries in ClinicMate. Please use it with consideration and care. You will not be able to retrieve any information back once the command has been called.
+`clear` is a one-time deletion of all of your entries in ClinicMate. Please use it with consideration and care. You will not be able to retrieve any information back once the command has been executed.
 </div>
 
 <span class="generated-only">[&uarr; Back to Top](#welcome-to-clinicmate)</span>
@@ -414,7 +414,7 @@ Don't worry about losing your data when exiting. They will be automatically save
 Data Management Functions in ClinicMate serve to simplify the process of adding, editing and deleting patient's information. It also enables you to view a comprehensive list of patient information and effortlessly search for specific patient records.
 
 ### Adding a person: `add`
-*Encounter a new patient without a record? No worries! Our `add` command simplifies the process of adding their details to ClinicMate.*
+*Registering a new patient? No worries! Our `add` command simplifies the process of adding their details to ClinicMate.*
 
 **Format**: `add n\NAME p\PHONE e\EMAIL i\IC_NUMBER ag\AGE s\SEX a\ADDRESS`
 
@@ -426,8 +426,8 @@ Data Management Functions in ClinicMate serve to simplify the process of adding,
 
 **<i class="material-icons-outlined">edit</i> Note:**<br>
 
-* A person will be uniquely identified by his/her personal identification number.
-* ClinicMate does not allow the same identification number to be used twice.
+* A person will be uniquely identified by his/her IC number.
+* ClinicMate does not allow the same IC number to be used twice.
 * Most of our fields do not have constraints as we want the application to be less restrictive :)
 * Do refer to our [Parameters Description section](#parameters-description) to find out more about our parameter constraints.
 
@@ -469,7 +469,7 @@ An example is shown below:
 <span class="generated-only">[&uarr; Back to Top](#welcome-to-clinicmate)</span>
 <span class="print-only">[&uarr; Back to Table of Contents](#table-of-contents)</span>
 
-### Locating persons by IC number: `find`
+### Finding person by IC number: `find`
 *Today, your regular patient arrives at the clinic, and you need to retrieve her record. However, with a multitude of contacts, locating hers seems daunting. Fear not! Utilize the `find` command to swiftly pinpoint the specific patient you're searching for using their `IC_NUMBER`.*
 
 <div markdown="block" class="alert alert-success">
@@ -547,7 +547,7 @@ There might be cases that the `IC_NUMBER` you keyed in is invalid as shown below
  </div>
 
 Example:
-* `show T0123456A` updates the patient notes panel on the right to show `John Doe`'s note.
+* `show T0123456A` updates the patient notes panel to show `John Doe`'s note.
 
 **Possible Error that you might encounter:**
 
@@ -690,7 +690,7 @@ There might be cases that the `IC_NUMBER` you keyed in does not exist in ClinicM
 
 ![addnoteapp2.png](images/addnoteapp2.png)
 
-3.  New note will appear in the patient notes panel. If notes already exists, the new note will be appended to the previous notes on a new line.
+3.  New note will appear in the patient list panel. If notes already exist, the new note will be appended to the previous notes on a new line.
 
 ![addnoteapp4.png](images/addnoteapp4.png)
 
@@ -698,7 +698,7 @@ There might be cases that the `IC_NUMBER` you keyed in does not exist in ClinicM
 
 **<i class="material-icons-outlined">edit</i> Note:**<br>
 
-* The `IC_number` refers to the IC number shown in the displayed patient list panel. 
+* The `IC_NUMBER` refers to the IC number shown in the displayed patient list panel. 
 * The `IC_NUMBER` **must be the FULL IC NUMBER**.
 * IC number must be valid and currently exist in the database.
 * When adding notes, the new note added will be appended to the current note of the person. i.e. current note is preserved.
@@ -722,7 +722,7 @@ There might be cases that the `IC_NUMBER` you keyed in does not exist in ClinicM
 
 **<i class="material-icons-outlined">edit</i> Note:**<br>
 
-* The `IC_number` refers to the IC number shown in the displayed patient list panel. 
+* The `IC_NUMBER` refers to the IC number shown in the displayed patient list panel. 
 * The `IC_NUMBER` **must be the FULL IC NUMBER**.
 * IC number must be valid and currently exist in the database.
 * Notes will not wrap around. Notes added with separate uses of the `addnote` command will appear as separate lines.
@@ -753,7 +753,7 @@ Examples:
 On the patient list panel, the list will be filtered to that specific patient; On the patient notes panel, the updated notes of the specific patient will be shown.
 
 - If you'd like to add empty line(s), you can add an empty note (i.e. `addnote T0123456A n\` 1 or more times.
-Do note that the person list panel will not display the empty line(s) unless there is a note with other characters before and after the note with just spaces.
+Do note that the patient list panel will not display the empty line(s) unless there is a note with other characters before and after the note with just spaces.
 
 - The space characters at the start and end of the note are stripped during the execution of this command. So `addnote T0123456A n\ Diabetes` and `addnote T0123456A n\Diabetes` give the same note of `Diabetes`.
 
@@ -762,13 +762,13 @@ Do note that the person list panel will not display the empty line(s) unless the
 <span class="generated-only">[&uarr; Back to Top](#welcome-to-clinicmate)</span>
 <span class="print-only">[&uarr; Back to Table of Contents](#table-of-contents)</span>
 
-## Data Files
+# Data Files
 
-### Saving the data
+## Saving the data
 
 ClinicMate data is saved in the hard disk automatically after any command that changes the data. There is no need to save manually.
 
-### Editing the data file
+## Editing the data file
 
 ClinicMate data is saved automatically as a JSON file `[JAR file location]/data/clinicmate.json`. Advanced users are welcome to update data directly by editing that data file.
 
@@ -785,7 +785,7 @@ ClinicMate data is saved automatically as a JSON file `[JAR file location]/data/
 --------------------------------------------------------------------------------------------------------------------
 <div style="page-break-after: always;"></div>
 
-## FAQ
+# FAQ
 
 **Q**: How do I open my terminal?<br>
 **A**: Here are the instructions to open your terminal for the different types of operating systems:
@@ -821,7 +821,7 @@ ClinicMate data is saved automatically as a JSON file `[JAR file location]/data/
 **A**: ClinicMate does not currently support direct import of patient data from other software. However, you can manually enter patient data using the `add` command.
 
 **Q**: I am not able to directly access the user guide by pressing on the icon in the help window.<br>
-**A**: Linux users might face some difficulties when trying to directly access. Unfortunately, we currently do not have a solution for this. Please access our user guide in the alternative way, which is to copy the URL and pasting it in your web browser.
+**A**: Linux users might face some difficulties when trying to directly access the website. Unfortunately, we currently do not have a solution for this. Please access our user guide in the alternative way, which is to copy the URL and pasting it in your web browser.
 
 **Q**: The patient notes panel does not display the most updated contact I interacted with.<br>
 **A**: Currently, only the `find` or `show` command will change whose notes are displayed in the patient notes panel.
@@ -845,9 +845,8 @@ ClinicMate data is saved automatically as a JSON file `[JAR file location]/data/
 <span class="print-only">[&uarr; Back to Table of Contents](#table-of-contents)</span>
 
 --------------------------------------------------------------------------------------------------------------------
-<div style="page-break-after: always;"></div>
 
-## Coming Soon
+# Coming Soon
 
 1. **Support for multiple phone numbers**: Allow users to add multiple phone numbers for a single patient record.
 2. **Date of Birth**: Add a field for date of birth to patient records for better age calculation.
@@ -860,9 +859,9 @@ ClinicMate data is saved automatically as a JSON file `[JAR file location]/data/
 --------------------------------------------------------------------------------------------------------------------
 <div style="page-break-after: always;"></div>
 
-## Glossary
+# Glossary
 
-### Definitions of Key Terms
+## Definitions of Key Terms
 
 These descriptions will help you understand the key terms used in ClinicMate.
 
@@ -879,7 +878,7 @@ These descriptions will help you understand the key terms used in ClinicMate.
 | **Prefix**           | A prefix acts as a keyword used to identify a parameter. In the command `edit S1234567A ag\AGE n\NAME`, `ag\` and `n\` function as prefixes.                                                                         |
 
 
-### Parameters Description
+## Parameters Description
 
 | Parameter | Description                  | Constraints                                                                                                                        |
 |-----------|------------------------------|------------------------------------------------------------------------------------------------------------------------------------|
@@ -910,7 +909,7 @@ These descriptions will help you understand the key terms used in ClinicMate.
 </div>
 
 
-#### Email Format Description
+### Email Format Description
 The email format is `local-part@domain`.
 
 `local-part` constraints:
@@ -926,7 +925,7 @@ The email format is `local-part@domain`.
 <span class="generated-only">[&uarr; Back to Top](#welcome-to-clinicmate)</span>
 <span class="print-only">[&uarr; Back to Table of Contents](#table-of-contents)</span>
 
-## Command summary
+# Command summary
 
 Action     | Format, Examples
 -----------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------

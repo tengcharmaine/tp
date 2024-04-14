@@ -208,7 +208,7 @@ The following activity diagram summarizes what happens when a user executes a ne
 
 **Aspect: How to add:**
 
-* **Alternative 1 (current choice):** Requires all the relevant fields (e.g. name, phone, email, ic number, age, sex, address).
+* **Alternative 1 (current choice):** Requires all the relevant fields (e.g. name, phone, email, IC number, age, sex, address).
     * Pros: 
       * Able to have complete contacts. 
       * For long time users: Do not need to use this command as often (mitigate cons that it is very long to type).
@@ -223,7 +223,7 @@ The following activity diagram summarizes what happens when a user executes a ne
       * Might not have all the relevant information of all patients. Messy to keep track.
 
 **Aspect: Display of new contact when command is successful:**
-* Current choice: Displays the new contact with relevant patient information in the addressbook.
+* Current choice: Displays the new contact with relevant patient information in ClinicMate.
   * Rationale: Users will be able to view the patient and the information added easily.
 
 **Aspect: Display of error message when command is unsuccessful:**
@@ -388,7 +388,15 @@ The following activity diagram summarizes what happens when a user executes a ne
 
 The edit mechanism is facilitated by `AddressBook`. It implements `AddressBook#setPerson(Person target, Person editedPerson)` which allow users to edit patient’s details in the addressbook.
 
-These operations are exposed in the `Model` interface as `Model#setPerson(Person target, Person editedPerson)`
+These operations are exposed in the `Model` interface as `Model#setPerson(Person target, Person editedPerson)`. 
+
+The `edit` feature has the following operations in `ModelManager` which implements the `Model` interface:
+
+- Model#setPerson: Replaces the given person target with `editedPerson`. Target must exist in the address book. The person identity of `editedPerson` must not be the same as another existing person in the address book.
+
+- Model#hasPerson: Returns true if a person with the same identity as person exists in the address book.
+
+- Model#updateFilteredPersonList: Updates the filter of the filtered person list to filter by the given predicate.
 
 Given below is an example usage scenario and how the edit note mechanism behaves at each step.
 
@@ -427,6 +435,103 @@ The following activity diagram summarizes what happens when a user executes a ne
 **Aspect: Display of error message when command is unsuccessful:**
 * Current choice: Displays the correct error message based on the type of error made (e.g. missing fields, invalid ic format).
     * Rationale: Users will be able to learn of their error quickly and have an idea of what to edit to make the command successful.
+
+### Show feature
+
+#### Implementation
+
+The `show` mechanism is facilitated by `ModelManager`. It implements 
+- `ModelManager#setDisplayNote(Person person)` - which allows users to display
+the notes of selected contacts on the `NoteDisplay`. 
+- `ModelManager#clear()` -  which clears the notes in `NoteDislay`.
+
+The `ShowCommandParser` parses the user input and implements `ShowCommand#createClearCommand()` if input is an empty string, else, 
+it implements `ShowCommand#createShowCommad(IdentityCardNumberMatchesPredicate icPredicate)`. 
+
+Given below is an example usage scenario and how the `show` mechanism behaves at each step.
+
+Step 1: The user launches the application. The `AddressBook` will be initialized with the initial address book state.
+
+Step 2:
+
+- Scenario 1: The user executes `show T0123456A ...` to show the notes of the person in the address book with the unique IC number of `T0123456A`. 
+The `show` command calls `ModelManager#setDisplayNote(Person person)`, causing the modified state of the address book after the `show T0123456A ...` command executes to be displayed.
+
+- Scenario 2: The user executes `show` to clear the notes of the person in patient notes display of the address book.
+  The `show` command calls `ModelManager#clear()`, causing the modified state of the address book after the `show` command executes to be displayed.
+
+The following sequence diagram illustrates how a `show` operation goes through the `Logic` component and sets the patient notes display. 
+
+<puml src="diagrams/ShowSequenceDiagram.puml" alt="FindSequenceDiagram" />
+
+<box type="info" seamless>
+
+**Note:** The lifeline for `ShowCommand` should end at the destroy marker (X) but due to a limitation of PlantUML, the lifeline reaches the end of diagram.
+
+</box>
+
+The following activity diagram summarizes what happens when a user executes a `show` command:
+<div style="text-align: center;">
+    <puml src="diagrams/ShowCommandActivityDiagram.puml" width="600"/>
+</div>
+
+#### Design Considerations & Alternatives Considered 
+
+**Aspect: How to show the notes of patient on patient notes display.**
+
+- **Alternative 1 (Current Choice):** Show patient's notes in one command using `IC_NUMBER`.
+
+    - Pros: Users are able to view specific user's notes.
+
+    - Cons: Only allow for one parameter which is `IC_NUMBER`.
+
+- **Alternative 2:** Only show the patient notes which was last searched for.
+    - Pros: Easy to implement.
+
+    - Cons: Brings inconvenience to users if they only want to view a specific user's notes.
+
+**Aspect: How to clear the notes of patient on patient notes display.**
+
+- **Alternative 1 (Current Choice):** Clears patient's notes on patient notes display using one command.
+    - Pros: Easy to implement. Users do not need to remember so many commands.
+
+    - Cons: The command might not be intuitive.
+
+- **Alternative 2:** Clears patient's notes on patient notes display with another command.
+
+    - Pros: The command is more intuitive.
+
+    - Cons: Users are required to know an extra command, which reduces usability of application.
+
+### NoteDisplay (UI Component)
+
+The `NoteDisplay` allows the users to view the notes of the selected patient in the patient list. All notes are displayed in the `Person Card`.
+
+#### Implementation 
+
+`NoteDisplay` inherits `UIPart` and is used to display the notes section of the patient details. More details of the class implementation can be seen in the class diagram below.
+
+<div style="text-align: center;">
+    <puml src="diagrams/NoteDisplayClassDiagram.puml" width="450"/>
+</div>
+
+`NoteDisplay` has a private field `noteDisplay` which is of type `TextArea`. The `NoteDisplay` has a method called `setNoteToUser` which takes in a string input and changes the `noteDisplay` through its `settext` method. 
+The notes will then be display in a section which is a FXML `VBox`. 
+
+#### Design Consideration & Alternatives Considered 
+
+**Aspect: How the notes of the patient are displayed**
+
+- **Alternative 1 (Current Choice):** Display the notes of the patients in a separate panel.
+    - Pros: The information of patient is more well organised. It allows users to have a more comprehensive view of their patient notes.
+  
+    - Cons: One additional command is needed to view the notes of the patients.
+
+- **Alternative 2:** Display the notes of the patients in the `PersonCard` with the rest the of the details.
+
+    - Pros: The user does not need to enter an extra command to view the notes of the patients.
+  
+    - Cons: It is very difficult to view the notes of the individual patient as there is too much information displayed on the `PersonCard`.
 
 --------------------------------------------------------------------------------------------------------------------
 

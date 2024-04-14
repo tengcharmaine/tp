@@ -418,11 +418,13 @@ These operations are exposed in the `Model` interface as `Model#setPerson(Person
 
 The `edit` feature has the following operations in `ModelManager` which implements the `Model` interface:
 
-- Model#setPerson: Replaces the given person target with `editedPerson`. Target must exist in the address book. The person identity of `editedPerson` must not be the same as another existing person in the address book.
+- `Model#getPersonIfExists(predicate)` - returns the specified person if they exist in the list.
 
-- Model#hasPerson: Returns true if a person with the same identity as person exists in the address book.
+- `Model#setPerson`: Replaces the given person target with `editedPerson`. Target must exist in the address book. The person identity of `editedPerson` must not be the same as another existing person in the address book.
 
-- Model#updateFilteredPersonList: Updates the filter of the filtered person list to filter by the given predicate.
+- `Model#hasPerson`: Returns true if a person with the same identity as person exists in the address book.
+
+- `Model#updateFilteredPersonList`: Updates the filter of the filtered person list to filter by the given predicate.
 
 Given below is an example usage scenario and how the edit note mechanism behaves at each step.
 
@@ -467,6 +469,8 @@ The following activity diagram summarizes what happens when a user executes a ne
 #### Implementation
 
 The `show` mechanism is facilitated by `ModelManager`. It implements 
+
+- `ModelManager#getPersonIfExists(predicate)` - returns the specified person if they exist in the list. 
 - `ModelManager#setDisplayNote(Person person)` - which allows users to display
 the notes of selected contacts on the `NoteDisplay`. 
 - `ModelManager#clear()` -  which clears the notes in `NoteDislay`.
@@ -481,7 +485,9 @@ Step 1: The user launches the application. The `AddressBook` will be initialized
 Step 2:
 
 - Scenario 1: The user executes `show T0123456A ...` to show the notes of the person in the address book with the unique IC number of `T0123456A`. 
-The `show` command calls `ModelManager#setDisplayNote(Person person)`, causing the modified state of the address book after the `show T0123456A ...` command executes to be displayed.
+The `show` command calls `ModelManager#getPersonIfExists(predicate)` to check if the specific person exists in the addressbook.
+
+- `ModelManager#setDisplayNote(Person person)` is then called, causing the modified state of the address book after the `show T0123456A ...` command executes to be displayed.
 
 - Scenario 2: The user executes `show` to clear the notes of the person in patient notes display of the address book.
   The `show` command calls `ModelManager#clear()`, causing the modified state of the address book after the `show` command executes to be displayed.

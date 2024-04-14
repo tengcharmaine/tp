@@ -426,8 +426,8 @@ Data Management Functions in ClinicMate serve to simplify the process of adding,
 
 **<i class="material-icons-outlined">edit</i> Note:**<br>
 
-* A person will be uniquely identified by his/her personal identification number.
-* ClinicMate does not allow the same identification number to be used twice.
+* A person will be uniquely identified by his/her IC number.
+* ClinicMate does not allow the same IC number to be used twice.
 * Most of our fields do not have constraints as we want the application to be less restrictive :)
 * Do refer to our [Parameters Description section](#parameters-description) to find out more about our parameter constraints.
 

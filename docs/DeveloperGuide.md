@@ -455,7 +455,7 @@ The following sequence diagram illustrates how a `show` operation goes through t
 
 The following activity diagram summarizes what happens when a user executes a new command:
 <div style="text-align: center;">
-    <puml src="diagrams/ShowCommandActivityDiagram.puml" width="250"/>
+    <puml src="diagrams/ShowCommandActivityDiagram.puml" width="600"/>
 </div>
 
 #### Design Considerations & Alternatives Considered 

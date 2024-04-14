@@ -456,14 +456,14 @@ The following activity diagram summarizes what happens when a user executes a ne
 
 - **Alternative 1 (Current Choice):** Show patient's notes on one command using `IC_NUMBER`.
 
-    - Pros: Users able to view specific user's notes.
+    - Pros: Users are able to view specific user's notes.
 
     - Cons: Only allow for one parameter which is `IC_NUMBER`.
 
 - **Alternative 2:** Only show the patient notes which was last searched for.
     - Pros: Easy to implement.
 
-    - Cons: Brings inconvenient to users if they only want to view a specific user's notes.
+    - Cons: Brings inconvenience to users if they only want to view a specific user's notes.
 
 **Aspect: How to clear the notes of patient on Patient Note Display.**
 
@@ -476,11 +476,11 @@ The following activity diagram summarizes what happens when a user executes a ne
 
     - Pros: The command is more intuitive.
 
-    - Cons: Users are required to know an extra command, which reduce usability of application.
+    - Cons: Users are required to know an extra command, which reduces usability of application.
 
 ### NoteDisplay (UI Component)
 
-The `NoteDisplay` allows the users to view the notes of the selected patient in the patient list. All notes in the `Person Card`.
+The `NoteDisplay` allows the users to view the notes of the selected patient in the patient list. All notes are displayed in the `Person Card`.
 
 #### Implementation 
 
@@ -499,11 +499,11 @@ The notes will then be display in a section which is a FXML `VBox`.
   
     - Cons: One additional command is needed to view the notes of the patients.
 
-- **Alternative 2:** Display the notes of the patients in the `PersonalListCard` with the rest the of the details.
+- **Alternative 2:** Display the notes of the patients in the `PersonCard` with the rest the of the details.
 
     - Pros: The user does not need to enter an extra command to view the notes of the patients.
   
-    - Cons: It is very difficult to view the notes of the individual patient as there is too much information displayed on the `PersonalListCard`.
+    - Cons: It is very difficult to view the notes of the individual patient as there is too much information displayed on the `PersonCard`.
 
 --------------------------------------------------------------------------------------------------------------------
 

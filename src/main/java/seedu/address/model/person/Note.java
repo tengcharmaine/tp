@@ -43,6 +43,15 @@ public class Note {
         return new Note(value + text);
     }
 
+    /**
+     * Returns a display friendly string. (Can be used by UI)
+     *
+     * @return Display friendly string.
+     */
+    public String getDisplayString() {
+        return value;
+    }
+
     @Override
     public String toString() {
         return value;
